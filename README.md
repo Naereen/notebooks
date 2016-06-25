@@ -3,7 +3,7 @@
 This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering various subject.
 
 - Some are tutorials on bash commands or some of [command-line my scripts](https://bitbucket.org/lbesson/bin/src/master/);
-- Some are experiments, only here to help me learn how to use [Jupyter](http://jupyter.org/) correctly;
+- Some are just experiments, only here to help me learn how to use [Jupyter](http://jupyter.org/) correctly;
 - And more will come...
 
 ----
@@ -11,8 +11,8 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 ## *How to read these documents*?
 
 ### View the notebooks statically
-- Either directly in GitHub: [list of notebooks](https://github.com/Naereen/notebooks/blob/master/);
-- Or on [nbviewer.jupiter.org](http://nbviewer.jupiter.org/): [list of notebooks](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/).
+- Either directly in GitHub: [list of notebooks](https://github.com/Naereen/notebooks/search?l=jupyter-notebook);
+- Or on [nbviewer.jupiter.org](http://nbviewer.jupiter.org/): [list of notebooks](http://nbviewer.jupyter.org/github/Naereen/notebooks/).
 
 ### Play with the notebooks dynamically
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/Naereen/notebooks)
@@ -22,7 +22,8 @@ You can then play with it as long as you like, for instance by modifying the val
 
 ----
 
-> More information about [notebooks (on the documentation of IPython)](http://nbviewer.jupiter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) or [on the FAQ on Jupyter's website](http://nbviewer.jupyter.org/faq).
+> - More information about [notebooks (on the documentation of IPython)](http://nbviewer.jupiter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) or [on the FAQ on Jupyter's website](http://nbviewer.jupyter.org/faq).
+> - More information about [mybinder.org](http://mybinder.org/): on [this example repository](https://github.com/binder-project/example-requirements).
 
 ### License
 All the notebooks in this repository are published under the terms of the [MIT license](http://lbesson.mit-license.org/).
