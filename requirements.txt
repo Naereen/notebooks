@@ -1,0 +1,4 @@
+jupyter
+ipython
+bash_kernel
+octave_kernel
