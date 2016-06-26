@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Notebooks : Playground to learn how to use Jupyter Notebooks for IPython, OCaml, Bash, Octave etc...">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Notebooks</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Naereen/notebooks">View on GitHub</a>
+
+          <h1 id="project_title">Notebooks</h1>
+          <h2 id="project_tagline">Playground to learn how to use Jupyter Notebooks for IPython, OCaml, Bash, Octave etc...</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Naereen/notebooks/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Naereen/notebooks/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="jupyter-notebooks-by-naereen--github" class="anchor" href="#jupyter-notebooks-by-naereen--github" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://mybinder.org/repo/Naereen/notebooks">Jupyter Notebooks</a> by <a href="https://naereen.github.io/">Naereen @ GitHub</a>
+</h1>
+
+<p>This repository hosts some <a href="http://jupyter.org/">Jupyter Notebooks</a>, covering various subjects.</p>
+
+<ul>
+<li>Some are small experiments, only here to help me learn how to use <a href="http://jupyter.org/">Jupyter</a> correctly;</li>
+<li>Some are tutorials, on <code>bash</code> commands or some of <a href="https://bitbucket.org/lbesson/bin/src/master/">command-line my scripts</a>;</li>
+<li>And more will come... soon!</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="1-how-to-read-these-documents" class="anchor" href="#1-how-to-read-these-documents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. <em>How to read these documents</em>?</h2>
+
+<h3>
+<a id="1a-view-the-notebooks-statically" class="anchor" href="#1a-view-the-notebooks-statically" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.a. View the notebooks statically</h3>
+
+<ul>
+<li>Either directly in GitHub: <a href="https://github.com/Naereen/notebooks/search?l=jupyter-notebook">see the list of notebooks</a>;</li>
+<li>Or on <a href="http://nbviewer.jupiter.org/">nbviewer.jupiter.org</a>: <a href="http://nbviewer.jupyter.org/github/Naereen/notebooks/">list of notebooks</a>.</li>
+</ul>
+
+<h3>
+<a id="1b-play-with-the-notebooks-dynamically" class="anchor" href="#1b-play-with-the-notebooks-dynamically" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.b. Play with the notebooks dynamically</h3>
+
+<p><a href="http://mybinder.org/repo/Naereen/notebooks"><img src="http://mybinder.org/badge.svg" alt="Binder"></a></p>
+
+<p>Anyone can use the <a href="http://mybinder.org/">mybinder.org</a> website (by <a href="http://mybinder.org/repo/Naereen/notebooks">clicking</a> on the icon above) to run the notebook in her/his web-browser.
+You can then play with it as long as you like, for instance by modifying the values or experimenting with the code.</p>
+
+<hr>
+
+<h2>
+<a id="2-requirements-to-run-the-notebooks-locally" class="anchor" href="#2-requirements-to-run-the-notebooks-locally" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. <em>Requirements to run the notebooks locally</em>?</h2>
+
+<p>All <a href="requirements.txt">the requirements</a> can be installed with <a href="https://pip.readthedocs.io/"><code>pip</code></a> and by running a few <code>python -m ...</code> commands.</p>
+
+<blockquote>
+<p>Note: if you use <a href="https://docs.python.org/3/">Python 3</a> instead of <a href="https://docs.python.org/2/">Python 2</a>, you might have to <em>replace</em> <code>pip</code> and <code>python</code> by <code>pip3</code> and <code>python3</code> in the next commands.</p>
+</blockquote>
+
+<h3>
+<a id="2a-jupyter-notebook-and-ipython" class="anchor" href="#2a-jupyter-notebook-and-ipython" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.a. <a href="http://jupyter.readthedocs.org/en/latest/install.html">Jupyter Notebook</a> and <a href="http://ipython.org/">IPython</a>
+</h3>
+
+<div class="highlight highlight-source-shell"><pre>sudo pip install jupyter ipython</pre></div>
+
+<p>It will also install all the dependencies, afterward you should have a <code>jupyter-notebook</code> command (or a <code>jupyter</code> command, to be ran as <code>jupyter notebook</code>) available in your <code>PATH</code>:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ whereis jupyter-notebook
+jupyter-notebook: /usr/local/bin/jupyter-notebook</pre></div>
+
+<h3>
+<a id="2b-other-kernels" class="anchor" href="#2b-other-kernels" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.b. Other kernels:</h3>
+
+<blockquote>
+<p>They are only needed to run the notebooks written for Bash or Octave (or OCaml):</p>
+</blockquote>
+
+<h4>
+<a id="2b1-gnu-bash-kernel" class="anchor" href="#2b1-gnu-bash-kernel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.b.1. <a href="https://github.com/takluyver/bash_kernel">GNU Bash kernel</a>
+</h4>
+
+<ul>
+<li>You have to have <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)"><code>bash</code></a> installed (<a href="https://tiswww.case.edu/php/chet/bash/bashtop.html">already there</a> on all Linux distribution, installable with <a href="http://brew.sh/"><code>brew</code></a> or <a href="https://www.macports.org/"><code>macports</code></a> on Mac OS, available on Windows through <a href="http://cygwin.org/"><code>cygwin</code></a>):</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>$ bash --version <span class="pl-k">|</span> head -n1
+GNU bash, version 4.3.42(1)-release (x86_64-pc-linux-gnu)</pre></div>
+
+<ul>
+<li>And then install the kernel <code>bash_kernel</code> with these two commands:</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>sudo pip install bash_kernel
+python -m bash_kernel.install</pre></div>
+
+<h4>
+<a id="2b2-gnu-octave-kernel" class="anchor" href="#2b2-gnu-octave-kernel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.b.2. <a href="https://github.com/calysto/octave_kernel">GNU Octave kernel</a>
+</h4>
+
+<ul>
+<li>You have to have <a href="https://www.gnu.org/software/octave/"><code>octave</code></a> installed (installable with the package manager on major Linux distributions (<code>apt-get</code>, <code>pacman</code>, <code>yum</code> etc), installable with <a href="http://brew.sh/"><code>brew</code></a> or <a href="https://www.macports.org/"><code>macports</code></a> on Mac OS, available on Windows through <a href="http://cygwin.org/"><code>cygwin</code></a> or <a href="https://ftp.gnu.org/gnu/octave/windows/">natively</a>):</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>$ octave --version <span class="pl-k">|</span> head -n1
+GNU Octave, version 4.0.0</pre></div>
+
+<ul>
+<li>Your version of Octave should be installed with <a href="">gnuplot</a> support (it is usually the case):</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>$ gnuplot --version <span class="pl-k">|</span> head -n1
+gnuplot 5.0 patchlevel 1</pre></div>
+
+<ul>
+<li>And then install the kernel <code>bash_kernel</code> with these two commands:</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>sudo pip install octave_kernel
+python -m octave_kernel.install</pre></div>
+
+<hr>
+
+<h3>
+<a id="more-information" class="anchor" href="#more-information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More information?</h3>
+
+<blockquote>
+<ul>
+<li>More information about <a href="http://nbviewer.jupiter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb">notebooks (on the documentation of IPython)</a> or <a href="http://nbviewer.jupyter.org/faq">on the FAQ on Jupyter's website</a>.</li>
+<li>More information about <a href="http://mybinder.org/">mybinder.org</a>: on <a href="https://github.com/binder-project/example-requirements">this example repository</a>.</li>
+</ul>
+</blockquote>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p>All the notebooks in this repository are published under the terms of the <a href="http://lbesson.mit-license.org/">MIT license</a> (file <a href="LICENSE.txt">LICENSE.txt</a>).</p>
+
+<p><a href="https://github.com/Naereen/notebooks/"><img src="https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/notebooks/README.md?pixel" alt="Analytics"></a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Notebooks maintained by <a href="https://github.com/Naereen">Naereen</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
