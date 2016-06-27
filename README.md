@@ -1,4 +1,4 @@
-# [Jupyter Notebooks](http://mybinder.org/repo/Naereen/notebooks) by [Naereen @ GitHub](https://naereen.github.io/)
+# :dizzy: [Jupyter Notebooks](http://mybinder.org/repo/Naereen/notebooks) by [Naereen @ GitHub](https://naereen.github.io/) :dizzy:
 
 This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering various subjects.
 
@@ -10,11 +10,11 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 
 ## 1. *How to read these documents*?
 
-### 1.a. View the notebooks statically
+### 1.a. View the notebooks statically :memo:
 - Either directly in GitHub: [see the list of notebooks](https://github.com/Naereen/notebooks/search?l=jupyter-notebook);
 - Or on [nbviewer.jupiter.org](http://nbviewer.jupiter.org/): [list of notebooks](http://nbviewer.jupyter.org/github/Naereen/notebooks/).
 
-### 1.b. Play with the notebooks dynamically
+### 1.b. Play with the notebooks dynamically :pencil:
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/Naereen/notebooks)
 
 Anyone can use the [mybinder.org](http://mybinder.org/) website (by [clicking](http://mybinder.org/repo/Naereen/notebooks) on the icon above) to run the notebook in her/his web-browser.
@@ -81,11 +81,11 @@ python -m octave_kernel.install
 
 ----
 
-### More information?
+### :information_desk_person: More information?
 > - More information about [notebooks (on the documentation of IPython)](http://nbviewer.jupiter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) or [on the FAQ on Jupyter's website](http://nbviewer.jupyter.org/faq).
 > - More information about [mybinder.org](http://mybinder.org/): on [this example repository](https://github.com/binder-project/example-requirements).
 
-### License
+### :scroll: License
 All the notebooks in this repository are published under the terms of the [MIT license](http://lbesson.mit-license.org/) (file [LICENSE.txt](LICENSE.txt)).
 
 [![Analytics](https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/notebooks/README.md?pixel)](https://github.com/Naereen/notebooks/)
