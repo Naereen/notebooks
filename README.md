@@ -1,9 +1,9 @@
-# [Jupyter Notebooks](http://mybinder.org/repo/Naereen/notebooks) :notebook: by [Naereen @ GitHub](https://naereen.github.io/) :dizzy:
+# [Jupyter Notebooks](http://mybinder.org/repo/Naereen/notebooks) :notebook: by [Naereen @ GitHub](https://naereen.github.io/)
 
 This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering various subjects.
 
-- At the beginning, this repository was only here to host some small experiments, for me to learn how to use [the wonderful Jupyter tools](http://jupyter.org/) correctly :baby_bottle:;
-- Some notebooks are small tutorials, on :shell: ``bash`` commands or some of [command-line my scripts](https://bitbucket.org/lbesson/bin/src/master/) ([example #1](https://github.com/Naereen/notebooks/blob/master/Tutorial%20on%20head%20and%20tail%20%28bash%29.ipynb), or on :snake: Python ([example #2](https://github.com/Naereen/notebooks/blob/master/Demonstration%20of%20numpy.polynomial.Polynomial%20and%20nice%20display%20with%20LaTeX%20and%20MathJax%20%28python3%29.ipynb));
+- At the beginning, this repository was only here to host some small experiments, for me to learn how to use [the wonderful Jupyter tools](http://jupyter.org/) correctly (baby notebooks :baby_bottle:);
+- Some notebooks are small tutorials, on :shell: ``bash`` commands (or some of [command-line my scripts](https://bitbucket.org/lbesson/bin/src/master/)) (as [example #1](https://github.com/Naereen/notebooks/blob/master/Tutorial%20on%20head%20and%20tail%20%28bash%29.ipynb)), or on :snake: Python (as [example #2](https://github.com/Naereen/notebooks/blob/master/Demonstration%20of%20numpy.polynomial.Polynomial%20and%20nice%20display%20with%20LaTeX%20and%20MathJax%20%28python3%29.ipynb));
 - Some notebooks are written in French :fr:, mainly [documents written for the preparation](agreg/) to the highly competitive French national exam to become a professor (aka the ["agrégation"](http://agreg.org/)), as in 2016-17 I will [be a teaching assistant](https://www.irisa.fr/fr/emplois/enseignants/missions-denseignement-au-departement-informatique-lens-rennes) at [ENS de Rennes](http://www.ens-rennes.fr/) in the [Computer Science department](http://www.dit.ens-rennes.fr/), for the ["Fundamental Computer Science" minor option (D) for the agrégation exam](http://www.dit.ens-rennes.fr/agregation-option-d/). (:fr: Voir [ce sous-dossier](agreg/) | :gb: See [this sub-folder](agreg/) ).
 - I will try to write a few *artistic* notebooks, showcasing nice pieces of code :art:!
 - And more will come... soon!
@@ -16,7 +16,7 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - Either directly in GitHub: [see the list of notebooks](https://github.com/Naereen/notebooks/search?l=jupyter-notebook);
 - Or on [nbviewer.jupiter.org](http://nbviewer.jupiter.org/): [list of notebooks](http://nbviewer.jupyter.org/github/Naereen/notebooks/).
 
-### 1.b. Play with the notebooks dynamically :pencil:
+### 1.b. Play with the notebooks dynamically :boom:
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/Naereen/notebooks)
 
 Anyone can use the [mybinder.org](http://mybinder.org/) website (by [clicking](http://mybinder.org/repo/Naereen/notebooks) on the icon above) to run the notebook in her/his web-browser.
@@ -40,11 +40,11 @@ It will also install all the dependencies, afterward you should have a ``jupyter
 ```bash
 $ whereis jupyter-notebook
 jupyter-notebook: /usr/local/bin/jupyter-notebook
-$ jupyter-notebook --version
+$ jupyter-notebook --version  # version >= 4 is recommended
 4.2.1
 ```
 
-### 2.b. Other kernels:
+### 2.b. Other kernels (*optional*):
 > They are only needed to run the notebooks written for Bash or Octave (or OCaml):
 
 #### 2.b.1. [GNU Bash kernel](https://github.com/takluyver/bash_kernel)
