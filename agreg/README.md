@@ -1,11 +1,13 @@
 # :notebook: Notebooks pour l'agrégation :fr:
 > Ce dossier contient des [notebooks Jupyter](http://jupyter.org/), écrits en [Python (version 3)](https://docs.python.org/3/), pour [l'option informatique (D)](http://www.dit.ens-rennes.fr/agregation-option-d/programme-de-l-option-informatique-de-l-agregation-de-mathematiques-48358.kjsp) de l'[agrégation de mathématiques](http://agreg.org/) (en France).
 
+[Liste des notebooks sur nbviewer.jupyter.org](http://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/)
+
 ----
 
 ## :pencil: Textes de modélisation
 - Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](public2012_D3.ipynb),
-- TODO : en faire plus !
+- TODO : en faire d'autres !
 
 ----
 
