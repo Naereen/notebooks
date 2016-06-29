@@ -4,7 +4,8 @@
 ----
 
 ## :pencil: Textes de modélisation
-- TODO
+- Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](public2012_D3.ipynb),
+- TODO : en faire plus !
 
 ----
 
