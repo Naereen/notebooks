@@ -6,12 +6,13 @@
 ----
 
 ## :pencil: Textes de modélisation
-- Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](public2012_D3.ipynb),
+- Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3.ipynb) (["public2012_D3.ipynb" on GitHub](public2012_D3.ipynb)),
 - TODO : en faire d'autres !
 
 ----
 
 ## :pencil: Implémentation pour des leçons ou des développements
+- [Algorithme de Cocke-Kasami-Younger](https://fr.wikipedia.org/wiki/Algorithme_de_Cocke-Younger-Kasami) : [Algorithme de Cocke-Kasami-Younger (python3).ipynb](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Algorithme%20de%20Cocke-Kasami-Younger%20%28python3%29.ipynb) (["Algorithme de Cocke-Kasami-Younger (python3).ipynb" on GitHub](Algorithme%20de%20Cocke-Kasami-Younger%20%28python3%29.ipynb)),
 - TODO
 
 ----
