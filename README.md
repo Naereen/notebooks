@@ -8,7 +8,7 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - I will try to write a few *artistic* notebooks, showcasing nice pieces of code :art:!
 - And more will come... soon!
 
-[![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/)
+[![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 ----
 
