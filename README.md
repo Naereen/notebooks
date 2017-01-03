@@ -19,7 +19,7 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - Or on [nbviewer.jupiter.org](http://nbviewer.jupiter.org/): [list of notebooks](http://nbviewer.jupyter.org/github/Naereen/notebooks/).
 
 ### 1.b. Play with the notebooks dynamically :boom:
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/Naereen/notebooks)
+[![MyBinder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/Naereen/notebooks)
 
 Anyone can use the [mybinder.org](http://mybinder.org/) website (by [clicking](http://mybinder.org/repo/Naereen/notebooks) on the icon above) to run the notebook in her/his web-browser.
 You can then play with it as long as you like, for instance by modifying the values or experimenting with the code.
@@ -98,7 +98,7 @@ python -m octave_kernel.install
 
 ## :scroll: License ? [![GitHub license](https://img.shields.io/github/license/Naereen/notebooks.svg)](https://github.com/Naereen/notebooks/blob/master/LICENSE)
 All the notebooks in this repository are published under the terms of the [MIT License](https://lbesson.mit-license.org/) (file [LICENSE.txt](LICENSE.txt)).
-© [Lilian Besson](https://GitHub.com/Naereen), 2016-17.
+© [Lilian Besson](https://GitHub.com/Naereen), 2016.
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/notebooks/graphs/commit-activity)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)

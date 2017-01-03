@@ -6,7 +6,7 @@
 ----
 
 ## :pencil: Textes de modélisation
-- Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3.ipynb) ([on GitHub?](public2012_D3.ipynb)),
+- Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3.ipynb) ([on GitHub?](public2012_D3.ipynb)) en Python 3, [public2012_D3.ipynb](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3%20%28OCaml%29.ipynb) ([on GitHub?](public2012_D3%20%28OCaml%29.ipynb)) en OCaml,
 - TODO : en faire d'autres !
 
 ----
@@ -25,7 +25,11 @@
 
 ### :scroll: Licence
 Tout ces documents sont distribues publiquement sous les conditions de la [licence MIT](http://lbesson.mit-license.org/) (fichier [LICENSE.txt](LICENSE.txt), en anglais).
-© [Lilian Besson](https://github.com/Naereen), 2016-17.
+© [Lilian Besson](https://github.com/Naereen), 2016.
 
-[![Ask Me Anything](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/Naereen/ama.fr)
+[![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![made-with-ocaml](https://img.shields.io/badge/Made%20with-OCaml-1f425f.svg)](https://ocaml.org/)
+
+[![Demandez moi n'importe quoi !](https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg)](https://GitHub.com/Naereen/ama.fr)
 [![Analytics](https://ga-beacon.appspot.com/UA-38514290-17/github.com/Naereen/notebooks/agreg/README.md?pixel)](https://github.com/Naereen/notebooks/)
