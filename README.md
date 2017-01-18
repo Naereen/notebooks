@@ -5,6 +5,7 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - At the beginning, this repository was only here to host some small experiments, for me to learn how to use [the wonderful Jupyter tools](http://jupyter.org/) correctly (baby notebooks :baby_bottle:);
 - Some notebooks are small tutorials, on :shell: ``bash`` commands (or some of [command-line my scripts](https://bitbucket.org/lbesson/bin/src/master/)) (as [example #1](https://github.com/Naereen/notebooks/blob/master/Tutorial%20on%20head%20and%20tail%20%28bash%29.ipynb)), or on :snake: Python (as [example #2](https://github.com/Naereen/notebooks/blob/master/Demonstration%20of%20numpy.polynomial.Polynomial%20and%20nice%20display%20with%20LaTeX%20and%20MathJax%20%28python3%29.ipynb));
 - Some notebooks are written in French :fr:, mainly [documents written for the preparation](agreg/) to the highly competitive French national exam to become a professor (aka the ["agrégation"](http://agreg.org/)), as in 2016-17 I will [be a teaching assistant](https://www.irisa.fr/fr/emplois/enseignants/missions-denseignement-au-departement-informatique-lens-rennes) at [ENS de Rennes](http://www.ens-rennes.fr/) in the [Computer Science department](http://www.dit.ens-rennes.fr/), for the ["Fundamental Computer Science" minor option (D) for the agrégation exam](http://www.dit.ens-rennes.fr/agregation-option-d/). (:fr: Voir [ce sous-dossier](agreg/) | :gb: See [this sub-folder](agreg/) ).
+- I also wrote some notebooks on numerical simulations of dice games (:fr: Voir [ce sous-dossier](simus/) | :gb: See [this sub-folder](simus)).
 - I will try to write a few *artistic* notebooks, showcasing nice pieces of code :art:!
 - And more will come... soon!
 
@@ -87,7 +88,7 @@ python -m octave_kernel.install
 ```
 
 #### 2.b.3. [OCaml kernel](https://github.com/andrewray/iocaml/wiki/jupyter)
-> I haven't been able to make it work, *sorry folks*.
+> The instructions are not so simple, cf. the tutorial by @andrewray on [iocaml's wiki](https://github.com/andrewray/iocaml/wiki/).
 
 ----
 
@@ -98,7 +99,7 @@ python -m octave_kernel.install
 
 ## :scroll: License ? [![GitHub license](https://img.shields.io/github/license/Naereen/notebooks.svg)](https://github.com/Naereen/notebooks/blob/master/LICENSE)
 All the notebooks in this repository are published under the terms of the [MIT License](https://lbesson.mit-license.org/) (file [LICENSE.txt](LICENSE.txt)).
-© [Lilian Besson](https://GitHub.com/Naereen), 2016.
+© [Lilian Besson](https://GitHub.com/Naereen), 2016-17.
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/notebooks/graphs/commit-activity)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
