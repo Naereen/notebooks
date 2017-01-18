@@ -1,7 +1,7 @@
 # :notebook: Notebooks pour des simulations numériques :fr:
-> Ce dossier contient des [notebooks Jupyter](http://jupyter.org/), écrits en [Python (version 3)](https://docs.python.org/3/), pour [l'option informatique (D)](http://www.dit.ens-rennes.fr/agregation-option-d/programme-de-l-option-informatique-de-l-agregation-de-mathematiques-48358.kjsp) de l'[agrégation de mathématiques](http://agreg.org/) (en France).
+> Ce dossier contient des [notebooks Jupyter](http://jupyter.org/), écrits en [Python (version 3)](https://docs.python.org/3/), pour mon plaisir.
 
-[Liste des notebooks sur nbviewer.jupyter.org](http://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/)
+[Liste des notebooks sur nbviewer.jupyter.org](http://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/simus/)
 
 ----
 
@@ -15,6 +15,7 @@
 ----
 
 ### :information_desk_person: Plus d'informations ?
+> - Les dépendances de ces notebooks se trouvent dans ce fichier [`requirements.txt`](requirements.txt).
 > - Plus d'informations sur ce dépôt se trouvent [ici](..).
 > - Plus d'informations sur [les notebooks (documentation de IPython)](http://nbviewer.jupiter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) ou [FAQ sur le site de Jupyter](http://nbviewer.jupyter.org/faq).
 > - Plus d'informations sur [mybinder.org](http://mybinder.org/): dans [ce dépôt exemple](https://github.com/binder-project/example-requirements).
