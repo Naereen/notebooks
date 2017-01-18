@@ -3,3 +3,4 @@
 */.ipynb_checkpoints/
 octave-workspace
 */octave-workspace
+*.log

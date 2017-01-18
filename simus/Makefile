@@ -1,0 +1,4 @@
+run:
+	# time ipython3 calculdes.py | tee calculdes.log
+	time runipy -o Calcul_d_une_paire_de_des_un_peu_particuliers.ipynb | tee Calcul_d_une_paire_de_des_un_peu_particuliers.log
+	# --html Calcul_d_une_paire_de_des_un_peu_particuliers..html
