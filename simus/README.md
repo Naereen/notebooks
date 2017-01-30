@@ -18,6 +18,8 @@
 ### The [Monty-Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
 - [Naive simulations of the Monty-Hall problem](Naive_simulations_of_the_Monty-Hall_paradox.ipynb), proves that the best strategy is the always chose to other door, ie to change from our initial choice to the door left by the master of the game.
 
+[![Naive_simulations_of_the_Monty-Hall_paradox.png](Naive_simulations_of_the_Monty-Hall_paradox.png)](Naive_simulations_of_the_Monty-Hall_paradox.png)
+
 ----
 
 ### :information_desk_person: Plus d'informations ?
