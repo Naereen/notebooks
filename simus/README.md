@@ -14,6 +14,12 @@
 
 ----
 
+## About numerical (apparent) paradoxes
+### The [Monty-Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
+- [Naive simulations of the Monty-Hall problem](Naive_simulations_of_the_Monty-Hall_paradox.ipynb), proves that the best strategy is the always chose to other door, ie to change from our initial choice to the door left by the master of the game.
+
+----
+
 ### :information_desk_person: Plus d'informations ?
 > - Les dépendances de ces notebooks se trouvent dans ce fichier [`requirements.txt`](requirements.txt).
 > - Plus d'informations sur ce dépôt se trouvent [ici](..).
