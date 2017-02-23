@@ -14,6 +14,13 @@
 
 ----
 
+## [Des dates qui sont aussi des nombres premiers](Des_dates_qui_font_des_nombres_premiers.ipynb)
+- Vous saviez qu'en 2017, 71 jours sur 365 donnent des dates qui sont des nombres premiers ?
+- Par exemple : 23/02/2017 -> `23022017` est premier, mais 24/02/2017 -> `24022017` ne l'est pas.
+- Il y a 71 jours en 2017 qui ont une date première (et 69 si on utilise le format MoisJourAnnée).
+
+----
+
 ## About numerical (apparent) paradoxes
 ### The [Monty-Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
 This [Naive simulations of the Monty-Hall problem](Naive_simulations_of_the_Monty-Hall_paradox.ipynb), proves that the best strategy is the always chose to other door, ie to change from our initial choice to the door left by the master of the game.
