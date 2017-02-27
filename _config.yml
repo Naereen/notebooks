@@ -1,0 +1,8 @@
+title: Notebooks
+description: Playground to learn how to use Jupyter Notebooks for IPython, OCaml, Bash, Octave etc...
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
