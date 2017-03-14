@@ -7,6 +7,7 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - Some notebooks are written in French :fr:, mainly [documents written for the preparation](agreg/) to the highly competitive French national exam to become a professor (aka the ["agrégation"](http://agreg.org/)), as in 2016-17 I am [a teaching assistant](https://www.irisa.fr/fr/emplois/enseignants/missions-denseignement-au-departement-informatique-lens-rennes) at [ENS de Rennes](http://www.ens-rennes.fr/) in the [Computer Science department](http://www.dit.ens-rennes.fr/), for the ["Fundamental Computer Science" minor option (D) for the agrégation exam](http://www.dit.ens-rennes.fr/agregation-option-d/). (:fr: Voir [ce sous-dossier](agreg/) | :gb: See [this sub-folder](agreg/) ).
 - I also wrote some notebooks on numerical simulations of dice games (:fr: Voir [ce sous-dossier](simus/) | :gb: See [this sub-folder](simus)).
 - [This notebook](Manual_implementation_of_the_Mersenne_twister_PseudoRandom_Number_Generator__PRNG_.ipynb) shows a hand-written and clear implementation of several Pseudo-Random Number Generators, including the famous Mersenne twister algorithm, and then uses it to samples from the most famous discrete and continuous distributions, showcasing use of the Inverse-Transform method and Acceptance-Rejection method (cf. Markov Chain Monte-Carlo methods).
+- [This notebook written for the Pi Day 2017](Py_Pi_Day_2017.ipynb).
 - I will try to write a few *artistic* notebooks, showcasing nice pieces of *code* :art:!
 - And more will come... soon!
 
