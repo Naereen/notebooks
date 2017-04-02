@@ -7,6 +7,7 @@
 
 ## :pencil: Textes de modélisation
 - Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3.ipynb) ([on GitHub?](public2012_D3.ipynb)) en Python 3, [public2012_D3.ipynb](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3%20%28OCaml%29.ipynb) ([on GitHub?](public2012_D3%20%28OCaml%29.ipynb)) en OCaml,
+- Pour deux textes donnés pour les oraux blancs début avril 2017 : [Crime parfait](Crime_parfait.ipynb) et [Sudoku](Sudoku.ipynb).
 - TODO : en faire d'autres !
 
 ----
