@@ -333,7 +333,7 @@ t_b ** s_b;;
 (* ### L'algorithme PC *)
 
 (* #### Structure de données pour les réseaux STP *)
-(* On a besoin désormais de considérer des réseaux STP, qui sont des graphes dont les sommets sont des entiers, et dont les arêtes sont étiquettées par des *listes* (non vides) d'intervalles.# L'algorithme PC demande pouvoir accéder rapidement et facilement à l'arête entre deux sommets $x,y$, $T_{x,y}$. *)
+(* On a besoin désormais de considérer des réseaux STP, qui sont des graphes dont les sommets sont des entiers, et dont les arêtes sont étiquetées par des *listes* (non vides) d'intervalles.# L'algorithme PC demande de pouvoir accéder rapidement et facilement à l'arête entre deux sommets $x,y$, $T_{x,y}$. *)
 (* Ainsi, la structure de matrice d'adjacence semble appropriée. *)
 (* Les arêtes inexistantes dans le réseau auront simplement $T_{x,y} = \emptyset$, c'est-à-dire `[]` (liste vide).# > On supposera que toutes les matrices données aux différentes fonctions définies plus bas sont carrées, on ne le vérifie pas (mais ce serait facile). *)
 
