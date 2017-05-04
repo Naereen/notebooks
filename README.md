@@ -10,6 +10,7 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - [This notebook written for the Pi Day 2017](Py_Pi_Day_2017.ipynb) demonstrates a dozen of algorithms to compute digits of the number pi.
 - [This other notebook](Obfuscated_code_or_piece_of_art.ipynb) shows some "obfuscated" code, producing :sparkles: [nice figures](art/)... Or maybe they are pieces of code art :art: ?
 - I will try to write more *artistic* notebooks, showcasing nice pieces of *code* :art:!
+- :fr: [Ce notebook en français](Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb) présente les problèmes de bandits multi-bras stochastiques (multi-armed bandit, MAB), et les algorithmes dits "de bandits" pour les résoudre (UCB "Upper Confidence Bounds", Thompson Sampling, Approximated Finite-Horizon Gittins index etc).
 - And more will come... soon!
 
 [![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
