@@ -6,3 +6,4 @@ octave-workspace
 *.log
 *.html
 *.pdf
+*.so
