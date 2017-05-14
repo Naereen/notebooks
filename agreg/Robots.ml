@@ -475,34 +475,304 @@ let _ = realise_rdv (0, 1) u l
 
 (*  > Merci à Romain pour son implémentation, sur laquelle la seconde approche est basée. *)
 
-(*  ---- *)
-(*  ## Une autre approche avec des chaînes de Markov *)
+(* ---- *)
+(* ## Une autre approche avec des chaînes de Markov *)
 
-(*  Quand j'aurais le temps, j'implémenterai une troisième modélisation, avec des matrices et des chaînes de Markov. *)
+(* Voici une troisième modélisation, avec des matrices et des [chaînes de Markov](https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_Markov). *)
 
-(*  ### Opérations matrice-vecteur *)
-(*  Avec un produit scalaire simple, et un appel à `Array.init`, on peut facilement effectuer un produit matrice-vecteur. *)
+(* L'idée de base vient de l'observation suivante : ajouter de l'aléa dans les déplacements des robots devraient permettre de s'assurer (avec forte probabilité) que tous les rendez-vous sont bien effectués. *)
 
-(*  $$ \mathrm{dot}(\mathbf{x}, \mathbf{y}) := \mathbf{x} . \mathbf{y} = \sum_{i=0}^{n-1} x_i \times y_i $$ *)
-(*  $$ \mathbf{A} \times \mathbf{x} := \begin{bmatrix} *)
-(*      A_0 . \mathbf{x} \\ *)
-(*      \dots \\ *)
-(*      A_{n-1} . \mathbf{x} \\ *)
-(*  \end{bmatrix}. $$ *)
+(* ### Opérations matrice-vecteur (inutile ici) *)
+(* Avec un produit scalaire simple, et un appel à `Array.init`, on peut facilement effectuer un produit matrice-vecteur. *)
 
-let dot x y =
+(* $$ \mathrm{dot}(\mathbf{x}, \mathbf{y}) := \mathbf{x} . \mathbf{y} = \sum_{i=0}^{n-1} x_i \times y_i $$ *)
+(* $$ \mathbf{A} \times \mathbf{x} := \begin{bmatrix} *)
+(*     A_0 . \mathbf{x} \\ *)
+(*     \dots \\ *)
+(*     A_{n-1} . \mathbf{x} \\ *)
+(* \end{bmatrix}. $$ *)
+
+let dot (x : float array) (y : float array) : float =
     let n = Array.length x in
-    let acc = ref 0 in
+    let acc = ref 0. in
     for i = 0 to n - 1 do
-        acc := (!acc) + (x.(i) * y.(i))
+        acc := (!acc) +. (x.(i) *. y.(i))
     done;
     !acc
 ;;
 
 
-let right_mult a x =
+dot [| 1.; 2.; 3. |] [| 1.; 2.; 3. |];;
+(* = 14 = 1 * 1 + 2 * 2 + 3 * 3 = 1 + 4 + 9 *)
+
+
+(* Et maintenant pour le produit matrice-vecteur : *)
+
+let right_mult (a : float array array) (x : float array) : float array =
     Array.init (Array.length x) (fun i ->
         dot a.(i) x
     )
 ;;
 
+
+(* Par exemple, définissons une matrice et un vecteur, utilisés ici et après pour nos tests. *)
+
+let a = [|
+            [| 0.4; 0.3; 0.3 |];
+            [| 0.3; 0.4; 0.3 |];
+            [| 0.3; 0.3; 0.4 |]
+    |]
+;;
+
+let x = [| 0.; 1.; 0. |];;  (* etat 2 *)
+let y = [| 0.2; 0.3; 0.5 |];;
+
+
+right_mult a x;;
+right_mult a y;;
+
+
+(* ### Échantillonage pondéré *)
+(* Le module [`Random`](http://caml.inria.fr/pub/docs/manual-ocaml/libref/Random.html) va être utile. *)
+
+Random.self_init ();;
+
+
+(* Etant donné une distribution discrète $\pi = (\pi_1,\dots,\pi_N)$ sur $\{1,\dots,N\}$, la fonction suivante permet de générer un indice $i$ tel que *)
+(* $$ \mathbb{P}(i = k) = \pi_k, \forall k \in \{1,\dots,N\}.$$ *)
+
+let weight_sampling (pi : float array) () =
+    let p = Random.float 1. in
+    let i = ref (-1) in
+    let acc = ref 0. in
+    while !acc < p do
+        incr i;
+        acc := (!acc) +. pi.(!i);
+    done;
+    !i
+;;
+
+
+(* Par exemple, tirer 100 échantillons suivant la distribution $\pi = [0.5, 0.1, 0.4]$ devrait donner environ $50$ fois $0$, $10$ fois $1$ et $40$ fois $2$ : *)
+
+let compte (a : 'a array) (x : 'a) : int =
+    Array.fold_left (fun i y -> if y = x then i + 1 else i) 0 a
+;;
+    
+let echantillons = Array.init 100
+    (fun i -> weight_sampling [| 0.5; 0.1; 0.4 |] ())
+;;
+
+compte echantillons 0;;
+compte echantillons 1;;
+compte echantillons 2;;
+
+
+(* ### Simuler une étape d'une chaîne de Markov ? *)
+(* On peut utiliser cette fonction pour suivre une transition, aléatoire, sur une chaîne de Markov. *)
+
+let markov_1 (a : float array array) (i : int) : int =
+    let pi = a.(i) in
+    weight_sampling pi ()
+;;
+
+
+(* Avec l'exemple définit ci-dessus, on peut voir le résultat de $100$ transitions différentes depuis l'état $0$ : *)
+
+for _ = 0 to 100 do
+    print_int (markov_1 a 0);
+done;;
+
+
+(* On peut suivre plusieurs transitions : *)
+
+let markov_n (a : float array array) (etat : int) (n : int) : int =
+    let u = ref etat in
+    for _ = 0 to n-1 do
+        u := markov_1 a !u;
+    done;
+    !u
+;;
+
+
+markov_n a 0 10;;
+
+
+(* Et pour plusieurs robots, c'est pareil : chaque robots a un état (`robots.(i)`) et une matrice de transition (`a.(i)`) : *)
+
+let markovs_n (a : float array array array) (robots : int array) (n : int) : int array =
+    Array.mapi (fun i u -> markov_n a.(i) u n) robots
+;;
+
+
+(* Si par exemple chaque état a la même matrice de transition : *)
+
+markovs_n [|a; a; a|] [|0; 1; 2|] 10;;
+
+
+(* ### Modéliser nos robots avec des chaînes de Markov *)
+
+(* Plutôt que d'imposer à chaque robot un ordre fixe de ses rendez-vous, on va leur donner une probabilité uniforme d'aller, après un rendez-vous, à n'importe lequel de leur rendez-vous. *)
+
+(* - Cela demande de transformer la liste $T_1,\dots,T_n$ de rendez-vous en $n$ matrices de transition de chaînes de Markov, une par robot. *)
+(* - Et ensuite de simuler chaque chaîne de Markov, parant d'un état initial $T_i[0]$. *)
+
+(* Fonctions utiles *)
+Array.init;;
+Array.make_matrix;;
+Array.iter;;
+
+
+let mat_proba_depuis_rdv (ts : int array array) : (float array array) array =
+    let n = Array.length ts in
+    let a = Array.init n (fun i -> Array.make_matrix n n 0.) in
+    for i = 0 to n-1 do
+        (* Pour le robot R_i, ses rendez-vous T_i sont ts.(i) *)
+        let r = ts.(i) in
+        let m = Array.length r in
+        let p_i = 1. /. (float_of_int m) in
+        (* Pour chaque rendez-vous L_j dans T_i,
+           remplir a.(j).(k) par 1/m,
+           et aussi a.(k).(j) par 1/m
+           pour chaque autre k dans L_j
+        *)
+        for j = 0 to m-1 do
+            for k = 0 to m-1 do
+                a.(i).(r.(j)).(r.(k)) <- p_i;
+                a.(i).(r.(k)).(r.(j)) <- p_i;
+            done;
+        done;
+    done;
+    a
+;;
+
+
+(* Avec les fonctions précédentes, on peut faire évoluer le système. *)
+
+let simule_markov_robots (ts : int array array)
+    (etats : int array) (n : int)
+    : int array =
+    let a = mat_proba_depuis_rdv ts in
+    markovs_n a etats n
+;;
+
+
+(* ### Exemple 1 *)
+(* On commence avec le premier exemple du texte, avec trois robots $R_1, R_2, R_3$, qui ont comme tableaux de rendez-vous $T_1 = [1, 3]$, $T_2 = [2, 1]$ et $T_3 = [3, 2]$. *)
+
+(* Ce système n'est pas bloqué, mais aucun rendez-vous n'est réalisé avec l'approche statique. *)
+(* L'approche probabiliste permettra, espérons, de résoudre ce problème. *)
+
+(* ![Premier exemple de robots](images/robots_exemple1.png) *)
+
+let rdv = [| [|0; 2|]; [|1; 0|]; [|2; 1|]|] ;;
+
+
+(* On peut écrire une fonction qui récupère l'état initial dans lequel se trouve chaque robot (le texte donnait comme convention d'utiliser le premier de chaque liste). *)
+
+let premier_etat (rdvs : int array array) : int array =
+    Array.init (Array.length rdvs) (fun i -> rdvs.(i).(0))
+;;
+
+
+let etat = premier_etat rdv;;
+
+
+(* On vérifie la matrice de transition produite par `mat_proba_depuis_rdv` : *)
+
+mat_proba_depuis_rdv rdv;;
+
+
+(* On peut vérifier que ces chaînes de Markov représentent bien le comportement des robots, par exemple le premier robot $R_1$ a $T_1 = [1, 3]$, donc il alterne entre l'état $0$ et $2$, avec la matrice de transition *)
+(* $$ \mathbf{A}_i := \begin{bmatrix} *)
+(*     1/2 & 0 & 1/2 \\ *)
+(*     0 & 0 & 0 \\ *)
+(*     1/2 & 0 & 1/2 *)
+(* \end{bmatrix}. $$ *)
+
+(* Et enfin on peut simuler le système, par exemple pour juste une étape, plusieurs fois (pour bien visualiser). *)
+
+simule_markov_robots rdv etat 0;;  (* rien à faire ! *)
+
+
+simule_markov_robots rdv etat 1;;
+
+
+(* Pour mieux comprendre le fonctionnement, on va afficher les états intermédiaires. *)
+
+let print = Printf.printf;;
+
+
+let affiche_etat (etat : int array) =
+    Array.iter (fun u -> print "%i " u) etat;
+    print "\n";
+;;
+
+
+affiche_etat etat;;
+
+
+let u = ref etat in
+for _ = 0 to 10 do
+    affiche_etat !u;
+    u := simule_markov_robots rdv !u 1;
+done;;
+
+
+(* On constate que des rendez-vous ont bien été effectués ! *)
+(* Pas à chaque fois, mais presque. *)
+
+(* En tout cas, ça fonctionne mieux que l'approche naïve, peu importe l'état initial. *)
+
+let u = ref [| 0; 1; 1 |] in
+for _ = 0 to 10 do
+    affiche_etat !u;
+    u := simule_markov_robots rdv !u 1;
+done;;
+
+
+(* Sur 11 états, le rendez-vous 0 a été fait 1 fois, le 1 a été fait 4 fois, et le 2 a été fait 4 fois aussi. Soit 9 sur 11 étapes utiles ! Pas mal ! *)
+
+(* ### Exemple 2 *)
+(* Puis le secnod exemple : *)
+
+(* ![Premier exemple de robots](images/robots_exemple2.png) *)
+
+let rdv = [| [|0; 3|]; [|0; 1|]; [|1; 2|]; [|2; 3|] |];;
+
+
+let etat = premier_etat rdv;;
+
+
+(* On vérifie la matrice de transition produite par `mat_proba_depuis_rdv` : *)
+
+mat_proba_depuis_rdv rdv;;
+
+
+(* Et enfin on peut simuler le système, par exemple pour juste une étape, plusieurs fois (pour bien visualiser). *)
+
+simule_markov_robots rdv etat 0;;  (* rien à faire ! *)
+
+
+simule_markov_robots rdv etat 1;;
+
+
+let u = ref etat in
+for _ = 0 to 10 do
+    affiche_etat !u;
+    u := simule_markov_robots rdv !u 1;
+done;;
+
+
+(* Sur 11 états, le rendez-vous 0 a été fait 5 fois, le 1 a été fait 2 fois, le 2 a été fait 3 fois, et le 3 a été fait 3 fois aussi. *)
+(* Soit plus d'un rendez-vous par étape réussi en moyenne, et tous les rendez-vous ont été vus. *)
+
+(* ### Conclusion de cette approche par des chaînes de Markov *)
+
+(* On ne pas en faire plus, mais cela suffit de montrer la pertinence de cette autre approche. *)
+
+
+(* > Merci d'avoir lu jusque là ! *)
+
+(* ---- *)
+(* N'hésitez pas à aller voir [ce dépôt GitHub](https://GitHub.com/Naereen/notebooks/) pour d'autres notebooks, notamment [cette page](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/) pour d'autres notebooks corrigeant des textes de modélisation (option D, informatique théorique) pour l'agrégation de mathématiques. *)
