@@ -10,6 +10,7 @@
 - Pour quatre textes donnés pour les oraux blancs début avril 2017 : Lundi 3 avril : [Crime parfait](Crime_parfait.ipynb) et [Sudoku](Sudoku.ipynb), Vendredi 7 avril : [Contraintes temporelles](Contraintes_temporelles.ipynb) et [Chapeaux](Chapeaux.ipynb).
 - Pour le texte [public2012-D6](http://agreg.org/Textes/public2012-D6.pdf) : [Mots_bien_formes.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Mots_bien_formes.ipynb) en OCaml.
 - Pour le texte [pub2008-D1](http://agreg.org/Textes/pub2008-D1.pdf) : [Robots.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Robots.ipynb) en OCaml.
+- Pour deux textes donnés pour les oraux blancs fin mai 2017 : Lundi 22 mai : [Tissu cellulaire](Tissu_cellulaire.ipynb) et [Eclairage graphe](Eclairage_graphe.ipynb).
 - TODO : en faire d'autres !?
 
 ----
