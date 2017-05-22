@@ -734,7 +734,7 @@ done;;
 (* Sur 11 états, le rendez-vous 0 a été fait 1 fois, le 1 a été fait 4 fois, et le 2 a été fait 4 fois aussi. Soit 9 sur 11 étapes utiles ! Pas mal ! *)
 
 (* ### Exemple 2 *)
-(* Puis le secnod exemple : *)
+(* Puis le second exemple : *)
 
 (* ![Premier exemple de robots](images/robots_exemple2.png) *)
 
