@@ -4,7 +4,7 @@
 
 (* - *Date* : 29 mai 2017 *)
 (* - *Auteur* : [Lilian Besson](https://GitHub.com/Naereen/notebooks/) *)
-(* - *Texte*: [Taquin (public2008-D1)](http://agreg.org/Textes/public2008-D1.pdf) *)
+(* - *Texte*: [Taquin (pub2008-D2)](http://agreg.org/Textes/pub2008-D2.pdf) *)
 
 (* ## À propos de ce document *)
 
