@@ -17,7 +17,7 @@ Pour quatre textes donnés pour les oraux blancs début avril 2017 :
     + et [Sudoku](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Sudoku.ipynb),
 
 - vendredi 7 avril :
-    + [Contraintes temporelles](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/contraintes_temporelles.ipynb),
+    + [Contraintes temporelles](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Contraintes_temporelles.ipynb),
     + et [Chapeaux](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Chapeaux.ipynb)
 
 (tous en OCaml, pour des textes non officiels).
