@@ -18,7 +18,9 @@ Pour quatre textes donnés pour les oraux blancs début avril 2017 :
 
 - vendredi 7 avril :
     + [Contraintes temporelles](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/contraintes_temporelles.ipynb),
-    + et [Chapeaux](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Chapeaux.ipynb) (tous en OCaml, pour des textes non officiels).
+    + et [Chapeaux](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Chapeaux.ipynb)
+
+(tous en OCaml, pour des textes non officiels).
 
 ### Entraînements en mars
 - Pour le texte [public2012-D6](http://agreg.org/Textes/public2012-D6.pdf) : [Mots_bien_formes.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Mots_bien_formes.ipynb) en OCaml.
@@ -32,8 +34,10 @@ Pour quatre textes donnés pour les oraux blancs fin mai 2017 :
     + et [Eclairage graphe](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Eclairage_graphe.ipynb) ([public2012-D1.pdf](http://agreg.org/Textes/public2012-D1.pdf)),
 
 - lundi 29 mai :
-    + [Taquin](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Taquin.ipynb) (pour [pub2008-D2.pdf](http://agreg.org/Textes/pub2008-D2.pdf)),
-    + et [Circuits](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Circuits.ipynb) ([public2010-D1.pdf](http://agreg.org/Textes/public2010-D1.pdf)) (tous en OCaml).
+    + [Taquin](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Taquin.ipynb) ([pub2008-D2.pdf](http://agreg.org/Textes/pub2008-D2.pdf)),
+    + et [Circuits](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Circuits.ipynb) ([public2010-D1.pdf](http://agreg.org/Textes/public2010-D1.pdf))
+
+(tous en OCaml).
 
 ----
 
