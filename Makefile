@@ -5,7 +5,7 @@ all:	export send
 
 send:	send_zamok
 send_zamok:
-	CP ./ ${Szam}publis/notebooks/
+	CP --exclude=.ipynb_checkpoints --exclude=.git ./ ${Szam}publis/notebooks/
 
 export:
 	./export.sh
