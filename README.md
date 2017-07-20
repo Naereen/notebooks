@@ -18,6 +18,7 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - A small benchmark between Python, Pypy and Julia for the Romberg numerical integration algorithm is presented in [Benchmark_between_Python_and_Julia.ipynb](Benchmark_between_Python_and_Julia.ipynb). Julia is faster, but Pypy is very fast too :snake: !
 - A tiny presentation on how to do time/memory profiling from *inside* the Jupyter notebook interface: [Profiling_in_a_Jupyter_notebook.ipynb](Profiling_in_a_Jupyter_notebook.ipynb).
 - I corrected some maths & programming problems from the annals of the [CentraleSupelec national competitive](www.concours-centrale-supelec.fr/) exam (in France), in this notebook [Oraux_CentraleSupelec_PSI__Juin_2017.ipynb](Oraux_CentraleSupelec_PSI__Juin_2017.ipynb) (for [this kind of oral exam](www.concours-centrale-supelec.fr/CentraleSupelec/MultiY/C2015/)).
+- A small example of the *simulated annealing* algorithm: [Simulated_annealing_in_Python.ipynb](Simulated_annealing_in_Python.ipynb) to minimize black-box functions :sunglasses:.
 - And more will come... soon! :bullettrain_front:
 
 [![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
