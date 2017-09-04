@@ -6,7 +6,7 @@
 > Exercices basiques couvrant plein d'aspects du programme.
 
 - [ ] Sujet en PDF,
-- [ ] Solution partielle en OCaml,
+- [x] Solution partielle en OCaml : [TP1__OCaml.ipynb](TP1__OCaml.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP1__OCaml.ipynb)).
 - [x] Solution partielle en Python : [TP1.ipynb](TP1.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP1.ipynb)).
 
 ## TP2 - 26-09-17
