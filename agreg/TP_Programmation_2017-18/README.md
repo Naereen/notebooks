@@ -1,7 +1,7 @@
 # TPs de programmation
 ## Pour l'*option informatique* (D) pour l'agrégation de mathématiques à l'ENS de Rennes - 2017-18
 
-## TP1 - 08-09-17
+## TP2 - 08-09-17
 > *Mise en bouche et échauffements.*
 > Exercices basiques couvrant plein d'aspects du programme.
 
@@ -13,7 +13,7 @@
 > *Listes et arbres.*
 
 - [ ] Sujet en PDF,
-- [ ] Solution partielle en OCaml,
+- [x] Solution partielle en OCaml : [TP2__OCaml.ipynb](TP2__OCaml.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP2__OCaml.ipynb)),
 - [ ] Solution partielle en Python : [TP2.ipynb](TP2.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP2.ipynb)).
 
 ## TP3 - 10-10-17
