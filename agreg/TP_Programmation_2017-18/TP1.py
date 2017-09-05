@@ -1,15 +1,4 @@
-
 # coding: utf-8
-
-# In[ ]:
-
-
-
-
-
-# # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#TP-1---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-1---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 1 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev1 toc-item"><a href="#Fonctions" data-toc-modified-id="Fonctions-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Fonctions</a></div><div class="lev2 toc-item"><a href="#Exercice-4" data-toc-modified-id="Exercice-4-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Exercice 4</a></div><div class="lev2 toc-item"><a href="#Exercice-5" data-toc-modified-id="Exercice-5-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercice 5</a></div><div class="lev2 toc-item"><a href="#Exercice-6" data-toc-modified-id="Exercice-6-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercice 6</a></div><div class="lev1 toc-item"><a href="#Récursivité" data-toc-modified-id="Récursivité-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Récursivité</a></div><div class="lev2 toc-item"><a href="#Exercice-7" data-toc-modified-id="Exercice-7-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Exercice 7</a></div><div class="lev2 toc-item"><a href="#Exercice-8" data-toc-modified-id="Exercice-8-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Exercice 8</a></div><div class="lev2 toc-item"><a href="#Exercice-9" data-toc-modified-id="Exercice-9-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 9</a></div><div class="lev2 toc-item"><a href="#Exercice-10" data-toc-modified-id="Exercice-10-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Exercice 10</a></div><div class="lev2 toc-item"><a href="#Exercice-11" data-toc-modified-id="Exercice-11-35"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Exercice 11</a></div><div class="lev1 toc-item"><a href="#Listes" data-toc-modified-id="Listes-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Listes</a></div><div class="lev2 toc-item"><a href="#Exercice-12" data-toc-modified-id="Exercice-12-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercice 12</a></div><div class="lev2 toc-item"><a href="#Exercice-13" data-toc-modified-id="Exercice-13-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Exercice 13</a></div><div class="lev2 toc-item"><a href="#Exercice-14" data-toc-modified-id="Exercice-14-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Exercice 14</a></div><div class="lev2 toc-item"><a href="#Exercice-15" data-toc-modified-id="Exercice-15-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Exercice 15</a></div><div class="lev2 toc-item"><a href="#Exercice-16" data-toc-modified-id="Exercice-16-45"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Exercice 16</a></div><div class="lev2 toc-item"><a href="#Exercice-17" data-toc-modified-id="Exercice-17-46"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Exercice 17</a></div><div class="lev1 toc-item"><a href="#Exponentiation-rapide" data-toc-modified-id="Exponentiation-rapide-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exponentiation rapide</a></div><div class="lev2 toc-item"><a href="#Exercice-18" data-toc-modified-id="Exercice-18-51"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exercice 18</a></div><div class="lev2 toc-item"><a href="#Exercice-19" data-toc-modified-id="Exercice-19-52"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Exercice 19</a></div><div class="lev2 toc-item"><a href="#Exercice-20" data-toc-modified-id="Exercice-20-53"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Exercice 20</a></div><div class="lev2 toc-item"><a href="#Exercice-21" data-toc-modified-id="Exercice-21-54"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Exercice 21</a></div><div class="lev2 toc-item"><a href="#Exercice-22" data-toc-modified-id="Exercice-22-55"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Exercice 22</a></div><div class="lev2 toc-item"><a href="#Exercice-23" data-toc-modified-id="Exercice-23-56"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>Exercice 23</a></div><div class="lev1 toc-item"><a href="#Formule-du-calcul-propositionnel" data-toc-modified-id="Formule-du-calcul-propositionnel-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Formule du calcul propositionnel</a></div><div class="lev2 toc-item"><a href="#Exercice-24" data-toc-modified-id="Exercice-24-61"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exercice 24</a></div><div class="lev2 toc-item"><a href="#Exercice-25" data-toc-modified-id="Exercice-25-62"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Exercice 25</a></div><div class="lev2 toc-item"><a href="#Exercice-26" data-toc-modified-id="Exercice-26-63"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Exercice 26</a></div><div class="lev2 toc-item"><a href="#Exercice-27" data-toc-modified-id="Exercice-27-64"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Exercice 27</a></div><div class="lev2 toc-item"><a href="#Exercice-28" data-toc-modified-id="Exercice-28-65"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Exercice 28</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></div>
-
 # # TP 1 - Programmation pour la préparation à l'agrégation maths option info
 # - En Python 3, avec des annotations de types.
 # - Notez que ce ne sont que des annotations.
@@ -181,7 +170,7 @@ get_ipython().magic('timeit fibonacci_lin(35)')
 # Voilà la différence.
 
 # ## Exercice 10
-# 
+#
 # Aucune hypothèse n'est faite sur les arguments de la fonction, on supposera seulement qu'elle est itérable sur sa sortie.
 
 # In[44]:
@@ -636,15 +625,15 @@ exp_rapide_2(2.0, 8)
 
 # ----
 # # Formule du calcul propositionnel
-# 
+#
 # *Spoiler alert* : en Python, c'est chaud.
-# 
+#
 # On va faire des choses non typées, avec des dictionnaires, pour bidouiller.
-# 
+#
 # ## Exercice 24
 
 # ``(not p ^ ((q ^ not p) v (r v q)))`` s'écrit en Caml `` (Conj(Not(V("p")),Disj(Conj(V("q"),Not(V("p"))),Disj(V("r"),V("q")))))``.
-# 
+#
 # On va imbriquer des dictionnaires, les types, `V`, `Not`, `Conj` et `Disj` seront des clés, et les valeurs seront des formules ou couples de formules.
 # Mais on va cacher ça et l'utilisateur verra exactement la même chose qu'en Caml !
 
@@ -814,7 +803,7 @@ extrait_variables(f)
 
 
 # On trouve facilement les $n$ variables d'une formule.
-# 
+#
 # Ensuite, un [`itertools.product`](https://docs.python.org/3/library/itertools.html#itertools.product) permet de générer les $2^n$ valuations.
 
 # In[98]:
@@ -866,13 +855,13 @@ table_verite(f)
 
 
 # Note : ce code est encore plus concis que celui donné dans la solution en Caml.
-# 
+#
 # > On peut vérifier, par exemple sur [Wolfram|Alpha](https%3A%2F%2Fwww.wolframalpha.com%2Finput%2F%3Fi%3D%28%7Ep%2B%2526%2B%28%28q%2B%2526%2B%7Ep%29%2B%257C%2B%28r%2B%257C%2Bq%29%29%29) que l'on obtient bien le bon résultat...
 
 # ----
-# 
+#
 # # Conclusion
-# 
+#
 # Comme vous le voyez, on arrive à répondre aux mêmes questions dans les deux langages, et il n'y a pas de grosses différences en pratique dans la mise en oeuvre.
-# 
+#
 # Là où Caml excelle pour les types définis, le filtrage et la récursion, Python gagne en simplicité sur l'affichage, sa librairie standard et les dictionnaires et ensembles...
