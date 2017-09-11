@@ -14,7 +14,7 @@
 
 - [ ] Sujet en PDF,
 - [x] Solution partielle en OCaml : [TP2__OCaml.ipynb](TP2__OCaml.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP2__OCaml.ipynb)),
-- [ ] Solution partielle en Python : [TP2.ipynb](TP2.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP2.ipynb)).
+- [x] Solution partielle en Python : [TP2__Python.ipynb](TP2__Python.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP2__Python.ipynb)).
 
 ## TP3 - 10-10-17
 > *Structures de données.*
