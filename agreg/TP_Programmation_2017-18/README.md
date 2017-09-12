@@ -20,8 +20,8 @@
 > *Structures de données.*
 
 - [ ] Sujet en PDF,
-- [ ] Solution partielle en OCaml,
-- [ ] Solution partielle en Python : [TP3.ipynb](TP3.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP3.ipynb)).
+- [x] Solution partielle en OCaml: [TP3__OCaml.ipynb](TP3__OCaml.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP3__OCaml.ipynb)),
+- [ ] Solution partielle en Python : [TP3__Python.ipynb](TP3__Python.ipynb) (ou aussi [ici](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP3__Python.ipynb)).
 
 
 ## TP4 - 28-11-17
