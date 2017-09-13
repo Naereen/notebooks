@@ -63,6 +63,17 @@ Pour quatre textes donnés pour les oraux blancs fin mai 2017 :
 > - Plus d'informations sur ce dépôt se trouvent [ici](..).
 > - Plus d'informations sur [les notebooks (documentation de IPython)](https://nbviewer.jupyter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) ou [FAQ sur le site de Jupyter](https://nbviewer.jupyter.org/faq).
 
+### [Utiliser OCaml avec Jupyter](https://github.com/akabe/ocaml-jupyter)
+Les solutions présentes ici sont rédigés comme des [notebooks](https://jupyter.org/documentation.html) [Jupyter](https://jupyter.org/).
+J'utilise un *kernel* spécifique pour coder en OCaml via Jupyter.
+
+Il ne devrait pas être trop compliqué à installer, avec [opam](https://opam.ocaml.org/) :
+```bash
+opam install jupyter
+```
+
+Cela demande d'avoir [déjà installé Jupyter](https://jupyter.org/install.html).
+
 ### :scroll: Licence
 Tout ces documents sont distribues publiquement sous les conditions de la [licence MIT](http://lbesson.mit-license.org/) (fichier [LICENSE.txt](LICENSE.txt), en anglais).
 © [Lilian Besson](https://github.com/Naereen), 2016-17.

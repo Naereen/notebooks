@@ -99,8 +99,15 @@ sudo pip install octave_kernel
 python -m octave_kernel.install
 ```
 
-#### 2.b.3. [OCaml kernel](https://github.com/andrewray/iocaml/wiki/jupyter)
-> The instructions are not so simple, cf. the tutorial by @andrewray on [iocaml's wiki](https://github.com/andrewray/iocaml/wiki/).
+#### 2.b.3. [OCaml kernel](https://github.com/akabe/ocaml-jupyter)
+It is quite easy to install, with [opam](https://opam.ocaml.org/):
+```bash
+opam install jupyter
+```
+
+> I started by using this [OCaml kernel called IOCaml](https://github.com/andrewray/iocaml/wiki/jupyter).
+> The instructions were not so simple, cf. the tutorial by @andrewray on [iocaml's wiki](https://github.com/andrewray/iocaml/wiki/).
+> It was prone to some bugs, and [I had to manually implement a script](https://github.com/Naereen/fix-iocaml-notebook-exports-to-pdf) to be able to convert the notebooks to PDF with `jupyter-nbconvert --to pdf`.
 
 ----
 
