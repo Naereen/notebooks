@@ -19,9 +19,10 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 - A tiny presentation on how to do time/memory profiling from *inside* the Jupyter notebook interface: [Profiling_in_a_Jupyter_notebook.ipynb](Profiling_in_a_Jupyter_notebook.ipynb).
 - I corrected some maths & programming problems from the annals of the [CentraleSupelec national competitive](www.concours-centrale-supelec.fr/) exam (in France), in this notebook [Oraux_CentraleSupelec_PSI__Juin_2017.ipynb](Oraux_CentraleSupelec_PSI__Juin_2017.ipynb) (for [this kind of oral exam](www.concours-centrale-supelec.fr/CentraleSupelec/MultiY/C2015/)).
 - A small example of the *simulated annealing* algorithm: [Simulated_annealing_in_Python.ipynb](Simulated_annealing_in_Python.ipynb) to minimize black-box functions :sunglasses:.
+- Demo of the [RISE Jupyter extension](https://github.com/damianavila/RISE) to easily write a dynamic slideshow in a Jupyter notebook: [Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb](Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb) and  [Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb](Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb) :loudspeaker:.
 - And more will come... soon! :bullettrain_front:
 
-[![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![made-with-ocaml](https://img.shields.io/badge/Made%20with-OCaml-1f425f.svg)](https://ocaml.org/)
 
 ----
 
