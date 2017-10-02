@@ -16,46 +16,11 @@ Profitez en bien !
 > Cela étant dit, si vous avez travaillé un texte, n'hésitez pas à jeter un oeil à la correction et à la travailler aussi.
 > Vous faites les choses différemment, et souvent plus vite et mieux, donc si vous avez envie, [contactez moi](http://perso.crans.org/besson/contact/) pour me signaler n'importe quoi (un bug, une meilleure façon de faire, une question ou autre).
 
-## :pencil: Textes de modélisation
-### Premier exemple
-- Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3.ipynb) ([sur GitHub](public2012_D3.ipynb)) en Python 3, [public2012_D3.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3%20%28OCaml%29.ipynb) ([sur GitHub](public2012_D3%20%28OCaml%29.ipynb)) en OCaml.
-
-### Oraux blancs (1/2)
-Pour quatre textes donnés pour les oraux blancs début avril 2017 :
-
-- lundi 3 avril :
-    + [Crime parfait](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Crime_parfait.ipynb),
-    + et [Sudoku](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Sudoku.ipynb),
-
-- vendredi 7 avril :
-    + [Contraintes temporelles](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Contraintes_temporelles.ipynb),
-    + et [Chapeaux](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Chapeaux.ipynb)
-
-(tous en OCaml, pour des textes non officiels).
-
-### Entraînements en mars
-- Pour le texte [public2012-D6](http://agreg.org/Textes/public2012-D6.pdf) : [Mots_bien_formes.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Mots_bien_formes.ipynb) en OCaml.
-- Pour le texte [pub2008-D1](http://agreg.org/Textes/pub2008-D1.pdf) : [Robots.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Robots.ipynb) en OCaml.
-
-### Oraux blancs (2/2)
-Pour quatre textes donnés pour les oraux blancs fin mai 2017 :
-
-- lundi 22 mai :
-    + [Tissu cellulaire](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Tissu_cellulaire.ipynb) ([public2010-D2.pdf](http://agreg.org/Textes/public2010-D2.pdf)),
-    + et [Eclairage graphe](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Eclairage_graphe.ipynb) ([public2012-D1.pdf](http://agreg.org/Textes/public2012-D1.pdf)),
-
-- lundi 29 mai :
-    + [Taquin](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Taquin.ipynb) ([pub2008-D2.pdf](http://agreg.org/Textes/pub2008-D2.pdf)),
-    + et [Circuits](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Circuits.ipynb) ([public2010-D1.pdf](http://agreg.org/Textes/public2010-D1.pdf))
-
-(tous en OCaml).
-
-----
-
 ## :pencil: Implémentation pour des leçons ou des développements
-- [Algorithme de Cocke-Kasami-Younger](https://fr.wikipedia.org/wiki/Algorithme_de_Cocke-Younger-Kasami) : [Algorithme de Cocke-Kasami-Younger (python3).ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Algorithme%20de%20Cocke-Kasami-Younger%20%28python3%29.ipynb) ([sur GitHub](Algorithme%20de%20Cocke-Kasami-Younger%20%28python3%29.ipynb)) -- Leçons 906, 907, 910, 923,
-- [Calcul du plus long sous mot commun](https://fr.wikipedia.org/wiki/Plus_longue_sous-séquence_commune) : [Plus long sous mot commun (python3).ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Plus%20long%20sous%20mot%20commun%20%28python3%29.ipynb) ([sur GitHub](Plus%20long%20sous%20mot%20commun%20%28python3%29.ipynb)) -- Leçons 906, 907,
-- [Tris à bulles et cocktail](https://fr.wikipedia.org/wiki/Tri_cocktail) : [Tri_a_bulle_et_tri_cocktail.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg//Tri_a_bulle_et_tri_cocktail.ipynb) ([sur GitHub](Tri_a_bulle_et_tri_cocktail.ipynb)) -- 903, 926, 927,
+- [Algorithme de Cocke-Kasami-Younger](https://fr.wikipedia.org/wiki/Algorithme_de_Cocke-Younger-Kasami), pour résoudre le problème du mot pour une grammaire sous forme normale de Chomsky (et la mise en forme normale de Chomsky depuis la forme normale, en bonus) : [Algorithme de Cocke-Kasami-Younger (python3).ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Algorithme%20de%20Cocke-Kasami-Younger%20%28python3%29.ipynb) ([sur GitHub](Algorithme%20de%20Cocke-Kasami-Younger%20%28python3%29.ipynb)) -- Leçons 906, 907, 910, 923.
+- [Calcul du plus long sous mot commun](https://fr.wikipedia.org/wiki/Plus_longue_sous-séquence_commune) : [Plus long sous mot commun (python3).ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Plus%20long%20sous%20mot%20commun%20%28python3%29.ipynb) ([sur GitHub](Plus%20long%20sous%20mot%20commun%20%28python3%29.ipynb)) -- Leçons 906, 907.
+- [Tris à bulles et cocktail](https://fr.wikipedia.org/wiki/Tri_cocktail) : [Tri_a_bulle_et_tri_cocktail.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Tri_a_bulle_et_tri_cocktail.ipynb) ([sur GitHub](Tri_a_bulle_et_tri_cocktail.ipynb)) -- 903, 926, 927.
+- [Lambda-Calcul embarqué en OCaml](https://fr.wikipedia.org/wiki/Lambda-calcul) : [Lambda_Calcul_en_OCaml.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Lambda_Calcul_en_OCaml.ipynb) ([sur GitHub](Lambda_Calcul_en_OCaml.ipynb)) -- 929.
 
 ----
 
