@@ -1,4 +1,4 @@
-# [Jupyter Notebooks](http://mybinder.org/repo/Naereen/notebooks) :notebook: by [Naereen @ GitHub](https://naereen.github.io/)
+# [Jupyter Notebooks](http://jupyter.org/) :notebook: by [Naereen @ GitHub](https://naereen.github.io/)
 
 This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering various subjects.
 
@@ -37,6 +37,10 @@ This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering va
 
 Anyone can use the [mybinder.org](http://mybinder.org/) website (by [clicking](http://mybinder.org/repo/Naereen/notebooks) on the icon above) to run the notebook in her/his web-browser.
 You can then play with it as long as you like, for instance by modifying the values or experimenting with the code.
+
+[![MyBinder v2](https://beta.mybinder.org/badge.svg)](https://beta.mybinder.org/v2/gh/Naereen/notebooks/master)
+
+> *Note:* Only the Python kernel is supported on the MyBinder interface!
 
 ----
 
