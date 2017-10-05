@@ -21,6 +21,7 @@ Profitez en bien !
 - [Calcul du plus long sous mot commun](https://fr.wikipedia.org/wiki/Plus_longue_sous-séquence_commune) : [Plus long sous mot commun (python3).ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Plus%20long%20sous%20mot%20commun%20%28python3%29.ipynb) ([sur GitHub](Plus%20long%20sous%20mot%20commun%20%28python3%29.ipynb)) -- Leçons 906, 907.
 - [Tris à bulles et cocktail](https://fr.wikipedia.org/wiki/Tri_cocktail) : [Tri_a_bulle_et_tri_cocktail.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Tri_a_bulle_et_tri_cocktail.ipynb) ([sur GitHub](Tri_a_bulle_et_tri_cocktail.ipynb)) -- 903, 926, 927.
 - [Lambda-Calcul embarqué en OCaml](https://fr.wikipedia.org/wiki/Lambda-calcul) : [Lambda_Calcul_en_OCaml.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Lambda_Calcul_en_OCaml.ipynb) ([sur GitHub](Lambda_Calcul_en_OCaml.ipynb)) -- 929.
+- [Mémoïsation générique, en Python et en OCaml](https://fr.wikipedia.org/wiki/M%C3%A9mo%C3%AFsation) : [Mémoisation_en_Python_et_OCaml.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Mémoisation_en_Python_et_OCaml.ipynb) ([sur GitHub](Mémoisation_en_Python_et_OCaml.ipynb)) -- Leçons 906, 907.
 
 ----
 
