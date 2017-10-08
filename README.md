@@ -1,26 +1,60 @@
 # [Jupyter Notebooks](http://jupyter.org/) :notebook: by [Naereen @ GitHub](https://naereen.github.io/)
 
 This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering various subjects.
+Go to [nbviewer](http://nbviewer.jupyter.org/github/Naereen/notebooks/) to read them.
 
-- At the beginning, this repository was only here to host some small experiments, for me to learn how to use [the wonderful Jupyter tools](http://jupyter.org/) correctly (baby notebooks :baby_bottle:);
-- Some notebooks are small tutorials, on :shell: ``bash`` commands (or some of my [command-line my scripts](https://bitbucket.org/lbesson/bin/src/master/)) (as [example #1](https://github.com/Naereen/notebooks/blob/master/Tutorial%20on%20head%20and%20tail%20%28bash%29.ipynb)), or on :snake: Python (as [example #2](https://github.com/Naereen/notebooks/blob/master/Demonstration%20of%20numpy.polynomial.Polynomial%20and%20nice%20display%20with%20LaTeX%20and%20MathJax%20%28python3%29.ipynb));
-- Some notebooks are written in French :fr:, mainly [documents written for the preparation](agreg/) to the highly competitive French national exam to become a professor (aka the ["agrégation"](http://agreg.org/)), as in 2016-17 I am [a teaching assistant](https://www.irisa.fr/fr/emplois/enseignants/missions-denseignement-au-departement-informatique-lens-rennes) at [ENS de Rennes](http://www.ens-rennes.fr/) in the [Computer Science department](http://www.dit.ens-rennes.fr/), for the ["Fundamental Computer Science" minor option (D) for the agrégation exam](http://www.dit.ens-rennes.fr/agregation-option-d/). (:fr: Voir [ce sous-dossier](agreg/) / :gb: See [this sub-folder](agreg/) ).
-- I also wrote some notebooks on numerical simulations of dice games (:fr: Voir [ce sous-dossier](simus/) / :gb: See [this sub-folder](simus)).
-- [This notebook](Manual_implementation_of_the_Mersenne_twister_PseudoRandom_Number_Generator__PRNG_.ipynb) shows a hand-written and clear implementation of several [Pseudo-Random Number Generators](https://docs.python.org/3/library/random.html), including the famous Mersenne twister algorithm, and then uses it to samples from the most famous discrete and continuous distributions, showcasing use of the Inverse-Transform method and Acceptance-Rejection method (cf. Markov Chain Monte-Carlo methods).
-- [This notebook written for the Pi Day 2017](Py_Pi_Day_2017.ipynb) demonstrates a dozen of algorithms to compute digits of the number pi.
-- [This other notebook](Obfuscated_code_or_piece_of_art.ipynb) shows some "obfuscated" code, producing :sparkles: [nice figures](art/)... Or maybe they are pieces of code art :art: ?
-- I will try to write more *artistic* notebooks, showcasing nice pieces of *code* :art:!
-- :fr: [Ce notebook en français](Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb) présente les problèmes de bandits multi-bras stochastiques (multi-armed bandit, MAB), et les algorithmes dits "de bandits" pour les résoudre (UCB "Upper Confidence Bounds", Thompson Sampling, Approximated Finite-Horizon Gittins index etc).
-- [This notebook](Manual_implementation_of_some_hash_functions.ipynb) shows a hand-written and clear implementation of several [Hashing functions](https://docs.python.org/3/library/hashlib.html), like `MD5`, `SHA1`, and all variants of `SHA2` (`SHA256`, `SHA224`, `SHA512`, `SHA384`).
-- [This small notebook](Living_in_a_noisy_world_with_James_Powell_rwatch_module.ipynb) is a stupid experiment, where I tried to use [James Powell (@dutc)](https://GitHub.com/dutc) [rwatch](https://GitHub.com/dutc/rwatch) module to write a Python context manager to add a Gaussian white noise to every numbers inside the context... Something like: `with noise(): x = 10` will produce `x = 10.325` for instance... It fails, but I almost got it, and it works (without breaking the interpreter) for complex numbers. That's already intersting!
-- [This notebook](Short_study_of_the_Lempel-Ziv_complexity.ipynb) shows how to manually implement the [Lempel-Ziv complexity](https://en.wikipedia.org/wiki/Lempel-Ziv_complexity) in pure Python, with Cython or with Numba. I also wrote a version in [Julia](http://julialang.org)!
-- [This other notebook](Floating_point_error_propagation_in_polynomial_multiplication_with_Fast-Fourier_Transform.ipynb) is a small experiment about floating-point error propagation when using a non-naive polynomial multiplication with evaluation-and-interpolation. Sadly, this approach fails!
-- A small benchmark between Python, Pypy and Julia for the Romberg numerical integration algorithm is presented in [Benchmark_between_Python_and_Julia.ipynb](Benchmark_between_Python_and_Julia.ipynb). Julia is faster, but Pypy is very fast too :snake: !
-- A tiny presentation on how to do time/memory profiling from *inside* the Jupyter notebook interface: [Profiling_in_a_Jupyter_notebook.ipynb](Profiling_in_a_Jupyter_notebook.ipynb).
-- I corrected some maths & programming problems from the annals of the [CentraleSupelec national competitive](www.concours-centrale-supelec.fr/) exam (in France), in this notebook [Oraux_CentraleSupelec_PSI__Juin_2017.ipynb](Oraux_CentraleSupelec_PSI__Juin_2017.ipynb) (for [this kind of oral exam](www.concours-centrale-supelec.fr/CentraleSupelec/MultiY/C2015/)).
+> At the beginning, this repository was only here to host some small experiments, for me to learn how to use [the wonderful Jupyter tools](http://jupyter.org/) correctly (baby notebooks :baby_bottle:)...
+
+## :shell: Bash
+- The first notebooks I wrote are small tutorials for :shell: `bash` commands (or some of my [command-line scripts](https://bitbucket.org/lbesson/bin/src/master/)), see for example [a tutorial on head and a tail](https://github.com/Naereen/notebooks/blob/master/Tutorial%20on%20head%20and%20tail%20%28bash%29.ipynb).
+
+## :snake: Python
+> I am a passionate user of [the Python programming language](https://www.python.org/).
+
+### Science
+- [This notebook written for the Pi Day 2017](Py_Pi_Day_2017.ipynb) demonstrates a dozen of algorithms to compute from 10 to 100000 digits of the number pi.
+
 - A small example of the *simulated annealing* algorithm: [Simulated_annealing_in_Python.ipynb](Simulated_annealing_in_Python.ipynb) to minimize black-box functions :sunglasses:.
+
+- [This notebook](Manual_implementation_of_some_hash_functions.ipynb) shows a hand-written and clear implementation of several [Hashing functions](https://docs.python.org/3/library/hashlib.html), like `MD5`, `SHA1`, and all variants of `SHA2` (`SHA256`, `SHA224`, `SHA512`, `SHA384`).
+
+- [This notebook](Short_study_of_the_Lempel-Ziv_complexity.ipynb) shows how to manually implement the [Lempel-Ziv complexity](https://en.wikipedia.org/wiki/Lempel-Ziv_complexity) in pure Python, with Cython or with Numba. I also wrote a version in [Julia](http://julialang.org) (in the same notebook)!
+
+- [This notebook](Manual_implementation_of_the_Mersenne_twister_PseudoRandom_Number_Generator__PRNG_.ipynb) shows a hand-written and clear implementation of several [Pseudo-Random Number Generators](https://docs.python.org/3/library/random.html), including the famous *Mersenne twister* algorithm, and then uses it to samples from the most famous discrete and continuous distributions, showcasing use of the Inverse-Transform method and Acceptance-Rejection method (cf. Markov Chain Monte-Carlo methods).
+
+### Teaching
+- :fr: [Ce notebook en français](Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb) présente les problèmes de bandits multi-bras stochastiques (multi-armed bandit, MAB), et les algorithmes dits "de bandits" pour les résoudre (UCB "Upper Confidence Bounds", Thompson Sampling, Approximated Finite-Horizon Gittins index etc).
+
+- :fr: I corrected some maths & programming problems from the annals of the [CentraleSupelec national competitive](http://www.concours-centrale-supelec.fr/) exam (in France), in this notebook [Oraux_CentraleSupelec_PSI__Juin_2017.ipynb](Oraux_CentraleSupelec_PSI__Juin_2017.ipynb) (for [this kind of oral exam](http://www.concours-centrale-supelec.fr/CentraleSupelec/MultiY/C2015/)).
+
+### Numerical simulations for dice games (:fr: in French)
+- I also wrote some notebooks on numerical simulations of dice games :fr: Voir [ce sous-dossier](simus/) / :gb: See [this sub-folder](simus/).
+
+### :art: Art
+- [This notebook](Obfuscated_code_or_piece_of_art.ipynb) shows some "obfuscated" code, producing :sparkles: [nice figures](art/)... Or maybe they are pieces of code art :art: ?
+
+> I will try to write more *artistic* notebooks, showcasing nice pieces of *code* :art:!
+
+### Experiments with Python
+- [This small notebook](Living_in_a_noisy_world_with_James_Powell_rwatch_module.ipynb) is a stupid experiment, where I tried to use [James Powell (@dutc)](https://GitHub.com/dutc) [rwatch](https://GitHub.com/dutc/rwatch) module to write a Python context manager to add a Gaussian white noise to every numbers inside the context... Something like: `with noise(): x = 10` will produce `x = 10.325` for instance... It fails, but I almost got it, and it works (without breaking the interpreter) for complex numbers. That's already intersting!
+
+- [This notebook](Floating_point_error_propagation_in_polynomial_multiplication_with_Fast-Fourier_Transform.ipynb) is a small experiment about floating-point error propagation when using a non-naive polynomial multiplication with evaluation-and-interpolation. Sadly, this approach fails!
+
+- A tiny presentation on how to do time/memory profiling from *inside* the Jupyter notebook interface: [Profiling_in_a_Jupyter_notebook.ipynb](Profiling_in_a_Jupyter_notebook.ipynb).
+
+## Experiments with Jupyter
+- [This notebook](Demonstration%20of%20numpy.polynomial.Polynomial%20and%20nice%20display%20with%20LaTeX%20and%20MathJax%20%28python3%29.ipynb) shows how to register a custom HTML writer for builtins or user-defined types in IPython and Jupyter, for the sake of the example I wrote a nice LaTeX/MathJax-powered print function that nicely displays polynomials from the `numpy.polynomial.Polynomial` module or class.
+
+- A small benchmark between Python, Pypy and Julia for the Romberg numerical integration algorithm is presented in [Benchmark_between_Python_and_Julia.ipynb](Benchmark_between_Python_and_Julia.ipynb). Julia is faster, but Pypy is very fast too :snake: !
+
 - Demo of the [RISE Jupyter extension](https://github.com/damianavila/RISE) to easily write a dynamic slideshow in a Jupyter notebook: [Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb](Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb) and  [Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb](Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb) :loudspeaker:.
-- And more will come... soon! :bullettrain_front:
+
+## :caml: OCaml
+- Some notebooks are written in French :fr:, mainly [documents written for the preparation](agreg/) to the highly competitive French national exam to become a professor (aka the ["agrégation"](http://agreg.org/)), as since 2016 I am [a teaching assistant](https://www.irisa.fr/fr/emplois/enseignants/missions-denseignement-au-departement-informatique-lens-rennes) at [ENS de Rennes](http://www.ens-rennes.fr/) in the [Computer Science department](http://www.dit.ens-rennes.fr/), for the ["Fundamental Computer Science" minor option (D) for the agrégation exam](http://www.dit.ens-rennes.fr/agregation-option-d/). (:fr: Voir [ce sous-dossier](agreg/) / :gb: See [this sub-folder](agreg/) ).
+
+http://nbviewer.jupyter.org/github/Naereen/notebooks/
+
+> And more will come... soon! :bullettrain_front:
 
 [![made-with-jupyter](https://img.shields.io/badge/Made%20with-Jupyter-1f425f.svg)](http://jupyter.org/) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![made-with-ocaml](https://img.shields.io/badge/Made%20with-OCaml-1f425f.svg)](https://ocaml.org/)
 
@@ -113,6 +147,7 @@ opam install jupyter
 > I started by using this [OCaml kernel called IOCaml](https://github.com/andrewray/iocaml/wiki/jupyter).
 > The instructions were not so simple, cf. the tutorial by @andrewray on [iocaml's wiki](https://github.com/andrewray/iocaml/wiki/).
 > It was prone to some bugs, and [I had to manually implement a script](https://github.com/Naereen/fix-iocaml-notebook-exports-to-pdf) to be able to convert the notebooks to PDF with `jupyter-nbconvert --to pdf`.
+> Note that [I also had to write a custom Exporter](https://github.com/Naereen/Jupyter-NBConvert-OCaml/) for jupyter-nbconvert in order to convert the notebooks to OCaml scripts (`.ml`).
 
 ----
 
