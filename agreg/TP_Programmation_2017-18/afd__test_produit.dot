@@ -1,0 +1,18 @@
+digraph g {
+  node [shape=circle];
+  0 -> 3 [label=A]
+  1 -> 5 [label=A]
+  2 -> 3 [label=A]
+  3 -> 7 [label=B]
+  4 -> 7 [label=B]
+  5 -> 7 [label=B]
+  6 -> 6 [label=A]
+  6 -> 7 [label=B]
+  6 -> 6 [label=C]
+  7 -> 8 [label=A]
+  7 -> 7 [label=B]
+  7 -> 6 [label=C]
+  8 -> 6 [label=A]
+  8 -> 7 [label=B]
+  8 -> 6 [label=C]
+}
