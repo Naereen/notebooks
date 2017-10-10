@@ -1,16 +1,35 @@
-(* # TP 2 - Programmation pour la préparation à l'agrégation maths option info *)
-(* - En OCaml. *)
+(*
+This OCaml script was exported from a Jupyter notebook
+using an open-source software (under the MIT License) written by @Naereen
+from https://github.com/Naereen/Jupyter-Notebook-OCaml
+This software is still in development, please notify me of a bug at
+https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
+*)
+
+(* # Table of Contents
+ <p><div class="lev1 toc-item"><a href="#TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 2 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev1 toc-item"><a href="#Listes" data-toc-modified-id="Listes-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Listes</a></div><div class="lev2 toc-item"><a href="#Exercice-1-:-taille" data-toc-modified-id="Exercice-1-:-taille-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Exercice 1 : <code>taille</code></a></div><div class="lev2 toc-item"><a href="#Exercice-2-:-concat" data-toc-modified-id="Exercice-2-:-concat-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercice 2 : <code>concat</code></a></div><div class="lev2 toc-item"><a href="#Exercice-3-:-appartient" data-toc-modified-id="Exercice-3-:-appartient-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercice 3 : <code>appartient</code></a></div><div class="lev2 toc-item"><a href="#Exercice-4-:-miroir" data-toc-modified-id="Exercice-4-:-miroir-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Exercice 4 : <code>miroir</code></a></div><div class="lev2 toc-item"><a href="#Exercice-5-:-alterne" data-toc-modified-id="Exercice-5-:-alterne-25"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Exercice 5 : <code>alterne</code></a></div><div class="lev2 toc-item"><a href="#Exercice-6-:-nb_occurrences" data-toc-modified-id="Exercice-6-:-nb_occurrences-26"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>Exercice 6 : <code>nb_occurrences</code></a></div><div class="lev2 toc-item"><a href="#Exercice-7-:-pairs" data-toc-modified-id="Exercice-7-:-pairs-27"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>Exercice 7 : <code>pairs</code></a></div><div class="lev2 toc-item"><a href="#Exercice-8-:-range" data-toc-modified-id="Exercice-8-:-range-28"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Exercice 8 : <code>range</code></a></div><div class="lev2 toc-item"><a href="#Exercice-9-:-premiers" data-toc-modified-id="Exercice-9-:-premiers-29"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Exercice 9 : <code>premiers</code></a></div><div class="lev1 toc-item"><a href="#Quelques-tris-par-comparaison" data-toc-modified-id="Quelques-tris-par-comparaison-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Quelques tris par comparaison</a></div><div class="lev2 toc-item"><a href="#Exercice-10-:-Tri-insertion" data-toc-modified-id="Exercice-10-:-Tri-insertion-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Exercice 10 : Tri insertion</a></div><div class="lev2 toc-item"><a href="#Exercice-11-:-Tri-insertion-générique" data-toc-modified-id="Exercice-11-:-Tri-insertion-générique-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Exercice 11 : Tri insertion générique</a></div><div class="lev2 toc-item"><a href="#Exercice-12-:-Tri-selection" data-toc-modified-id="Exercice-12-:-Tri-selection-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 12 : Tri selection</a></div><div class="lev2 toc-item"><a href="#Exercices-13,-14,-15-:-Tri-fusion" data-toc-modified-id="Exercices-13,-14,-15-:-Tri-fusion-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Exercices 13, 14, 15 : Tri fusion</a></div><div class="lev1 toc-item"><a href="#Listes-:-l'ordre-supérieur" data-toc-modified-id="Listes-:-l'ordre-supérieur-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Listes : l'ordre supérieur</a></div><div class="lev2 toc-item"><a href="#Exercice-16-:-applique" data-toc-modified-id="Exercice-16-:-applique-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercice 16 : <code>applique</code></a></div><div class="lev2 toc-item"><a href="#Exercice-17" data-toc-modified-id="Exercice-17-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Exercice 17</a></div><div class="lev2 toc-item"><a href="#Exercice-18-:-itere" data-toc-modified-id="Exercice-18-:-itere-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Exercice 18 : <code>itere</code></a></div><div class="lev2 toc-item"><a href="#Exercice-19" data-toc-modified-id="Exercice-19-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Exercice 19</a></div><div class="lev2 toc-item"><a href="#Exercice-20-:-qqsoit-et-ilexiste" data-toc-modified-id="Exercice-20-:-qqsoit-et-ilexiste-45"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Exercice 20 : <code>qqsoit</code> et <code>ilexiste</code></a></div><div class="lev2 toc-item"><a href="#Exercice-21-:-appartient-version-2" data-toc-modified-id="Exercice-21-:-appartient-version-2-46"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Exercice 21 : <code>appartient</code> version 2</a></div><div class="lev2 toc-item"><a href="#Exercice-22-:-filtre" data-toc-modified-id="Exercice-22-:-filtre-47"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Exercice 22 : <code>filtre</code></a></div><div class="lev2 toc-item"><a href="#Exercice-23" data-toc-modified-id="Exercice-23-48"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Exercice 23</a></div><div class="lev2 toc-item"><a href="#Exercice-24-:-reduit" data-toc-modified-id="Exercice-24-:-reduit-49"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>Exercice 24 : <code>reduit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-25-:-somme,-produit" data-toc-modified-id="Exercice-25-:-somme,-produit-410"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>Exercice 25 : <code>somme</code>, <code>produit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-26-:-miroir-version-2" data-toc-modified-id="Exercice-26-:-miroir-version-2-411"><span class="toc-item-num">4.11&nbsp;&nbsp;</span>Exercice 26 : <code>miroir</code> version 2</a></div><div class="lev1 toc-item"><a href="#Arbres" data-toc-modified-id="Arbres-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Arbres</a></div><div class="lev2 toc-item"><a href="#Exercice-27" data-toc-modified-id="Exercice-27-51"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exercice 27</a></div><div class="lev2 toc-item"><a href="#Exercice-28" data-toc-modified-id="Exercice-28-52"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Exercice 28</a></div><div class="lev2 toc-item"><a href="#Exercice-29" data-toc-modified-id="Exercice-29-53"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Exercice 29</a></div><div class="lev2 toc-item"><a href="#Exercice-30" data-toc-modified-id="Exercice-30-54"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Exercice 30</a></div><div class="lev1 toc-item"><a href="#Parcours-d'arbres-binaires" data-toc-modified-id="Parcours-d'arbres-binaires-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Parcours d'arbres binaires</a></div><div class="lev2 toc-item"><a href="#Exercice-31" data-toc-modified-id="Exercice-31-61"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exercice 31</a></div><div class="lev2 toc-item"><a href="#Exercice-32-:-Parcours-naifs-(complexité-quadratique)" data-toc-modified-id="Exercice-32-:-Parcours-naifs-(complexité-quadratique)-62"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Exercice 32 : Parcours naifs (complexité quadratique)</a></div><div class="lev2 toc-item"><a href="#Exercice-33-:-Parcours-linéaires" data-toc-modified-id="Exercice-33-:-Parcours-linéaires-63"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Exercice 33 : Parcours linéaires</a></div><div class="lev2 toc-item"><a href="#Exercice-34-:-parcours-en-largeur-et-en-profondeur" data-toc-modified-id="Exercice-34-:-parcours-en-largeur-et-en-profondeur-64"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Exercice 34 : parcours en largeur et en profondeur</a></div><div class="lev2 toc-item"><a href="#Exercice-35-et-fin" data-toc-modified-id="Exercice-35-et-fin-65"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Exercice 35 et fin</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></div> *)
+
+(* # TP 2 - Programmation pour la préparation à l'agrégation maths option info
+- En OCaml. *)
+
+(* In[1]: *)
+
 
 let print = Printf.printf;;
-print "\n\tOcaml version %s\n" Sys.ocaml_version;;
+Sys.command "ocaml -version";;
 
-(* # Listes *)
+(* ----
+# Listes *)
+
 (* ## Exercice 1 : `taille` *)
 
+(* In[2]: *)
+
+
 let rec taille (liste : 'a list) : int =
-   match liste with
-   | [] -> 0
-   | _ :: q -> (taille q) + 1
+    match liste with
+    | [] -> 0
+    | _ :: q -> (taille q) + 1
 ;;
 
 taille [];;
@@ -18,12 +37,15 @@ taille [1; 2; 3];;
 
 (* Pas sûr qu'elle soit récursive terminale, alors que celle là oui : *)
 
+(* In[3]: *)
+
+
 let taille (liste : 'a list) : int =
-   let rec aux acc = function
-       | [] -> acc
-       | _ :: q -> aux (acc + 1) q
-   in
-   aux 0 liste
+    let rec aux acc = function
+        | [] -> acc
+        | _ :: q -> aux (acc + 1) q
+    in
+    aux 0 liste
 ;;
 
 taille [];;
@@ -31,54 +53,77 @@ taille [1; 2; 3];;
 
 (* Solution plus ésotérique : *)
 
-let taille = List.fold_left (fun acc x -> acc + 1) 0;;
+(* In[6]: *)
+
+
+let taille = List.fold_left (fun acc _ -> acc + 1) 0;;
 
 taille [];;
 taille [1; 2; 3];;
+
+(* In[7]: *)
+
 
 List.length [];;
 List.length [1; 2; 3];;
 
 (* ## Exercice 2 : `concat` *)
 
+(* In[8]: *)
+
+
 let rec concatene (liste1 : 'a list) (liste2 : 'a list) : 'a list =
-   match liste1 with
-   | [] -> liste2
-   | h :: q -> h :: (concatene q liste2)
+    match liste1 with
+    | [] -> liste2
+    | h :: q -> h :: (concatene q liste2)
 ;;
 
 concatene [1; 2] [3; 4];;
 
 (* Autre approche, moins simple mais de même complexité en $\mathcal{O}(n)$. *)
 
+(* In[9]: *)
+
+
 let miroir (liste : 'a list) : 'a list =
-   let rec aux acc = function
-   | [] -> acc
-   | h :: q -> aux (h :: acc) q
-   in aux [] liste
+    let rec aux acc = function
+    | [] -> acc
+    | h :: q -> aux (h :: acc) q
+    in aux [] liste
 ;;
 
+(* In[10]: *)
+
+
 let concatene (liste1 : 'a list) (liste2 : 'a list) : 'a list =
-   let rec aux acc l1 l2 =
-       match l1 with
-       | [] when l2 = [] -> acc
-       | [] -> aux acc l2 []
-       | h :: q -> aux (h :: acc) q l2
-   in
-   miroir (aux [] liste1 liste2)
+    let rec aux acc l1 l2 =
+        match l1 with
+        | [] when l2 = [] -> acc
+        | [] -> aux acc l2 []
+        | h :: q -> aux (h :: acc) q l2
+    in
+    miroir (aux [] liste1 liste2)
 ;;
+
+(* In[11]: *)
+
 
 concatene [1; 2] [3; 4];;
 
-List.append [1; 2] [3; 4];;
+(* In[12]: *)
 
+
+List.append [1; 2] [3; 4];;
 
 (* ## Exercice 3 : `appartient` *)
 
+(* In[13]: *)
+
+
 let rec appartient x = function
-   | [] -> false
-   | h :: _ when h = x -> true
-   | _ :: q -> appartient x q
+    | [] -> false
+    | h :: _ when h = x -> true
+    | _ :: q -> appartient x q
 ;;
 
 appartient 1 [];;
@@ -86,39 +131,52 @@ appartient 1 [1];;
 appartient 1 [1; 2; 3];;
 appartient 4 [1; 2; 3];;
 
+(* In[14]: *)
+
+
 List.mem 1 [];;
 List.mem 1 [1];;
 List.mem 1 [1; 2; 3];;
 List.mem 4 [1; 2; 3];;
 
-
 (* ## Exercice 4 : `miroir` *)
 
+(* In[15]: *)
+
+
 let miroir (liste : 'a list) : 'a list =
-   let rec aux acc = function
-   | [] -> acc
-   | h :: q -> aux (h :: acc) q
-   in aux [] liste
+    let rec aux acc = function
+    | [] -> acc
+    | h :: q -> aux (h :: acc) q
+    in aux [] liste
 ;;
+
+(* In[16]: *)
+
 
 miroir [2; 3; 5; 7; 11];;
 
 List.rev [2; 3; 5; 7; 11];;
 
-
 (* ## Exercice 5 : `alterne` *)
 
-(* La sémantique n'est pas forcément claire, mais on peut imaginer quelque chose comme ça : *)
+(* La sémantique n'était pas très claire, mais on peut imaginer quelque chose comme ça : *)
+
+(* In[17]: *)
+
 
 let alterne (liste1 : 'a list) (liste2 : 'a list) : 'a list =
-   let rec aux acc l1 l2 =
-       match (l1, l2) with
-       | [], [] -> acc
-       | [], ll2 -> acc @ ll2
-       | ll1, [] -> acc @ ll1
-       | h1 :: q1, h2 :: q2 -> aux (h1 :: h2 :: acc) q1 q2
-   in List.rev (aux [] liste1 liste2)
+    let rec aux acc l1 l2 =
+        match (l1, l2) with
+        | [], [] -> acc
+        | [], ll2 -> acc @ ll2
+        | ll1, [] -> acc @ ll1
+        | h1 :: q1, h2 :: q2 -> aux (h1 :: h2 :: acc) q1 q2
+    in List.rev (aux [] liste1 liste2)
 ;;
+
+(* In[18]: *)
+
 
 alterne [1; 3; 5] [2; 4; 6];;
 
@@ -126,21 +184,26 @@ alterne [1; 3; 5] [2; 4; 6];;
 
 (* Mais on manque souvent la version la plus simple : *)
 
-let rec alterne (l1 : 'a list) (l2 : 'a list) : 'a list =
-   match l1 with
-   | [] -> l2
-   | t::q -> t::(alterne l2 q)
-;;
+(* In[19]: *)
 
+
+let rec alterne (l1 : 'a list) (l2 : 'a list) : 'a list =
+    match l1 with
+    | [] -> l2
+    | t::q -> t::(alterne l2 q)
+;;
 
 (* ## Exercice 6 : `nb_occurrences` *)
 
+(* In[20]: *)
+
+
 let nb_occurrences (x : 'a) (liste : 'a list) : int =
-   let rec aux acc x = function
-   | [] -> acc
-   | h :: q when h = x -> aux (acc + 1) x q
-   | _ :: q -> aux acc x q
-   in aux 0 x liste
+    let rec aux acc x = function
+    | [] -> acc
+    | h :: q when h = x -> aux (acc + 1) x q
+    | _ :: q -> aux acc x q
+    in aux 0 x liste
 ;;
 
 nb_occurrences 0 [1; 2; 3; 4];;
@@ -150,8 +213,11 @@ nb_occurrences 5 [1; 2; 3; 4];;
 
 (* Autre approche, avec un `List.fold_left` bien placé : *)
 
+(* In[21]: *)
+
+
 let nb_occurrences (x : 'a) : 'a list -> int =
-   List.fold_left (fun acc y -> if x = y then (acc + 1) else acc) 0
+    List.fold_left (fun acc y -> if x = y then (acc + 1) else acc) 0
 ;;
 
 nb_occurrences 0 [1; 2; 3; 4];;
@@ -159,200 +225,347 @@ nb_occurrences 2 [1; 2; 3; 4];;
 nb_occurrences 2 [1; 2; 2; 3; 3; 4];;
 nb_occurrences 5 [1; 2; 3; 4];;
 
+(* ## Exercice 7 : `pairs`
 
-(* ## Exercice 7 : `pairs` *)
+C'est un filtrage : *)
 
-(* C'est un filtrage : *)
+(* In[22]: *)
+
 
 let pairs = List.filter (fun x -> x mod 2 = 0);;
+
+(* In[23]: *)
+
 
 pairs [1; 2; 3; 4; 5; 6];;
 pairs [1; 2; 3; 4; 5; 6; 7; 100000];;
 pairs [1; 2; 3; 4; 5; 6; 7; 100000000000];;
 pairs [1; 2; 3; 4; 5; 6; 7; 1000000000000000000];;
 
-
 (* ## Exercice 8 : `range` *)
 
+(* In[24]: *)
+
+
 let range (n : int) : int list =
-   let rec aux acc = function
-   | 0 -> acc
-   | n -> aux (n :: acc) (n - 1)
-   in aux [] n
+    let rec aux acc = function
+    | 0 -> acc
+    | n -> aux (n :: acc) (n - 1)
+    in aux [] n
 ;;
+
+(* In[25]: *)
+
 
 range 30;;
 
+(* In[26]: *)
+
+
 (* Vous avez parfois eu du mal à construire la liste des entiers de a à b
-  ca serait bon de savoir le faire car ca peut vous donner des exemples
-  d'entree pour vos algos *)
+   ca serait bon de savoir le faire car ca peut vous donner des exemples
+   d'entree pour vos algos *)
 
 let entiers a b =
- let rec construit x =
-   if x > b
-   then []
-   else x::(construit (x + 1))
- in construit a
+  let rec construit x =
+    if x > b
+    then []
+    else x::(construit (x + 1))
+  in construit a
 ;;
+
+(* In[27]: *)
+
 
 let premiers_entiers = entiers 0;; (* Bel exemple de currification *)
 
 entiers 4 10;;
 premiers_entiers 7;;
 
-(* ## Exercice 9 : `premiers` *)
-(* Plusieurs possibilités. Un filtre d'Erathosthène marche bien, ou une filtration.
-   Je ne vais pas utiliser de tableaux donc on est un peu réduit d'utiliser une filtration (filtrage ? pattern matching)
-   *)
+(* ## Exercice 9 : `premiers`
+Plusieurs possibilités. Un filtre d'Erathosthène marche bien, ou une filtration.
+Je ne vais pas utiliser de tableaux donc on est un peu réduit d'utiliser une filtration (filtrage ? *pattern matching*) *)
+
+(* In[28]: *)
+
 
 let racine (n : int) : int =
-   int_of_float (floor (sqrt (float_of_int n)))
+    int_of_float (floor (sqrt (float_of_int n)))
 ;;
 
 racine 17;;
 
+(* In[29]: *)
+
+
 let estDivisible (a : int) (b : int) : bool =
-   (a mod b) = 0
+    (a mod b) = 0
 ;;
 
 estDivisible 10 2;;
 estDivisible 10 6;;
 estDivisible 10 5;;
 
+(* In[30]: *)
+
+
 let range2 (debut : int) (fin : int) (taille : int) : int list =
-   let rec aux acc = function
-   | n when n > fin -> acc
-   | n -> aux (n :: acc) (n + taille)
-   in
-   List.rev (aux [] debut)
+    let rec aux acc = function
+    | n when n > fin -> acc
+    | n -> aux (n :: acc) (n + taille)
+    in
+    List.rev (aux [] debut)
 ;;
+
+(* In[31]: *)
+
 
 range2 2 12 3;;
 
 (* Une version purement fonctionnelle est moins facile qu'une version impérative avec une référence booléenne (rappel : pas de `break` dans les boucles `for` en OCaml...). *)
 
+(* In[32]: *)
+
+
 let estPremier (n : int) : bool =
-   List.fold_left (fun b k -> b && (not (estDivisible n k))) true (range2 2 (racine n) 1)
+    List.fold_left (fun b k -> b && (not (estDivisible n k))) true (range2 2 (racine n) 1)
 ;;
 
+(* In[33]: *)
+
+
 let premiers (n : int) : int list =
-   List.filter estPremier (range2 2 n 1)
+    List.filter estPremier (range2 2 n 1)
 ;;
+
+(* In[34]: *)
+
 
 premiers 10;;
 
+(* In[35]: *)
+
+
 premiers 100;;
 
+(* ----
+# Quelques tris par comparaison *)
 
-(* Tris *)
-(* ---- *)
+(* On fera les tris en ordre croissant. *)
 
-(* On fera les tris en ordre croissant *)
+(* In[5]: *)
+
 
 let test = [3; 1; 8; 4; 5; 6; 1; 2];;
 
-(* Tri insertion *)
+(* ## Exercice 10 : Tri insertion *)
 
-let rec insere x = function
-  | [] -> [x]
-  | t::q ->
-    if x <= t then
-      x::t::q
-    else
-      t::(insere x q)
+(* In[37]: *)
+
+
+let rec insere (x : 'a) : 'a list -> 'a list = function
+    | [] -> [x]
+    | t :: q ->
+        if x <= t then
+            x :: t :: q
+        else
+            t :: (insere x q)
 ;;
 
-let rec tri_insertion = function
-  | [] -> []
-  | t::q -> insere t (tri_insertion q)
+(* In[38]: *)
+
+
+let rec tri_insertion : 'a list -> 'a list = function
+    | [] -> []
+    | t :: q -> insere t (tri_insertion q)
 ;;
+
+(* In[39]: *)
+
 
 tri_insertion test;;
 
-(* Complexité en temps O(n2) *)
+(* Complexité en temps $\mathcal{O}(n^2)$. *)
 
-(* Tri selection *)
+(* ## Exercice 11 : Tri insertion générique *)
 
-let selectionne_min l =
-  let rec cherche_min min autres = function
-    | [] -> (min, autres)
-    | t::q ->
-      if t < min then
-	cherche_min t (min::autres) q
-      else
-	cherche_min min (t::autres) q
-  in
-  match l with
-    | [] -> failwith "Selectionne_mion sur liste vide"
-    | t::q -> cherche_min t [] q
+(* In[40]: *)
+
+
+let rec insere2 (ordre : 'a -> 'a -> bool) (x : 'a) : 'a list -> 'a list = function
+    | [] -> [x]
+    | t :: q ->
+        if ordre x t then
+            x :: t :: q
+        else
+            t :: (insere2 ordre x q)
 ;;
+
+(* In[41]: *)
+
+
+let rec tri_insertion2 (ordre : 'a -> 'a -> bool) : 'a list -> 'a list = function
+    | [] -> []
+    | t :: q -> insere2 ordre t (tri_insertion2 ordre q)
+;;
+
+(* In[16]: *)
+
+
+let ordre_croissant a b = a <= b;;
+
+(* In[43]: *)
+
+
+tri_insertion2 ordre_croissant test;;
+
+(* In[44]: *)
+
+
+let ordre_decroissant = (>=);;
+
+(* In[45]: *)
+
+
+tri_insertion2 ordre_decroissant test;;
+
+(* ## Exercice 12 : Tri selection *)
+
+(* In[46]: *)
+
+
+let selectionne_min (l : 'a list) : ('a * 'a list) =
+    let rec cherche_min min autres = function
+        | [] -> (min, autres)
+        | t :: q ->
+            if t < min then
+                cherche_min t (min :: autres) q
+            else
+                cherche_min min (t :: autres) q
+    in
+    match l with
+    | [] -> failwith "Selectionne_min sur liste vide"
+    | t :: q -> cherche_min t [] q
+;;
+
+(* In[47]: *)
+
 
 selectionne_min test;;
 
-let rec tri_selection = function
-  | [] -> []
-  | l ->
-    let (min, autres) = selectionne_min l in
-    min::(tri_selection autres)
+(* In[48]: *)
+
+
+let rec tri_selection : 'a list -> 'a list = function
+    | [] -> []
+    | l ->
+        let (min, autres) = selectionne_min l in
+        min :: (tri_selection autres)
 ;;
 
+(* In[49]: *)
+
+
 tri_selection test;;
-(* Complexité en temps : O(n2) *)
 
-(* Tri fusion *)
+(* Complexité en temps : $\mathcal{O}(n^2)$. *)
 
-let rec separe = function
-  | [] -> ([], [])
-  | [x] -> ([x], [])
-  | x::y::q -> let (a, b) = separe q in (x::a, y::b)
+(* ## Exercices 13, 14, 15 : Tri fusion *)
+
+(* In[3]: *)
+
+
+let print_list (liste : int list) : unit =
+    print_string "[";
+    List.iter (fun i -> print_int i; print_string "; " ) liste;
+    print_endline "]";
+;;
+
+(* In[7]: *)
+
+
+test;;
+print_list test;;
+
+(* In[50]: *)
+
+
+let rec separe : 'a list -> ('a list * 'a list) = function
+    | [] -> ([], [])
+    | [x] -> ([x], [])
+    | x :: y :: q ->
+        let (a, b) = separe q
+        in (x::a, y::b)
 ;;
 
 separe test;;
 
-let rec fusion l1 l2 = match (l1, l2) with
-  | (l, []) | ([], l) -> l
-  | (x::a, y::b) ->
-    if x <= y then
-      x::(fusion a (y::b))
-    else
-      y::(fusion (x::a) b)
+(* In[51]: *)
+
+
+let rec fusion (l1 : 'a list) (l2 : 'a list) : 'a list =
+    match (l1, l2) with
+    | (l, []) | ([], l) -> l  (* syntaxe concise pour deux cas identiques *)
+    | (x::a, y::b) ->
+        if x <= y then
+            x :: (fusion a (y :: b))
+        else
+            y :: (fusion (x :: a) b)
 ;;
 
 fusion [1; 3; 7] [2; 3; 8];;
 
-let rec tri_fusion = function
-  | [] -> []
-  | [x] -> [x] (* ATTENTION A NE PAS OUBLIER CE CAS *)
-  | l -> let (a, b) = separe l in
-	 fusion (tri_fusion a) (tri_fusion b)
+(* In[52]: *)
+
+
+let rec tri_fusion : 'a list -> 'a list = function
+    | [] -> []
+    | [x] -> [x] (* ATTENTION A NE PAS OUBLIER CE CAS *)
+    | l ->
+        let a, b = separe l in
+        fusion (tri_fusion a) (tri_fusion b)
 ;;
 
+(* In[53]: *)
+
+
 tri_fusion test;;
-(* Complexité en temps O(nlogn) *)
 
+(* Complexité en temps $\mathcal{O}(n \log n)$. *)
 
-(* # Listes : l'ordre supérieur *)
+(* ----
+# Listes : l'ordre supérieur
 
-(* Je ne corrige pas les questions qui étaient traitées dans le TP1. *)
+Je ne corrige pas les questions qui étaient traitées dans le TP1. *)
 
 (* ## Exercice 16 : `applique` *)
+
+(* In[54]: *)
+
 
 let rec applique f = function
     | [] -> []
     | h :: q -> (f h) :: (applique f q)
 ;;
 
-
 (* ## Exercice 17 *)
+
+(* In[55]: *)
+
 
 let premiers_carres_parfaits (n : int) : int list =
     applique (fun x -> x * x) (entiers 1 n)
 ;;
 
+(* In[56]: *)
+
+
 premiers_carres_parfaits 12;;
 
-
 (* ## Exercice 18 : `itere` *)
+
+(* In[57]: *)
+
 
 let rec itere (f : 'a -> unit) = function
     | [] -> ()
@@ -362,23 +575,31 @@ let rec itere (f : 'a -> unit) = function
     end
 ;;
 
-
 (* ## Exercice 19 *)
+
+(* In[58]: *)
+
 
 let print = Printf.printf
 
 let f x = print "%i\n" x;;
 
+(* In[62]: *)
+
+
 let affiche_liste_entiers (liste : int list) =
     print "Debut\n";
     itere (print "%i\n") liste;
-    print "Fin\n"
+    print "Fin\n";
+    flush_all ();
 ;;
 
 affiche_liste_entiers [1; 2; 4; 5];;
 
-
 (* ## Exercice 20 : `qqsoit` et `ilexiste` *)
+
+(* In[63]: *)
+
 
 let rec qqsoit (pred : 'a -> bool) = function
     | [] -> true (* piege ! *)
@@ -388,6 +609,9 @@ let rec qqsoit (pred : 'a -> bool) = function
     *)
 ;;
 
+(* In[64]: *)
+
+
 let rec ilexiste (pred : 'a -> bool) = function
     | [] -> false
     | h :: q -> (pred h) || (ilexiste pred q)
@@ -396,18 +620,29 @@ let rec ilexiste (pred : 'a -> bool) = function
     *)
 ;;
 
+(* In[65]: *)
+
+
 qqsoit (fun x -> (x mod 2) = 0) [1; 2; 3; 4; 5];;
 
 ilexiste (fun x -> (x mod 2) = 0) [1; 2; 3; 4; 5];;
 
-
 (* ## Exercice 21 : `appartient` version 2 *)
+
+(* In[66]: *)
+
 
 let appartient x = ilexiste (fun y -> x = y);;
 
-let appartient x = ilexiste ((=) x);; (* syntaxe simplifiée par curification *)
+let appartient x = ilexiste ((=) x);; (* syntaxe simplifiée par curification *);;
+
+(* In[67]: *)
+
 
 let toutes_egales x = qqsoit ((=) x);;
+
+(* In[68]: *)
+
 
 appartient 1 [1; 2; 3];;
 appartient 5 [1; 2; 3];;
@@ -415,8 +650,10 @@ appartient 5 [1; 2; 3];;
 toutes_egales 1 [1; 2; 3];;
 toutes_egales 2 [2; 2; 2];;
 
-
 (* ## Exercice 22 : `filtre` *)
+
+(* In[69]: *)
+
 
 let rec filtre (pred : 'a -> bool) : 'a list -> 'a list = function
     | [] -> []
@@ -424,20 +661,27 @@ let rec filtre (pred : 'a -> bool) : 'a list -> 'a list = function
     | _ :: q -> filtre pred q
 ;;
 
+(* In[70]: *)
+
+
 filtre (fun x -> (x mod 2) = 0) [1; 2; 3; 4; 5];;
 
 filtre (fun x -> (x mod 2) != 0) [1; 2; 3; 4; 5];;
-filtre (fun x -> (x mod 2) <> 0) [1; 2; 3; 4; 5];; (* syntaxe non conseillée *)
+filtre (fun x -> (x mod 2) <> 0) [1; 2; 3; 4; 5];; (* syntaxe non conseillée *);;
 
+(* ## Exercice 23
+Je vous laisse trouver pour `premiers`. *)
 
-(* ## Exercice 23 *)
-(* Je vous laisse trouver pour `premiers`. *)
+(* In[71]: *)
+
 
 let pairs = filtre (fun x -> (x mod 2) = 0);;
 let impairs = filtre (fun x -> (x mod 2) != 0);;
 
-
 (* ## Exercice 24 : `reduit` *)
+
+(* In[72]: *)
+
 
 let rec reduit (tr : 'a -> 'b -> 'a) (acc : 'a) (liste : 'b list) : 'a =
     match liste with
@@ -447,124 +691,259 @@ let rec reduit (tr : 'a -> 'b -> 'a) (acc : 'a) (liste : 'b list) : 'a =
 
 (* Très pratique pour calculer des sommes, notamment. *)
 
-
 (* ## Exercice 25 : `somme`, `produit` *)
+
+(* In[73]: *)
+
 
 let somme = reduit (+) 0;;
 
 somme [1; 2; 3; 4; 5];;
 List.fold_left (+) 0 [1; 2; 3; 4; 5];;
 
+(* In[74]: *)
+
+
 let produit = reduit ( * ) 1;;
 
 produit [1; 2; 3; 4; 5];;
 List.fold_left ( * ) 1 [1; 2; 3; 4; 5];;
 
-
 (* ## Exercice 26 : `miroir` version 2 *)
 
+(* In[75]: *)
+
+
 let miroir = reduit (fun a b -> b :: a) [];;
+
+(* In[76]: *)
+
 
 miroir [2; 3; 5; 7; 11];;
 
 List.rev [2; 3; 5; 7; 11];;
 
+(* In[77]: *)
+
+
 miroir [2.; 3.; 5.; 7.; 11.];;
 
-(* Parcours d'arbres *)
-(* ----------------- *)
+(* ----
+# Arbres *)
+
+(* ## Exercice 27 *)
+
+(* In[5]: *)
+
+
+type 'a arbre_bin0 = Feuille0 of 'a | Noeud0 of ('a arbre_bin0) * 'a * ('a arbre_bin0);;
+
+(* In[6]: *)
+
+
+let rec arbre_complet_entier (n : int) : int arbre_bin0 =
+    match n with
+    | n when n < 2 -> Feuille0 0
+    | n -> Noeud0((arbre_complet_entier (n / 2)), n, (arbre_complet_entier (n / 2)))
+;;
+
+arbre_complet_entier 4;;
+
+(* Autre variante, plus simple : *)
+
+(* In[7]: *)
+
 
 type arbre_bin = Feuille | Noeud of arbre_bin * arbre_bin;;
+
+(* In[8]: *)
+
+
+let arbre_test = Noeud (Noeud (Noeud (Feuille, Feuille), Feuille), Feuille);;
+
+(* ## Exercice 28 *)
+
+(* Compte le nombre de feuilles et de sommets. *)
+
+(* In[10]: *)
+
+
+let rec taille : arbre_bin -> int = function
+    | Feuille -> 1
+    | Noeud(x, y) -> 1 + (taille x) + (taille y)
+;;
+
+(* In[11]: *)
+
+
+taille arbre_test;;
+
+(* ## Exercice 29 *)
+
+(* In[12]: *)
+
+
+let rec hauteur : arbre_bin -> int = function
+    | Feuille -> 0
+    | Noeud(x, y) -> 1 + (max (hauteur x) (hauteur y)) (* peut etre plus simple *)
+;;
+
+(* In[13]: *)
+
+
+hauteur arbre_test;;
+
+(* ## Exercice 30 *)
+
+(* Bonus. *)
+
+(* ----
+# Parcours d'arbres binaires *)
+
+(* ## Exercice 31 *)
+
+(* In[14]: *)
+
 
 type element_parcours = F | N;;
 
 type parcours = element_parcours list;;
 
-let arbre_test = Noeud (Noeud (Noeud (Feuille, Feuille), Feuille), Feuille);;
+(* ## Exercice 32 : Parcours naifs (complexité quadratique) *)
 
-(* Parcours naifs (complexité quadratique) *)
+(* In[15]: *)
 
-let rec parcours_prefixe = function
-  | Feuille -> [F]
-  | Noeud (g, d) -> [N] @ (parcours_prefixe g) @ (parcours_prefixe d)
+
+let rec parcours_prefixe : arbre_bin -> element_parcours list = function
+    | Feuille -> [F]
+    | Noeud (g, d) -> [N] @ (parcours_prefixe g) @ (parcours_prefixe d)
 ;;
 
 parcours_prefixe arbre_test;;
 
-let rec parcours_postfixe = function
-  | Feuille -> [F]
-  | Noeud(g, d) -> (parcours_postfixe g) @ (parcours_postfixe d) @ [N]
+(* In[16]: *)
+
+
+let rec parcours_postfixe : arbre_bin -> element_parcours list = function
+    | Feuille -> [F]
+    | Noeud(g, d) -> (parcours_postfixe g) @ (parcours_postfixe d) @ [N]
 ;;
 
 parcours_postfixe arbre_test;;
 
-let rec parcours_infixe = function
-  | Feuille -> [F]
-  | Noeud(g, d) -> (parcours_infixe g) @ [N] @ (parcours_infixe d)
+(* In[17]: *)
+
+
+let rec parcours_infixe : arbre_bin -> element_parcours list = function
+    | Feuille -> [F]
+    | Noeud(g, d) -> (parcours_infixe g) @ [N] @ (parcours_infixe d)
 ;;
 
 parcours_infixe arbre_test;;
 
-(* Parcours linéaire en la taille de l'arbre *)
+(* Pourquoi ont-ils une complexité quadratique ? La concaténation (`@`) ne se fait pas en temps constant mais linéaire dans la taille de la première liste. *)
 
-(* On ajoute une fonction auxiliaire et un argument vus
-   qui est une liste qui stocke les élements observés
-   dans l'ordre du parcours *)
+(* ## Exercice 33 : Parcours linéaires
+
+On ajoute une fonction auxiliaire et un argument `vus` qui est une liste qui stocke les élements observés dans l'ordre du parcours *)
+
+(* In[18]: *)
+
 
 let parcours_prefixe2 a =
-  let rec parcours vus = function
-    | Feuille -> F::vus
-    | Noeud(g, d) -> parcours (parcours (N::vus) g) d
-  in List.rev (parcours [] a)
+    let rec parcours vus = function
+        | Feuille -> F :: vus
+        | Noeud(g, d) -> parcours (parcours (N :: vus) g) d
+    in List.rev (parcours [] a)
 ;;
 
 parcours_prefixe2 arbre_test;;
 
-let rec parcours_postfixe2 a =
-  let rec parcours vus = function
-    | Feuille -> F::vus
-    | Noeud(g, d) -> N::(parcours (parcours vus g) d)
-  in List.rev (parcours [] a)
+(* In[21]: *)
+
+
+let parcours_postfixe2 a =
+    let rec parcours vus = function
+        | Feuille -> F :: vus
+        | Noeud(g, d) -> N :: (parcours (parcours vus g) d)
+    in List.rev (parcours [] a)
 ;;
 
 parcours_postfixe2 arbre_test;;
 
-let rec parcours_infixe2 a =
-  let rec parcours vus = function
-    | Feuille -> F::vus
-    | Noeud(g, d) -> parcours (N::(parcours vus g)) d
-  in List.rev (parcours [] a)
+(* In[22]: *)
+
+
+let parcours_infixe2 a =
+    let rec parcours vus = function
+        | Feuille -> F :: vus
+        | Noeud(g, d) -> parcours (N :: (parcours vus g)) d
+    in List.rev (parcours [] a)
 ;;
 
 parcours_infixe2 arbre_test;;
 
-(* Parcours en largeur *)
+(* ## Exercice 34 : parcours en largeur et en profondeur *)
+
+(* In[23]: *)
+
 
 let parcours_largeur a =
-  let file = Queue.create () in
-  let rec parcours () =
-    if Queue.is_empty file then
-      []
-    else
-      match Queue.pop file with
-	| Feuille -> F::(parcours ())
-	| Noeud(g, d) ->
-	  (Queue.push g file;
-	   Queue.push d file;
-	   N::(parcours ()))
-  in
-  Queue.push a file;
-  parcours ()
+    let file = Queue.create () in
+    (* fonction avec effet de bord sur la file *)
+    let rec parcours () =
+        if Queue.is_empty file
+        then []
+        else match Queue.pop file with
+            | Feuille -> F :: (parcours ())
+            | Noeud(g, d) -> begin
+                Queue.push g file;
+                Queue.push d file;
+                N :: (parcours ())
+            end
+    in
+    Queue.push a file;
+    parcours ()
 ;;
 
 parcours_largeur arbre_test;;
 
-(* EN REMPLACANT LA FILE PAR UNE PILE AVEC LE MEME ALGO ON
-   OBTIENT LE PARCOURS EN PROFONDEUR *)
+(* En remplaçant la file par une pile (`Stack`), on obtient le parcours en profondeur, avec la même complexité. *)
+
+(* In[24]: *)
+
+
+let parcours_profondeur a =
+    let file = Stack.create () in
+    (* fonction avec effet de bord sur la file *)
+    let rec parcours () =
+        if Stack.is_empty file
+        then []
+        else match Stack.pop file with
+            | Feuille -> F :: (parcours ())
+            | Noeud(g, d) -> begin
+                Stack.push g file;
+                Stack.push d file;
+                N :: (parcours ())
+            end
+    in
+    Stack.push a file;
+    parcours ()
+;;
+
+parcours_profondeur arbre_test;;
+
+(* ## Exercice 35 et fin *)
+
+(* In[25]: *)
+
 
 (* Reconstruction depuis le parcours prefixe *)
 
 let test_prefixe = parcours_prefixe2 arbre_test;;
+
+(* In[26]: *)
+
 
 (* L'idée de cette solution est la suivante :
    j'aimerais une fonction récursive qui fasse le travail;
@@ -577,21 +956,24 @@ let test_prefixe = parcours_prefixe2 arbre_test;;
    et ce qui n'a pas été utilisé : *)
 
 let reconstruit_prefixe parcours =
-  let rec reconstruit = function
-    | F::p -> (Feuille, p)
-    | N::p ->
-      let (g, q) = reconstruit p in
-      let (d, r) = reconstruit q in
-      (Noeud(g, d), r)
+    let rec reconstruit = function
+    | F :: p -> (Feuille, p)
+    | N :: p ->
+        let (g, q) = reconstruit p in
+        let (d, r) = reconstruit q in
+        (Noeud(g, d), r)
     | [] -> failwith "pacours invalide"
-  in
-  match reconstruit parcours with
+    in
+    match reconstruit parcours with
     | (a, []) -> a
     | _ -> failwith "parcours invalide"
 ;;
 
 reconstruit_prefixe test_prefixe;;
-reconstruit_prefixe (N::F::F::test_prefixe);;
+reconstruit_prefixe (N :: F :: F :: test_prefixe);; (* échoue *);;
+
+(* In[27]: *)
+
 
 (* Reconstruction depuis le parcours en largeur *)
 
@@ -601,41 +983,53 @@ reconstruit_prefixe (N::F::F::test_prefixe);;
 
 let largeur_test = parcours_largeur arbre_test;;
 
+(* In[28]: *)
+
+
 let reconstruit_largeur parcours =
-  let file = Queue.create () in
-  let lire_element = function
+    let file = Queue.create () in
+    (* Fonction avec effets de bord *)
+    let lire_element = function
     | F -> Queue.push Feuille file
     | N ->
-      let d = Queue.pop file in
-      let g = Queue.pop file in
-      Queue.push (Noeud(g, d)) file
-  in
-  List.iter lire_element (List.rev parcours);
-  if Queue.length file = 1 then
-    Queue.pop file
-  else
-    failwith "parcours invalide"
+        let d = Queue.pop file in
+        let g = Queue.pop file in
+        Queue.push (Noeud(g, d)) file
+    in
+    List.iter lire_element (List.rev parcours);
+    if Queue.length file = 1 then
+        Queue.pop file
+    else
+        failwith "parcours invalide"
 ;;
 
 reconstruit_largeur largeur_test;;
+
+(* In[29]: *)
+
 
 (* Le même algorithme (enfin presque, modulo interversion de g et d)
    avec une pile donne une autre version de la reconstruction du parcours prefixe *)
 
 let reconstruit_prefixe2 parcours =
-  let pile = Stack.create () in
-  let lire_element = function
+    let pile = Stack.create () in
+    let lire_element = function
     | F -> Stack.push Feuille pile
     | N ->
-      let g = Stack.pop pile in
-      let d = Stack.pop pile in
-      Stack.push (Noeud(g, d)) pile
-  in
-  List.iter lire_element (List.rev parcours);
-  if Stack.length pile = 1 then
-    Stack.pop pile
-  else
-    failwith "parcours invalide"
+        let g = Stack.pop pile in
+        let d = Stack.pop pile in
+        Stack.push (Noeud(g, d)) pile
+    in
+    List.iter lire_element (List.rev parcours);
+    if Stack.length pile = 1 then
+        Stack.pop pile
+    else
+        failwith "parcours invalide"
 ;;
 
 reconstruit_prefixe2 test_prefixe;;
+
+(* ----
+# Conclusion
+
+Fin. À la séance prochaine. *)
