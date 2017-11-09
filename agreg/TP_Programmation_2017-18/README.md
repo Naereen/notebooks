@@ -44,7 +44,7 @@
 > *Lambda-calcul.*
 
 - [ ] Sujet en PDF,
-- [ ] Solution en OCaml : [TP6__OCaml.ipynb](TP6__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP6__OCaml.ipynb)). Et le script [TP6__OCaml.ml](TP6__OCaml.ml).
+- [x] Solution en OCaml : [TP6__OCaml.ipynb](TP6__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP6__OCaml.ipynb)). Et le script [TP6__OCaml.ml](TP6__OCaml.ml).
 
 
 ## TP7 - 23-02-18

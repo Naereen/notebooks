@@ -1,0 +1,7 @@
+graph exemple {
+    "0" [color=red];
+    "1" [color=blue];
+    "2" [color=green];
+    "0" -- "1";
+    "0" -- "2";
+}
