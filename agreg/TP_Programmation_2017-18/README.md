@@ -26,34 +26,44 @@
 - [x] Solution en OCaml : [TP3__OCaml.ipynb](TP3__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP3__OCaml.ipynb)). Et le script [TP3__OCaml.ml](TP3__OCaml.ml).
 
 
-## TP4 - 28-11-17
+## TP4 - 24-10-17
 > *Automates et langages réguliers.*
 
 - [ ] Sujet en PDF,
 - [x] Solution en OCaml : [TP4__OCaml.ipynb](TP4__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP4__OCaml.ipynb)). Et le script [TP4__OCaml.ml](TP4__OCaml.ml).
 
 
-## TP5 - 16-02-18
+## TP5 - 28-11-17
+> *Graphes.*
 
 - [ ] Sujet en PDF,
-- [ ] Solution en OCaml : [TP5__OCaml.ipynb](TP5__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP5__OCaml.ipynb)). Et le script [TP5__OCaml.ml](TP5__OCaml.ml).
+- [x] Solution en OCaml : [TP5__OCaml.ipynb](TP5__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP5__OCaml.ipynb)). Et le script [TP5__OCaml.ml](TP5__OCaml.ml).
 
 
-## TP6 - 23-02-18
-> *Graphes.*
+## TP6 - 16-02-18
+> *Lambda-calcul.*
 
 - [ ] Sujet en PDF,
 - [ ] Solution en OCaml : [TP6__OCaml.ipynb](TP6__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP6__OCaml.ipynb)). Et le script [TP6__OCaml.ml](TP6__OCaml.ml).
 
 
-## TP7 (culturel) – Programmation logique - 09-05-18
+## TP7 - 23-02-18
 > *Algorithmes gloutons et files de priorité.*
 
 - [ ] Sujet en PDF,
 - [ ] Solution en OCaml : [TP7__OCaml.ipynb](TP7__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP7__OCaml.ipynb)). Et le script [TP7__OCaml.ml](TP7__OCaml.ml).
 
 
-## TP8 (culturel) – Sudoku - ?
+## TP8 – 09-05-18
+> *Sudoku.*
+> *Programmation logique.*
 
 - [ ] Sujet en PDF,
 - [ ] Solution en OCaml : [TP8__OCaml.ipynb](TP8__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP8__OCaml.ipynb)). Et le script [TP8__OCaml.ml](TP8__OCaml.ml).
+
+
+## TP9 (culturel) - à la maison
+> *Programmation logique.*
+
+- [ ] Sujet en PDF,
+- [ ] Solution en OCaml : [TP9__OCaml.ipynb](TP9__OCaml.ipynb) (ou aussi [ici lisible directement](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP9__OCaml.ipynb)). Et le script [TP9__OCaml.ml](TP9__OCaml.ml).
