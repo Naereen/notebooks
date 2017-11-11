@@ -7,14 +7,14 @@ https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
 *)
 
 (* # Table of Contents
- <p><div class="lev1 toc-item"><a href="#TP-5---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-5---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 5 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev1 toc-item"><a href="#Représentation" data-toc-modified-id="Représentation-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Représentation</a></div><div class="lev2 toc-item"><a href="#Trois-représentations" data-toc-modified-id="Trois-représentations-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Trois représentations</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-211"><span class="toc-item-num">2.1.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjancence" data-toc-modified-id="Listes-d'adjancence-212"><span class="toc-item-num">2.1.2&nbsp;&nbsp;</span>Listes d'adjancence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-213"><span class="toc-item-num">2.1.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Nombres-de-sommets-et-d'arcs" data-toc-modified-id="Nombres-de-sommets-et-d'arcs-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Nombres de sommets et d'arcs</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-221"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-222"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-223"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Graphes-pondérés" data-toc-modified-id="Graphes-pondérés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Graphes pondérés</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-231"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-232"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-233"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Graphes-colorés" data-toc-modified-id="Graphes-colorés-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Graphes colorés</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-241"><span class="toc-item-num">2.4.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-242"><span class="toc-item-num">2.4.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-243"><span class="toc-item-num">2.4.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Degrés" data-toc-modified-id="Degrés-25"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Degrés</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-251"><span class="toc-item-num">2.5.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-252"><span class="toc-item-num">2.5.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-253"><span class="toc-item-num">2.5.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev1 toc-item"><a href="#Parcours-de-graphes" data-toc-modified-id="Parcours-de-graphes-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Parcours de graphes</a></div><div class="lev2 toc-item"><a href="#Parcours-en-profondeur-et-largeur" data-toc-modified-id="Parcours-en-profondeur-et-largeur-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Parcours en profondeur et largeur</a></div><div class="lev3 toc-item"><a href="#En-profondeur-:-avec-une-pile-(Stack)" data-toc-modified-id="En-profondeur-:-avec-une-pile-(Stack)-311"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>En profondeur : avec une pile (<code>Stack</code>)</a></div><div class="lev3 toc-item"><a href="#En-largeur-:-avec-une-file-(Queue)" data-toc-modified-id="En-largeur-:-avec-une-file-(Queue)-312"><span class="toc-item-num">3.1.2&nbsp;&nbsp;</span>En largeur : avec une file (<code>Queue</code>)</a></div><div class="lev2 toc-item"><a href="#est_connexe" data-toc-modified-id="est_connexe-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span><code>est_connexe</code></a></div><div class="lev2 toc-item"><a href="#est_arbre" data-toc-modified-id="est_arbre-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span><code>est_arbre</code></a></div><div class="lev2 toc-item"><a href="#composantes_connexes" data-toc-modified-id="composantes_connexes-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span><code>composantes_connexes</code></a></div><div class="lev2 toc-item"><a href="#2-coloriage" data-toc-modified-id="2-coloriage-35"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>2-coloriage</a></div><div class="lev1 toc-item"><a href="#Cycles-eulériens" data-toc-modified-id="Cycles-eulériens-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Cycles eulériens</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Conclusion</a></div> *)
+ <p><div class="lev1 toc-item"><a href="#TP-5---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-5---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 5 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev1 toc-item"><a href="#Représentation" data-toc-modified-id="Représentation-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Représentation</a></div><div class="lev2 toc-item"><a href="#Trois-représentations" data-toc-modified-id="Trois-représentations-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Trois représentations</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-211"><span class="toc-item-num">2.1.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjancence" data-toc-modified-id="Listes-d'adjancence-212"><span class="toc-item-num">2.1.2&nbsp;&nbsp;</span>Listes d'adjancence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-213"><span class="toc-item-num">2.1.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Nombres-de-sommets-et-d'arcs" data-toc-modified-id="Nombres-de-sommets-et-d'arcs-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Nombres de sommets et d'arcs</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-221"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-222"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-223"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Graphes-pondérés" data-toc-modified-id="Graphes-pondérés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Graphes pondérés</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-231"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-232"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-233"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Graphes-colorés" data-toc-modified-id="Graphes-colorés-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Graphes colorés</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-241"><span class="toc-item-num">2.4.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-242"><span class="toc-item-num">2.4.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-243"><span class="toc-item-num">2.4.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev2 toc-item"><a href="#Degrés" data-toc-modified-id="Degrés-25"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Degrés</a></div><div class="lev3 toc-item"><a href="#Matrice-d'adjacence" data-toc-modified-id="Matrice-d'adjacence-251"><span class="toc-item-num">2.5.1&nbsp;&nbsp;</span>Matrice d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'adjacence" data-toc-modified-id="Listes-d'adjacence-252"><span class="toc-item-num">2.5.2&nbsp;&nbsp;</span>Listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Listes-d'arêtes" data-toc-modified-id="Listes-d'arêtes-253"><span class="toc-item-num">2.5.3&nbsp;&nbsp;</span>Listes d'arêtes</a></div><div class="lev1 toc-item"><a href="#Parcours-de-graphes" data-toc-modified-id="Parcours-de-graphes-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Parcours de graphes</a></div><div class="lev2 toc-item"><a href="#Parcours-en-profondeur-et-largeur" data-toc-modified-id="Parcours-en-profondeur-et-largeur-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Parcours en profondeur et largeur</a></div><div class="lev3 toc-item"><a href="#En-profondeur-:-avec-une-pile-(Stack)" data-toc-modified-id="En-profondeur-:-avec-une-pile-(Stack)-311"><span class="toc-item-num">3.1.1&nbsp;&nbsp;</span>En profondeur : avec une pile (<code>Stack</code>)</a></div><div class="lev3 toc-item"><a href="#En-largeur-:-avec-une-file-(Queue)" data-toc-modified-id="En-largeur-:-avec-une-file-(Queue)-312"><span class="toc-item-num">3.1.2&nbsp;&nbsp;</span>En largeur : avec une file (<code>Queue</code>)</a></div><div class="lev2 toc-item"><a href="#est_connexe" data-toc-modified-id="est_connexe-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span><code>est_connexe</code></a></div><div class="lev2 toc-item"><a href="#est_arbre" data-toc-modified-id="est_arbre-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span><code>est_arbre</code></a></div><div class="lev2 toc-item"><a href="#composantes_connexes" data-toc-modified-id="composantes_connexes-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span><code>composantes_connexes</code></a></div><div class="lev2 toc-item"><a href="#2-coloriage" data-toc-modified-id="2-coloriage-35"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>2-coloriage</a></div><div class="lev1 toc-item"><a href="#Cycles-eulériens" data-toc-modified-id="Cycles-eulériens-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Cycles eulériens</a></div><div class="lev2 toc-item"><a href="#existe_cycle_eulerien" data-toc-modified-id="existe_cycle_eulerien-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span><code>existe_cycle_eulerien</code></a></div><div class="lev2 toc-item"><a href="#La-suite" data-toc-modified-id="La-suite-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>La suite</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Conclusion</a></div> *)
 
 (* # TP 5 - Programmation pour la préparation à l'agrégation maths option info
 TP 5 : Graphes. *)
 
 (* - En OCaml. *)
 
-(* In[1]: *)
+(* In[ ]: *)
 
 
 let print = Printf.printf;;
@@ -34,7 +34,7 @@ Graphe :
 
 (* ## Trois représentations *)
 
-(* In[2]: *)
+(* In[8]: *)
 
 
 type sommet = int;;
@@ -48,12 +48,12 @@ type sommet = int;;
 (* Plutôt que d'utiliser des `bool`, on utilise `0` et `1` pour facilement compter le nombre d'arêtes en sommant le nombre de `1`.
 (en plus, ça s'écrit plus vite !) *)
 
-(* In[3]: *)
+(* In[9]: *)
 
 
 type graphe_mat = int array array;;
 
-(* In[4]: *)
+(* In[10]: *)
 
 
 let g1__mat : graphe_mat = [|
@@ -65,12 +65,12 @@ let g1__mat : graphe_mat = [|
 
 (* ### Listes d'adjancence *)
 
-(* In[5]: *)
+(* In[11]: *)
 
 
 type graphe_adj = (sommet list) array;;
 
-(* In[6]: *)
+(* In[12]: *)
 
 
 let g1__adj : graphe_adj = [|
@@ -81,13 +81,13 @@ let g1__adj : graphe_adj = [|
 
 (* ### Listes d'arêtes *)
 
-(* In[7]: *)
+(* In[13]: *)
 
 
 type arete = sommet * sommet;;
 type graphe_art = arete list;;
 
-(* In[8]: *)
+(* In[14]: *)
 
 
 let g1__art : graphe_art = [
@@ -102,13 +102,13 @@ let g1__art : graphe_art = [
 
 (* Pour `graphe_mat`, `nb_sommets` est en $\mathcal{O}(1)$ et `nb_arcs` est en $\mathcal{O}(n^2)$. *)
 
-(* In[9]: *)
+(* In[15]: *)
 
 
 let somme_tableau = Array.fold_left (+) 0;;
 let somme_matrice = Array.fold_left (fun x a -> x + (somme_tableau a)) 0;;
 
-(* In[10]: *)
+(* In[16]: *)
 
 
 let nb_sommets__mat (g : graphe_mat) : int = Array.length g ;;
@@ -121,12 +121,12 @@ nb_arcs__mat g1__mat;;
 
 (* Pour `graphe_adj`, `nb_sommets` est en $\mathcal{O}(1)$ et `nb_arcs` est en $\mathcal{O}(n)$. *)
 
-(* In[11]: *)
+(* In[17]: *)
 
 
 let somme_list = List.fold_left (+) 0;;
 
-(* In[12]: *)
+(* In[18]: *)
 
 
 let nb_sommets__adj (g : graphe_adj) : int = Array.length g ;;
@@ -140,13 +140,13 @@ nb_arcs__adj g1__adj;;
 
 (* Pour `graphe_art`, `nb_sommets` est en $\mathcal{O}(n)$ et `nb_arcs` est en $\mathcal{O}(1)$. *)
 
-(* In[13]: *)
+(* In[19]: *)
 
 
 let max_list = List.fold_left max min_int;;
 max_list [1; 3; 4; 19];;
 
-(* In[14]: *)
+(* In[20]: *)
 
 
 let max_list_couple l =
@@ -154,7 +154,7 @@ let max_list_couple l =
     max (max_list g) (max_list d)
 ;;
 
-(* In[15]: *)
+(* In[21]: *)
 
 
 let nb_sommets__art (g : graphe_art) : int = 1 + (max_list_couple g);;
@@ -172,7 +172,7 @@ nb_arcs__art g1__art;;
 
 ![TP5__exemple_graphe2.svg](TP5__exemple_graphe2.svg) *)
 
-(* In[16]: *)
+(* In[22]: *)
 
 
 type poids = int;;
@@ -182,12 +182,12 @@ type poids = int;;
 (* `None` indique une absence d'arête, `Some x` une arête pondérée par `x`.
 Aucune raison qu'on ne puisse pas pondérer par `0`, donc utiliser seulement `0` pour indiquer une absence d'arête ne marchera pas. *)
 
-(* In[17]: *)
+(* In[23]: *)
 
 
 type graphe_mat_pond = (poids option) array array;;
 
-(* In[18]: *)
+(* In[24]: *)
 
 
 let g1__mat_pond : graphe_mat_pond = [|
@@ -201,12 +201,12 @@ let g1__mat_pond : graphe_mat_pond = [|
 
 (* C'est plus facile : *)
 
-(* In[19]: *)
+(* In[25]: *)
 
 
 type graphe_adj_pond = ((sommet * poids) list) array;;
 
-(* In[20]: *)
+(* In[26]: *)
 
 
 let g1__adj_pond : graphe_adj_pond = [|
@@ -219,13 +219,13 @@ let g1__adj_pond : graphe_adj_pond = [|
 
 (* C'est très facile : *)
 
-(* In[21]: *)
+(* In[27]: *)
 
 
 type arete_pond = sommet * poids * sommet;;
 type graphe_art_pond = arete_pond list;;
 
-(* In[22]: *)
+(* In[28]: *)
 
 
 let g1__art_pond : graphe_art_pond = [
@@ -243,7 +243,7 @@ let g1__art_pond : graphe_art_pond = [
 
 ![TP5__exemple_graphe3.svg](TP5__exemple_graphe3.svg) *)
 
-(* In[23]: *)
+(* In[29]: *)
 
 
 type couleur = int;;
@@ -253,12 +253,12 @@ let rouge : couleur = 1 and bleu : couleur = 2 and vert : couleur = 3;;
 
 (* C'est moins facile ! On est obligé d'ajouter une structure qui contient la liste des couleurs séparément... Et donc ce n'est pas très intéressant... *)
 
-(* In[24]: *)
+(* In[30]: *)
 
 
 type graphe_mat_color = { mat : int array array; couleurs : couleur array } ;;
 
-(* In[25]: *)
+(* In[31]: *)
 
 
 let g1__mat_color : graphe_mat_color = { mat = [|
@@ -271,12 +271,12 @@ let g1__mat_color : graphe_mat_color = { mat = [|
 
 (* ### Listes d'adjacence *)
 
-(* In[26]: *)
+(* In[32]: *)
 
 
 type graphe_adj_color = { adj : (sommet list) array; couleurs : couleur array } ;;
 
-(* In[27]: *)
+(* In[33]: *)
 
 
 let g1__adj_color : graphe_adj_color = { adj = [|
@@ -289,12 +289,12 @@ let g1__adj_color : graphe_adj_color = { adj = [|
 
 (* ### Listes d'arêtes *)
 
-(* In[28]: *)
+(* In[34]: *)
 
 
 type graphe_art_color = { art : arete list; couleurs : couleur array } ;;
 
-(* In[29]: *)
+(* In[35]: *)
 
 
 let g1__art_color : graphe_art_color = { art = [
@@ -311,7 +311,7 @@ let g1__art_color : graphe_art_color = { art = [
 
 (* Pour `graphe_mat`, `degres` est en $\mathcal{O}(n^2)$. *)
 
-(* In[30]: *)
+(* In[36]: *)
 
 
 let degres__mat (g : graphe_mat) : int array = Array.map somme_tableau g ;;
@@ -321,7 +321,7 @@ degres__mat g1__mat;;
 
 (* Pour `graphe_adj`, `degres` est en $\mathcal{O}(n)$. *)
 
-(* In[31]: *)
+(* In[37]: *)
 
 
 let degres__adj (g : graphe_adj) : int array = Array.map List.length g ;;
@@ -331,12 +331,12 @@ degres__adj g1__adj;;
 
 (* Pour `graphe_art`, `degres` est en $\mathcal{O}(n^2)$. *)
 
-(* In[32]: *)
+(* In[38]: *)
 
 
 g1__art;;
 
-(* In[33]: *)
+(* In[39]: *)
 
 
 let degres__art (g : graphe_art) : int array =
@@ -356,13 +356,14 @@ degres__art g1__art;;
 
 (* Pour les deux parcours, l'implémentation sous forme de listes d'adjacence fonctionne très bien.
 
-Les deux algorithmes sont très similaires, et sont en $\mathcal{O}(n)$ si on utilise une structure de pile/file qui est efficace (insertion, suppression en $\mathcal{O}(1)$).
+Les deux algorithmes sont très similaires, et sont en $\mathcal{O}(|A|)$ ($|A|$ étant le nombre d'arêtes, si $G=(S,A)$), si on utilise une structure de pile/file qui est efficace (insertion, suppression en $\mathcal{O}(1)$).
 
-On va être un peu fainéant, et ces deux parcours ne renverront rien, ils vont juste afficher les sommets dans l'ordre dans lesquels on les voit. *)
+On va être un peu fainéant, et ces deux parcours *ne renverront rien*, ils vont juste afficher les sommets dans l'ordre dans lesquels on les voit.
+On pourrait utiliser une référence d'une liste (`list ref`) pour ajouter les sommets un à un. *)
 
 (* ### En profondeur : avec une pile (`Stack`) *)
 
-(* In[34]: *)
+(* In[40]: *)
 
 
 let profondeur_iter (g : graphe_adj) (debut : sommet) : unit =
@@ -374,29 +375,35 @@ let profondeur_iter (g : graphe_adj) (debut : sommet) : unit =
         let i = Stack.pop pile in
         Printf.printf "visite(%d)\n" i;
         flush_all();
+        (* Complexité O(deg(i)) pour le sommet i *)
         List.iter (fun j -> if not vu.(j) then begin
             Stack.push j pile;
             vu.(j) <- true
             end)
         g.(i)
     done
+    (* donc en tout, complexité en Sigma_i O(deg(i)) = |E| *)
 ;;
 
 (* On remarque qu'on parcourt les sommets de "la droite vers la gauche" dans cet exemple. *)
 
-(* In[35]: *)
+(* In[41]: *)
 
 
 g1__adj;;
 
-(* In[36]: *)
+(* In[42]: *)
 
 
 profondeur_iter g1__adj 0;;
 
 (* ### En largeur : avec une file (`Queue`) *)
 
-(* In[37]: *)
+(* C'est magique, le code est *exactement* le même, avec `Queue` en lieu et place de `Stack`.
+
+> On a déjà vu tout ça, vous devriez être capable de le réécrire rapidement ! *)
+
+(* In[43]: *)
 
 
 let largeur_iter (g : graphe_adj) (debut : sommet) : unit =
@@ -418,12 +425,12 @@ let largeur_iter (g : graphe_adj) (debut : sommet) : unit =
 
 (* On remarque qu'on parcourt les sommets de "la gauche vers la droite" dans cet exemple. *)
 
-(* In[38]: *)
+(* In[44]: *)
 
 
 g1__adj;;
 
-(* In[39]: *)
+(* In[45]: *)
 
 
 largeur_iter g1__adj 0;;
@@ -435,38 +442,39 @@ largeur_iter g1__adj 0;;
 (* Un graphe est connexe *si et seulement si* chaque sommet est relié à tout autre sommet (par un chemin de longueur un ou plus).
 On écrit d'abord une fonction qui vérifie que tous les sommets sont accessibles depuis un sommet, puis on vérifiera que ce prédicat est vrai pour tous les sommets. *)
 
-(* In[40]: *)
+(* In[46]: *)
 
 
 let tous_vrais = Array.fold_left (&&) true;;
 
-(* In[41]: *)
+(* In[47]: *)
 
 
 let tous_accessibles (g : graphe_adj) (debut : sommet) : bool =
     let vu = Array.make (nb_sommets__adj g) false in
     let file = Queue.create () in
     Queue.push debut file;
-    vu.(debut) <- true;
+    vu.(debut) <- true;  (* on ne peut pas se passer du tableau vu *)
     while not (Queue.is_empty file) do
         let i = Queue.pop file in
-        List.iter (fun j -> if not vu.(j) then begin
+        List.iter (fun j -> if not vu.(j) then begin (* car utile ici *)
             Queue.push j file;
             vu.(j) <- true
             end)
         g.(i)
     done;
+    (* mais a la fin on s'en sert juste pour ce test *)
     tous_vrais vu
 ;;
 
-(* In[42]: *)
+(* In[48]: *)
 
 
 tous_accessibles g1__adj 0;;
 tous_accessibles g1__adj 1;;
 tous_accessibles g1__adj 2;;
 
-(* In[43]: *)
+(* In[49]: *)
 
 
 let est_connexe (g : graphe_adj) : bool =
@@ -474,7 +482,7 @@ let est_connexe (g : graphe_adj) : bool =
     tous_vrais (Array.init n (fun i -> tous_accessibles g i));
 ;;
 
-(* In[44]: *)
+(* In[50]: *)
 
 
 est_connexe g1__adj;;
@@ -483,7 +491,7 @@ est_connexe g1__adj;;
 
 ![TP5__exemple_graphe4.svg](TP5__exemple_graphe4.svg) *)
 
-(* In[45]: *)
+(* In[51]: *)
 
 
 let g2__adj : graphe_adj = [|
@@ -494,14 +502,14 @@ let g2__adj : graphe_adj = [|
     [3]; (* 4 -- 3 *)
 |];;
 
-(* In[46]: *)
+(* In[52]: *)
 
 
 largeur_iter g2__adj 0;;
 
 largeur_iter g2__adj 3;;
 
-(* In[47]: *)
+(* In[53]: *)
 
 
 est_connexe g2__adj;;
@@ -513,7 +521,91 @@ est_connexe g2__adj;;
 1. on sait déjà vérifier la connexité.
 2. on doit vérifier l'absence de cycle.
 
-Je vous laisse trouver par vous-même pour le second point. *)
+Je vous laisse réfléchir par vous-même pour le second point. ([Exemple](http://www.geeksforgeeks.org/detect-cycle-undirected-graph/))
+
+Si besoin, voici une correction. *)
+
+(* In[85]: *)
+
+
+let est_cyclique_aux (g : graphe_adj) (v : sommet) (vu : bool array) (parent : sommet) =
+    vu.(v) <- true; (* v est vu ! *)
+    let res = ref false in
+    let indice = ref 0 in
+    let gv = Array.of_list g.(v) in (* la conversion prend un temps O(deg(v)) une fois *)
+    while (not !res) && (!indice < Array.length gv) do
+        let i = gv.(!indice) in (* comme ca cette lecture prend O(1) chaque fois *)
+        incr indice;
+        if not vu.(i) then begin
+            if (est_cyclique_aux g i vu v) then
+                res := true;
+        end
+        else begin
+            if parent != i then
+                res := true
+        end
+    done;
+    !res    
+;;
+
+(* In[86]: *)
+
+
+let est_cyclique (g : graphe_adj) : bool =
+    let n = nb_sommets__adj g in
+    let vu = Array.make n false in
+    let res = ref false in
+    for i = 0 to n - 1 do
+        if not vu.(i) then begin
+            if est_cyclique_aux g i vu (-1) then
+                res := true;
+        end
+    done;
+    !res
+;;
+
+(* In[87]: *)
+
+
+let absence_cycle (g : graphe_adj) : bool =
+    not (est_cyclique g)
+;;
+
+(* In[88]: *)
+
+
+let est_arbre (g : graphe_adj) : bool =
+    (est_connexe g) && (absence_cycle g)
+;;
+
+(* In[95]: *)
+
+
+est_cyclique g1__adj;;
+est_arbre g1__adj;;
+
+(* In[96]: *)
+
+
+est_cyclique g2__adj;;
+est_arbre g2__adj;;
+
+(* Et avec un exemple de graphe connexe mais avec un cycle : *)
+
+(* In[97]: *)
+
+
+let g3__adj : graphe_adj = [|
+    [1; 2]; (* 0 -- 1 et 0 -- 2 *)
+    [0; 2]; (* 1 -- 0 et 1 -- 2 *)
+    [0; 1]; (* 2 -- 0 et 2 -- 1 *)
+|];;
+
+(* In[98]: *)
+
+
+est_connexe g3__adj;;
+est_arbre g3__adj;;
 
 (* ## `composantes_connexes` *)
 
@@ -522,7 +614,7 @@ Dès qu'un nouveau sommet n'a pas encore été visité, on commence une nouvelle
 
 Cet algorithme est en $\mathcal{O}(n)$, au pire chaque sommet est visité exactement une fois. *)
 
-(* In[48]: *)
+(* In[57]: *)
 
 
 let composantes_connexes (g : graphe_adj) : sommet list list =
@@ -551,12 +643,12 @@ let composantes_connexes (g : graphe_adj) : sommet list list =
     !cc
 ;;
 
-(* In[49]: *)
+(* In[58]: *)
 
 
 composantes_connexes g1__adj;;
 
-(* In[50]: *)
+(* In[59]: *)
 
 
 composantes_connexes g2__adj;;
@@ -568,34 +660,36 @@ Si tous les sommets ont un degrés $\leq 2$, on part d'un sommet (pour chaque co
 
 Cet algorithme est aussi en $\mathcal{O}(n)$. *)
 
-(* In[51]: *)
+(* In[60]: *)
 
 
-type deuxcouleur = B | N;;
+type deuxcouleur = B | N;; (* on pourrait utiliser bool *);;
 
-(* In[52]: *)
+(* In[99]: *)
 
 
-let alterne_couleur = function
+let alterne_couleur = function  (* avec bool, cette fonction serait... juste not *)
     | B -> N
     | N -> B
 ;;
 
-(* In[53]: *)
+(* In[62]: *)
 
 
 let max_array = Array.fold_left max min_int;;
 
-(* In[54]: *)
+(* In[100]: *)
 
 
 let deuxcoloriage (g : graphe_adj) : deuxcouleur array =
-    let n = nb_sommets__adj g in
-    let vu = Array.make n false in
-    let couleurs = Array.make n B in
+    (* d'abord on verifie *)
     let deg = degres__adj g in
     let max_deg = max_array deg in
     if max_deg >= 3 then failwith "2-coloriage impossible, un sommet a un degre >= 3.";
+    (* ensuite on se lance *)
+    let n = nb_sommets__adj g in
+    let vu = Array.make n false in
+    let couleurs = Array.make n B in
     let cc = composantes_connexes g in
     let rec visite_et_colorie_en_alternance (c : deuxcouleur) (i : sommet) : unit =
         Printf.printf "visite(%d)\n" i;
@@ -608,19 +702,19 @@ let deuxcoloriage (g : graphe_adj) : deuxcouleur array =
     couleurs
 ;;
 
-(* In[55]: *)
+(* In[101]: *)
 
 
 deuxcoloriage g1__adj;;
 
 (* Pour le deuxième exemple, on voit que la seconde composante connexe $\{3, 4\}$ est coloriée avec deux couleurs aussi. *)
 
-(* In[56]: *)
+(* In[102]: *)
 
 
 deuxcoloriage g2__adj;;
 
-(* In[57]: *)
+(* In[103]: *)
 
 
 let g3__adj : graphe_adj = [|
@@ -630,7 +724,7 @@ let g3__adj : graphe_adj = [|
     [0]; (* 3 -- 0 *)
 |];;
 
-(* In[58]: *)
+(* In[104]: *)
 
 
 deuxcoloriage g3__adj;;
@@ -642,16 +736,46 @@ Je vous laisse lire [cette page](http://perso.crans.org/besson/agreg/modelisatio
 (`perso.crans.org/besson/agreg/modelisation/projet_2/`).
 [Cherchez en ligne](https://duckduckgo.com/?q=parcours+eul%C3%A9rien+algorithme+de+rosenstielh&t=canonical&ia=web) pour plus d'informations. *)
 
+(* ## `existe_cycle_eulerien` *)
+
+(* On compte le nombre de sommets de degrés impairs, et un chemin eulérien existe si et seulement s'il y en a zéros ou deux. *)
+
+(* In[106]: *)
+
+
+let existe_cycle_eulerien (g : graphe_adj) : bool =
+    let deg = Array.to_list (degres__adj g) in
+    let nb_deg_impair = List.length (List.filter (fun i -> i mod 2 = 0) deg) in
+    nb_deg_impair = 0 || nb_deg_impair = 2
+;;
+
+(* In[107]: *)
+
+
+existe_cycle_eulerien g1__adj;;
+
+(* In[108]: *)
+
+
+existe_cycle_eulerien g2__adj;;
+
+(* In[109]: *)
+
+
+existe_cycle_eulerien g3__adj;;
+
+(* ## La suite *)
+
 (* Pour trouver un chemin eulérien, on applique l'algorithme suivant (dû à Rosentielh, aussi attribué à [Hierholzer (1873)](https://en.wikipedia.org/wiki/Eulerian_path#Hierholzer.27s_algorithm)).
 
 - Compter le nombre de sommets de degré impair,
-- Si
+- Si :
   + c'est 0 : construire un cycle partant du premier sommet (choix arbitraire),
   + c'est 2 : construire un chemin entre les deux sommets en question,
   + sinon, il n'y a pas de chemin eulérien (on répond non).
-- parcourir le chemin déjà construit : à chaque sommet
-  + tant qu'il reste des arêtes partant de ce sommet dans le graphe
-     - construire un cycle partant de ce sommet
+- parcourir le chemin déjà construit : à chaque sommet :
+  + tant qu'il reste des arêtes partant de ce sommet dans le graphe :
+     - construire un cycle partant de ce sommet,
      - puis l'insérer dans le chemin.
 
 Étant donné les conditions sur le graphe, construire un chemin ou un cycle n'est pas compliqué : il suffit de partir de l'origine, de prendre la première arête rencontrée et de recommencer récursivement. *)
