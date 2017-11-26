@@ -34,6 +34,9 @@ Go to [nbviewer](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/maste
 
 ### :art: Art
 - [This notebook shows some "obfuscated" code, producing](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Obfuscated_code_or_piece_of_art.ipynb) ([on GitHub?](Obfuscated_code_or_piece_of_art.ipynb)) :sparkles: [nice figures](art/)... Or maybe they are pieces of code art :art: ?
+- [This notebook implements in Python a generator of small "identicon" like the dislayed on GitHub for users without profile pictures](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/An_Identiconizer_generator_implementation_in_Python.ipynb) ([on GitHub?](An_Identiconizer_generator_implementation_in_Python.ipynb)) :sparkles:. See this example:
+
+![art/identicons.png](art/identicons.png)
 
 > I will try to write more *artistic* notebooks, showcasing nice pieces of *code* :art:!
 
