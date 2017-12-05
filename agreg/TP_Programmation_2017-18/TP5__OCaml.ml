@@ -14,11 +14,16 @@ TP 5 : Graphes. *)
 
 (* - En OCaml. *)
 
-(* In[ ]: *)
+(* In[2]: *)
 
 
 let print = Printf.printf;;
 Sys.command "ocaml -version";;
+
+(* In[3]: *)
+
+
+print_endline;;
 
 (* ----
 # Représentation *)
@@ -34,26 +39,28 @@ Graphe :
 
 (* ## Trois représentations *)
 
-(* In[8]: *)
+(* In[4]: *)
 
 
 type sommet = int;;
 
 (* On supposera que les sommets sont toujours numérotés de $0$ à $n-1$. *)
 
-(* Pour des graphes non orientés, on doit stocker deux fois chaque arête : $a \to b$ et $b \to a$. *)
+(* Pour des graphes non orientés, on doit stocker deux fois chaque arête : $a \to b$ et $b \to a$.
+
+<span style="color:red;">On suppose aussi que des arêtes de la forme $a - a$ ne sont pas considérées : pas de boucle sur soi-même ! Ca simplifie les codes...</span> *)
 
 (* ### Matrice d'adjacence *)
 
 (* Plutôt que d'utiliser des `bool`, on utilise `0` et `1` pour facilement compter le nombre d'arêtes en sommant le nombre de `1`.
 (en plus, ça s'écrit plus vite !) *)
 
-(* In[9]: *)
+(* In[5]: *)
 
 
 type graphe_mat = int array array;;
 
-(* In[10]: *)
+(* In[6]: *)
 
 
 let g1__mat : graphe_mat = [|
@@ -65,12 +72,12 @@ let g1__mat : graphe_mat = [|
 
 (* ### Listes d'adjancence *)
 
-(* In[11]: *)
+(* In[7]: *)
 
 
 type graphe_adj = (sommet list) array;;
 
-(* In[12]: *)
+(* In[8]: *)
 
 
 let g1__adj : graphe_adj = [|
@@ -81,13 +88,13 @@ let g1__adj : graphe_adj = [|
 
 (* ### Listes d'arêtes *)
 
-(* In[13]: *)
+(* In[9]: *)
 
 
 type arete = sommet * sommet;;
 type graphe_art = arete list;;
 
-(* In[14]: *)
+(* In[10]: *)
 
 
 let g1__art : graphe_art = [
@@ -102,13 +109,13 @@ let g1__art : graphe_art = [
 
 (* Pour `graphe_mat`, `nb_sommets` est en $\mathcal{O}(1)$ et `nb_arcs` est en $\mathcal{O}(n^2)$. *)
 
-(* In[15]: *)
+(* In[11]: *)
 
 
 let somme_tableau = Array.fold_left (+) 0;;
 let somme_matrice = Array.fold_left (fun x a -> x + (somme_tableau a)) 0;;
 
-(* In[16]: *)
+(* In[12]: *)
 
 
 let nb_sommets__mat (g : graphe_mat) : int = Array.length g ;;
@@ -121,12 +128,12 @@ nb_arcs__mat g1__mat;;
 
 (* Pour `graphe_adj`, `nb_sommets` est en $\mathcal{O}(1)$ et `nb_arcs` est en $\mathcal{O}(n)$. *)
 
-(* In[17]: *)
+(* In[13]: *)
 
 
 let somme_list = List.fold_left (+) 0;;
 
-(* In[18]: *)
+(* In[14]: *)
 
 
 let nb_sommets__adj (g : graphe_adj) : int = Array.length g ;;
@@ -140,13 +147,13 @@ nb_arcs__adj g1__adj;;
 
 (* Pour `graphe_art`, `nb_sommets` est en $\mathcal{O}(n)$ et `nb_arcs` est en $\mathcal{O}(1)$. *)
 
-(* In[19]: *)
+(* In[15]: *)
 
 
 let max_list = List.fold_left max min_int;;
 max_list [1; 3; 4; 19];;
 
-(* In[20]: *)
+(* In[16]: *)
 
 
 let max_list_couple l =
@@ -154,7 +161,7 @@ let max_list_couple l =
     max (max_list g) (max_list d)
 ;;
 
-(* In[21]: *)
+(* In[17]: *)
 
 
 let nb_sommets__art (g : graphe_art) : int = 1 + (max_list_couple g);;
@@ -172,7 +179,7 @@ nb_arcs__art g1__art;;
 
 ![TP5__exemple_graphe2.svg](TP5__exemple_graphe2.svg) *)
 
-(* In[22]: *)
+(* In[18]: *)
 
 
 type poids = int;;
@@ -182,12 +189,12 @@ type poids = int;;
 (* `None` indique une absence d'arête, `Some x` une arête pondérée par `x`.
 Aucune raison qu'on ne puisse pas pondérer par `0`, donc utiliser seulement `0` pour indiquer une absence d'arête ne marchera pas. *)
 
-(* In[23]: *)
+(* In[19]: *)
 
 
 type graphe_mat_pond = (poids option) array array;;
 
-(* In[24]: *)
+(* In[20]: *)
 
 
 let g1__mat_pond : graphe_mat_pond = [|
@@ -201,12 +208,12 @@ let g1__mat_pond : graphe_mat_pond = [|
 
 (* C'est plus facile : *)
 
-(* In[25]: *)
+(* In[21]: *)
 
 
 type graphe_adj_pond = ((sommet * poids) list) array;;
 
-(* In[26]: *)
+(* In[22]: *)
 
 
 let g1__adj_pond : graphe_adj_pond = [|
@@ -219,13 +226,13 @@ let g1__adj_pond : graphe_adj_pond = [|
 
 (* C'est très facile : *)
 
-(* In[27]: *)
+(* In[23]: *)
 
 
 type arete_pond = sommet * poids * sommet;;
 type graphe_art_pond = arete_pond list;;
 
-(* In[28]: *)
+(* In[24]: *)
 
 
 let g1__art_pond : graphe_art_pond = [
@@ -243,7 +250,7 @@ let g1__art_pond : graphe_art_pond = [
 
 ![TP5__exemple_graphe3.svg](TP5__exemple_graphe3.svg) *)
 
-(* In[29]: *)
+(* In[25]: *)
 
 
 type couleur = int;;
@@ -253,12 +260,12 @@ let rouge : couleur = 1 and bleu : couleur = 2 and vert : couleur = 3;;
 
 (* C'est moins facile ! On est obligé d'ajouter une structure qui contient la liste des couleurs séparément... Et donc ce n'est pas très intéressant... *)
 
-(* In[30]: *)
+(* In[26]: *)
 
 
 type graphe_mat_color = { mat : int array array; couleurs : couleur array } ;;
 
-(* In[31]: *)
+(* In[27]: *)
 
 
 let g1__mat_color : graphe_mat_color = { mat = [|
@@ -271,12 +278,12 @@ let g1__mat_color : graphe_mat_color = { mat = [|
 
 (* ### Listes d'adjacence *)
 
-(* In[32]: *)
+(* In[28]: *)
 
 
 type graphe_adj_color = { adj : (sommet list) array; couleurs : couleur array } ;;
 
-(* In[33]: *)
+(* In[29]: *)
 
 
 let g1__adj_color : graphe_adj_color = { adj = [|
@@ -289,12 +296,12 @@ let g1__adj_color : graphe_adj_color = { adj = [|
 
 (* ### Listes d'arêtes *)
 
-(* In[34]: *)
+(* In[30]: *)
 
 
 type graphe_art_color = { art : arete list; couleurs : couleur array } ;;
 
-(* In[35]: *)
+(* In[31]: *)
 
 
 let g1__art_color : graphe_art_color = { art = [
@@ -311,7 +318,7 @@ let g1__art_color : graphe_art_color = { art = [
 
 (* Pour `graphe_mat`, `degres` est en $\mathcal{O}(n^2)$. *)
 
-(* In[36]: *)
+(* In[32]: *)
 
 
 let degres__mat (g : graphe_mat) : int array = Array.map somme_tableau g ;;
@@ -321,7 +328,7 @@ degres__mat g1__mat;;
 
 (* Pour `graphe_adj`, `degres` est en $\mathcal{O}(n)$. *)
 
-(* In[37]: *)
+(* In[33]: *)
 
 
 let degres__adj (g : graphe_adj) : int array = Array.map List.length g ;;
@@ -331,12 +338,12 @@ degres__adj g1__adj;;
 
 (* Pour `graphe_art`, `degres` est en $\mathcal{O}(n^2)$. *)
 
-(* In[38]: *)
+(* In[34]: *)
 
 
 g1__art;;
 
-(* In[39]: *)
+(* In[35]: *)
 
 
 let degres__art (g : graphe_art) : int array =
@@ -363,7 +370,7 @@ On pourrait utiliser une référence d'une liste (`list ref`) pour ajouter les s
 
 (* ### En profondeur : avec une pile (`Stack`) *)
 
-(* In[40]: *)
+(* In[36]: *)
 
 
 let profondeur_iter (g : graphe_adj) (debut : sommet) : unit =
@@ -387,12 +394,12 @@ let profondeur_iter (g : graphe_adj) (debut : sommet) : unit =
 
 (* On remarque qu'on parcourt les sommets de "la droite vers la gauche" dans cet exemple. *)
 
-(* In[41]: *)
+(* In[37]: *)
 
 
 g1__adj;;
 
-(* In[42]: *)
+(* In[38]: *)
 
 
 profondeur_iter g1__adj 0;;
@@ -403,7 +410,7 @@ profondeur_iter g1__adj 0;;
 
 > On a déjà vu tout ça, vous devriez être capable de le réécrire rapidement ! *)
 
-(* In[43]: *)
+(* In[39]: *)
 
 
 let largeur_iter (g : graphe_adj) (debut : sommet) : unit =
@@ -425,12 +432,12 @@ let largeur_iter (g : graphe_adj) (debut : sommet) : unit =
 
 (* On remarque qu'on parcourt les sommets de "la gauche vers la droite" dans cet exemple. *)
 
-(* In[44]: *)
+(* In[40]: *)
 
 
 g1__adj;;
 
-(* In[45]: *)
+(* In[41]: *)
 
 
 largeur_iter g1__adj 0;;
@@ -442,12 +449,12 @@ largeur_iter g1__adj 0;;
 (* Un graphe est connexe *si et seulement si* chaque sommet est relié à tout autre sommet (par un chemin de longueur un ou plus).
 On écrit d'abord une fonction qui vérifie que tous les sommets sont accessibles depuis un sommet, puis on vérifiera que ce prédicat est vrai pour tous les sommets. *)
 
-(* In[46]: *)
+(* In[42]: *)
 
 
 let tous_vrais = Array.fold_left (&&) true;;
 
-(* In[47]: *)
+(* In[43]: *)
 
 
 let tous_accessibles (g : graphe_adj) (debut : sommet) : bool =
@@ -467,14 +474,14 @@ let tous_accessibles (g : graphe_adj) (debut : sommet) : bool =
     tous_vrais vu
 ;;
 
-(* In[48]: *)
+(* In[44]: *)
 
 
 tous_accessibles g1__adj 0;;
 tous_accessibles g1__adj 1;;
 tous_accessibles g1__adj 2;;
 
-(* In[49]: *)
+(* In[45]: *)
 
 
 let est_connexe (g : graphe_adj) : bool =
@@ -482,7 +489,7 @@ let est_connexe (g : graphe_adj) : bool =
     tous_vrais (Array.init n (fun i -> tous_accessibles g i));
 ;;
 
-(* In[50]: *)
+(* In[46]: *)
 
 
 est_connexe g1__adj;;
@@ -491,7 +498,7 @@ est_connexe g1__adj;;
 
 ![TP5__exemple_graphe4.svg](TP5__exemple_graphe4.svg) *)
 
-(* In[51]: *)
+(* In[47]: *)
 
 
 let g2__adj : graphe_adj = [|
@@ -502,14 +509,14 @@ let g2__adj : graphe_adj = [|
     [3]; (* 4 -- 3 *)
 |];;
 
-(* In[52]: *)
+(* In[48]: *)
 
 
 largeur_iter g2__adj 0;;
 
 largeur_iter g2__adj 3;;
 
-(* In[53]: *)
+(* In[49]: *)
 
 
 est_connexe g2__adj;;
@@ -525,10 +532,10 @@ Je vous laisse réfléchir par vous-même pour le second point. ([Exemple](http:
 
 Si besoin, voici une correction. *)
 
-(* In[85]: *)
+(* In[64]: *)
 
 
-let est_cyclique_aux (g : graphe_adj) (v : sommet) (vu : bool array) (parent : sommet) =
+let rec est_cyclique_aux (g : graphe_adj) (v : sommet) (vu : bool array) (parent : sommet) =
     vu.(v) <- true; (* v est vu ! *)
     let res = ref false in
     let indice = ref 0 in
@@ -548,7 +555,7 @@ let est_cyclique_aux (g : graphe_adj) (v : sommet) (vu : bool array) (parent : s
     !res    
 ;;
 
-(* In[86]: *)
+(* In[65]: *)
 
 
 let est_cyclique (g : graphe_adj) : bool =
@@ -564,27 +571,27 @@ let est_cyclique (g : graphe_adj) : bool =
     !res
 ;;
 
-(* In[87]: *)
+(* In[66]: *)
 
 
 let absence_cycle (g : graphe_adj) : bool =
     not (est_cyclique g)
 ;;
 
-(* In[88]: *)
+(* In[67]: *)
 
 
 let est_arbre (g : graphe_adj) : bool =
     (est_connexe g) && (absence_cycle g)
 ;;
 
-(* In[95]: *)
+(* In[68]: *)
 
 
 est_cyclique g1__adj;;
 est_arbre g1__adj;;
 
-(* In[96]: *)
+(* In[69]: *)
 
 
 est_cyclique g2__adj;;
@@ -592,7 +599,7 @@ est_arbre g2__adj;;
 
 (* Et avec un exemple de graphe connexe mais avec un cycle : *)
 
-(* In[97]: *)
+(* In[70]: *)
 
 
 let g3__adj : graphe_adj = [|
@@ -601,7 +608,7 @@ let g3__adj : graphe_adj = [|
     [0; 1]; (* 2 -- 0 et 2 -- 1 *)
 |];;
 
-(* In[98]: *)
+(* In[71]: *)
 
 
 est_connexe g3__adj;;
@@ -614,7 +621,7 @@ Dès qu'un nouveau sommet n'a pas encore été visité, on commence une nouvelle
 
 Cet algorithme est en $\mathcal{O}(n)$, au pire chaque sommet est visité exactement une fois. *)
 
-(* In[57]: *)
+(* In[72]: *)
 
 
 let composantes_connexes (g : graphe_adj) : sommet list list =
@@ -643,12 +650,12 @@ let composantes_connexes (g : graphe_adj) : sommet list list =
     !cc
 ;;
 
-(* In[58]: *)
+(* In[73]: *)
 
 
 composantes_connexes g1__adj;;
 
-(* In[59]: *)
+(* In[74]: *)
 
 
 composantes_connexes g2__adj;;
@@ -660,61 +667,62 @@ Si tous les sommets ont un degrés $\leq 2$, on part d'un sommet (pour chaque co
 
 Cet algorithme est aussi en $\mathcal{O}(n)$. *)
 
-(* In[60]: *)
+(* In[77]: *)
 
 
-type deuxcouleur = B | N;; (* on pourrait utiliser bool *);;
+type deuxcouleur = Blanc | Noir;; (* on pourrait utiliser bool *);;
 
-(* In[99]: *)
+(* In[78]: *)
 
 
 let alterne_couleur = function  (* avec bool, cette fonction serait... juste not *)
-    | B -> N
-    | N -> B
+    | Blanc -> Noir
+    | Noir -> Blanc
 ;;
 
-(* In[62]: *)
+(* In[63]: *)
 
 
 let max_array = Array.fold_left max min_int;;
 
-(* In[100]: *)
+(* In[81]: *)
 
 
 let deuxcoloriage (g : graphe_adj) : deuxcouleur array =
-    (* d'abord on verifie *)
-    let deg = degres__adj g in
-    let max_deg = max_array deg in
-    if max_deg >= 3 then failwith "2-coloriage impossible, un sommet a un degre >= 3.";
-    (* ensuite on se lance *)
     let n = nb_sommets__adj g in
     let vu = Array.make n false in
-    let couleurs = Array.make n B in
+    let couleurs = Array.make n Blanc in
     let cc = composantes_connexes g in
     let rec visite_et_colorie_en_alternance (c : deuxcouleur) (i : sommet) : unit =
         Printf.printf "visite(%d)\n" i;
         flush_all();
         vu.(i) <- true;
         couleurs.(i) <- c;
-        List.iter (fun j -> if not vu.(j) then visite_et_colorie_en_alternance (alterne_couleur c) j) g.(i) 
+        List.iter (fun j ->
+            if not vu.(j) then
+                visite_et_colorie_en_alternance (alterne_couleur c) j
+            else begin
+                if couleurs.(j) = c then failwith "2-coloriage impossible."
+            end
+        ) g.(i)
     in
-    List.iter (visite_et_colorie_en_alternance B) (List.map List.hd cc);
+    List.iter (visite_et_colorie_en_alternance Blanc) (List.map List.hd cc);
     couleurs
 ;;
 
-(* In[101]: *)
+(* In[82]: *)
 
 
 deuxcoloriage g1__adj;;
 
 (* Pour le deuxième exemple, on voit que la seconde composante connexe $\{3, 4\}$ est coloriée avec deux couleurs aussi. *)
 
-(* In[102]: *)
+(* In[83]: *)
 
 
 deuxcoloriage g2__adj;;
 
-(* In[103]: *)
+(* In[84]: *)
 
 
 let g3__adj : graphe_adj = [|
@@ -724,10 +732,27 @@ let g3__adj : graphe_adj = [|
     [0]; (* 3 -- 0 *)
 |];;
 
-(* In[104]: *)
+(* In[85]: *)
 
 
 deuxcoloriage g3__adj;;
+
+(* Et un graphe non coloriable, avec une 3-clique $0 - 1 - 2$ : *)
+
+(* In[86]: *)
+
+
+let g4__adj : graphe_adj = [|
+    [1; 2; 3]; (* 0 -- 1 et 0 -- 2 et 0 -- 3 *)
+    [0; 2]; (* 1 -- 0 et 1 -- 2 *)
+    [0; 1]; (* 2 -- 0 et 2 -- 1 *)
+    [0]; (* 3 -- 0 *)
+|];;
+
+(* In[87]: *)
+
+
+deuxcoloriage g4__adj;;
 
 (* ----
 # Cycles eulériens
