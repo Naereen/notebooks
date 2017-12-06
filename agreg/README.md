@@ -25,6 +25,48 @@ Profitez en bien !
 
 ----
 
+## :pencil: Textes de modélisation
+### Premier exemple
+- Pour le texte [public2012-D3](http://agreg.org/Textes/public2012-D3.pdf) : [public2012_D3.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3.ipynb) ([sur GitHub](public2012_D3.ipynb)) en Python 3, [public2012_D3.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2012_D3%20%28OCaml%29.ipynb) ([sur GitHub](public2012_D3%20%28OCaml%29.ipynb)) en OCaml.
+
+### Textes les plus récents (2018)
+- Pour le texte [public2018-D1](http://agreg.org/Textes/public2018-D1.pdf) : [public2018_D1.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2018_D1.ipynb) ([sur GitHub](public2018_D1.ipynb)) en OCaml.
+- Pour le texte [public2018-D2](http://agreg.org/Textes/public2018-D2.pdf) : [public2018_D2.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/public2018_D2.ipynb) ([sur GitHub](public2018_D2.ipynb)) en OCaml.
+
+> Note: ces textes ont enfin été mis en ligne récemment (décembre 2017), et je les ai corrigé le plus rapidement possible.
+
+### Oraux blancs (1/2)
+Pour quatre textes donnés pour les oraux blancs début avril 2017 :
+
+- lundi 3 avril :
+    + [Crime parfait](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Crime_parfait.ipynb),
+    + et [Sudoku](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Sudoku.ipynb),
+
+- vendredi 7 avril :
+    + [Contraintes temporelles](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Contraintes_temporelles.ipynb),
+    + et [Chapeaux](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Chapeaux.ipynb)
+
+(tous en OCaml, pour des textes non officiels).
+
+### Entraînements en mars
+- Pour le texte [public2012-D6](http://agreg.org/Textes/public2012-D6.pdf) : [Mots_bien_formes.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Mots_bien_formes.ipynb) en OCaml.
+- Pour le texte [pub2008-D1](http://agreg.org/Textes/pub2008-D1.pdf) : [Robots.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Robots.ipynb) en OCaml.
+
+### Oraux blancs (2/2)
+Pour quatre textes donnés pour les oraux blancs fin mai 2017 :
+
+- lundi 22 mai :
+    + [Tissu cellulaire](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Tissu_cellulaire.ipynb) ([public2010-D2.pdf](http://agreg.org/Textes/public2010-D2.pdf)),
+    + et [Eclairage graphe](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Eclairage_graphe.ipynb) ([public2012-D1.pdf](http://agreg.org/Textes/public2012-D1.pdf)),
+
+- lundi 29 mai :
+    + [Taquin](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Taquin.ipynb) ([pub2008-D2.pdf](http://agreg.org/Textes/pub2008-D2.pdf)),
+    + et [Circuits](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Circuits.ipynb) ([public2010-D1.pdf](http://agreg.org/Textes/public2010-D1.pdf))
+
+(tous en OCaml).
+
+----
+
 ### :information_desk_person: Plus d'informations ?
 > - Plus d'informations sur ce dépôt se trouvent [ici](..).
 > - Plus d'informations sur [les notebooks (documentation de IPython)](https://nbviewer.jupyter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) ou [FAQ sur le site de Jupyter](https://nbviewer.jupyter.org/faq).
