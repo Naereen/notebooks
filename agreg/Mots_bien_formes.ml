@@ -421,7 +421,7 @@ let _ = evalue ex2 arite_calcul_prop interp_calcul_prop_a;;
 (* In[27]: *)
 
 
-let print_latex (s : string) = JupyterNotebook.display "text/html" ("$$" ^ s ^ "$$");;
+let print_latex (s : string) = Jupyter_notebook.display "text/html" ("$$" ^ s ^ "$$");;
 
 (* In[28]: *)
 
@@ -618,7 +618,7 @@ let rec formule_vers_chaine form =
 
 (* Et en bonus, on affiche aussi avec une chaîne en $\LaTeX$ : *)
 
-(* In[50]: *)
+(* In[42]: *)
 
 
 let rec formule_vers_latex form =
@@ -651,21 +651,21 @@ Des formules bien formées :
 - $\phi_2 = \exists x, \exists y, x + y = 10$, (vraie).
 - $\phi_3 = \exists x, x + 1 = 0$ (fausse). *)
 
-(* In[42]: *)
+(* In[43]: *)
 
 
 let formule_1 = Exists(L('x'), Equal(L('x'), I(3)));;
 let formule_2 = Exists(L('x'), Exists(L('y'), PlusEqual(L('x'), L('y'), I(10))));;
 let formule_3 = Exists(L('x'), PlusEqual(L('x'), I(1), I(0)));;
 
-(* In[43]: *)
+(* In[44]: *)
 
 
 print_endline (formule_vers_chaine formule_1);;
 print_endline (formule_vers_chaine formule_2);;
 print_endline (formule_vers_chaine formule_3);;
 
-(* In[51]: *)
+(* In[45]: *)
 
 
 print_latex (formule_vers_latex formule_1);;
@@ -674,7 +674,7 @@ print_latex (formule_vers_latex formule_3);;
 
 (* ### Vérification de l'écriture préfixe pour des formules de Presburger *)
 
-(* In[44]: *)
+(* In[46]: *)
 
 
 let sy1 = formule_vers_symboles formule_1;;
@@ -683,7 +683,7 @@ let sy3 = formule_vers_symboles formule_3;;
 
 (* Elles sont évidemment bien formées. *)
 
-(* In[45]: *)
+(* In[47]: *)
 
 
 let _ = ecriture_prefixe_valide sy1 arite_presburger;; (* true *)
@@ -692,14 +692,14 @@ let _ = ecriture_prefixe_valide sy3 arite_presburger;; (* true *);;
 
 (* On peut regarder d'autres suites de symboles qui ne sont pas valides. *)
 
-(* In[46]: *)
+(* In[48]: *)
 
 
 let sy4 = [Ex; Let; Eq; Let; Eq];;
 let sy5 = [Ex; Let; Ex; Let; Eq; Let; Let; Cst];;
 let sy6 = [Ex; Let; PEq; Let; Eq; Cst];;
 
-(* In[47]: *)
+(* In[49]: *)
 
 
 let _ = ecriture_prefixe_valide_info sy4 arite_presburger;; (* Some 4 *)
