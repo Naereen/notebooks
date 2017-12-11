@@ -143,7 +143,7 @@ let ecriture_prefixe_valide (l : 'a list) (arite : 'a -> int) : bool =
 let _ = ecriture_prefixe_valide ex_correct   arite_calcul_prop;; (* true *)
 let _ = ecriture_prefixe_valide ex_incorrect arite_calcul_prop;; (* false *)
 let _ = ecriture_prefixe_valide ex_ite       arite_calcul_prop;; (* true *)
-let _ = ecriture_prefixe_valide ex_vide      arite_calcul_prop;; (* false *)
+let _ = ecriture_prefixe_valide ex_vide      arite_calcul_prop;; (* false *);;
 
 (* ### Vérification et localisation de la première erreur
 Avec la remarque précédente, on peut écrire une fonction très similaire, mais qui donnera une indication sur la position (i.e., l'indice) du premier symbole qui fait que le mot n'est pas bien équilibré, si le mot n'est pas bien formé. Si le mot est bien formé, `None` est renvoyé. *)
@@ -178,7 +178,7 @@ let ecriture_prefixe_valide_info (l : 'a list) (arite : 'a -> int) : int option 
 let _ = ecriture_prefixe_valide_info ex_correct   arite_calcul_prop;; (* None *)
 let _ = ecriture_prefixe_valide_info ex_incorrect arite_calcul_prop;; (* Some 3 *)
 let _ = ecriture_prefixe_valide_info ex_ite       arite_calcul_prop;; (* None *)
-let _ = ecriture_prefixe_valide_info ex_vide      arite_calcul_prop;; (* Some 0 *)
+let _ = ecriture_prefixe_valide_info ex_vide      arite_calcul_prop;; (* Some 0 *);;
 
 (* Cela permet de voir que sur la formule "$\mathrm{Ou} \; \mathrm{Non} \; F \; \mathrm{Non}$", le premier symbole à poser problème est le dernier symbole.
 Et effectivement, le critère est vérifié jusqu'au dernier symbole $\mathrm{Non}$. *)
@@ -192,7 +192,7 @@ Avec les mêmes exemples : *)
 let _ = ecriture_prefixe_valide ex_correct   arite_calcul_prop;; (* true *)
 let _ = ecriture_prefixe_valide ex_incorrect arite_calcul_prop;; (* false *)
 let _ = ecriture_prefixe_valide ex_ite       arite_calcul_prop;; (* true *)
-let _ = ecriture_prefixe_valide ex_vide      arite_calcul_prop;; (* false *)
+let _ = ecriture_prefixe_valide ex_vide      arite_calcul_prop;; (* false *);;
 
 (* On peut aussi transformer un peu la deuxième formule pour la rendre valide. *)
 
@@ -200,7 +200,7 @@ let _ = ecriture_prefixe_valide ex_vide      arite_calcul_prop;; (* false *)
 
 
 let ex_correct_2 = [Ou; Non; F; V];;
-let _ = ecriture_prefixe_valide ex_correct_2   arite_calcul_prop;; (* true *)
+let _ = ecriture_prefixe_valide ex_correct_2   arite_calcul_prop;; (* true *);;
 
 (* ## Bonus : évaluation d'un terme
 
@@ -221,7 +221,7 @@ Cette fonction renvoie un couple de listes :
 - la liste des `k` éléments en sommet de la pile `p` de sorte que le sommet de la pile `p` se trouve en dernière position dans cette liste,
 - et la pile `p` une fois qu'on a dépilé ses `k` éléments du sommet. *)
 
-(* In[14]: *)
+(* In[11]: *)
 
 
 let depile (k : int) (p : 'a list) : ('a list * 'a list) =
@@ -240,7 +240,7 @@ let depile (k : int) (p : 'a list) : ('a list * 'a list) =
 
 (* Il est absolument crucial de faire *au moins un test* à ce moment là : *)
 
-(* In[15]: *)
+(* In[12]: *)
 
 
 depile 0 [0; 1; 2; 3; 4; 5; 6; 7];;
@@ -253,7 +253,7 @@ Notez que la première liste a été retournée ("renversée"), puisque les vale
 
 On peut aussi proposer une implémentation alternative, moins élégante mais plus rapide à écrire, avec des tableaux, et deux appels à `Array.sub` pour découper le tableau, et `Array.of_list` et `Array.to_list` pour passer d'une liste à un tableau puis de deux tableaux à deux listes. *)
 
-(* In[16]: *)
+(* In[13]: *)
 
 
 let depile_2 (k : int) (p : 'a list) : ('a list * 'a list) =
@@ -263,7 +263,7 @@ let depile_2 (k : int) (p : 'a list) : ('a list * 'a list) =
     (List.rev (Array.to_list debut)), (Array.to_list fin)
 ;;
 
-(* In[17]: *)
+(* In[14]: *)
 
 
 depile_2 0 [0; 1; 2; 3; 4; 5; 6; 7];;
@@ -277,7 +277,7 @@ Cette fonction prend en entrée une liste `interpretation` de couples (symbole, 
 
 Avec les notations mathématiques du texte, le symbole `t` est $\omega$ et `f_t` est $\overline{\omega}$ ("omegabarre" dans l'algorithme). *)
 
-(* In[18]: *)
+(* In[15]: *)
 
 
 let interprete (interpretation : ('a * ('d list -> 'd)) list) (t : 'a) (arg : 'd list) : 'd =
@@ -289,7 +289,7 @@ Notez que pour faciliter le typage, ces fonctions recoivent la pile, i.e., une *
 
 > Les fonctions échouent si la pile donnée n'est pas assez profondes, bien évidemment. *)
 
-(* In[19]: *)
+(* In[16]: *)
 
 
 let interp_V   _  = true;;
@@ -301,7 +301,7 @@ let interp_ITE l  = if (List.hd l) then (List.hd (List.tl l)) else (List.hd (Lis
 
 (* Ensuite, on crée cette liste d'association, qui permet d'associer à un symbole $\omega$ sa fonction $\overline{\omega}$ : *)
 
-(* In[20]: *)
+(* In[17]: *)
 
 
 let interp_calcul_prop = [
@@ -319,7 +319,7 @@ Elle renvoie le résultat de l'évaluation du terme `l` pour l'interpretation `i
 
 L'algorithme est annoncé correct par le théorème 2, non prouvé dans le texte (ça peut être une idée de développement à faire au tableau). *)
 
-(* In[21]: *)
+(* In[18]: *)
 
 
 let evalue (l : 'a list) (arite : 'a -> int) (interpretation : ('a * ('d list -> 'd)) list) : 'd =
@@ -345,7 +345,7 @@ En d'autres termes, l'évaluation d'un terme postfixe par la méthode naïve, ut
 
 ![images/exemple_terme.png](images/exemple_terme.png) *)
 
-(* In[22]: *)
+(* In[19]: *)
 
 
 let ex1 = List.rev [ Ou; Non; V; Ou; V; F ];; (* écriture préfixe *)
@@ -359,7 +359,7 @@ let _ = evalue ex1 arite_calcul_prop interp_calcul_prop;;
 
 $$ (F \vee \neg V) \vee (\neg (V \vee F)) \;\; \;\; \underset{\text{Interpretation}}{\longrightarrow} \;\; \;\; F $$ *)
 
-(* In[23]: *)
+(* In[20]: *)
 
 
 let ex2 = [F; V; Ou; Non; V; Non; F; Ou; Ou];;
@@ -369,7 +369,7 @@ let _ = evalue ex2 arite_calcul_prop interp_calcul_prop;;
 
 On considère un second exemple : l'interprétation choisie consiste à construire **l'arbre syntaxique** d'une formule du calcul propositionnel. *)
 
-(* In[24]: *)
+(* In[21]: *)
 
 
 type arbre =
@@ -379,7 +379,7 @@ type arbre =
     | NITE of arbre * arbre * arbre                (* Arité 3 *)
 ;;
 
-(* In[25]: *)
+(* In[22]: *)
 
 
 let interp_V_a _    = FeuilleV;;
@@ -389,7 +389,7 @@ let interp_Ou_a l   = NOu ( (List.hd l), (List.hd (List.tl l) ) );;
 let interp_Et_a l   = NEt ( (List.hd l), (List.hd (List.tl l) ) );;
 let interp_ITE_a l  = NITE ( (List.hd l), (List.hd (List.tl l) ), (List.hd (List.tl (List.tl l) ) ) );;
 
-(* In[26]: *)
+(* In[23]: *)
 
 
 let interp_calcul_prop_a = [
@@ -399,13 +399,88 @@ let interp_calcul_prop_a = [
     (ITE, interp_ITE_a);                   (* Arité 3 *)
 ];;
 
-(* In[27]: *)
+(* In[24]: *)
 
 
 let _ = ex2;;
 let _ = evalue ex2 arite_calcul_prop interp_calcul_prop_a;;
 
-(* > Un bonus pourrait être de jouer avec l'API du notebook Jupyter, [accessible depuis OCaml via le kernel IOCaml](https://github.com/andrewray/iocaml/), pour afficher joliment le terme en $\LaTeX{}$. *)
+(* > Un bonus rapide va être de jouer avec l'API du notebook Jupyter, [accessible depuis OCaml via le kernel OCaml-Jupyter](https://github.com/akabe/ocaml-jupyter/), pour afficher joliment le terme en $\LaTeX{}$. *)
+
+(* In[30]: *)
+
+
+#thread;;
+
+(* In[31]: *)
+
+
+#require "jupyter";;
+#require "jupyter.notebook";;
+
+(* In[36]: *)
+
+
+let print_latex (s : string) = JupyterNotebook.display "text/html" ("$$" ^ s ^ "$$");;
+
+(* In[37]: *)
+
+
+print_latex "\\cos(x)";;
+
+(* In[57]: *)
+
+
+let symbole_to_latex (sym : symbole_calcul_prop) =
+    match sym with
+    | ITE -> "\\implies"
+    | Ou -> "\\vee"
+    | Et -> "\\wedge"
+    | Non -> "\\neg"
+    | V -> "V" | F -> "F"
+;;
+
+(* In[58]: *)
+
+
+let formule_to_latex (form : symbole_calcul_prop list) =
+    String.concat " " (List.map symbole_to_latex form)
+;;
+
+(* In[66]: *)
+
+
+print_latex (formule_to_latex ex2);;
+
+(* Sans prendre en compte la structure d'arbre, c'est très moche ! *)
+
+(* In[60]: *)
+
+
+let rec arbre_to_latex (arb : arbre) =
+    match arb with
+    | FeuilleV -> "V"
+    | FeuilleF -> "F"
+    | NNon(a) -> "(\\neg " ^ (arbre_to_latex a) ^ ")"
+    | NEt(a, b) -> "(" ^ (arbre_to_latex a) ^ " \\wedge " ^ (arbre_to_latex b) ^ ")"
+    | NOu(a, b) -> "(" ^ (arbre_to_latex a) ^ " \\vee " ^ (arbre_to_latex b) ^ ")"
+    | NITE(a, b, c) -> "(" ^ (arbre_to_latex a) ^ " ? " ^ (arbre_to_latex b) ^ " : " ^ (arbre_to_latex c) ^ ")"
+;;
+
+let formule_to_latex2 (form : symbole_calcul_prop list) =
+    let arb = evalue form arite_calcul_prop interp_calcul_prop_a in
+    arbre_to_latex arb
+;;
+
+(* In[64]: *)
+
+
+let _ = evalue ex2 arite_calcul_prop interp_calcul_prop_a;;
+
+(* In[65]: *)
+
+
+print_latex (formule_to_latex2 ex2);;
 
 (* ----
 ## Bonus : un autre exemple
@@ -425,7 +500,7 @@ En gros, c'est l'arithmétique avec :
 
 (* ### Symboles et arités *)
 
-(* In[28]: *)
+(* In[67]: *)
 
 
 type symbole_presburger =
@@ -434,7 +509,7 @@ type symbole_presburger =
 
 (* Avec ces symboles, on définit facilement leur arités. *)
 
-(* In[29]: *)
+(* In[68]: *)
 
 
 let arite_presburger (s : symbole_presburger) : int =
@@ -465,14 +540,14 @@ A noter que cet exemple nécessite des signatures non homogènes :
 
 (* Plutôt que de travailler avec des listes de symboles, on définit une structure arborescente pour les formules de l'arithmétique de Presburger. *)
 
-(* In[30]: *)
+(* In[69]: *)
 
 
 type entier = int ;;
 type lettre = char ;;
 type cst = I of entier | L of lettre ;;
 
-(* In[31]: *)
+(* In[70]: *)
 
 
 type formule_presburger =
@@ -481,11 +556,11 @@ type formule_presburger =
     | Or of formule_presburger * formule_presburger
     | And of formule_presburger * formule_presburger
     | Not of formule_presburger
-    | Exists of cst * formule_presburger
+    | Exists of cst * formule_presburger;;
 
 (* Ces formules peuvent facilement s'écrire comme un terme en notation préfixes : *)
 
-(* In[33]: *)
+(* In[71]: *)
 
 
 let rec formule_vers_symboles form =
@@ -512,13 +587,13 @@ let rec formule_vers_symboles form =
 
 (* On peut aussi afficher une formule, en la convertissant vers une chaîne de caractère : *)
 
-(* In[34]: *)
+(* In[72]: *)
 
 
 let i = string_of_int ;;
 let c car = String.make 1 car ;;
 
-(* In[35]: *)
+(* In[73]: *)
 
 
 let rec formule_vers_chaine form =
@@ -551,14 +626,14 @@ Des formules bien formées :
 - $\phi_2 = \exists x, \exists y, x + y = 10$, (vraie).
 - $\phi_3 = \exists x, x + 1 = 0$ (fausse). *)
 
-(* In[36]: *)
+(* In[74]: *)
 
 
 let formule_1 = Exists(L('x'), Equal(L('x'), I(3)));;
 let formule_2 = Exists(L('x'), Exists(L('y'), PlusEqual(L('x'), L('y'), I(10))));;
 let formule_3 = Exists(L('x'), PlusEqual(L('x'), I(1), I(0)));;
 
-(* In[37]: *)
+(* In[75]: *)
 
 
 print_endline (formule_vers_chaine formule_1);;
@@ -567,7 +642,7 @@ print_endline (formule_vers_chaine formule_3);;
 
 (* ### Vérification de l'écriture préfixe pour des formules de Presburger *)
 
-(* In[38]: *)
+(* In[76]: *)
 
 
 let sy1 = formule_vers_symboles formule_1;;
@@ -576,28 +651,28 @@ let sy3 = formule_vers_symboles formule_3;;
 
 (* Elles sont évidemment bien formées. *)
 
-(* In[39]: *)
+(* In[77]: *)
 
 
 let _ = ecriture_prefixe_valide sy1 arite_presburger;; (* true *)
 let _ = ecriture_prefixe_valide sy2 arite_presburger;; (* true *)
-let _ = ecriture_prefixe_valide sy3 arite_presburger;; (* true *)
+let _ = ecriture_prefixe_valide sy3 arite_presburger;; (* true *);;
 
 (* On peut regarder d'autres suites de symboles qui ne sont pas valides. *)
 
-(* In[40]: *)
+(* In[78]: *)
 
 
 let sy4 = [Ex; Let; Eq; Let; Eq];;
 let sy5 = [Ex; Let; Ex; Let; Eq; Let; Let; Cst];;
 let sy6 = [Ex; Let; PEq; Let; Eq; Cst];;
 
-(* In[41]: *)
+(* In[79]: *)
 
 
 let _ = ecriture_prefixe_valide_info sy4 arite_presburger;; (* Some 4 *)
 let _ = ecriture_prefixe_valide_info sy5 arite_presburger;; (* Some 6 *)
-let _ = ecriture_prefixe_valide_info sy6 arite_presburger;; (* Some 5 *)
+let _ = ecriture_prefixe_valide_info sy6 arite_presburger;; (* Some 5 *);;
 
 (* Ça suffit pour cet exemple, on voulait juste montrer une autre utilisation de cette fonction `ecriture_prefixe_valide`.
 
