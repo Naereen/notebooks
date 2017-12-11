@@ -407,28 +407,28 @@ let _ = evalue ex2 arite_calcul_prop interp_calcul_prop_a;;
 
 (* > Un bonus rapide va être de jouer avec l'API du notebook Jupyter, [accessible depuis OCaml via le kernel OCaml-Jupyter](https://github.com/akabe/ocaml-jupyter/), pour afficher joliment le terme en $\LaTeX{}$. *)
 
-(* In[30]: *)
+(* In[25]: *)
 
 
 #thread;;
 
-(* In[31]: *)
+(* In[26]: *)
 
 
 #require "jupyter";;
 #require "jupyter.notebook";;
 
-(* In[36]: *)
+(* In[27]: *)
 
 
 let print_latex (s : string) = JupyterNotebook.display "text/html" ("$$" ^ s ^ "$$");;
 
-(* In[37]: *)
+(* In[28]: *)
 
 
 print_latex "\\cos(x)";;
 
-(* In[57]: *)
+(* In[29]: *)
 
 
 let symbole_to_latex (sym : symbole_calcul_prop) =
@@ -440,21 +440,21 @@ let symbole_to_latex (sym : symbole_calcul_prop) =
     | V -> "V" | F -> "F"
 ;;
 
-(* In[58]: *)
+(* In[30]: *)
 
 
 let formule_to_latex (form : symbole_calcul_prop list) =
     String.concat " " (List.map symbole_to_latex form)
 ;;
 
-(* In[66]: *)
+(* In[31]: *)
 
 
 print_latex (formule_to_latex ex2);;
 
 (* Sans prendre en compte la structure d'arbre, c'est très moche ! *)
 
-(* In[60]: *)
+(* In[32]: *)
 
 
 let rec arbre_to_latex (arb : arbre) =
@@ -472,12 +472,12 @@ let formule_to_latex2 (form : symbole_calcul_prop list) =
     arbre_to_latex arb
 ;;
 
-(* In[64]: *)
+(* In[33]: *)
 
 
 let _ = evalue ex2 arite_calcul_prop interp_calcul_prop_a;;
 
-(* In[65]: *)
+(* In[34]: *)
 
 
 print_latex (formule_to_latex2 ex2);;
@@ -500,7 +500,7 @@ En gros, c'est l'arithmétique avec :
 
 (* ### Symboles et arités *)
 
-(* In[67]: *)
+(* In[35]: *)
 
 
 type symbole_presburger =
@@ -509,7 +509,7 @@ type symbole_presburger =
 
 (* Avec ces symboles, on définit facilement leur arités. *)
 
-(* In[68]: *)
+(* In[36]: *)
 
 
 let arite_presburger (s : symbole_presburger) : int =
@@ -540,14 +540,14 @@ A noter que cet exemple nécessite des signatures non homogènes :
 
 (* Plutôt que de travailler avec des listes de symboles, on définit une structure arborescente pour les formules de l'arithmétique de Presburger. *)
 
-(* In[69]: *)
+(* In[37]: *)
 
 
 type entier = int ;;
 type lettre = char ;;
 type cst = I of entier | L of lettre ;;
 
-(* In[70]: *)
+(* In[38]: *)
 
 
 type formule_presburger =
@@ -560,7 +560,7 @@ type formule_presburger =
 
 (* Ces formules peuvent facilement s'écrire comme un terme en notation préfixes : *)
 
-(* In[71]: *)
+(* In[39]: *)
 
 
 let rec formule_vers_symboles form =
@@ -587,13 +587,13 @@ let rec formule_vers_symboles form =
 
 (* On peut aussi afficher une formule, en la convertissant vers une chaîne de caractère : *)
 
-(* In[72]: *)
+(* In[40]: *)
 
 
 let i = string_of_int ;;
 let c car = String.make 1 car ;;
 
-(* In[73]: *)
+(* In[41]: *)
 
 
 let rec formule_vers_chaine form =
@@ -616,6 +616,31 @@ let rec formule_vers_chaine form =
     | Exists(L(x), a) -> "E" ^ (c x) ^ ", " ^ (formule_vers_chaine a)
 ;;
 
+(* Et en bonus, on affiche aussi avec une chaîne en $\LaTeX$ : *)
+
+(* In[50]: *)
+
+
+let rec formule_vers_latex form =
+    match form with
+    | Equal(L(x), L(y)) -> (c x) ^ "=" ^ (c y)
+    | Equal(I(x), L(y)) -> (i x) ^ "=" ^ (c y)
+    | Equal(L(x), I(y)) -> (c x) ^ "=" ^ (i y)
+    | Equal(I(x), I(y)) -> (i x) ^ "=" ^ (i y)
+    | PlusEqual(L(x), L(y), L(z)) -> (c x) ^ "+" ^ (c y) ^ "=" ^ (c z)
+    | PlusEqual(I(x), L(y), L(z)) -> (i x) ^ "+" ^ (c y) ^ "=" ^ (c z)
+    | PlusEqual(L(x), I(y), L(z)) -> (c x) ^ "+" ^ (i y) ^ "=" ^ (c z)
+    | PlusEqual(I(x), I(y), L(z)) -> (i x) ^ "+" ^ (i y) ^ "=" ^ (c z)
+    | PlusEqual(L(x), L(y), I(z)) -> (c x) ^ "+" ^ (c y) ^ "=" ^ (i z)
+    | PlusEqual(I(x), L(y), I(z)) -> (i x) ^ "+" ^ (c y) ^ "=" ^ (i z)
+    | PlusEqual(L(x), I(y), I(z)) -> (c x) ^ "+" ^ (i y) ^ "=" ^ (i z)
+    | PlusEqual(I(x), I(y), I(z)) -> (i x) ^ "+" ^ (i y) ^ "=" ^ (i z)
+    | Or(a, b) -> (formule_vers_latex a) ^ "\\vee" ^ (formule_vers_latex b)
+    | And(a, b) -> (formule_vers_latex a) ^ "\\wedge" ^ (formule_vers_latex b)
+    | Not(a) -> "\\neg" ^ (formule_vers_latex a)
+    | Exists(L(x), a) -> "\\exists " ^ (c x) ^ ", " ^ (formule_vers_latex a)
+;;
+
 (* ### Quelques exemples de formules de Presburger
 On peut prendre quelques exemples de formules, et les convertir en liste de symboles.
 Notez qu'on perd l'information des constantes et des lettres !
@@ -626,23 +651,30 @@ Des formules bien formées :
 - $\phi_2 = \exists x, \exists y, x + y = 10$, (vraie).
 - $\phi_3 = \exists x, x + 1 = 0$ (fausse). *)
 
-(* In[74]: *)
+(* In[42]: *)
 
 
 let formule_1 = Exists(L('x'), Equal(L('x'), I(3)));;
 let formule_2 = Exists(L('x'), Exists(L('y'), PlusEqual(L('x'), L('y'), I(10))));;
 let formule_3 = Exists(L('x'), PlusEqual(L('x'), I(1), I(0)));;
 
-(* In[75]: *)
+(* In[43]: *)
 
 
 print_endline (formule_vers_chaine formule_1);;
 print_endline (formule_vers_chaine formule_2);;
 print_endline (formule_vers_chaine formule_3);;
 
+(* In[51]: *)
+
+
+print_latex (formule_vers_latex formule_1);;
+print_latex (formule_vers_latex formule_2);;
+print_latex (formule_vers_latex formule_3);;
+
 (* ### Vérification de l'écriture préfixe pour des formules de Presburger *)
 
-(* In[76]: *)
+(* In[44]: *)
 
 
 let sy1 = formule_vers_symboles formule_1;;
@@ -651,7 +683,7 @@ let sy3 = formule_vers_symboles formule_3;;
 
 (* Elles sont évidemment bien formées. *)
 
-(* In[77]: *)
+(* In[45]: *)
 
 
 let _ = ecriture_prefixe_valide sy1 arite_presburger;; (* true *)
@@ -660,14 +692,14 @@ let _ = ecriture_prefixe_valide sy3 arite_presburger;; (* true *);;
 
 (* On peut regarder d'autres suites de symboles qui ne sont pas valides. *)
 
-(* In[78]: *)
+(* In[46]: *)
 
 
 let sy4 = [Ex; Let; Eq; Let; Eq];;
 let sy5 = [Ex; Let; Ex; Let; Eq; Let; Let; Cst];;
 let sy6 = [Ex; Let; PEq; Let; Eq; Cst];;
 
-(* In[79]: *)
+(* In[47]: *)
 
 
 let _ = ecriture_prefixe_valide_info sy4 arite_presburger;; (* Some 4 *)
