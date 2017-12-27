@@ -144,7 +144,7 @@ sudo pip install octave_kernel
 python -m octave_kernel.install
 ```
 
-#### 2.b.3. [OCaml kernel](https://github.com/akabe/ocaml-jupyter)
+#### 2.b.3. [OCaml kernel: `OCaml-Jupyter`](https://github.com/akabe/ocaml-jupyter)
 It is quite easy to install, with [opam](https://opam.ocaml.org/):
 ```bash
 opam install jupyter
@@ -164,7 +164,7 @@ opam install jupyter
 
 ## :scroll: License ? [![GitHub license](https://img.shields.io/github/license/Naereen/notebooks.svg)](https://github.com/Naereen/notebooks/blob/master/LICENSE)
 All the notebooks in this repository are published under the terms of the [MIT License](https://lbesson.mit-license.org/) (file [LICENSE.txt](LICENSE.txt)).
-© [Lilian Besson](https://GitHub.com/Naereen), 2016-17.
+© [Lilian Besson](https://GitHub.com/Naereen), 2016-18.
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/notebooks/graphs/commit-activity)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
