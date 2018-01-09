@@ -11,7 +11,7 @@ https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
 
 (* # Texte d'oral de modélisation - Agrégation Option Informatique
 ## Préparation à l'agrégation - ENS de Rennes, 2017-18
-- *Date* : 12 janvier 2017, démonstration d'un oral d'agrégation.
+- *Date* : 12 janvier 2018, démonstration d'un oral d'agrégation.
 - *Auteur* : [Lilian Besson](https://GitHub.com/Naereen/notebooks/)
 - *Texte*: Annale 2008, ["Robots"](http://agreg.org/Textes/pub2008-D1.pdf) *)
 
@@ -594,6 +594,7 @@ On ne va pas en faire plus, mais cela suffit de montrer la pertinence de cette a
 > Merci d'avoir lu jusque là ! *)
 
 (* ----
+
 ## Conclusion
 
 Voilà pour la question obligatoire de programmation :
@@ -602,6 +603,7 @@ Voilà pour la question obligatoire de programmation :
 - on a traité l'exemple du texte, et deux exemples assez proches.
 - on a fait des exemples et *on les garde* dans ce qu'on présente au jury.
 - on a essayé de faire *un peu plus*, en suivant une des directions suggérées par le texte.
+
 
 > Bien-sûr, ce petit notebook ne se prétend pas être une solution optimale, ni exhaustive.
 
