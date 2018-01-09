@@ -20,13 +20,13 @@ https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
 - Ce document est un [notebook Jupyter](https://www.Jupyter.org/), et [est open-source sous Licence MIT sur GitHub](https://github.com/Naereen/notebooks/tree/master/agreg/), comme les autres solutions de textes de modélisation que [j](https://GitHub.com/Naereen)'ai écrite cette année.
 - L'implémentation sera faite en OCaml, version 4+ : *)
 
-(* In[1]: *)
+(* In[2]: *)
 
 
 print_endline Sys.ocaml_version;;
 Sys.command "ocaml -version";;
 
-(* In[2]: *)
+(* In[3]: *)
 
 
 let print = Printf.printf;;
@@ -53,7 +53,7 @@ Elle pourrait être traitée avec un automate ou graphe produit non simplifié, 
 (* ### Choix des structures de données
 En utilisant des tableaux, `int array`, au lieu de listes, pour représenter les états $u$ on peut modifier l'état *en place* ! *)
 
-(* In[3]: *)
+(* In[4]: *)
 
 
 type etat = int array;;
@@ -63,7 +63,7 @@ type liste_rdv = (int array) array;;
 
 ![Premier exemple de robots](images/robots_exemple1.png) *)
 
-(* In[4]: *)
+(* In[5]: *)
 
 
 let ex1_1 : etat = [| 1; 1; 2 |];;
@@ -75,7 +75,7 @@ let ex1 : liste_rdv = [|
 
 (* On peut facilement trouver la première position de `x` dans une liste et dans un tableau et `-1` sinon. *)
 
-(* In[5]: *)
+(* In[6]: *)
 
 
 let trouve (x:int) (a:int list) : int =
@@ -88,21 +88,21 @@ let trouve (x:int) (a:int list) : int =
     aux x a 0
 ;;
 
-(* In[6]: *)
+(* In[7]: *)
 
 
 let trouve_array (x : int) (a : int array) : int =
     trouve x (Array.to_list a)
 ;;
 
-(* In[7]: *)
+(* In[8]: *)
 
 
 let _ = trouve_array 2 ex1_1;; (* 2 *);;
 
 (* On a besoin de pouvoir obtenir la liste des paires de robots pouvant réaliser un rendez-vous. *)
 
-(* In[8]: *)
+(* In[9]: *)
 
 
 let rdv (u : etat) : ((int * int) list) = 
@@ -120,12 +120,12 @@ let rdv (u : etat) : ((int * int) list) =
 
 (* Un rapide, pour visualiser le fonctionnement de la fonction `rdv`. *)
 
-(* In[9]: *)
+(* In[10]: *)
 
 
 let _ = rdv ex1_1 ;;
 
-(* In[10]: *)
+(* In[11]: *)
 
 
 let ex3_1 = [| 1; 2; 1; 4; 4 |];;
@@ -140,7 +140,7 @@ Pour une fonction comme ça, il faut absolument :
 - utiliser des variables intermédiaires,
 - et des noms de variables un peu explicites (attention aux `1`, `i`, `I` et `l` qui se ressemblent beaucoup une fois projetés au tableau !). *)
 
-(* In[11]: *)
+(* In[12]: *)
 
 
 let realise_rdv (u : etat) (lr : liste_rdv) (xy : int * int) : etat =
@@ -154,7 +154,7 @@ let realise_rdv (u : etat) (lr : liste_rdv) (xy : int * int) : etat =
 
 (* Un rapide, pour visualiser le fonctionnement de la fonction `realise_rdv`. *)
 
-(* In[12]: *)
+(* In[13]: *)
 
 
 let u = [| 0; 0; 1 |];;
@@ -163,7 +163,7 @@ let _ = realise_rdv u l (0, 1) ;;
 
 (* On vérifie que l'état `u` a bien été modifié en place : *)
 
-(* In[13]: *)
+(* In[14]: *)
 
 
 u;;
@@ -171,17 +171,17 @@ u;;
 (* ### Fonction `transition`
 Et enfin, on calcule l'état suivant $u_1$ à partir de l'état $u_0$, en appliquant la fonction `realise_rdv` à chaque état qui peut être modifié. *)
 
-(* In[14]: *)
+(* In[15]: *)
 
 
 let transition (u0 : etat) (l0 : liste_rdv) : etat =
-    List.iter (realise_rdv u0 l0) (rdv u0);
+    List.iter (fun u -> ignore (realise_rdv u0 l0 u)) (rdv u0);
     u0
 ;;
 
 (* On effectue `n` transitions successives, <span style="color:red;">non pas avec une approche récursive (qui ne serait pas récursive terminale, et donc avec une mémoire de pile d'appel linéaire en $\mathcal{O}(n)$), mais avec une simple boucle `for`</span>. *)
 
-(* In[15]: *)
+(* In[16]: *)
 
 
 let rec n_transitions_trop_couteux (u : etat) (l : liste_rdv) (n : int) : etat =
@@ -191,7 +191,7 @@ let rec n_transitions_trop_couteux (u : etat) (l : liste_rdv) (n : int) : etat =
         n_transitions_trop_couteux (transition u l) l (n-1)
 ;;
 
-(* In[16]: *)
+(* In[17]: *)
 
 
 let n_transitions (u : etat) (l : liste_rdv) (n : int) : etat =
@@ -205,13 +205,13 @@ let n_transitions (u : etat) (l : liste_rdv) (n : int) : etat =
 (* ### Exemple
 Avec l'exemple du texte : *)
 
-(* In[17]: *)
+(* In[18]: *)
 
 
 let _ = ex1;;
 let _ = ex1_1;;
 
-(* In[18]: *)
+(* In[19]: *)
 
 
 let _ = transition ex1_1 ex1;;
@@ -223,7 +223,7 @@ let _ = transition ex1_1 ex1;;
 
 Quatre robots, $R_0$, $R_1$, $R_2$, $R_3$, ont comme liste de rendez-vous successifs, $T_0 = [0, 1, 2]$, $T_1 = [0]$, $T_2 = [1, 3]$ et $T_3 = [2, 3]$. *)
 
-(* In[19]: *)
+(* In[20]: *)
 
 
 let ex2 = [| [|0; 1; 2|]; [|0|]; [|1; 3|]; [|2; 3|] |];;
@@ -233,7 +233,7 @@ let _ = n_transitions ex2_1 ex2 3;;
 
 (* C'est trivial, mais il peut être utile de vérifier que `n_transitions 3` fait pareil que trois appels à `transition` : *)
 
-(* In[20]: *)
+(* In[21]: *)
 
 
 let ex2_1 = [| 0; 0; 1; 2 |];; (* il faut l'écrire, il a été modifié *)
@@ -244,7 +244,7 @@ let _ = transition ex2_1 ex2;;
 
 (* Avec un autre état initial : *)
 
-(* In[21]: *)
+(* In[22]: *)
 
 
 let ex2_2 = [| 0; 0; 3; 2 |];;
@@ -255,7 +255,7 @@ let _ = transition ex2_2 ex2;; (* On bloque !*);;
 
 (* Et avec encore un autre état initial : *)
 
-(* In[22]: *)
+(* In[23]: *)
 
 
 let ex2_3 = [| 0; 0; 3; 3 |];;
@@ -277,7 +277,7 @@ Le module [`Random`](http://caml.inria.fr/pub/docs/manual-ocaml/libref/Random.ht
 
 En Python, on a `numpy.random.choice` pour faire cet échantillonage pondéré, pas en Caml, donc on va l'écrire manuellement. *)
 
-(* In[23]: *)
+(* In[24]: *)
 
 
 Random.init 0;;
@@ -285,7 +285,7 @@ Random.init 0;;
 (* Etant donné une distribution discrète $\pi = (\pi_1,\dots,\pi_N)$ sur $\{1,\dots,N\}$, la fonction suivante permet de générer un indice $i$ tel que
 $$ \mathbb{P}(i = k) = \pi_k, \forall k \in \{1,\dots,N\}.$$ *)
 
-(* In[24]: *)
+(* In[25]: *)
 
 
 let weight_sampling (pi : float array) () =
@@ -301,7 +301,7 @@ let weight_sampling (pi : float array) () =
 
 (* Par exemple, tirer 100 échantillons suivant la distribution $\pi = [0.5, 0.1, 0.4]$ devrait donner environ $50$ fois $0$, $10$ fois $1$ et $40$ fois $2$ : *)
 
-(* In[25]: *)
+(* In[26]: *)
 
 
 let compte (a : 'a array) (x : 'a) : int =
@@ -321,7 +321,7 @@ compte echantillons 2;;
 (* ### Simuler une étape d'une chaîne de Markov ?
 On peut utiliser cette fonction pour suivre une transition, aléatoire, sur une chaîne de Markov. *)
 
-(* In[26]: *)
+(* In[27]: *)
 
 
 let markov_1 (a : float array array) (i : int) : int =
@@ -331,7 +331,7 @@ let markov_1 (a : float array array) (i : int) : int =
 
 (* Avec un petit exemple définit, on peut voir le résultat de $100$ transitions différentes depuis l'état $0$ : *)
 
-(* In[27]: *)
+(* In[28]: *)
 
 
 let a = [|
@@ -341,7 +341,7 @@ let a = [|
     |]
 ;;
 
-(* In[28]: *)
+(* In[29]: *)
 
 
 print "\n";;
@@ -352,7 +352,7 @@ flush_all ();;
 
 (* On peut suivre plusieurs transitions : *)
 
-(* In[29]: *)
+(* In[30]: *)
 
 
 let markov_n (a : float array array) (etat : int) (n : int) : int =
@@ -363,14 +363,14 @@ let markov_n (a : float array array) (etat : int) (n : int) : int =
     !u
 ;;
 
-(* In[30]: *)
+(* In[31]: *)
 
 
 markov_n a 0 10;;
 
 (* Et pour plusieurs robots, c'est pareil : chaque robots a un état (`robots.(i)`) et une matrice de transition (`a.(i)`) : *)
 
-(* In[31]: *)
+(* In[32]: *)
 
 
 let markovs_n (a : float array array array) (robots : int array) (n : int) : int array =
@@ -379,7 +379,7 @@ let markovs_n (a : float array array array) (robots : int array) (n : int) : int
 
 (* Si par exemple chaque état a la même matrice de transition : *)
 
-(* In[32]: *)
+(* In[33]: *)
 
 
 markovs_n [|a; a; a|] [|0; 1; 2|] 10;;
@@ -391,7 +391,7 @@ Plutôt que d'imposer à chaque robot un ordre fixe de ses rendez-vous, on va le
 - Cela demande de transformer la liste $T_1,\dots,T_n$ de rendez-vous en $n$ matrices de transition de chaînes de Markov, une par robot.
 - Et ensuite de simuler chaque chaîne de Markov, parant d'un état initial $T_i[0]$. *)
 
-(* In[33]: *)
+(* In[34]: *)
 
 
 (* Fonctions utiles *)
@@ -399,7 +399,7 @@ Array.init;;
 Array.make_matrix;;
 Array.iter;;
 
-(* In[34]: *)
+(* In[35]: *)
 
 
 let mat_proba_depuis_rdv (ts : int array array) : (float array array) array =
@@ -427,7 +427,7 @@ let mat_proba_depuis_rdv (ts : int array array) : (float array array) array =
 
 (* Avec les fonctions précédentes, on peut faire évoluer le système. *)
 
-(* In[35]: *)
+(* In[36]: *)
 
 
 let simule_markov_robots (ts : int array array)
@@ -445,28 +445,28 @@ L'approche probabiliste permettra, espérons, de résoudre ce problème.
 
 ![Premier exemple de robots](images/robots_exemple1.png) *)
 
-(* In[36]: *)
+(* In[37]: *)
 
 
 let ex3 = [| [|0; 2|]; [|1; 0|]; [|2; 1|]|] ;;
 
 (* On peut écrire une fonction qui récupère l'état initial dans lequel se trouve chaque robot (le texte donnait comme convention d'utiliser le premier de chaque liste). *)
 
-(* In[37]: *)
+(* In[38]: *)
 
 
 let premier_etat (rdvs : int array array) : int array =
     Array.init (Array.length rdvs) (fun i -> rdvs.(i).(0))
 ;;
 
-(* In[38]: *)
+(* In[39]: *)
 
 
 let ex3_1 = premier_etat ex3;;
 
 (* On vérifie la matrice de transition produite par `mat_proba_depuis_rdv` : *)
 
-(* In[39]: *)
+(* In[40]: *)
 
 
 mat_proba_depuis_rdv ex3;;
@@ -480,24 +480,24 @@ $$ \mathbf{A}_i := \begin{bmatrix}
 
 (* Et enfin on peut simuler le système, par exemple pour juste une étape, plusieurs fois (pour bien visualiser). *)
 
-(* In[40]: *)
+(* In[41]: *)
 
 
 simule_markov_robots ex3 ex3_1 0;;  (* rien à faire ! *);;
 
-(* In[41]: *)
+(* In[42]: *)
 
 
 simule_markov_robots ex3 ex3_1 1;;
 
 (* Pour mieux comprendre le fonctionnement, on va afficher les états intermédiaires. *)
 
-(* In[42]: *)
+(* In[43]: *)
 
 
 let print = Printf.printf;;
 
-(* In[43]: *)
+(* In[44]: *)
 
 
 let affiche_etat (etat : int array) =
@@ -506,12 +506,12 @@ let affiche_etat (etat : int array) =
     flush_all ();
 ;;
 
-(* In[44]: *)
+(* In[45]: *)
 
 
 affiche_etat ex3_1;;
 
-(* In[45]: *)
+(* In[46]: *)
 
 
 let u = ref ex3_1 in
@@ -525,7 +525,7 @@ Pas à chaque fois, mais presque.
 
 En tout cas, ça fonctionne mieux que l'approche naïve, peu importe l'état initial. *)
 
-(* In[46]: *)
+(* In[47]: *)
 
 
 let u = ref [| 0; 1; 1 |] in
@@ -543,36 +543,36 @@ Puis le second exemple :
 
 ![Premier exemple de robots](images/robots_exemple2.png) *)
 
-(* In[47]: *)
+(* In[48]: *)
 
 
 let ex4 = [| [|0; 3|]; [|0; 1|]; [|1; 2|]; [|2; 3|] |];;
 
-(* In[48]: *)
+(* In[49]: *)
 
 
 let ex4_1 = premier_etat ex4;;
 
 (* On vérifie la matrice de transition produite par `mat_proba_depuis_rdv` : *)
 
-(* In[49]: *)
+(* In[50]: *)
 
 
 mat_proba_depuis_rdv ex4;;
 
 (* Et enfin on peut simuler le système, par exemple pour juste une étape, plusieurs fois (pour bien visualiser). *)
 
-(* In[50]: *)
+(* In[51]: *)
 
 
 simule_markov_robots ex4 ex4_1 0;;  (* rien à faire ! *);;
 
-(* In[51]: *)
+(* In[52]: *)
 
 
 simule_markov_robots ex4 ex4_1 1;;
 
-(* In[52]: *)
+(* In[53]: *)
 
 
 let u = ref ex4_1 in
