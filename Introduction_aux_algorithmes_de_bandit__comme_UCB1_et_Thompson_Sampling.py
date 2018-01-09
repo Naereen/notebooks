@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#Introduction-aux-algorithmes-de-bandit-(UCB1,-Thompson-Sampling)" data-toc-modified-id="Introduction-aux-algorithmes-de-bandit-(UCB1,-Thompson-Sampling)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introduction aux <em>algorithmes de bandit</em> (UCB1, Thompson Sampling)</a></div><div class="lev2 toc-item"><a href="#Problèmes-de-bandit" data-toc-modified-id="Problèmes-de-bandit-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Problèmes de bandit</a></div><div class="lev3 toc-item"><a href="#Problèmes-stochastiques" data-toc-modified-id="Problèmes-stochastiques-111"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Problèmes stochastiques</a></div><div class="lev3 toc-item"><a href="#Radio-intelligente-?" data-toc-modified-id="Radio-intelligente-?-112"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>Radio intelligente ?</a></div><div class="lev2 toc-item"><a href="#Simulation-de-problèmes-de-bandit" data-toc-modified-id="Simulation-de-problèmes-de-bandit-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Simulation de problèmes de bandit</a></div><div class="lev2 toc-item"><a href="#Bras-stochastiques,-de-Bernoulli" data-toc-modified-id="Bras-stochastiques,-de-Bernoulli-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Bras stochastiques, de Bernoulli</a></div><div class="lev2 toc-item"><a href="#Présentation-des-algorithmes-de-bandit" data-toc-modified-id="Présentation-des-algorithmes-de-bandit-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Présentation des algorithmes de bandit</a></div><div class="lev2 toc-item"><a href="#Deux-algorithmes-naïfs" data-toc-modified-id="Deux-algorithmes-naïfs-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Deux algorithmes naïfs</a></div><div class="lev3 toc-item"><a href="#ChoixUniforme" data-toc-modified-id="ChoixUniforme-151"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span><code>ChoixUniforme</code></a></div><div class="lev3 toc-item"><a href="#MoyenneEmpirique" data-toc-modified-id="MoyenneEmpirique-152"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span><code>MoyenneEmpirique</code></a></div><div class="lev2 toc-item"><a href="#Approche-fréquentiste,-UCB1,-&quot;Upper-Confidence-Bound&quot;" data-toc-modified-id="Approche-fréquentiste,-UCB1,-&quot;Upper-Confidence-Bound&quot;-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Approche fréquentiste, UCB1, "Upper Confidence Bound"</a></div><div class="lev2 toc-item"><a href="#Approche-bayésienne,-Thompson-Sampling" data-toc-modified-id="Approche-bayésienne,-Thompson-Sampling-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Approche bayésienne, Thompson Sampling</a></div><div class="lev2 toc-item"><a href="#Exemples-de-simulations" data-toc-modified-id="Exemples-de-simulations-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Exemples de simulations</a></div><div class="lev3 toc-item"><a href="#Fonctions-pour-l'affichage" data-toc-modified-id="Fonctions-pour-l'affichage-181"><span class="toc-item-num">1.8.1&nbsp;&nbsp;</span>Fonctions pour l'affichage</a></div><div class="lev3 toc-item"><a href="#Premier-problème,-à-3-bras" data-toc-modified-id="Premier-problème,-à-3-bras-182"><span class="toc-item-num">1.8.2&nbsp;&nbsp;</span>Premier problème, à 3 bras</a></div><div class="lev3 toc-item"><a href="#Second-problème,-à-9-bras" data-toc-modified-id="Second-problème,-à-9-bras-183"><span class="toc-item-num">1.8.3&nbsp;&nbsp;</span>Second problème, à 9 bras</a></div><div class="lev3 toc-item"><a href="#Troisième-problème,-simulé-100-fois" data-toc-modified-id="Troisième-problème,-simulé-100-fois-184"><span class="toc-item-num">1.8.4&nbsp;&nbsp;</span>Troisième problème, simulé 100 fois</a></div><div class="lev3 toc-item"><a href="#Dernier-problème,-simulé-1000-fois" data-toc-modified-id="Dernier-problème,-simulé-1000-fois-185"><span class="toc-item-num">1.8.5&nbsp;&nbsp;</span>Dernier problème, simulé 1000 fois</a></div><div class="lev2 toc-item"><a href="#Une-autre-politique-d'indice-:-ApproximatedFHGittins" data-toc-modified-id="Une-autre-politique-d'indice-:-ApproximatedFHGittins-19"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Une autre politique d'indice : ApproximatedFHGittins</a></div><div class="lev3 toc-item"><a href="#Comparaison-de-ApproximatedFHGittins-avec-les-autres-algorithmes" data-toc-modified-id="Comparaison-de-ApproximatedFHGittins-avec-les-autres-algorithmes-191"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>Comparaison de <code>ApproximatedFHGittins</code> avec les autres algorithmes</a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-110"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Conclusion</a></div>
+#  <p><div class="lev1 toc-item"><a href="#Introduction-aux-algorithmes-de-bandit-(UCB1,-Thompson-Sampling)" data-toc-modified-id="Introduction-aux-algorithmes-de-bandit-(UCB1,-Thompson-Sampling)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introduction aux <em>algorithmes de bandit</em> (UCB1, Thompson Sampling)</a></div><div class="lev2 toc-item"><a href="#Problèmes-de-bandit" data-toc-modified-id="Problèmes-de-bandit-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Problèmes de bandit</a></div><div class="lev3 toc-item"><a href="#Problèmes-stochastiques" data-toc-modified-id="Problèmes-stochastiques-111"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Problèmes stochastiques</a></div><div class="lev3 toc-item"><a href="#Radio-intelligente-?" data-toc-modified-id="Radio-intelligente-?-112"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>Radio intelligente ?</a></div><div class="lev2 toc-item"><a href="#Simulation-de-problèmes-de-bandit" data-toc-modified-id="Simulation-de-problèmes-de-bandit-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Simulation de problèmes de bandit</a></div><div class="lev2 toc-item"><a href="#Bras-stochastiques,-de-Bernoulli" data-toc-modified-id="Bras-stochastiques,-de-Bernoulli-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Bras stochastiques, de Bernoulli</a></div><div class="lev2 toc-item"><a href="#Présentation-des-algorithmes-de-bandit" data-toc-modified-id="Présentation-des-algorithmes-de-bandit-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Présentation des algorithmes de bandit</a></div><div class="lev2 toc-item"><a href="#Deux-algorithmes-naïfs" data-toc-modified-id="Deux-algorithmes-naïfs-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Deux algorithmes naïfs</a></div><div class="lev3 toc-item"><a href="#ChoixUniforme" data-toc-modified-id="ChoixUniforme-151"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span><code>ChoixUniforme</code></a></div><div class="lev3 toc-item"><a href="#MoyenneEmpirique" data-toc-modified-id="MoyenneEmpirique-152"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span><code>MoyenneEmpirique</code></a></div><div class="lev2 toc-item"><a href="#Approche-fréquentiste,-UCB1,-&quot;Upper-Confidence-Bound&quot;" data-toc-modified-id="Approche-fréquentiste,-UCB1,-&quot;Upper-Confidence-Bound&quot;-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Approche fréquentiste, UCB1, "Upper Confidence Bound"</a></div><div class="lev2 toc-item"><a href="#Approche-fréquentiste-optimale,-KL-UCB,-&quot;Kullback-Leibler-UCB&quot;" data-toc-modified-id="Approche-fréquentiste-optimale,-KL-UCB,-&quot;Kullback-Leibler-UCB&quot;-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Approche fréquentiste optimale, KL-UCB, "Kullback-Leibler UCB"</a></div><div class="lev3 toc-item"><a href="#KL-binaire" data-toc-modified-id="KL-binaire-171"><span class="toc-item-num">1.7.1&nbsp;&nbsp;</span>KL binaire</a></div><div class="lev3 toc-item"><a href="#KLUCB" data-toc-modified-id="KLUCB-172"><span class="toc-item-num">1.7.2&nbsp;&nbsp;</span>KLUCB</a></div><div class="lev2 toc-item"><a href="#Approche-bayésienne,-Thompson-Sampling" data-toc-modified-id="Approche-bayésienne,-Thompson-Sampling-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Approche bayésienne, Thompson Sampling</a></div><div class="lev2 toc-item"><a href="#Exemples-de-simulations" data-toc-modified-id="Exemples-de-simulations-19"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Exemples de simulations</a></div><div class="lev3 toc-item"><a href="#Fonctions-pour-l'affichage" data-toc-modified-id="Fonctions-pour-l'affichage-191"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>Fonctions pour l'affichage</a></div><div class="lev3 toc-item"><a href="#Premier-problème,-à-3-bras" data-toc-modified-id="Premier-problème,-à-3-bras-192"><span class="toc-item-num">1.9.2&nbsp;&nbsp;</span>Premier problème, à 3 bras</a></div><div class="lev3 toc-item"><a href="#Second-problème,-à-9-bras" data-toc-modified-id="Second-problème,-à-9-bras-193"><span class="toc-item-num">1.9.3&nbsp;&nbsp;</span>Second problème, à 9 bras</a></div><div class="lev3 toc-item"><a href="#Troisième-problème,-simulé-100-fois" data-toc-modified-id="Troisième-problème,-simulé-100-fois-194"><span class="toc-item-num">1.9.4&nbsp;&nbsp;</span>Troisième problème, simulé 100 fois</a></div><div class="lev3 toc-item"><a href="#Dernier-problème" data-toc-modified-id="Dernier-problème-195"><span class="toc-item-num">1.9.5&nbsp;&nbsp;</span>Dernier problème</a></div><div class="lev2 toc-item"><a href="#Une-autre-politique-d'indice-:-ApproximatedFHGittins" data-toc-modified-id="Une-autre-politique-d'indice-:-ApproximatedFHGittins-110"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>Une autre politique d'indice : ApproximatedFHGittins</a></div><div class="lev3 toc-item"><a href="#Comparaison-de-ApproximatedFHGittins-avec-les-autres-algorithmes" data-toc-modified-id="Comparaison-de-ApproximatedFHGittins-avec-les-autres-algorithmes-1101"><span class="toc-item-num">1.10.1&nbsp;&nbsp;</span>Comparaison de <code>ApproximatedFHGittins</code> avec les autres algorithmes</a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-111"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>Conclusion</a></div>
 
 # # Introduction aux *algorithmes de bandit* (UCB1, Thompson Sampling)
 # Ce petit document est un [notebook Jupyter](https://www.jupyter.org), ayant pour but de présenter le concept de problèmes de bandit, comment les simuler et les résoudre, et deux algorithmes conçus dans ce but.
@@ -14,7 +14,7 @@
 # 
 # Dans ce but, j'utilise une approche *objet* : chaque morceau sera une classe, et des *instances* (des *objets*) seront utilisées pour toutes les composantes.
 
-# In[3]:
+# In[19]:
 
 
 # Dépendances
@@ -22,14 +22,21 @@ import numpy as np
 import random as rd
 
 
-# In[4]:
+# In[76]:
 
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
-sns.set(context="notebook", style="darkgrid", palette="hls", font="sans-serif", font_scale=1.4)
+sns.set(context="notebook", style="whitegrid", palette="hls", font="sans-serif", font_scale=1.4)
 from tqdm import tqdm_notebook as tqdm
+
+
+# In[181]:
+
+
+get_ipython().run_line_magic('load_ext', 'watermark')
+get_ipython().run_line_magic('watermark', '-v -m -a "Lilian Besson (Naereen)" -p scipy,numpy,matplotlib,sympy,seaborn -g')
 
 
 # ----
@@ -70,7 +77,7 @@ from tqdm import tqdm_notebook as tqdm
 #     + `A_t = choix()` pour choisir un bras, à chaque instant $t$, noté $A(t) \in \{1,\dots,K\}$,
 #     + `recompense(A_t, r_k_t)` pour donner la récompense `r_k_t` tirée du bras `A_t`.
 
-# In[5]:
+# In[21]:
 
 
 def simulation(bras, algorithme, horizon):
@@ -99,7 +106,7 @@ def simulation(bras, algorithme, horizon):
 # Les récompenses de tels bras, notées $r_k(t)$ pour le bras $k$ à l'instant $t$, sont tirées de façons identiquement distribuées et indépendantes, selon une loi de Bernoulli :
 # $$ \forall t\in\mathbb{N}, \forall k\in\{1,\dots,K\}, r_k(t) \in \{0,1\}, \;\text{et}\; r_k(t) \sim \mathrm{B}(\mu_k). $$
 
-# In[6]:
+# In[22]:
 
 
 class Bernoulli():
@@ -116,7 +123,7 @@ class Bernoulli():
 
 # Par exemple, on peut considérer le problème à trois bras ($K = 3$), caractérisé par ces paramètres $\boldsymbol{\mu} = [\mu_1,\dots,\mu_K] = [0.1, 0.5, 0.9]$ :
 
-# In[7]:
+# In[23]:
 
 
 mus = [ 0.1, 0.5, 0.9 ]
@@ -125,7 +132,7 @@ bras = [ Bernoulli(mu) for mu in mus ]
 
 # On peut prendre 10 échantillons de chaque bras, et vérifier leurs moyennes :
 
-# In[8]:
+# In[24]:
 
 
 rd.seed(10000)
@@ -134,7 +141,7 @@ exemples_echantillons = [ [ bras_k.tire() for _ in range(T) ] for bras_k in bras
 exemples_echantillons
 
 
-# In[9]:
+# In[25]:
 
 
 np.mean(exemples_echantillons, axis=1)
@@ -166,7 +173,7 @@ np.mean(exemples_echantillons, axis=1)
 
 # ### `ChoixUniforme`
 
-# In[10]:
+# In[26]:
 
 
 class ChoixUniforme(object):
@@ -194,7 +201,7 @@ class ChoixUniforme(object):
 # 
 # L'algorithme suivant est un peu plus complexe.
 
-# In[11]:
+# In[27]:
 
 
 class MoyenneEmpirique(object):
@@ -247,7 +254,7 @@ class MoyenneEmpirique(object):
 # 
 # > On va gagner du temps en *héritant* de la classe `MoyenneEmpirique` précédente. Ça permet de ne pas réécrire les méthodes qui sont déjà bien écrites.
 
-# In[12]:
+# In[28]:
 
 
 class UCB1(MoyenneEmpirique):
@@ -275,6 +282,99 @@ class UCB1(MoyenneEmpirique):
 
 
 # ----
+# ## Approche fréquentiste optimale, KL-UCB, "Kullback-Leibler UCB"
+
+# ### KL binaire
+# Pour $x,y\in\{0,1\}$, $x,y\neq 0,1$, $\mathrm{kl}(x,y)$, on définit [la divergence de Kullback-Leibler binaire](https://en.wikipedia.org/wiki/Bernoulli_distribution#Kullback.E2.80.93Leibler_divergence) de $x$ et $y$ comme la KL de deux lois de Bernoulli de moyennes $x$ et $y$, ce qui est défini comme :
+# $$\mathrm{kl}(x,y) := x \log\left(\frac{x}{y}\right) + (1-x)\log\left(\frac{1-x}{1-y}\right).$$
+# 
+# Pour vous facilier la tâche, la fonction $\mathrm{kl}$ est déjà implémentée, ainsi qu'une fonction pour résoudre (de façon approchée) le probl_me d'optimisation contrainte qui définit l'indice $g_k''(t)$.
+
+# In[29]:
+
+
+# Just forcing the ?? in Jupyter to be in the main document (to be saved) and not a floating window.
+# Thanks to https://nbviewer.jupyter.org/gist/minrk/7715212
+from __future__ import print_function
+from IPython.core import page
+def myprint(s):
+    try:
+        print(s['text/plain'])
+    except (KeyError, TypeError):
+        print(s)
+page.page = myprint
+
+
+# In[30]:
+
+
+from kullback import klBern
+get_ipython().run_line_magic('pinfo', 'klBern')
+
+
+# ### KLUCB
+# > ([Garivier & Cappé - COLT, 2011](https://arxiv.org/pdf/1102.2490.pdf))
+# 
+# Il s'agit d'une autre amélioration de l'algorithme précédent, où on utilise un autre *indice*.
+# 
+# Au lieu d'utiliser une borne supérieure d'un intervalle de confiance autour de cette moyenne, on utilise la [pseudo-distance de Kullback-Leibler](https://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler) afin d'obtenir l'intervale de confiance optimal :
+# $$g''_k(t) = \sup\limits_{q \in [0,1]} \left\{ q : \mathrm{kl}(\hat{\mu}_k(t), q) \leq \frac{f(t)}{N_k(t)} \right\}.$$
+# Et cet *indice* est toujours utilisé pour décider le bras à essayer à chaque instant :
+# $$A^{\mathrm{KLUCB}}(t) = \arg\max_k g''_k(t).$$
+# 
+# On utilise $$f(t) := \log(t) + c\log\log(t).$$
+# Il faut une constante $c \geq 0$, qu'on doit choisir $c > 0$ pour simplifier les preuves théoriques. En pratique, $c = 0$ est un bon choix par défaut.
+
+# In[31]:
+
+
+from kullback import klucb
+get_ipython().run_line_magic('pinfo', 'klucb')
+# do klucb?? to see the code
+
+
+# In[32]:
+
+
+from kullback import klucbBern
+get_ipython().run_line_magic('pinfo', 'klucbBern')
+# do klucbBern?? to see the code
+
+
+# C'est assez facile donc :
+
+# In[61]:
+
+
+def f(t, c=0):
+    return np.log(t) + c * np.log(np.maximum(0, np.log(t)))
+
+class KLUCB(MoyenneEmpirique):
+    """Algorithme KLUCB."""
+    
+    def __init__(self, K, c=0, tolerance=1e-4):
+        """Crée l'instance de l'algorithme. Par défaut, c=0."""
+        super(KLUCB, self).__init__(K)  # On laisse la classe mère faire le travaille
+        assert c >= 0, "Erreur : c doit etre >= 0."
+        self.c = c
+        self.tolerance = tolerance
+        # Version vectorisée
+        self.klucb = np.vectorize(klucbBern)
+    
+    def choix(self):
+        """Si on a vu tous les bras, on prend celui d'indice KLUCB le plus grand."""
+        self.t += 1      # Nécessaire ici
+        # 1er cas : il y a encore des bras qu'on a jamais vu
+        if np.min(self.tirages) == 0:
+            k = np.min(np.where(self.tirages == 0)[0])
+        # 2nd cas : tous les bras ont été essayé
+        else:
+            indices = self.klucb(self.recompenses / self.tirages, f(self.t, self.c) / self.tirages, self.tolerance)
+            k = np.argmax(indices)
+        return k
+
+
+# ----
 # ## Approche bayésienne, Thompson Sampling
 # 
 # [Ce petit article](http://chercheurs.lille.inria.fr/ekaufman/Matapli_Kaufmann.pdf) explique très bien l'approche bayésienne.
@@ -286,7 +386,7 @@ class UCB1(MoyenneEmpirique):
 # - Les posteriors sont initialisés à $\mathrm{Beta}(1, 1) = U([0,1])$, c'est-à-dire qu'on met un a priori uniforme sur les $\mu_k$, comme on ne connaît que $\mu_k \in [0,1]$.
 # - Comme les *observations* sont binaires, $r_k(t) \in \{0,1\}$, les paramètres $\alpha$,$\beta$ restent entiers.
 
-# In[13]:
+# In[62]:
 
 
 from numpy.random import beta
@@ -323,7 +423,7 @@ class Beta():
 # D'un point de vue bayésien, un *modèle* est tiré selon les posteriors, puis on joue selon le meilleur modèle :
 # $$ g''_k(t) \sim \mathrm{Beta}(\alpha_k(t), \beta_k(t)) \\ A^{\mathrm{TS}}(t) = \arg\max_k g''_k(t). $$
 
-# In[14]:
+# In[63]:
 
 
 class ThompsonSampling(MoyenneEmpirique):
@@ -372,13 +472,13 @@ class ThompsonSampling(MoyenneEmpirique):
 # 
 # On définit 4 fonctions d'affichage pour ces quantités.
 
-# In[15]:
+# In[77]:
 
 
 mpl.rcParams['figure.figsize'] = (15, 8)
 
 
-# In[16]:
+# In[103]:
 
 
 def affiche_selections(choix, noms, kstar=0):
@@ -394,7 +494,7 @@ def affiche_selections(choix, noms, kstar=0):
     plt.show()
 
 
-# In[17]:
+# In[104]:
 
 
 def affiche_recompenses(recompenses, noms):
@@ -409,7 +509,7 @@ def affiche_recompenses(recompenses, noms):
     plt.show()
 
 
-# In[18]:
+# In[105]:
 
 
 def affiche_recompenses_moyennes(recompenses, noms):
@@ -424,7 +524,7 @@ def affiche_recompenses_moyennes(recompenses, noms):
     plt.show()
 
 
-# In[21]:
+# In[106]:
 
 
 def affiche_regret(recompenses, noms, mustar=1):
@@ -443,7 +543,7 @@ def affiche_regret(recompenses, noms, mustar=1):
 # ### Premier problème, à 3 bras
 # On reprend le problème donné plus haut :
 
-# In[22]:
+# In[107]:
 
 
 horizon = 1000
@@ -453,36 +553,36 @@ K = len(mus)
 kstar = np.argmax(mus)  # = 0
 
 
-# In[23]:
+# In[108]:
 
 
 horizon, mus, bras, K, kstar
 
 
-# In[24]:
+# In[109]:
 
 
-algorithmes = [ChoixUniforme(K), MoyenneEmpirique(K), UCB1(K, alpha=1), ThompsonSampling(K)]
+algorithmes = [ChoixUniforme(K), MoyenneEmpirique(K), UCB1(K, alpha=1), KLUCB(K), ThompsonSampling(K)]
 algorithmes
 
 
 # Pour les légendes, on a besoin des noms des algorithmes :
 
-# In[25]:
+# In[110]:
 
 
-noms = ["ChoixUniforme", "MoyenneEmpirique", "UCB1(alpha=1)", "ThompsonSampling"]
+noms = ["ChoixUniforme", "MoyenneEmpirique", "UCB1(alpha=1)", "KLUCB", "ThompsonSampling"]
 
 
 # On peut commencer la simulation, pour chaque algorithme.
 
-# In[26]:
+# In[111]:
 
 
 get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, choix = np.zeros((N, horizon)), np.zeros((N, horizon))\n\nfor i, alg in tqdm(enumerate(algorithmes), desc="Algorithmes"):\n    rec, ch = simulation(bras, alg, horizon)\n    recompenses[i] = rec\n    choix[i] = ch')
 
 
-# In[27]:
+# In[112]:
 
 
 recompenses, choix
@@ -490,25 +590,25 @@ recompenses, choix
 
 # On affiche et vérifie les résultats attendus :
 
-# In[24]:
+# In[113]:
 
 
 affiche_selections(choix, noms, kstar)
 
 
-# In[25]:
+# In[114]:
 
 
 affiche_recompenses(recompenses, noms)
 
 
-# In[26]:
+# In[115]:
 
 
 affiche_recompenses_moyennes(recompenses, noms)
 
 
-# In[27]:
+# In[116]:
 
 
 affiche_regret(recompenses, noms, mustar=mus[kstar])
@@ -521,7 +621,7 @@ affiche_regret(recompenses, noms, mustar=mus[kstar])
 
 # ### Second problème, à 9 bras
 
-# In[28]:
+# In[117]:
 
 
 horizon = 5000
@@ -531,7 +631,7 @@ K = len(mus)
 kstar = np.argmax(mus)  # = 0
 
 
-# In[29]:
+# In[118]:
 
 
 horizon, mus, bras, K, kstar
@@ -539,30 +639,30 @@ horizon, mus, bras, K, kstar
 
 # On va comparer différents choix de $\alpha$ pour l'algorithme UCB : $\alpha = 4, 1, 0.5, 0.1$.
 
-# In[30]:
+# In[119]:
 
 
-algorithmes = [MoyenneEmpirique(K), UCB1(K, alpha=4), UCB1(K, alpha=1), UCB1(K, alpha=0.5), UCB1(K, alpha=0.1), ThompsonSampling(K)]
+algorithmes = [MoyenneEmpirique(K), UCB1(K, alpha=4), UCB1(K, alpha=1), UCB1(K, alpha=0.5), UCB1(K, alpha=0.1), KLUCB(K), ThompsonSampling(K)]
 algorithmes
 
 
 # Pour les légendes, on a besoin des noms des algorithmes :
 
-# In[31]:
+# In[120]:
 
 
-noms = ["MoyenneEmpirique", "UCB1(alpha=4)", "UCB1(alpha=1)", "UCB1(alpha=0.5)", "UCB1(alpha=0.1)", "ThompsonSampling"]
+noms = ["MoyenneEmpirique", "UCB1(alpha=4)", "UCB1(alpha=1)", "UCB1(alpha=0.5)", "UCB1(alpha=0.1)", "KLUCB", "ThompsonSampling"]
 
 
 # On peut commencer la simulation, pour chaque algorithme.
 
-# In[32]:
+# In[121]:
 
 
 get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, choix = np.zeros((N, horizon)), np.zeros((N, horizon))\n\nfor i, alg in tqdm(enumerate(algorithmes), desc="Algorithmes"):\n    rec, ch = simulation(bras, alg, horizon)\n    recompenses[i] = rec\n    choix[i] = ch')
 
 
-# In[33]:
+# In[122]:
 
 
 recompenses, choix
@@ -570,7 +670,7 @@ recompenses, choix
 
 # On affiche et vérifie les résultats attendus :
 
-# In[34]:
+# In[123]:
 
 
 affiche_selections(choix, noms, kstar)
@@ -578,7 +678,7 @@ affiche_selections(choix, noms, kstar)
 
 # On commence à voir une différence de vitesse de convergence, pour l'identification du meilleur bras.
 
-# In[35]:
+# In[124]:
 
 
 affiche_recompenses(recompenses, noms)
@@ -586,7 +686,7 @@ affiche_recompenses(recompenses, noms)
 
 # Difficile de différence quel algorithme est le plus efficace, même si clairement les plus grandes valeurs de $\alpha = 4, 1$ pour UCB semblent avoir moins bien fonctionner.
 
-# In[36]:
+# In[125]:
 
 
 affiche_recompenses_moyennes(recompenses, noms)
@@ -594,7 +694,7 @@ affiche_recompenses_moyennes(recompenses, noms)
 
 # En terme de récompenses moyennes au cours du temps, les 4 algorithmes les plus efficaces convergent vers $\mu^* = \mu_1 = 0.9$.
 
-# In[37]:
+# In[126]:
 
 
 affiche_regret(recompenses, noms, mustar=mus[kstar])
@@ -607,7 +707,7 @@ affiche_regret(recompenses, noms, mustar=mus[kstar])
 # 
 # On s'intéressera ensuite aux statistiques *moyennes* sur ces 100 répétitions pour les graphiques.
 
-# In[38]:
+# In[127]:
 
 
 horizon = 10000
@@ -618,7 +718,7 @@ K = len(mus)
 kstar = np.argmax(mus)  # = 0
 
 
-# In[39]:
+# In[128]:
 
 
 horizon, repetitions, mus, bras, K, kstar
@@ -626,24 +726,24 @@ horizon, repetitions, mus, bras, K, kstar
 
 # On va comparer différents choix de $\alpha$ pour l'algorithme UCB : $\alpha = 4, 1, 0.5, 0.1$.
 
-# In[40]:
+# In[130]:
 
 
-algorithmes = [MoyenneEmpirique(K), UCB1(K, alpha=4), UCB1(K, alpha=1), UCB1(K, alpha=0.5), UCB1(K, alpha=0.1), ThompsonSampling(K)]
+algorithmes = [MoyenneEmpirique(K), UCB1(K, alpha=4), UCB1(K, alpha=1), UCB1(K, alpha=0.5), UCB1(K, alpha=0.1), KLUCB(K), ThompsonSampling(K)]
 algorithmes
 
 
 # Pour les légendes, on a besoin des noms des algorithmes :
 
-# In[41]:
+# In[131]:
 
 
-noms = ["MoyenneEmpirique", "UCB1(alpha=4)", "UCB1(alpha=1)", "UCB1(alpha=0.5)", "UCB1(alpha=0.1)", "ThompsonSampling"]
+noms = ["MoyenneEmpirique", "UCB1(alpha=4)", "UCB1(alpha=1)", "UCB1(alpha=0.5)", "UCB1(alpha=0.1)", "KLUCB", "ThompsonSampling"]
 
 
 # On peut commencer la simulation, pour chaque algorithme.
 
-# In[42]:
+# In[132]:
 
 
 get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, choix = np.zeros((N, horizon)), np.zeros((N, horizon))\n\n# Pour chaque répétitions\nfor rep in tqdm(range(repetitions), desc="Répétitions"):\n    for i, alg in enumerate(algorithmes):\n        rec, ch = simulation(bras, alg, horizon)\n        recompenses[i] += rec\n        choix[i] += ch\n\n# On moyenne\nrecompenses /= repetitions\nchoix /= repetitions')
@@ -651,7 +751,7 @@ get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, cho
 
 # Cette fois, les statistiques accumulées ne sont plus entières.
 
-# In[43]:
+# In[133]:
 
 
 recompenses, choix
@@ -659,13 +759,13 @@ recompenses, choix
 
 # On affiche et vérifie les résultats attendus :
 
-# In[44]:
+# In[134]:
 
 
 choix = np.floor(choix)
 
 
-# In[45]:
+# In[135]:
 
 
 affiche_selections(choix, noms, kstar)
@@ -673,7 +773,7 @@ affiche_selections(choix, noms, kstar)
 
 # On commence à voir une différence de vitesse de convergence, pour l'identification du meilleur bras.
 
-# In[46]:
+# In[136]:
 
 
 affiche_recompenses(recompenses, noms)
@@ -681,7 +781,7 @@ affiche_recompenses(recompenses, noms)
 
 # Difficile de différence quel algorithme est le plus efficace, même si clairement les plus grandes valeurs de $\alpha = 4, 1$ pour UCB semblent avoir moins bien fonctionner.
 
-# In[47]:
+# In[137]:
 
 
 affiche_recompenses_moyennes(recompenses, noms)
@@ -689,7 +789,7 @@ affiche_recompenses_moyennes(recompenses, noms)
 
 # En terme de récompenses moyennes au cours du temps, les 4 algorithmes les plus efficaces convergent vers $\mu^* = \mu_1 = 0.9$.
 
-# In[48]:
+# In[138]:
 
 
 affiche_regret(recompenses, noms, mustar=mus[kstar])
@@ -699,23 +799,23 @@ affiche_regret(recompenses, noms, mustar=mus[kstar])
 # 
 # - `MoyenneEmpirique` converge rapidement au début, mais son regret $\mathcal{R}(t)$ ne semble pas avoir un profil logarithmique (il faudrait essayer de plus grands horizons pour le confirmer),
 # - Les différents `UCB` semblent tous avoir un regret logarithmique, i.e., $\mathcal{R}(t) = \mathcal{O}(\log t)$, et plus le $\alpha$ est petit, plus le regret est bas,
-# - `ThompsonSampling` fonctionne très bien, sans avoir à choisir de constante $\alpha$.
+# - `ThompsonSampling` et `KLUCB` fonctionnent très bien, sans avoir à choisir de constante $\alpha$.
 
-# ### Dernier problème, simulé 1000 fois
-# On s'intéresse enfin à un problème bien plus difficile, simulé 1000 fois et sur un horizon plus long ($T = 10000$).
+# ### Dernier problème
+# On s'intéresse enfin à un problème bien plus difficile.
 
-# In[49]:
+# In[155]:
 
 
 horizon = 10000
-repetitions = 1000
+repetitions = 10
 mus = [0.3, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.02, 0.02, 0.02, 0.01, 0.01, 0.005, 0.005, 0.001, 0.001]
 bras = [ Bernoulli(mu) for mu in mus ]
 K = len(mus)
 kstar = np.argmax(mus)
 
 
-# In[50]:
+# In[156]:
 
 
 horizon, repetitions, mus, bras, K, kstar
@@ -723,28 +823,28 @@ horizon, repetitions, mus, bras, K, kstar
 
 # On va comparer différents choix de $\alpha$ pour l'algorithme UCB : $\alpha = 4, 1, 0.5, 0.1, 0.01, 0.001$.
 
-# In[51]:
+# In[157]:
 
 
 algorithmes = [MoyenneEmpirique(K), UCB1(K, alpha=4), UCB1(K, alpha=1),
                UCB1(K, alpha=0.5), UCB1(K, alpha=0.1), UCB1(K, alpha=0.01),
-               UCB1(K, alpha=0.001), ThompsonSampling(K)]
+               UCB1(K, alpha=0.001), KLUCB(K), ThompsonSampling(K)]
 algorithmes
 
 
 # Pour les légendes, on a besoin des noms des algorithmes :
 
-# In[52]:
+# In[158]:
 
 
 noms = ["MoyenneEmpirique", "UCB1(alpha=4)", "UCB1(alpha=1)",
         "UCB1(alpha=0.5)", "UCB1(alpha=0.1)", "UCB1(alpha=0.01)",
-        "UCB1(alpha=0.001)", "ThompsonSampling"]
+        "UCB1(alpha=0.001)", "KLUCB", "ThompsonSampling"]
 
 
 # On peut commencer la simulation, pour chaque algorithme.
 
-# In[53]:
+# In[159]:
 
 
 get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, choix = np.zeros((N, horizon)), np.zeros((N, horizon))\n\n# Pour chaque répétitions\nfor rep in tqdm(range(repetitions), desc="Répétitions"):\n    for i, alg in enumerate(algorithmes):\n        rec, ch = simulation(bras, alg, horizon)\n        recompenses[i] += rec\n        choix[i] += ch\n\n# On moyenne\nrecompenses /= repetitions\nchoix /= repetitions')
@@ -752,7 +852,7 @@ get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, cho
 
 # Cette fois, les statistiques accumulées ne sont plus entières.
 
-# In[54]:
+# In[160]:
 
 
 recompenses, choix
@@ -760,13 +860,13 @@ recompenses, choix
 
 # On affiche et vérifie les résultats attendus :
 
-# In[55]:
+# In[161]:
 
 
 choix = np.floor(choix)
 
 
-# In[56]:
+# In[162]:
 
 
 affiche_selections(choix, noms, kstar)
@@ -774,7 +874,7 @@ affiche_selections(choix, noms, kstar)
 
 # On commence à voir une différence de vitesse de convergence, pour l'identification du meilleur bras.
 
-# In[57]:
+# In[163]:
 
 
 affiche_recompenses(recompenses, noms)
@@ -782,7 +882,7 @@ affiche_recompenses(recompenses, noms)
 
 # Difficile de différence quel algorithme est le plus efficace, même si clairement les plus grandes valeurs de $\alpha = 4, 1$ pour UCB semblent avoir moins bien fonctionner.
 
-# In[58]:
+# In[164]:
 
 
 affiche_recompenses_moyennes(recompenses, noms)
@@ -790,18 +890,18 @@ affiche_recompenses_moyennes(recompenses, noms)
 
 # En terme de récompenses moyennes au cours du temps, les 4 algorithmes les plus efficaces convergent vers $\mu^* = \mu_1 = 0.9$.
 
-# In[59]:
+# In[165]:
 
 
 affiche_regret(recompenses, noms, mustar=mus[kstar])
 
 
-# Cette fois, ces 1000 simulations permet de renforcer les conclusions précédentes :
+# Cette fois, cette autre simulation permet de renforcer les conclusions précédentes :
 # 
 # - `MoyenneEmpirique` converge rapidement au début, mais son regret $\mathcal{R}(t)$ ne semble pas avoir un profil logarithmique (il faudrait essayer de plus grands horizons pour le confirmer),
 # - Les différents `UCB1` semblent tous avoir un regret logarithmique, i.e., $\mathcal{R}(t) = \mathcal{O}(\log t)$, et plus le $\alpha$ est petit, plus le regret est bas,
 # - Mais si $\alpha$ est trop petit (e.g., $\alpha = 10^{-3}$), `UCB1(alpha)` n'est pas assez exploiteur, et pour ce problème à $K=15$ bras, il ne fonctionne plus bien,
-# - `ThompsonSampling` fonctionne très bien, sans avoir à choisir de constante $\alpha$.
+# - `ThompsonSampling` et `KLUCB` fonctionnent généralement aussi bien qu'un `UCB1` avec "la bonne constante".
 
 # ## Une autre politique d'indice : ApproximatedFHGittins
 # 
@@ -816,7 +916,7 @@ affiche_regret(recompenses, noms, mustar=mus[kstar])
 # - Notez que ce terme $\log^{1/2}(\dots) = \sqrt(\log(\dots))$ peut être *indéfini*, dès que $m < N_k(t)$, donc en pratique, $\sqrt(\max(0, \log(\dots))$ est préférable, ou alors un horizon *un peu plus grand* peut être utilisé à la place, pour rendre $m$ un peu plus grand (e.g., $T' = 1.1 T$).
 # - Si besoin, voir [mon implémentation](http://banditslilian.gforge.inria.fr/docs/Policies.ApproximatedFHGittins.html#Policies.ApproximatedFHGittins.ApproximatedFHGittins.computeIndex).
 
-# In[65]:
+# In[166]:
 
 
 class ApproximatedFHGittins(MoyenneEmpirique):
@@ -853,27 +953,27 @@ class ApproximatedFHGittins(MoyenneEmpirique):
 # 
 # Sur le même problème que précédemment, on va vérifier que ce dernier algorithme est plus efficace que les autres.
 
-# In[66]:
+# In[167]:
 
 
 horizon = 10000
-repetitions = 1000
+repetitions = 10
 mus = [0.3, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.02, 0.02, 0.02, 0.01, 0.01, 0.005, 0.005, 0.001, 0.001]
 bras = [ Bernoulli(mu) for mu in mus ]
 K = len(mus)
 kstar = np.argmax(mus)
 
 
-# In[67]:
+# In[168]:
 
 
 horizon, repetitions, mus, bras, K, kstar
 
 
-# In[68]:
+# In[169]:
 
 
-algorithmes = [UCB1(K, alpha=1), UCB1(K, alpha=0.5),
+algorithmes = [UCB1(K, alpha=1), UCB1(K, alpha=0.5), KLUCB(K),
                ThompsonSampling(K),
                ApproximatedFHGittins(K, 1.1 * T, alpha=4),
                ApproximatedFHGittins(K, 1.1 * T, alpha=1),
@@ -882,10 +982,10 @@ algorithmes = [UCB1(K, alpha=1), UCB1(K, alpha=0.5),
 algorithmes
 
 
-# In[69]:
+# In[170]:
 
 
-noms = ["UCB1(alpha=1)", "UCB1(alpha=0.5)",
+noms = ["UCB1(alpha=1)", "UCB1(alpha=0.5)", "KLUCB",
         "ThompsonSampling",
         "ApproximatedFHGittins(T, alpha=4)",
         "ApproximatedFHGittins(T, alpha=1)",
@@ -895,7 +995,7 @@ noms = ["UCB1(alpha=1)", "UCB1(alpha=0.5)",
 
 # On peut commencer la simulation, pour chaque algorithme.
 
-# In[70]:
+# In[171]:
 
 
 get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, choix = np.zeros((N, horizon)), np.zeros((N, horizon))\n\n# Pour chaque répétitions\nfor rep in tqdm(range(repetitions), desc="Répétitions"):\n    for i, alg in enumerate(algorithmes):\n        rec, ch = simulation(bras, alg, horizon)\n        recompenses[i] += rec\n        choix[i] += ch\n\n# On moyenne\nrecompenses /= repetitions\nchoix /= repetitions')
@@ -903,7 +1003,7 @@ get_ipython().run_cell_magic('time', '', 'N = len(algorithmes)\nrecompenses, cho
 
 # Cette fois, les statistiques accumulées ne sont plus entières.
 
-# In[71]:
+# In[172]:
 
 
 recompenses, choix
@@ -911,13 +1011,13 @@ recompenses, choix
 
 # On affiche et vérifie les résultats attendus :
 
-# In[72]:
+# In[173]:
 
 
 choix = np.floor(choix)
 
 
-# In[73]:
+# In[174]:
 
 
 affiche_selections(choix, noms, kstar)
@@ -925,7 +1025,7 @@ affiche_selections(choix, noms, kstar)
 
 # On commence à voir une différence de vitesse de convergence, pour l'identification du meilleur bras.
 
-# In[74]:
+# In[175]:
 
 
 affiche_recompenses(recompenses, noms)
@@ -933,7 +1033,7 @@ affiche_recompenses(recompenses, noms)
 
 # Difficile de différence quel algorithme est le plus efficace, même si clairement les plus grandes valeurs de $\alpha = 4, 1$ pour UCB semblent avoir moins bien fonctionner.
 
-# In[75]:
+# In[176]:
 
 
 affiche_recompenses_moyennes(recompenses, noms)
@@ -941,13 +1041,13 @@ affiche_recompenses_moyennes(recompenses, noms)
 
 # En terme de récompenses moyennes au cours du temps, les 4 algorithmes les plus efficaces convergent vers $\mu^* = \mu_1 = 0.9$.
 
-# In[76]:
+# In[177]:
 
 
 affiche_regret(recompenses, noms, mustar=mus[kstar])
 
 
-# In[77]:
+# In[178]:
 
 
 affiche_regret(recompenses[2:], noms[2:], mustar=mus[kstar])
