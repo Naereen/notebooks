@@ -288,7 +288,7 @@ class UCB1(MoyenneEmpirique):
 # Pour $x,y\in\{0,1\}$, $x,y\neq 0,1$, $\mathrm{kl}(x,y)$, on définit [la divergence de Kullback-Leibler binaire](https://en.wikipedia.org/wiki/Bernoulli_distribution#Kullback.E2.80.93Leibler_divergence) de $x$ et $y$ comme la KL de deux lois de Bernoulli de moyennes $x$ et $y$, ce qui est défini comme :
 # $$\mathrm{kl}(x,y) := x \log\left(\frac{x}{y}\right) + (1-x)\log\left(\frac{1-x}{1-y}\right).$$
 # 
-# Pour vous facilier la tâche, la fonction $\mathrm{kl}$ est déjà implémentée, ainsi qu'une fonction pour résoudre (de façon approchée) le probl_me d'optimisation contrainte qui définit l'indice $g_k''(t)$.
+# Pour vous facilier la tâche, la fonction $\mathrm{kl}$ est déjà implémentée, ainsi qu'une fonction pour résoudre (de façon approchée) le problème d'optimisation contrainte qui définit l'indice $g_k''(t)$.
 
 # In[29]:
 
