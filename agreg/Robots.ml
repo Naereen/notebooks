@@ -95,6 +95,16 @@ let trouve_array (x : int) (a : int array) : int =
     trouve x (Array.to_list a)
 ;;
 
+let trouve_array2 (x : int) (a : int array) : int =
+    let i = ref -1 in
+    for j = 0 to (Array.length a) - 1 do
+	if a.(j) = x then
+	    i := j;
+    done;
+    !i
+;;
+
+
 (* In[8]: *)
 
 
