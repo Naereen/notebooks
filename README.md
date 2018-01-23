@@ -26,6 +26,8 @@ Go to [nbviewer](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/maste
 
 - :fr: [Ce petit notebook en français](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Verification_de_numeros_CB_RIB_NIRPP_IBAN.ipynb) ([sur GitHub ?](Verification_de_numeros_CB_RIB_NIRPP_IBAN.ipynb)) implémente les algorithmes de vérifications des numéros de cartes bleues, de sécurité sociale et d'IBAN en Python.
 
+- [This notebook implements and explore the Exponential Integral function Ei(x)](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Exponential_Integral_Python.ipynb) ([on GitHub?](Exponential_Integral_Python.ipynb)).
+
 ### Teaching
 - :fr: [Ce notebook en français présente les problèmes de bandits multi-bras stochastiques](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb) ([on GitHub?](Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb)) (*multi-armed bandit*, MAB), et les algorithmes dits "de bandits" pour les résoudre (UCB "Upper Confidence Bounds", KL-UCB, Thompson Sampling, Approximated Finite-Horizon Gittins index etc). C'est une bonne introduction aux outils que j'utilise pour [ma thèse](http://perso.crans.org/besson/phd/).
 
