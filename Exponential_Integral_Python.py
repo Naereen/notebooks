@@ -347,25 +347,27 @@ t = 2*e
 see_upper_bound(t, t, onlylast=True)
 
 
-# In[ ]:
+# In[110]:
 
 
 t = 3*e
 see_upper_bound(t, t, onlylast=True)
 
 
-# In[ ]:
+# In[111]:
 
 
 t = 4*e
 see_upper_bound(t, t, onlylast=True)
 
 
-# In[69]:
+# In[113]:
 
 
 I = lambda t: Ei(t) - Ei(-t)
 I(1)
+e - 1/e
+assert I(1) < e - 1/e
 I(e)
 
 
