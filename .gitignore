@@ -8,3 +8,4 @@ octave-workspace
 *.pdf
 *.so
 \#*\#
+mocaml_history.ml
