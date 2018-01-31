@@ -28,6 +28,8 @@ Go to [nbviewer](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/maste
 
 - [This notebook implements and explore the Exponential Integral function Ei(x)](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Exponential_Integral_Python.ipynb) ([on GitHub?](Exponential_Integral_Python.ipynb)).
 
+- [This notebook shows how to solve the equation `exp(- a x²)=x` both numerically and formally (with the Lambert W function)](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Solving_an_equation_and_the_Lambert_W_function.ipynb) ([on GitHub?](Solving_an_equation_and_the_Lambert_W_function.ipynb)).
+
 ### Teaching
 - :fr: [Ce notebook en français présente les problèmes de bandits multi-bras stochastiques](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb) ([on GitHub?](Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb)) (*multi-armed bandit*, MAB), et les algorithmes dits "de bandits" pour les résoudre (UCB "Upper Confidence Bounds", KL-UCB, Thompson Sampling, Approximated Finite-Horizon Gittins index etc). C'est une bonne introduction aux outils que j'utilise pour [ma thèse](http://perso.crans.org/besson/phd/).
 
