@@ -2,9 +2,9 @@
 # coding: utf-8
 
 # # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#Solving-an-equation-and-the-Lambert-W-function" data-toc-modified-id="Solving-an-equation-and-the-Lambert-W-function-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Solving an equation and the Lambert W function</a></div><div class="lev2 toc-item"><a href="#Loading-packages-and-configuring-plot-sizes" data-toc-modified-id="Loading-packages-and-configuring-plot-sizes-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Loading packages and configuring plot sizes</a></div><div class="lev2 toc-item"><a href="#Plotting-the-function-first" data-toc-modified-id="Plotting-the-function-first-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Plotting the function first</a></div><div class="lev2 toc-item"><a href="#Solving-numerically?" data-toc-modified-id="Solving-numerically?-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Solving numerically?</a></div><div class="lev2 toc-item"><a href="#How-many-solutions-for-a-given-$a$?" data-toc-modified-id="How-many-solutions-for-a-given-$a$?-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>How many solutions for a given <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-449-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>a</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-3355" role="math" style="width: 0.636em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.497em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.952em, 1000.47em, 2.591em, -1000em); top: -2.487em; left: 0em;"><span class="mrow" id="MathJax-Span-3356"><span class="mi" id="MathJax-Span-3357" style="font-family: STIXMathJax_Main; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 2.487em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.648em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></span></span><script type="math/tex" id="MathJax-Element-449">a</script>?</a></div><div class="lev2 toc-item"><a href="#Number-of-solutions-as-function-of-$a$" data-toc-modified-id="Number-of-solutions-as-function-of-$a$-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Number of solutions as function of <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-445-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>a</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-3343" role="math" style="width: 0.636em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.497em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.952em, 1000.47em, 2.591em, -1000em); top: -2.487em; left: 0em;"><span class="mrow" id="MathJax-Span-3344"><span class="mi" id="MathJax-Span-3345" style="font-family: STIXMathJax_Main; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 2.487em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.648em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></span></span><script type="math/tex" id="MathJax-Element-445">a</script></a></div><div class="lev2 toc-item"><a href="#Plot-of-solution(s)-as-function-of-$a$" data-toc-modified-id="Plot-of-solution(s)-as-function-of-$a$-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Plot of solution(s) as function of <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-447-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>a</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-3349" role="math" style="width: 0.636em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.497em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.952em, 1000.47em, 2.591em, -1000em); top: -2.487em; left: 0em;"><span class="mrow" id="MathJax-Span-3350"><span class="mi" id="MathJax-Span-3351" style="font-family: STIXMathJax_Main; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 2.487em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.648em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></span></span><script type="math/tex" id="MathJax-Element-447">a</script></a></div><div class="lev2 toc-item"><a href="#Solving-formally-with-the-Lambert-W-function" data-toc-modified-id="Solving-formally-with-the-Lambert-W-function-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Solving formally with the Lambert W function</a></div>
+#  <p><div class="lev1 toc-item"><a href="#Solving-an-equation,-numerically-or-with-the-Lambert-W-function" data-toc-modified-id="Solving-an-equation,-numerically-or-with-the-Lambert-W-function-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Solving an equation, numerically or with the Lambert W function</a></div><div class="lev2 toc-item"><a href="#Loading-packages-and-configuring-plot-sizes" data-toc-modified-id="Loading-packages-and-configuring-plot-sizes-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Loading packages and configuring plot sizes</a></div><div class="lev2 toc-item"><a href="#Plotting-the-function-first" data-toc-modified-id="Plotting-the-function-first-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Plotting the function first</a></div><div class="lev2 toc-item"><a href="#Solving-numerically?" data-toc-modified-id="Solving-numerically?-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Solving numerically?</a></div><div class="lev2 toc-item"><a href="#How-many-solutions-for-a-given-$a$?" data-toc-modified-id="How-many-solutions-for-a-given-$a$?-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>How many solutions for a given <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>a</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-129" role="math" style="width: 0.636em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.497em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.952em, 1000.47em, 2.591em, -1000em); top: -2.487em; left: 0em;"><span class="mrow" id="MathJax-Span-130"><span class="mi" id="MathJax-Span-131" style="font-family: STIXMathJax_Main; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 2.487em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.648em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></span></span><script type="math/tex" id="MathJax-Element-19">a</script>?</a></div><div class="lev2 toc-item"><a href="#Number-of-solutions-as-function-of-$a$" data-toc-modified-id="Number-of-solutions-as-function-of-$a$-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Number of solutions as function of <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-26-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>a</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-150" role="math" style="width: 0.636em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.497em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.952em, 1000.47em, 2.591em, -1000em); top: -2.487em; left: 0em;"><span class="mrow" id="MathJax-Span-151"><span class="mi" id="MathJax-Span-152" style="font-family: STIXMathJax_Main; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 2.487em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.648em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></span></span><script type="math/tex" id="MathJax-Element-26">a</script></a></div><div class="lev2 toc-item"><a href="#Plot-of-solution(s)-as-function-of-$a$" data-toc-modified-id="Plot-of-solution(s)-as-function-of-$a$-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Plot of solution(s) as function of <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-28-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>a</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-156" role="math" style="width: 0.636em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.497em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.952em, 1000.47em, 2.591em, -1000em); top: -2.487em; left: 0em;"><span class="mrow" id="MathJax-Span-157"><span class="mi" id="MathJax-Span-158" style="font-family: STIXMathJax_Main; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 2.487em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.648em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></span></span><script type="math/tex" id="MathJax-Element-28">a</script></a></div><div class="lev2 toc-item"><a href="#Solving-formally-with-the-Lambert-W-function" data-toc-modified-id="Solving-formally-with-the-Lambert-W-function-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Solving formally with the Lambert W function</a></div><div class="lev2 toc-item"><a href="#Behavior-for-$a\to-0^+$-or-$a\to\infty$" data-toc-modified-id="Behavior-for-$a\to-0^+$-or-$a\to\infty$-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Behavior for <span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-3808"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-3809">a</span><span class="MJXp-mo" id="MJXp-Span-3810" style="margin-left: 0.333em; margin-right: 0.333em;">→</span><span class="MJXp-msubsup" id="MJXp-Span-3811"><span class="MJXp-mn" id="MJXp-Span-3812" style="margin-right: 0.05em;">0</span><span class="MJXp-mo MJXp-script" id="MJXp-Span-3813" style="vertical-align: 0.5em;">+</span></span></span></span><script type="math/tex" id="MathJax-Element-469">a\to 0^+</script> or <span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-3814"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-3815">a</span><span class="MJXp-mo" id="MJXp-Span-3816" style="margin-left: 0.333em; margin-right: 0.333em;">→</span><span class="MJXp-mi" id="MJXp-Span-3817">∞</span></span></span><script type="math/tex" id="MathJax-Element-470">a\to\infty</script></a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-19"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Conclusion</a></div>
 
-# # Solving an equation and the Lambert W function
+# # Solving an equation, numerically or with the Lambert W function
 # 
 # I want to solve the equation $\exp(-ax^2)=x$ and find its solution(s) as a function of $a\in\mathbb{R}$.
 
@@ -201,21 +201,21 @@ def thresholds(amin=-10, amax=10, delta=0.01):
     return gap_points
 
 
-# In[19]:
+# In[21]:
 
 
 thresholds(amin=-10, amax=10, delta=0.01)
 
 
-# In[20]:
+# In[22]:
 
 
-thresholds(amin=-8, amax=1, delta=0.001)
+thresholds(amin=-8, amax=1, delta=0.01)
 
 
 # I think having $3$ (or more) solutions is a numerical error.
 
-# In[21]:
+# In[23]:
 
 
 amin = -100
@@ -224,10 +224,12 @@ gap_points = thresholds(amin=amin, amax=amax, delta=0.1)
 gap_points
 
 
+# As we will see below, even having two solutions is nothing but a numerical error.
+
 # ## Number of solutions as function of $a$
 # We can plot the (estimated) number of solution as a function of $a$, to start wit, thanks to the [`matplotlib.pyplot.hlines`](https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.hlines) function:
 
-# In[22]:
+# In[24]:
 
 
 def plot_gap_points(gap_points, amin, amax):
@@ -274,7 +276,7 @@ ys, xleft, min_xleft, xright, max_xright = plot_gap_points(gap_points, amin, ama
 # ## Plot of solution(s) as function of $a$
 # Now we can try to use this to plot the solution(s) as function of $a$.
 
-# In[40]:
+# In[25]:
 
 
 def plot_multivalued_function(X, f, maxnboutput=1, **kwargs):
@@ -288,7 +290,7 @@ def plot_multivalued_function(X, f, maxnboutput=1, **kwargs):
         plt.plot(X, Y[j], 'o-', **kwargs)
 
 
-# In[43]:
+# In[26]:
 
 
 A = np.linspace(-100, 100, 1000)
@@ -300,7 +302,7 @@ plt.title(r"Solution(s) to $\exp(- a x^2) = x$, as function of $a$")
 plt.show()
 
 
-# In[45]:
+# In[27]:
 
 
 A = np.linspace(0, 20, 2000)
@@ -312,6 +314,8 @@ plt.title(r"Solution(s) to $\exp(- a x^2) = x$, as function of $a$")
 plt.show()
 
 
+# This shows the numerical solution to the equation, and we will check below that the formal solution coincides.
+
 # ## Solving formally with the Lambert W function
 # 
 # Luckily, we can transform this equation to solve it with the Lambert $W$ function, defined as $W(x) = z \Leftrightarrow x = z \mathrm{e}^{z}$.
@@ -319,7 +323,7 @@ plt.show()
 # 
 # As for (almost) all the special function, we don't need to write it ourself: it is in scipy! [`scipy.special.lambertw`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.lambertw.html#scipy.special.lambertw)
 
-# In[46]:
+# In[28]:
 
 
 from scipy.special import lambertw
@@ -328,27 +332,44 @@ from scipy.special import lambertw
 # As the only possible solution are $x>0$
 # $$
 # \exp(-a x^2) = x \Leftrightarrow
-# \exp(-2 a x^2) = x^2 \Leftrightarrow
-# 2 a y \exp(2 a x) = 2 a (\text{with} y := x^2) \Leftrightarrow \\
-# u \exp(u) = 2 a (\text{with} u := 2 a y) \Leftrightarrow
+# \left(\exp(-a x^2)\right)^2= \exp(-2 a x^2) = x^2 \Leftrightarrow
+# 2 a y \exp(2 a x) = 2 a \;\;(\text{with}\;\; y := x^2) \Leftrightarrow \\
+# u \exp(u) = 2 a \;\;(\text{with}\;\; u := 2 a y) \Leftrightarrow
 # u = W(2a) \Leftrightarrow
 # y = \frac{W(2a)}{2a} \Leftrightarrow
 # x(a) := \sqrt{\frac{W(2a)}{2a}}.
 # $$
+# 
+# And so it is quite easy to compute, for $a > 0$ (the behavior at $0$ is undefined without a more careful study):
 
-# In[47]:
+# In[30]:
 
 
 def formal_solution(a):
     return np.sqrt(lambertw(2 * a) / (2 * a))
 
 
+# We can check some values:
+
+# In[35]:
+
+
+for a in [0.5, 1, 2, 3, 4]:
+    xa = formal_solution(a)
+    assert np.isclose(exp(-a * xa**2), xa)
+    print(f"a = {a:.3g} gives x(a) = {float(xa):.3g}")
+
+
+# ## Behavior for $a\to 0^+$ or $a\to\infty$
+# 
+# We can try to approximate the solution for small $a$ or large $a$:
+# 
 # - For small $a$, $W(2a) \simeq 2a - 4a^2$ so $x(a) \simeq 1 - a$.
 # 
 # - For large $a$, we have [this bound](https://en.wikipedia.org/wiki/Lambert_W_function#Asymptotic_expansions):
 #   $$ \forall x \geq \mathrm{e},{\displaystyle \ln(x)-\ln {\bigl (}\ln(x){\bigr )}+{\frac {\ln {\bigl (}\ln(x){\bigr )}}{2\ln(x)}}\leq W(x)\leq \ln(x)-\ln {\bigl (}\ln(x){\bigr )}+{\frac {e}{e-1}}{\frac {\ln {\bigl (}\ln(x){\bigr )}}{\ln(x)}}} $$
 
-# In[58]:
+# In[36]:
 
 
 e = np.exp(1)
@@ -364,7 +385,7 @@ def lower_bound(a):
 
 # We can plot all this.
 
-# In[63]:
+# In[39]:
 
 
 A = np.linspace(0, 20, 4000)
@@ -374,11 +395,11 @@ Ae = A[A >= e]
 
 plt.plot(A, formal_solution(A), label="Solution", markevery=20)
 
-plt.plot(A1, 1 - A1, 'b--', label="Tangent at $0$", markevery=20)
+plt.plot(A1, 1 - A1, 'b--', label=r"Tangent at $0$: $x(a) \simeq 1 - a$", markevery=20)
 
 #plt.plot(A2, np.sqrt((np.log(2*A2) - np.log(np.log(2*A2)))/(2*A2)), 'g--', label=r"Asymptote at $+\infty$", markevery=20)
-plt.plot(Ae, lower_bound(Ae), 'g--', label=r"Lower-bound for $x \geq e$", markevery=20)
-plt.plot(Ae, upper_bound(Ae), 'c--', label=r"Upper-bound for $x \geq e$", markevery=20)
+plt.plot(Ae, lower_bound(Ae), 'g--', label=r"Lower-bound for $a \geq e$", markevery=20)
+plt.plot(Ae, upper_bound(Ae), 'c--', label=r"Upper-bound for $a \geq e$", markevery=20)
 
 plt.legend()
 plt.xlabel("Parameter $a$"); plt.ylabel(r"Solution $x(a) = \sqrt{\frac{W(2a)}{2a}}$")
@@ -387,3 +408,9 @@ plt.show()
 
 
 # And voilà.
+
+# ## Conclusion
+# 
+# That's it for today, *folks*!
+# 
+# > See [here](https://github.com/Naereen/notebooks/) for other notebooks I wrote, in Python, Julia, OCaml or other languages.
