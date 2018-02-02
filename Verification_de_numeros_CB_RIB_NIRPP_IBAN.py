@@ -10,6 +10,8 @@
 # - NIRPP (numéro de sécurité sociale en France), avec deux chiffres de vérifications.
 # 
 # > J'avais déjà implementé les deux derniers, cf. ces scripts : [check_IBAN.py](https://bitbucket.org/lbesson/bin/src/master/check_IBAN.py), et [check_NIRPP.py](https://bitbucket.org/lbesson/bin/src/master/check_NIRPP.py).
+# 
+# Si vous êtes curieux de l'aspect historique, [ce petit article](https://spectrum.ieee.org/tech-history/silicon-revolution/hans-peter-luhn-and-the-birth-of-the-hashing-algorithm) explique très bien les origines de ces chiffres de contrôles et de la [formule de Luhn](https://fr.wikipedia.org/wiki/Formule_de_Luhn).
 
 # Je vais utiliser cette fonction plusieurs fois, qui permet de transformer une lettre 'A',...,'Z' en entier.
 
@@ -192,7 +194,7 @@ verifie_iban("BE43 0689 9999 9500")
 exemple_nirpp = "2 69 05 49 588 157 80"
 
 
-# In[20]:
+# In[19]:
 
 
 length_checksum = 2
@@ -217,7 +219,7 @@ def verifie_nirpp(nirpp, length_checksum=length_checksum):
 
 # ### Exemples
 
-# In[21]:
+# In[20]:
 
 
 verifie_nirpp(exemple_nirpp)
@@ -228,7 +230,7 @@ verifie_nirpp(exemple_nirpp)
 # 
 # Il suffit de récupérer les informations de chaque morceau du code NIRPP, et les stocker comme ça :
 
-# In[22]:
+# In[21]:
 
 
 information_nirpp = {
@@ -396,13 +398,13 @@ information_nirpp = {
 
 # Pour les villes, on a besoin d'une base de donnée plus grande. J'ai récupéré [ce fichier](https://bitbucket.org/lbesson/bin/src/master/comsimp2016.txt) sur le site de l'INSEE (lien mort).
 
-# In[23]:
+# In[22]:
 
 
 get_ipython().system('ls data/')
 
 
-# In[24]:
+# In[23]:
 
 
 get_ipython().system('wc data/comsimp2016.txt')
@@ -410,7 +412,7 @@ get_ipython().system('wc data/comsimp2016.txt')
 
 # Il ressemble à ça :
 
-# In[25]:
+# In[24]:
 
 
 get_ipython().system('head data/comsimp2016.txt')
@@ -418,7 +420,7 @@ get_ipython().system('head data/comsimp2016.txt')
 
 # Briançon est bien dans la liste :
 
-# In[26]:
+# In[25]:
 
 
 get_ipython().system('grep "BRIANCON" data/comsimp2016.txt')
@@ -426,7 +428,7 @@ get_ipython().system('grep "BRIANCON" data/comsimp2016.txt')
 
 # Allons-y :
 
-# In[45]:
+# In[26]:
 
 
 import subprocess
@@ -470,7 +472,7 @@ def pprint_nirpp(nirpp, length_checksum=length_checksum):
         )
 
 
-# In[46]:
+# In[27]:
 
 
 pprint_nirpp(exemple_nirpp)
@@ -478,10 +480,85 @@ pprint_nirpp(exemple_nirpp)
 
 # Avec un exemple assez proche de mon numéro de sécurité sociale (modifié) :
 
-# In[48]:
+# In[28]:
 
 
 pprint_nirpp("1 93 01 05 023 122 23")
+
+
+# ## IMEI
+# Les numéros d'identification des téléphones portables ([les IMEI](https://fr.wikipedia.org/wiki/International_Mobile_Equipment_Identity#Structure)) terminent aussi par un chiffre de contrôle, qui utilise aussi la [formule de Luhn](https://fr.wikipedia.org/wiki/Formule_de_Luhn).
+# Je termine ce notebook en implémentant aussi cette vérification.
+# 
+# <img width="40%" src="data/Exemple_IMEI.jpg"/>
+
+# In[29]:
+
+
+exemple_imei = "448674 52 897641 0"  # avant 2014, 6-2-6-1
+
+
+# In[30]:
+
+
+def verifie_imei(imei):
+    print("\nVérification du numéro IMEI '%s'..." % imei)
+    check = verifie_Luhn(imei)
+    if check:
+        print("OK '%s' semble être un numéro IMEI valide." % imei)
+    else:
+        print("[ATTENTION] PAS OK '%s' semble ne pas être un numéro IMEI valide!" % imei)
+    return check
+
+
+# In[32]:
+
+
+verifie_imei(exemple_imei)
+
+
+# ### Exemples
+
+# In[33]:
+
+
+exemple_imei = "448674 52 897641 1"
+
+
+# In[34]:
+
+
+verifie_imei(exemple_imei)
+
+
+# In[35]:
+
+
+exemple_imei = "468674 52 897641 0"
+
+
+# In[36]:
+
+
+verifie_imei(exemple_imei)
+
+
+# Avec un IMEI semblable à celui d'un de mes anciens téléphones :
+
+# In[39]:
+
+
+mon_faux_imei_1 = "35569508 262195 2"
+
+verifie_imei(mon_faux_imei_1)
+
+
+# In[40]:
+
+
+mon_faux_imei_2 = "35569508 283295 5"
+
+verifie_imei(mon_faux_imei_2)
 
 
 # ## Conclusion
