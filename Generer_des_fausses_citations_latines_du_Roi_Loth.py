@@ -302,7 +302,7 @@ explications += [
     " : la victoire par la sagesse.",
     " : les livres contiennent la sagesse des anciens.",
     " : à Rome seul compte le pouvoir.",
-    " : seul les puissants agissent."
+    " : seul les puissants agissent.",
     " : le mariage est une bénédiction.",
     " : ça veut rien dire, mais ça impressionne !",
     """, ça veut rien dire mais on pourrait très bien imaginer une traduction du type : "Le vent tourne pour ceux qui savent écouter", ce qui ne veut rien dire non plus.""",
@@ -352,7 +352,7 @@ for _ in range(10):
 from IPython.display import display, Markdown
 
 
-# In[27]:
+# In[28]:
 
 
 for _ in range(10):
