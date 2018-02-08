@@ -44,6 +44,10 @@ Go to [nbviewer](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/maste
 
 ![art/identicons.png](art/identicons.png)
 
+- :fr: [Ce notebook montre comment générer des fausses citations latines du Roi Loth](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Generer_des_fausses_citations_latines_du_Roi_Loth.ipynb), avec une chaîne de Markov, la liste de locutions latines extraite de Wikipédia, et la liste des vraies citations latines du Roi Loth extraite de Wikiquote. Exemples :
+
+![art/citation_du_roi_Loth_aleatoires.png](art/citation_du_roi_Loth_aleatoires.png)
+
 > I will try to write more *artistic* notebooks, showcasing nice pieces of *code* :art:!
 
 ### Experiments with Python
