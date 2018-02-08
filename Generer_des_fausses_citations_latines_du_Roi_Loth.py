@@ -8,24 +8,27 @@
 # 
 # J'aimerai montrer ici comment générer des fausses citations latines, dignes du [Roi Loth](https://fr.wikipedia.org/wiki/Personnages_de_Kaamelott#Loth_d%E2%80%99Orcanie) de [Kaamelott](https://fr.wikiquote.org/wiki/Kaamelott), avec Python, des données extraites de [sa page Wikiquote](https://fr.wikiquote.org/wiki/Kaamelott/Loth) et des [chaînes de Markov](https://github.com/jilljenn/markov.py).
 # 
-# Exemple  de sortie :
-# ```python
-# >>> citation_aleatoire()
-# FIXME
-# ```
-# 
 # > Cf. [ce ticket](https://github.com/Naereen/notebooks/issues/13) pour l'idée initiale.
+# 
+# Exemple  de sortie :
+
+# In[32]:
+
+
+citation = citation_aleatoire(italic=True)
+display(Markdown("> {}".format(citation)))
+
 
 # ## Dépendances
 
-# In[1]:
+# In[2]:
 
 
 get_ipython().run_line_magic('load_ext', 'watermark')
 get_ipython().run_line_magic('watermark', '-v -m -a "Lilian Besson (Naereen)" -p lea -g')
 
 
-# In[2]:
+# In[3]:
 
 
 import os
@@ -37,7 +40,7 @@ from collections import Counter, defaultdict
 
 # Le module [lea](https://bitbucket.org/piedenis/lea) sera très pratique pour manipuler les probabilités pour les chaînes de Markov.
 
-# In[3]:
+# In[4]:
 
 
 from lea import Lea
@@ -47,19 +50,11 @@ from lea import Lea
 # 
 # J'ai utilisé [cette page Wikipédia](https://en.wikipedia.org/wiki/List_of_Latin_phrases_(full)) et deux lignes de Bash :
 
-# In[4]:
+# In[5]:
 
 
 get_ipython().run_cell_magic('bash', '', 'wget --no-verbose "https://en.wikipedia.org/wiki/List_of_Latin_phrases_(full)" -O /tmp/latin.html\ngrep -o \'<b>[^<]*</b>\' /tmp/latin.html | sed s_\'</\\?b>\'_\'\'_g | sort | uniq | sort | uniq > /tmp/data_latin.txt')
 
-
-# In[5]:
-
-
-get_ipython().system('head data/latin.txt')
-
-
-# Ensuite il faut un peu de nettoyage pour enlever les lignes qui ont été incorrectement ajoutées dans le fichier (j'ai fait ça à la main).
 
 # In[6]:
 
@@ -67,7 +62,15 @@ get_ipython().system('head data/latin.txt')
 get_ipython().system('head data/latin.txt')
 
 
+# Ensuite il faut un peu de nettoyage pour enlever les lignes qui ont été incorrectement ajoutées dans le fichier (j'ai fait ça à la main).
+
 # In[7]:
+
+
+get_ipython().system('head data/latin.txt')
+
+
+# In[8]:
 
 
 get_ipython().system('ls -larth data/latin.txt')
@@ -80,7 +83,7 @@ get_ipython().system('wc data/latin.txt')
 # 
 # J'utilise cette fonction [markov](https://github.com/jilljenn/markov.py/blob/master/markov.py#L10) écrite par [Jill-Jênn Vie](https://jilljenn.github.io/).
 
-# In[8]:
+# In[9]:
 
 
 def markov(corpus, start, length):
@@ -108,7 +111,7 @@ def markov(corpus, start, length):
 
 # Par exemple :
 
-# In[9]:
+# In[10]:
 
 
 corpus = [
@@ -122,7 +125,7 @@ length = 4
 
 # Et on peut générer 3 phrases aléatoires :
 
-# In[10]:
+# In[11]:
 
 
 for _ in range(3):
@@ -134,21 +137,21 @@ for _ in range(3):
 # 
 # On va extraire le corpus, la liste des premiers mots, et la probabilité qu'un mot en début de citation commence par une majuscule.
 
-# In[11]:
+# In[12]:
 
 
 WORD_LIST = "data/latin.txt"
 corpus = open(WORD_LIST).readlines()
 
 
-# In[12]:
+# In[13]:
 
 
 print("Exemple d'une citation :", corpus[0])
 print("Il y a", len(corpus), "citations.")
 
 
-# In[13]:
+# In[14]:
 
 
 starts = [c.split()[0] for c in corpus]
@@ -157,7 +160,7 @@ print("Exemple d'un mot de début de citation :", start)
 print("Il y a", len(starts), "mots de débuts de citations.")
 
 
-# In[14]:
+# In[15]:
 
 
 proba_title = len([1 for s in starts if s.istitle()]) / len(starts)
@@ -166,7 +169,7 @@ print("Il y a {:.3%} chance de commencer une citation par une majuscule.".format
 
 # Mais en fait, le Roi Loth commence toujours ses citations latines par une majuscule :
 
-# In[15]:
+# In[16]:
 
 
 proba_title = 1
@@ -174,7 +177,7 @@ proba_title = 1
 
 # On va générer des locutions de 3 à 6 mots :
 
-# In[16]:
+# In[17]:
 
 
 length_min = 3
@@ -184,7 +187,7 @@ length_max = 6
 # On a bientôt ce qu'il faut pour générer une locution latine aléatoire.
 # Il arrive que la chaîne de Markov se bloque, donc on va juste essayer plusieurs fois avec des débuts différents.
 
-# In[17]:
+# In[18]:
 
 
 def markov_try_while_failing(corpus, starts, length_min, length_max, proba_title, nb_max_trial=100):
@@ -208,7 +211,7 @@ def markov_try_while_failing(corpus, starts, length_min, length_max, proba_title
 
 # On peut essayer :
 
-# In[18]:
+# In[19]:
 
 
 for _ in range(10):
@@ -250,7 +253,7 @@ for _ in range(10):
 # ### Générer aléatoirement les métadonnées de l'épisode
 # C'est facile.
 
-# In[19]:
+# In[20]:
 
 
 episodes = [
@@ -263,7 +266,7 @@ episodes = [
 ]
 
 
-# In[20]:
+# In[21]:
 
 
 def metadonnee_aleatoire(episodes=episodes):
@@ -274,7 +277,7 @@ def metadonnee_aleatoire(episodes=episodes):
 # ### Générer aléatoirement les explications foireuses du Roi Loth
 # C'est moins facile... Mais sans chercher à être parfait, on va juste prendre une explication parmi celles qui existent :
 
-# In[21]:
+# In[22]:
 
 
 explications = [
@@ -289,7 +292,7 @@ explications = [
 
 # Et quelques variations :
 
-# In[22]:
+# In[23]:
 
 
 explications += [
@@ -310,7 +313,7 @@ explications += [
 ]
 
 
-# In[23]:
+# In[24]:
 
 
 def explication_aleatoire():
@@ -320,7 +323,7 @@ def explication_aleatoire():
 # ### Combiner le tout !
 # C'est très facile :
 
-# In[24]:
+# In[25]:
 
 
 def citation_aleatoire(italic=False):
@@ -337,7 +340,7 @@ def citation_aleatoire(italic=False):
 
 # ### Exemples
 
-# In[25]:
+# In[26]:
 
 
 for _ in range(10):
@@ -346,7 +349,7 @@ for _ in range(10):
 
 # ### Joli affichage
 
-# In[26]:
+# In[27]:
 
 
 from IPython.display import display, Markdown
