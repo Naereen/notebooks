@@ -22,6 +22,7 @@ Profitez en bien !
 - [Tris à bulles et cocktail](https://fr.wikipedia.org/wiki/Tri_cocktail) : [Tri_a_bulle_et_tri_cocktail.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Tri_a_bulle_et_tri_cocktail.ipynb) ([sur GitHub](Tri_a_bulle_et_tri_cocktail.ipynb)) -- 903, 926, 927.
 - [Lambda-Calcul embarqué en OCaml](https://fr.wikipedia.org/wiki/Lambda-calcul) : [Lambda_Calcul_en_OCaml.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Lambda_Calcul_en_OCaml.ipynb) ([sur GitHub](Lambda_Calcul_en_OCaml.ipynb)) -- 929.
 - [Mémoïsation générique, en Python et en OCaml](https://fr.wikipedia.org/wiki/M%C3%A9mo%C3%AFsation) : [Mémoisation_en_Python_et_OCaml.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Mémoisation_en_Python_et_OCaml.ipynb) ([sur GitHub](Mémoisation_en_Python_et_OCaml.ipynb)) -- Leçons 906, 907.
+- [Bitsets en OCaml et comparaison avec un `bool array` et un `Set.Make(Int)`](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/agreg/Bitsets_en_OCaml.ipynb) ([sur GitHub](Bitsets_en_OCaml.ipynb)) -- Leçon ?
 
 ----
 
