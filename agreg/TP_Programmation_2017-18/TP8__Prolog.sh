@@ -29,11 +29,11 @@ cd prolog
 
 cat pair.pl
 
-./prolog pair.pl "pair(o)."  # une théorie vide : c'est axiomatiquement vrai !
+./prolog pair.pl "pair(o)."  # une valuation vide : c'est axiomatiquement vrai !
 
-./prolog pair.pl "pair(s(o))."  # aucune théorie : c'est faux !
+./prolog pair.pl "pair(s(o))."  # aucune valuation : c'est faux !
 
-./prolog pair.pl "pair(s(s(o)))."  # une théorie vide : c'est vrai !
+./prolog pair.pl "pair(s(s(o)))."  # une valuation vide : c'est vrai !
 
 ./prolog nat.pl "infEq(s(s(o)), s(s(s(o))))."  # 2 <= 3 ? oui
 
