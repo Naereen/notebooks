@@ -108,3 +108,95 @@ cat famille.pl
 
 ./prolog famille.pl "freresoeur(X,clovis)."
 ./prolog famille.pl "cousin(X,clovis)."
+
+cd exemples
+
+cat listes.pl
+
+../prolog/prolog listes.pl "liste(nil)."  # vrai
+../prolog/prolog listes.pl "liste(cons(toto, nil))."  # vrai
+../prolog/prolog listes.pl "liste(pasliste)."  # faux
+../prolog/prolog listes.pl "liste(cons(zorro, pasliste))."  # faux
+
+../prolog/prolog listes.pl "dernier(X, nil)."  # {} aucune solution !
+../prolog/prolog listes.pl "dernier(X, cons(toto, nil))."  # X = toto
+../prolog/prolog listes.pl "avant_dernier(X, cons(zorro, cons(toto, nil)))."  # X = toto
+../prolog/prolog listes.pl "avant_dernier(X, cons(titeuf, cons(zorro, cons(toto, nil))))."  # X = zorro
+
+../prolog/prolog listes.pl "taille(K, nil)."  # K = o
+../prolog/prolog listes.pl "taille(K, cons(toto, nil))."  # K = s(o)
+../prolog/prolog listes.pl "taille(K, cons(zorro, cons(toto, nil)))."  # K = s(s(o))
+../prolog/prolog listes.pl "taille(K, cons(titeuf, cons(zorro, cons(toto, nil))))."  # K = s(s(s(o)))
+
+../prolog/prolog listes.pl "element_numero(X, o, nil)."  # {} erreur
+../prolog/prolog listes.pl "element_numero(X, o, cons(toto, nil))."  # X = toto
+../prolog/prolog listes.pl "element_numero(X, s(o), cons(zorro, cons(toto, nil)))."  # X = toto
+../prolog/prolog listes.pl "element_numero(X, o, cons(titeuf, cons(zorro, cons(toto, nil))))."  # X = titeuf
+
+../prolog/prolog listes.pl "element_numero(X, s(s(o)), cons(un, cons(deux, cons(trois, cons(quatre, nil)))))."  # X = titeuf
+
+../prolog/prolog listes.pl "dupliquer(X, cons(a, cons(b, cons(c, nil))))."  # X = [a, a, b, b, c, c]
+
+cd exemples
+
+[ -f dominos.pl ] && rm -vf dominos.pl
+
+echo "est_liste(nil)." >> dominos.pl
+echo "est_liste(c(X, L)) <-- est_liste(L)." >> dominos.pl
+
+echo "est_paire(p(A, B))." >> dominos.pl
+
+echo "enchainement(nil)." >> dominos.pl
+echo "enchainement(c(p(A, B), nil))." >> dominos.pl
+echo "enchainement(c(p(Z, X), c(p(X, Y), Q))) <-- enchainement(c(p(X, Y), Q))." >> dominos.pl
+
+../prolog/prolog dominos.pl "enchainement(nil)."  # vrai
+../prolog/prolog dominos.pl "enchainement(c(p(a, b), nil))."  # vrai
+../prolog/prolog dominos.pl "enchainement(c(p(a, b), c(p(a, b), nil)))."  # faux
+../prolog/prolog dominos.pl "enchainement(c(p(b, a), c(p(a, b), nil)))."  # vrai : b-a a-b s'enchaine bien
+
+echo "insere(X, L, c(X, L))." >> dominos.pl
+echo "insere(X, c(T, Q1), c(T, Q2)) <-- insere(X, Q1, Q2)." >> dominos.pl
+
+../prolog/prolog dominos.pl "insere(a, c(b, c(d, nil)), L2)."  # 2+1 possibilités
+
+echo "perm(nil, nil)." >> dominos.pl
+echo "perm(L, c(T, Q)) <-- insere(T, L2, L), perm(L2, Q)." >> dominos.pl
+
+../prolog/prolog dominos.pl "perm(c(a,c(b,nil)), X)."  # [a;b] et [b;a]
+
+../prolog/prolog dominos.pl "perm(c(a,c(b,c(d,nil))), X)."  # 6 = 3! possibilités, toutes montrées
+
+../prolog/prolog dominos.pl "perm(c(u,c(v,c(w,c(x,nil)))), X)."  # 24 = 4! possibilités, pas toutes montrées ?!
+
+echo "miroir(p(A, B), p(B, A))." >> dominos.pl
+
+../prolog/prolog dominos.pl "miroir(p(u,v), X)."  # X = p(v,u)
+
+echo "arrangement(nil, nil)." >> dominos.pl
+echo "arrangement(L, c(T,Q)) <-- insere(T, L2, L), arrangement(L2, Q)." >> dominos.pl
+echo "arrangement(L, c(T,Q)) <-- miroir(T2, T), insere(T2, L2, L), arrangement(L2, Q)." >> dominos.pl
+
+../prolog/prolog dominos.pl "arrangement(nil, L)."  # L = nil
+../prolog/prolog dominos.pl "arrangement(c(a,nil)), L)."  # rien
+
+../prolog/prolog dominos.pl "arrangement(c(a,c(b,nil)), X)."  # X = [a;b] ou [b;a]
+
+../prolog/prolog dominos.pl "arrangement(c(a,c(b,c(d,nil))), X)."  # 6 réponses
+
+# X = [(u,v);(w,u)] ou [(w,u);(u,v)] avec 0 miroir
+# ou X = [(v,u);(w,u)] ou [(w,u);(v,u)] avec 1 miroir sur (u,v)
+# ou X = [(u,v);(u,w)] ou [(u,w);(u,v)] avec 1 miroir sur (w,u)
+# ou X = [(v,u);(u,w)] ou [(u,w);(v,u)] avec 2 miroirs
+../prolog/prolog dominos.pl "arrangement(c(p(u,v),c(p(w,u),nil)), X)."
+
+echo "quasisolution(L1, L2) <-- perm(L1, L2), enchainement(L2)." >> dominos.pl
+echo "solution(L1, L2) <-- arrangement(L1, L2), enchainement(L2)." >> dominos.pl
+
+../prolog/prolog dominos.pl "quasisolution(c(p(un,deux),c(p(trois,un),c(p(deux,quatre),nil))), L)."
+
+../prolog/prolog dominos.pl "solution(c(p(un,deux),c(p(trois,un),c(p(deux,quatre),nil))), L)."
+
+cat domino.pl
+
+cat dominos.pl
