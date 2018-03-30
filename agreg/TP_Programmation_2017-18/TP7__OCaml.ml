@@ -738,26 +738,26 @@ On représente un graphe par tableau de listes d'adjacence. Notre exemple sera l
 
 (* ### Représentation des graphes *)
 
-(* In[75]: *)
+(* In[2]: *)
 
 
 type sommet = int ;;
 type graphe = (sommet list) array;;
 
-(* In[76]: *)
+(* In[3]: *)
 
 
 let nb_sommet (g : graphe) = Array.length g;;
 
 (* ### Et des coloriages *)
 
-(* In[77]: *)
+(* In[4]: *)
 
 
 type couleur = int;;
 type coloriage = couleur array;; (* c.(i) est la couleur du sommet i... *);;
 
-(* In[78]: *)
+(* In[5]: *)
 
 
 let verifie_coloriage (g : graphe) (c : coloriage) =
@@ -774,7 +774,7 @@ let verifie_coloriage (g : graphe) (c : coloriage) =
 
 (* ### Exemple *)
 
-(* In[79]: *)
+(* In[6]: *)
 
 
 let g1 : graphe = [|
@@ -785,7 +785,7 @@ let g1 : graphe = [|
     [1; 2]  (* voisins de 4 *)
 |];;
 
-(* In[80]: *)
+(* In[7]: *)
 
 
 let coloriage1 = [|0; 1; 1; 1; 0|];;
@@ -796,7 +796,7 @@ let _ = verifie_coloriage g1 coloriage2;;
 
 (* On a bien sûr une approche naïve : *)
 
-(* In[81]: *)
+(* In[8]: *)
 
 
 let coloriage_naif (g : graphe) : coloriage =
@@ -804,7 +804,7 @@ let coloriage_naif (g : graphe) : coloriage =
     Array.init n (fun i -> i);
 ;;
 
-(* In[82]: *)
+(* In[9]: *)
 
 
 let coloriage3 = coloriage_naif g1;;
@@ -812,21 +812,23 @@ let _ = verifie_coloriage g1 coloriage3;;
 
 (* C'est une borne supérieure triviale sur le nombre minimal de couleur requis pour colorier un graphe. *)
 
-(* ### Algorithme glouton pour le coloriage *)
+(* ### Algorithme glouton pour le coloriage
 
-(* In[83]: *)
+Pour plus de détails, voir par exemple [cette page là](http://jean-paul.davalan.pagesperso-orange.fr/graphs/col/index.html). *)
+
+(* In[10]: *)
 
 
 let degres (g : graphe) : int array =
     Array.map List.length g
 ;;
 
-(* In[84]: *)
+(* In[11]: *)
 
 
 let _ = degres g1;;
 
-(* In[85]: *)
+(* In[12]: *)
 
 
 type permutation = int array;;
@@ -840,12 +842,12 @@ let trie_par_degres (g : graphe) : permutation =
     indices
 ;;
 
-(* In[86]: *)
+(* In[13]: *)
 
 
 let _ = trie_par_degres g1;;
 
-(* In[87]: *)
+(* In[14]: *)
 
 
 let plus_petite_couleur_libre (n : int) (cs : couleur list) : couleur =
@@ -857,7 +859,7 @@ let plus_petite_couleur_libre (n : int) (cs : couleur list) : couleur =
     !rep
 ;;
 
-(* In[88]: *)
+(* In[15]: *)
 
 
 let coloriage_glouton (g : graphe) : coloriage =
@@ -872,13 +874,33 @@ let coloriage_glouton (g : graphe) : coloriage =
     c
 ;;
 
+(* In[20]: *)
+
+
+let coloriage_glouton_pas_trie (g : graphe) : coloriage =
+    let n = nb_sommet g in
+    let c = Array.make n (-1) in
+    for i = 0 to n-1 do
+        (* on regarde le sommet i *)
+        let couleurs_voisins = List.map (fun j -> c.(j)) g.(i) in
+        c.(i) <- plus_petite_couleur_libre n couleurs_voisins;
+    done;
+    c
+;;
+
 (* ### Exemples *)
 
-(* In[89]: *)
+(* In[16]: *)
 
 
 let coloriage4 = coloriage_glouton g1;;
 let _ = verifie_coloriage g1 coloriage4;;
+
+(* In[21]: *)
+
+
+let coloriage5 = coloriage_glouton_pas_trie g1;;
+let _ = verifie_coloriage g1 coloriage5;;
 
 (* On remarque que la procédure gloutonne a ici trouvé un coloriage minimal et optimal mais différent de celui proposé plus haut.
 
@@ -886,6 +908,63 @@ let _ = verifie_coloriage g1 coloriage4;;
 - Et comment vérifier l'optimalité ? Il faudrait tester *tous* les coloriages à `c-1` couleurs (si celui là en a `c`) et montrer qu'aucun ne convient (ce n'est pas simple non plus, il y a beaucoup de coloriages possibles).
 
 Note : une première indication est qu'ici on a utilisé `c=3` couleurs avec un graphe de degré maximum $\delta_{\max} = 3$. *)
+
+(* Pour un contre exemple : *)
+
+(* In[22]: *)
+
+
+let g2 : graphe = [|
+    [1; 2; 3; 4; 5]; (* voisins de 0 *)
+    [0; 2; 3; 4; 5]; (* voisins de 1 *)
+    [0; 1; 3; 4]; (* voisins de 2 *)
+    [0; 1; 2; 5]; (* voisins de 3 *)
+    [0; 1; 2];  (* voisins de 4 *)
+    [0; 1; 3]  (* voisins de 5 *)
+|];;
+
+(* In[23]: *)
+
+
+let coloriage6 = coloriage_glouton g2;;
+let _ = verifie_coloriage g2 coloriage6;;
+
+(* In[24]: *)
+
+
+let coloriage6 = coloriage_glouton_pas_trie g2;;
+let _ = verifie_coloriage g2 coloriage6;;
+
+(* Et en changeant l'ordre des sommets : *)
+
+(* In[26]: *)
+
+
+let g3 : graphe = [|
+    [5; 4; 2];  (* voisins de 0 *)
+    [5; 4; 3];  (* voisins de 1 *)
+    [5; 4; 3; 0]; (* voisins de 2 *)
+    [5; 4; 2; 1]; (* voisins de 3 *)
+    [5; 3; 2; 1; 0]; (* voisins de 4 *)
+    [4; 3; 2; 1; 0] (* voisins de 5 *)
+|];;
+
+(* In[29]: *)
+
+
+let coloriage6 = coloriage_glouton g3;;
+let _ = verifie_coloriage g3 coloriage6;;
+
+(* Là on vérifie que l'ordre des sommets est important, par exemple si on ne trie pas les sommets par degrés décroissants, l'algorithme glouton trouche un coloriage sous-optimal (avec 5 couleurs ici) : *)
+
+(* In[28]: *)
+
+
+let coloriage6 = coloriage_glouton_pas_trie g3;;
+let _ = verifie_coloriage g3 coloriage6;;
+
+(* Je n'ai pas trouvé de contre exemple qui donne un coloriage sous-optimal pour la première version (avec tri par degrés décroissants) de l'algorithme.
+Si vous en avez un, [envoyez le moi !](https://perso.crans.org/besson/contact/) *)
 
 (* ----
 ## Conclusion
