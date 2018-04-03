@@ -1,0 +1,13 @@
+digraph G {
+  som0 [label="0"];
+  som1 [label="1"];
+  som2 [label="2"];
+  som3 [label="3"];
+  som4 [label="4"];
+  som0 -> som1 [label="2"];
+  som0 -> som2 [label="4"];
+  som0 -> som3 [label="2"];
+  som1 -> som4 [label="1"];
+  som2 -> som4 [label="4"];
+  som3 -> som2 [label="1"];
+}
