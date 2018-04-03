@@ -7,7 +7,7 @@ https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
 *)
 
 (* # Table of Contents
- <p><div class="lev1 toc-item"><a href="#TP-7---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-7---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 7 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev2 toc-item"><a href="#Algorithme-de-Dijkstra---avec-des-files-non-mutables" data-toc-modified-id="Algorithme-de-Dijkstra---avec-des-files-non-mutables-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Algorithme de Dijkstra - avec des files non mutables</a></div><div class="lev3 toc-item"><a href="#Files-de-priorité-min" data-toc-modified-id="Files-de-priorité-min-111"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Files de priorité min</a></div><div class="lev3 toc-item"><a href="#Graphe-par-tableau-de-listes-d'adjacence" data-toc-modified-id="Graphe-par-tableau-de-listes-d'adjacence-112"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>Graphe par tableau de listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Exemple-de-visualisation-de-graphe" data-toc-modified-id="Exemple-de-visualisation-de-graphe-113"><span class="toc-item-num">1.1.3&nbsp;&nbsp;</span>Exemple de visualisation de graphe</a></div><div class="lev3 toc-item"><a href="#Dijkstra" data-toc-modified-id="Dijkstra-114"><span class="toc-item-num">1.1.4&nbsp;&nbsp;</span>Dijkstra</a></div><div class="lev2 toc-item"><a href="#Algorithme-de-Dijkstra---avec-des-files-mutables" data-toc-modified-id="Algorithme-de-Dijkstra---avec-des-files-mutables-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Algorithme de Dijkstra - avec des files mutables</a></div><div class="lev3 toc-item"><a href="#Files-de-priorité-min-mutables" data-toc-modified-id="Files-de-priorité-min-mutables-121"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Files de priorité min mutables</a></div><div class="lev3 toc-item"><a href="#Dijkstra,-2ème-version" data-toc-modified-id="Dijkstra,-2ème-version-122"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Dijkstra, 2ème version</a></div><div class="lev3 toc-item"><a href="#Exemple" data-toc-modified-id="Exemple-123"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>Exemple</a></div><div class="lev2 toc-item"><a href="#Arbres-couvrants-de-poids-minimal" data-toc-modified-id="Arbres-couvrants-de-poids-minimal-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Arbres couvrants de poids minimal</a></div><div class="lev3 toc-item"><a href="#Algorithme-de-Prim" data-toc-modified-id="Algorithme-de-Prim-131"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Algorithme de Prim</a></div><div class="lev3 toc-item"><a href="#Exemple" data-toc-modified-id="Exemple-132"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Exemple</a></div><div class="lev2 toc-item"><a href="#Tas-binaire-min" data-toc-modified-id="Tas-binaire-min-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Tas binaire min</a></div><div class="lev2 toc-item"><a href="#Codage-de-Huffman" data-toc-modified-id="Codage-de-Huffman-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Codage de Huffman</a></div><div class="lev3 toc-item"><a href="#Fréquences-de-lettres-dans-un-texte" data-toc-modified-id="Fréquences-de-lettres-dans-un-texte-151"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Fréquences de lettres dans un texte</a></div><div class="lev3 toc-item"><a href="#Structure-de-tas-binaire-min" data-toc-modified-id="Structure-de-tas-binaire-min-152"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>Structure de tas binaire min</a></div><div class="lev3 toc-item"><a href="#Exemple-d'un-codage-préfixe-(Figure-16.4-p378-du-Cormen)" data-toc-modified-id="Exemple-d'un-codage-préfixe-(Figure-16.4-p378-du-Cormen)-153"><span class="toc-item-num">1.5.3&nbsp;&nbsp;</span>Exemple d'un codage préfixe (Figure 16.4 p378 du Cormen)</a></div><div class="lev3 toc-item"><a href="#Algorithme-glouton-de-codage-préfixe-optimal-de-Huffman" data-toc-modified-id="Algorithme-glouton-de-codage-préfixe-optimal-de-Huffman-154"><span class="toc-item-num">1.5.4&nbsp;&nbsp;</span>Algorithme glouton de codage préfixe optimal de Huffman</a></div><div class="lev2 toc-item"><a href="#Coloration-de-graphes" data-toc-modified-id="Coloration-de-graphes-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Coloration de graphes</a></div><div class="lev3 toc-item"><a href="#Représentation-des-graphes" data-toc-modified-id="Représentation-des-graphes-161"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Représentation des graphes</a></div><div class="lev3 toc-item"><a href="#Et-des-coloriages" data-toc-modified-id="Et-des-coloriages-162"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>Et des coloriages</a></div><div class="lev3 toc-item"><a href="#Exemple" data-toc-modified-id="Exemple-163"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>Exemple</a></div><div class="lev3 toc-item"><a href="#Algorithme-glouton-pour-le-coloriage" data-toc-modified-id="Algorithme-glouton-pour-le-coloriage-164"><span class="toc-item-num">1.6.4&nbsp;&nbsp;</span>Algorithme glouton pour le coloriage</a></div><div class="lev3 toc-item"><a href="#Exemples" data-toc-modified-id="Exemples-165"><span class="toc-item-num">1.6.5&nbsp;&nbsp;</span>Exemples</a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Conclusion</a></div> *)
+ <p><div class="lev1 toc-item"><a href="#TP-7---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-7---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 7 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev2 toc-item"><a href="#Algorithme-de-Dijkstra---avec-des-files-non-mutables" data-toc-modified-id="Algorithme-de-Dijkstra---avec-des-files-non-mutables-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Algorithme de Dijkstra - avec des files non mutables</a></div><div class="lev3 toc-item"><a href="#Files-de-priorité-min" data-toc-modified-id="Files-de-priorité-min-111"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Files de priorité min</a></div><div class="lev3 toc-item"><a href="#Graphe-par-tableau-de-listes-d'adjacence" data-toc-modified-id="Graphe-par-tableau-de-listes-d'adjacence-112"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>Graphe par tableau de listes d'adjacence</a></div><div class="lev3 toc-item"><a href="#Exemple-de-visualisation-de-graphe" data-toc-modified-id="Exemple-de-visualisation-de-graphe-113"><span class="toc-item-num">1.1.3&nbsp;&nbsp;</span>Exemple de visualisation de graphe</a></div><div class="lev3 toc-item"><a href="#Dijkstra" data-toc-modified-id="Dijkstra-114"><span class="toc-item-num">1.1.4&nbsp;&nbsp;</span>Dijkstra</a></div><div class="lev3 toc-item"><a href="#Contre-exemples" data-toc-modified-id="Contre-exemples-115"><span class="toc-item-num">1.1.5&nbsp;&nbsp;</span>Contre-exemples</a></div><div class="lev4 toc-item"><a href="#Un-graphe-non-connexe" data-toc-modified-id="Un-graphe-non-connexe-1151"><span class="toc-item-num">1.1.5.1&nbsp;&nbsp;</span>Un graphe non connexe</a></div><div class="lev4 toc-item"><a href="#Un-graphe-avec-un-poids-négatif" data-toc-modified-id="Un-graphe-avec-un-poids-négatif-1152"><span class="toc-item-num">1.1.5.2&nbsp;&nbsp;</span>Un graphe avec un poids négatif</a></div><div class="lev2 toc-item"><a href="#Algorithme-de-Dijkstra---avec-des-files-mutables" data-toc-modified-id="Algorithme-de-Dijkstra---avec-des-files-mutables-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Algorithme de Dijkstra - avec des files mutables</a></div><div class="lev3 toc-item"><a href="#Files-de-priorité-min-mutables" data-toc-modified-id="Files-de-priorité-min-mutables-121"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Files de priorité min mutables</a></div><div class="lev3 toc-item"><a href="#Dijkstra,-2ème-version" data-toc-modified-id="Dijkstra,-2ème-version-122"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Dijkstra, 2ème version</a></div><div class="lev3 toc-item"><a href="#Exemples" data-toc-modified-id="Exemples-123"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>Exemples</a></div><div class="lev2 toc-item"><a href="#Arbres-couvrants-de-poids-minimal" data-toc-modified-id="Arbres-couvrants-de-poids-minimal-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Arbres couvrants de poids minimal</a></div><div class="lev3 toc-item"><a href="#Algorithme-de-Prim" data-toc-modified-id="Algorithme-de-Prim-131"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Algorithme de Prim</a></div><div class="lev3 toc-item"><a href="#Exemple" data-toc-modified-id="Exemple-132"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Exemple</a></div><div class="lev2 toc-item"><a href="#Tas-binaire-min" data-toc-modified-id="Tas-binaire-min-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Tas binaire min</a></div><div class="lev2 toc-item"><a href="#Codage-de-Huffman" data-toc-modified-id="Codage-de-Huffman-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Codage de Huffman</a></div><div class="lev3 toc-item"><a href="#Fréquences-de-lettres-dans-un-texte" data-toc-modified-id="Fréquences-de-lettres-dans-un-texte-151"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>Fréquences de lettres dans un texte</a></div><div class="lev3 toc-item"><a href="#Structure-de-tas-binaire-min" data-toc-modified-id="Structure-de-tas-binaire-min-152"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>Structure de tas binaire min</a></div><div class="lev3 toc-item"><a href="#Exemple-d'un-codage-préfixe-(Figure-16.4-p378-du-Cormen)" data-toc-modified-id="Exemple-d'un-codage-préfixe-(Figure-16.4-p378-du-Cormen)-153"><span class="toc-item-num">1.5.3&nbsp;&nbsp;</span>Exemple d'un codage préfixe (Figure 16.4 p378 du Cormen)</a></div><div class="lev3 toc-item"><a href="#Algorithme-glouton-de-codage-préfixe-optimal-de-Huffman" data-toc-modified-id="Algorithme-glouton-de-codage-préfixe-optimal-de-Huffman-154"><span class="toc-item-num">1.5.4&nbsp;&nbsp;</span>Algorithme glouton de codage préfixe optimal de Huffman</a></div><div class="lev2 toc-item"><a href="#Coloration-de-graphes" data-toc-modified-id="Coloration-de-graphes-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Coloration de graphes</a></div><div class="lev3 toc-item"><a href="#Représentation-des-graphes" data-toc-modified-id="Représentation-des-graphes-161"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Représentation des graphes</a></div><div class="lev3 toc-item"><a href="#Et-des-coloriages" data-toc-modified-id="Et-des-coloriages-162"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>Et des coloriages</a></div><div class="lev3 toc-item"><a href="#Exemple" data-toc-modified-id="Exemple-163"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>Exemple</a></div><div class="lev3 toc-item"><a href="#Algorithme-glouton-pour-le-coloriage" data-toc-modified-id="Algorithme-glouton-pour-le-coloriage-164"><span class="toc-item-num">1.6.4&nbsp;&nbsp;</span>Algorithme glouton pour le coloriage</a></div><div class="lev3 toc-item"><a href="#Exemples" data-toc-modified-id="Exemples-165"><span class="toc-item-num">1.6.5&nbsp;&nbsp;</span>Exemples</a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Conclusion</a></div> *)
 
 (* # TP 7 - Programmation pour la préparation à l'agrégation maths option info
 TP 5 : Algorithmes gloutons et files de priorité. *)
@@ -270,6 +270,72 @@ let dijkstra g =
 
 let _ = dijkstra g1;;
 
+(* ### Contre-exemples
+
+Trouver des cas simples faisant échouer l’algorithme si une des hypothèses n'est pas satisfaite : par exemple un graphe non connexe, ou un graphe avec une arête de poids négatif. *)
+
+(* #### Un graphe non connexe *)
+
+(* In[32]: *)
+
+
+let s = 0
+and a = 1
+and b = 2
+and c = 3
+and d = 4
+and e = 5
+and f = 6;;
+let g2 = {
+    taille = 7;
+    entree = s;
+    adj = [|
+        [(2,a); (4,b); (2,c)]; (* adj(s) *)
+        [(1,d)]; (* adj(A) *)
+        [(4,d)]; (* adj(B) *)
+        [(1,b)]; (* adj(C) *)
+        [ ]; (* adj(D) *)
+        [(5,f)]; (* adj(E) *)
+        [ ]; (* adj(F) *)
+    |]
+};;
+
+(* In[33]: *)
+
+
+let _ = dijkstra g2;;
+
+(* Oups, ça n'a pas l'air correct ! *)
+
+(* #### Un graphe avec un poids négatif *)
+
+(* In[44]: *)
+
+
+let s = 0
+and a = 1
+and b = 2
+and c = 3
+and d = 4;;
+let g3 = {
+    taille = 5;
+    entree = s;
+    adj = [|
+        [(2,a); (-4,b); (2,c)]; (* adj(s) *)
+        [(1,d)]; (* adj(A) *)
+        [(-4,d)]; (* adj(B) *)
+        [(1,b)]; (* adj(C) *)
+        [(2,b)]; (* adj(D) *)
+    |]
+};;
+
+(* In[45]: *)
+
+
+let _ = dijkstra g3;;
+
+(* Oups, ça n'a pas l'air correct non plus ! *)
+
 (* ----
 ## Algorithme de Dijkstra - avec des files mutables
 
@@ -277,19 +343,19 @@ Déjà vu, on le retraite ici. *)
 
 (* ### Files de priorité min mutables *)
 
-(* In[24]: *)
+(* In[46]: *)
 
 
 (* file de priorité version non-mutable *)
 type 'a priopqueue = (int * 'a) list ref;;
 
-(* In[25]: *)
+(* In[47]: *)
 
 
 (* file vide *)
 let vide () : 'a priopqueue = ref [ ];;
 
-(* In[26]: *)
+(* In[48]: *)
 
 
 (* [inserer x clef q] insere l'element [x] dans la file [q]
@@ -301,13 +367,13 @@ let inserer (x:'a) (clef:int) (q:'a priopqueue) : unit =
     else q := (clef,x) :: !q
 ;;
 
-(* In[27]: *)
+(* In[49]: *)
 
 
 (* [est_vide q] teste si la file [q] est vide *)
 let est_vide (q:'a priopqueue) : bool = (!q = [ ]);;
 
-(* In[30]: *)
+(* In[50]: *)
 
 
 (* [trouve_min_aux min_val min_clef q] renvoie un couple de clef minimale
@@ -319,7 +385,7 @@ let rec trouve_min_aux (min_val:'a) (min_clef:int) (q:(int*'a) list) : int * 'a 
     | (clef, v) :: q -> trouve_min_aux v clef q
 ;;
 
-(* In[31]: *)
+(* In[51]: *)
 
 
 (* [trouve_min q] renvoie un élément de clef minimale la file [q].
@@ -330,7 +396,7 @@ let trouve_min (q:(int*'a) list) : 'a =
     | (clef, v) :: q -> snd (trouve_min_aux v clef q)
 ;;
 
-(* In[32]: *)
+(* In[52]: *)
 
 
 (* [supprime v q] renvoie une file contenant les éléments de [q], sauf [x].
@@ -342,7 +408,7 @@ let rec supprime (x:'a) (q:(int*'a) list) : (int*'a) list =
     | (clef, v) :: q -> (clef,v) :: (supprime x q)
 ;;
 
-(* In[33]: *)
+(* In[53]: *)
 
 
 (* [extraire_min q] renvoie un élément de q, de clef minimal,
@@ -355,7 +421,7 @@ let extraire_min (q:'a priopqueue) : 'a =
         min
 ;;
 
-(* In[34]: *)
+(* In[54]: *)
 
 
 (* [diminuer_clef q clef x] modifie la clef de l'élément [x]
@@ -375,7 +441,7 @@ let diminuer_clef (x:'a) (clef:int) (q:'a priopqueue) : unit =
 
 (* C'est aussi assez direct : *)
 
-(* In[35]: *)
+(* In[55]: *)
 
 
 let dijkstra g =
@@ -401,12 +467,24 @@ let dijkstra g =
     dist, pere
 ;;
 
-(* ### Exemple *)
+(* ### Exemples *)
 
-(* In[36]: *)
+(* In[56]: *)
 
 
 let _ = dijkstra g1;;
+
+(* Et les contre-exemples maintenant : *)
+
+(* In[57]: *)
+
+
+let _ = dijkstra g2;;
+
+(* In[58]: *)
+
+
+let _ = dijkstra g3;;
 
 (* ----
 ## Arbres couvrants de poids minimal
@@ -420,29 +498,29 @@ On ne traite que l'algorithme de Prim. L'algorithme de Kruskal n'est pas plus co
 
 let prim g =
     let q = vide () in
-    let poid = Array.init g.taille (fun i ->
+    let poids = Array.init g.taille (fun i ->
         if i=g.entree then 0 else max_int
     ) in
     let pere = Array.init g.taille (fun i -> i) in
     for i=0 to g.taille-1 do (* initialisation de la file *)
-        inserer i poid.(i) q;
+        inserer i poids.(i) q;
     done;
     while not (est_vide q) do
         let x = extraire_min q in
         (* on regarde les adjacents de x *)
         List.iter (fun (c,y) ->
-            if poid.(y) > c
+            if poids.(y) > c
             then begin
                 pere.(y) <- x;
-                poid.(y) <- c;
-                diminuer_clef y poid.(y) q
+                poids.(y) <- c;
+                diminuer_clef y poids.(y) q
         end)
         g.adj.(x)
     done;
     Array.iteri (fun i p ->
         if i != p then Printf.printf " (%d, %d)\n" i p
     ) pere;
-    poid, pere;
+    poids, pere;
 ;;
 
 (* ### Exemple *)
@@ -969,4 +1047,6 @@ Si vous en avez un, [envoyez le moi !](https://perso.crans.org/besson/contact/) 
 (* ----
 ## Conclusion
 
-Fin. À la séance prochaine. Le dernier TP8 traitera de programmation logique (en mai). *)
+Fin. À la séance prochaine. Le dernier TP (TP8) traitera de programmation logique (en mai).
+
+> En attendant, essayez de finir ce sujet TP#7 et aussi la partie 2 (avec Python) du TP#6 sur le $\lambda$-calcul. *)
