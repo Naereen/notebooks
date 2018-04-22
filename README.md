@@ -30,6 +30,8 @@ Go to [nbviewer](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/maste
 
 - [This notebook shows how to solve the equation `exp(- a x²)=x` both numerically and formally (with the Lambert W function)](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Solving_an_equation_and_the_Lambert_W_function.ipynb) ([on GitHub?](Solving_an_equation_and_the_Lambert_W_function.ipynb)).
 
+- [This notebook implements Kullback-Leibler divergences for some parametric distributions, and KL-UCB indexes, in naive Python and compare with optimized versions using JIT compilation by Numba or C compilation by Cython](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Kullback-Leibler_divergences_in_native_Python__Cython_and_Numba.ipynb) ([on GitHub?](Kullback-Leibler_divergences_in_native_Python__Cython_and_Numba.ipynb)).
+
 ### Teaching
 - :fr: [Ce notebook en français présente les problèmes de bandits multi-bras stochastiques](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb) ([on GitHub?](Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb)) (*multi-armed bandit*, MAB), et les algorithmes dits "de bandits" pour les résoudre (UCB "Upper Confidence Bounds", KL-UCB, Thompson Sampling, Approximated Finite-Horizon Gittins index etc). C'est une bonne introduction aux outils que j'utilise pour [ma thèse](http://perso.crans.org/besson/phd/).
 
