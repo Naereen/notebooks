@@ -67,7 +67,10 @@ Go to [nbviewer](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/maste
 - Demo of the [RISE Jupyter extension](https://github.com/damianavila/RISE) to easily write a dynamic slideshow in a Jupyter notebook, [for Python](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb) ([on GitHub?](Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb)) and
 [for OCaml](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb) ([on GitHub?](Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb)) :loudspeaker:.
 
-## 🐫 OCaml
+## With [Julia](https://www.julialang.org/)
+- [This notebook shows a implementation of a naive algorithm to compute eigen values and eigen vectors for full rank matrices](http://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Algorithms_to_compute_eigen_values_and_eigen_vectors_in_Julia.ipynb) ([on GitHub?](Algorithms_to_compute_eigen_values_and_eigen_vectors_in_Julia.ipynb), on Julia.
+
+## 🐫 [OCaml](https://www.ocaml.org/)
 - Some notebooks are written in French :fr:, mainly [documents written for the preparation](agreg/) to the highly competitive French national exam to become a professor (aka the ["agrégation"](http://agreg.org/)), as since 2016 I am [a teaching assistant](https://www.irisa.fr/fr/emplois/enseignants/missions-denseignement-au-departement-informatique-lens-rennes) at [ENS de Rennes](http://www.ens-rennes.fr/) in the [Computer Science department](http://www.dit.ens-rennes.fr/), for the ["Fundamental Computer Science" minor option (D) for the agrégation exam](http://www.dit.ens-rennes.fr/agregation-option-d/). :fr: Voir [ce sous-dossier](http://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/) ([ou sur GitHub](agreg/)) / :gb: See [this sub-folder](http://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/) ([or on GitHub](agreg/)).
 
 > And more will come... soon! :bullettrain_front:
