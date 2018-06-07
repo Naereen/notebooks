@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2017" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2017-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2017</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#Quelques-exemples-de-sujets-d'oraux-corrigés" data-toc-modified-id="Quelques-exemples-de-sujets-d'oraux-corrigés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Quelques exemples de sujets <em>d'oraux</em> corrigés</a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
+#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2017" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2017-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2017</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev2 toc-item"><a href="#Planche-177" data-toc-modified-id="Planche-177-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Planche 177</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#Quelques-exemples-de-sujets-d'oraux-corrigés" data-toc-modified-id="Quelques-exemples-de-sujets-d'oraux-corrigés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Quelques exemples de sujets <em>d'oraux</em> corrigés</a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
 
 # # Oraux CentraleSupélec PSI - Juin 2017
 # 
@@ -346,6 +346,98 @@ plt.title(r"Valeurs de $u_n / \frac{1}{n(n+1)}$")
 
 
 # Ca suffit pour la partie Python.
+
+# ----
+# ## Planche 177
+# 
+# - Le domaine de définition de $f(x) = \sum_{n \geq 1} \frac{x^n}{n^2}$ est $[-1, 1]$ car $\sum \frac{x^n}{n^k}$ converge si $\sum x^n$ converge (par $k$ dérivations successives), qui converge ssi $|x| < 1$. Et en $-1$ et $1$, on utilise $\sum \frac{1}{n^2} = \frac{\pi^2}{6}$.
+# 
+# - Pour calculer $f(x)$ à $10^{-5}$ près, il faut calculer sa somme partielle $S_n(x) := \sum_{i=1}^n \frac{x^i}{i^2}$ en bornant son reste $S_n(x) := \sum_{i \geq n+1} \frac{x^i}{i^2}$ par (au moins) $10^{-5}$. Une inégalité montre rapidement que $R_n(x) \leq |x|^{n+1}\sum_{i\geq n+1} \frac{1}{i^2} $, et donc $R_n(x) \leq \delta$ dès que $|x|^{n+1} \leq \frac{\pi^2}{6} \delta$, puisque $\sum_{i\geq n+1} \frac{1}{i^2} \leq \sum_{i=0}^{+\infty} \frac{1}{i^2} = \frac{\pi^2}{6}$. En inversant pour trouver $n$, cela donne que le reste est contrôlé par $\delta$ dès que $n \leq \log_{|x|}\left( \frac{6}{\pi^2} \delta \right) - 1$ (si $x\neq 0$, et par $n \geq 0$ sinon).
+
+# In[9]:
+
+
+from math import floor, log, pi
+
+
+# In[10]:
+
+
+delta = 1e-5
+
+def f(x):
+    if x == 0: return 0
+    borne_sur_n = int(floor(log((6/pi**2 * delta), abs(x)) - 1))
+    somme_partielle = 0
+    for n in range(1, borne_sur_n + 1):
+        somme_partielle += x**n / n**2
+    return somme_partielle
+
+
+# In[13]:
+
+
+for x in [-0.75, -0.5, 0.25, 0, 0.25, 0.5, 0.75]:
+    print("Pour x =", x, "f(x) =", f(x))
+
+
+# - L'intégrale $g(t) = \int_0^x \frac{\ln(1 - t)}{t} \mathrm{d}t$ est bien défine sur $D = [-1, 1]$ puisque son intégrande existe, est continue et bien intégrable sur tout interval de la forme $]a, 0[$ ou $]0, b[$ pour $-1 < a < 0$ ou $0 < b < 1$. Le seul point qui peut déranger l'intégrabilité est en $0$, mais $\ln(1-t) \sim t$ quand $t\to0$ donc l'intégrande est $\sim 1$ en $0^-$ et $0^+$ et donc est bien intégrable. De plus, comme "intégrale de la borne supérieure" d'une fonction continue, $g$ est dérivable sur l'intérieur de son domaine, *i.e.*, sur $]-1, 1[$.
+# 
+# - Pour la calculer numériquement, on utilise **évidemment** le module `scipy.integrate` et sa fonction `integrale, erreur = quad(f, a, b)`, qui donne une approximation de la valeur d'une intégrale en dimension 1 et une *borne* sur son erreur :
+
+# In[17]:
+
+
+from scipy import integrate
+
+
+# In[18]:
+
+
+def g(x):
+    def h(t):
+        return log(1 - t) / t
+    integrale, erreur = integrate.quad(h, 0, x)
+    return integrale
+
+
+# - On visualise les deux fonctions $f$ et $g$ sur le domaine $D$ :
+
+# In[22]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# In[25]:
+
+
+domaine = np.linspace(-0.99, 0.99, 1000)
+
+valeurs_f = [f(x) for x in domaine]
+valeurs_g = [g(x) for x in domaine]
+
+plt.figure()
+plt.plot(domaine, valeurs_f, label="$f(x)$")
+plt.plot(domaine, valeurs_g, label="$g(x)$")
+plt.legend()
+plt.grid()
+plt.title("Représentation de $f(x)$ et $g(x)$")
+plt.show()
+
+
+# - On conjecture que $g(x) = - f(x)$.
+# 
+# La suite des questions est à faire au brouillon et sans Python :
+# 
+# - On trouve que $f'(x) = \sum_{n\geq 1} \frac{n x^{n-1}}{n^2} = \frac{1}{x} \sum_{n\geq 1} \frac{x^n}{n}$ si $x\neq0$. Or on sait que $\log(1 + x) = \sum_{n\geq 1} \frac{x^n}{n}$ et donc cela montre bien que $g(x) = \int_0^x - f'(t) \mathrm{d}t = f(0) - f(x) = f(x)$ comme observé.
+# 
+# - On trouve que $g(1) = - f(1) = - \frac{\pi^2}{6}$.
+# 
+# - Par ailleurs, un changement de variable $u=1-x$ donne $g(1-x) = \int_x^1 \frac{\ln(u)}{1-u} \mathrm{d} u$, et une intégration par partie avec $a(u) = \ln(u)$ et $b'(u) = \frac{1}{1-u}$ donne $g(1-x) = [\ln(u)\ln(1-u)]_x^1 + \int_x^1 \frac{\ln(1-u)}{u} \mathrm{d}u$ et donc on reconnaît que $$g(1-x) = \ln(x)\ln(1-x) + g(1) - g(x).$$
+# 
+# - Je vous laisse la fin comme exercice !
 
 # ----
 # # À voir aussi
