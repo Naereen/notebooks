@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2017" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2017-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2017</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev2 toc-item"><a href="#Planche-177" data-toc-modified-id="Planche-177-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Planche 177</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#Quelques-exemples-de-sujets-d'oraux-corrigés" data-toc-modified-id="Quelques-exemples-de-sujets-d'oraux-corrigés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Quelques exemples de sujets <em>d'oraux</em> corrigés</a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
+#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2017" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2017-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2017</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev2 toc-item"><a href="#Planche-172" data-toc-modified-id="Planche-172-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Planche 172</a></div><div class="lev2 toc-item"><a href="#Planche-177" data-toc-modified-id="Planche-177-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Planche 177</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#Quelques-exemples-de-sujets-d'oraux-corrigés" data-toc-modified-id="Quelques-exemples-de-sujets-d'oraux-corrigés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Quelques exemples de sujets <em>d'oraux</em> corrigés</a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
 
 # # Oraux CentraleSupélec PSI - Juin 2017
 # 
@@ -14,7 +14,7 @@
 # - Les exercices sans Python ne sont pas traités.
 # - Les exercices avec Python utilisent Python 3, [numpy](http://numpy.org), [matplotlib](http://matplotlib.org), [scipy](http://scipy.org) et [sympy](http://sympy.org), et essaient d'être résolus le plus simplement et le plus rapidement possible. L'efficacité (algorithmique, en terme de mémoire et de temps de calcul), n'est *pas* une priorité. La concision et simplicité de la solution proposée est prioritaire.
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -310,14 +310,14 @@ np.round(vecteur_propres[0])
 
 # ## Planche 170
 
-# In[ ]:
+# In[2]:
 
 
 def u(n):
     return np.arctan(n+1) - np.arctan(n)
 
 
-# In[85]:
+# In[42]:
 
 
 valeurs_n = np.arange(50)
@@ -328,12 +328,37 @@ plt.plot(valeurs_n, valeurs_u, "o-")
 plt.title("Premières valeurs de $u_n$")
 
 
+# On peut vérifier le prognostic quand à la somme de la série $\sum u_n$ :
+
+# In[44]:
+
+
+pi/2
+
+
+# In[43]:
+
+
+sum(valeurs_u)
+
+
+# In[45]:
+
+
+somme_serie = pi/2
+somme_partielle = sum(valeurs_u)
+erreur_relative = abs(somme_partielle - somme_serie) / somme_serie
+erreur_relative
+
+
+# Avec seulement $50$ termes, on a moins de $1.5%$ d'erreur relative, c'est déjà pas mal !
+
 # $(u_n)_n$ semble être décroisante, et tendre vers $0$. On peut prouver ça mathématiquement.
 
 # On sait aussi que $\forall x\neq0, \arctan(x) + \arctan(1/x) = \frac{\pi}{2}$, et que $\arctan(x) \sim x$, donc on obtient que $u_n \sim \frac{1}{n} - \frac{1}{n+1} = \frac{1}{n(n+1)}$.
 # On peut le vérifier :
 
-# In[91]:
+# In[4]:
 
 
 valeurs_n = np.arange(10, 1000)
@@ -345,7 +370,162 @@ plt.plot(valeurs_n, valeurs_u / valeurs_equivalents, "-")
 plt.title(r"Valeurs de $u_n / \frac{1}{n(n+1)}$")
 
 
+# - Pour $e = (e_n)_{n\in\mathbb{N}}$ une suite de nombres égaux à $0$ ou $1$ (*i.e.*, $\forall n, e_n \in \{0,1\}$, $S_n(e) = \sum{i=0}^n e_i u_i$ est bornée entre $0$ et $\sum_{i=0}^n u_i$. Et $u_n \sim \frac{1}{n(n+1)}$ qui est le terme général d'une série convergente (par critère de Cauchy, par exemple, avec $\alpha=2$). Donc la série $\sum u_n$ converge et donc par encadrement, $S_n(e)$ converge pour $n\to\infty$, *i.e.*, $S(e)$ converge. Ces justifications donnent aussi que $$0 \leq S(e) \leq \sum_{n\geq0} u_n = \lim_{n\to\infty} \arctan(n) - \arctan(0) = \frac{\pi}{2}.$$
+
+# - Pour $e = (0, 1, 0, 1, \ldots)$, $S(e)$ peut être calculée avec Python. Pour trouver une valeur approchée à $\delta = 10^{-5}$ près, il faut borner le **reste** de la série, $R_n(e) = \sum_{i \geq n + 1} e_i u_i$. Ici, $R_{2n+1}(e) \leq u_{2n+2}$ or $u_i \leq \frac{1}{i(i+1)}$, donc $R_{2n+1}(e) \leq \frac{1}{(2n+1)(2n+2)}$. $\frac{1}{(2n+1)(2n+2)} \leq \delta$ dès que $2n+1 \geq \sqrt{\delta}$, *i.e.*, $n \geq \frac{\sqrt{\delta}+1}{2}$. Calculons ça :
+
+# In[36]:
+
+
+from math import ceil, sqrt, pi
+
+
+# In[37]:
+
+
+def Se(e, delta=1e-5, borne_sur_n_0=10000):
+    borne_sur_n_1 = int(ceil(1 + sqrt(delta)/2.0))
+    borne_sur_n = max(borne_sur_n_0, borne_sur_n_1)
+    somme_partielle = 0
+    for n in range(0, borne_sur_n + 1):
+        somme_partielle += e(n) * u(n)
+    return somme_partielle
+
+
+# In[38]:
+
+
+def e010101(n):
+    return 1 if n % 2 == 0 else 0
+
+
+# In[39]:
+
+
+delta = 1e-5
+Se010101 = Se(e010101, delta)
+print("Pour delta =", delta, "on a Se010101(delta) ~=", round(Se010101, 5))
+
+
+# - Pour inverser la fonction, et trouver la suite $e$ telle que $S(e) = x$ pour un $x$ donné, il faut réfléchir un peu plus.
+
+# In[50]:
+
+
+def inverse_Se(x, n):
+    assert 0 < x < pi/2.0, "Erreur : x doit être entre 0 et pi/2 strictement."
+    print("Je vous laisse chercher.")
+    raise NotImplementedError
+
+
 # Ca suffit pour la partie Python.
+
+# ----
+# ## Planche 172
+
+# In[51]:
+
+
+from random import random
+
+def pile(proba):
+    """ True si pile, False si face (false, face, facile à retenir)."""
+    return random() < proba
+
+
+# - D'abord, on écrit une fonction pour **simuler** l'événement aléatoire :
+
+# In[52]:
+
+
+def En(n, p):
+    lance = pile(p)
+    for i in range(n - 1):
+        nouveau_lance = pile(p)
+        if lance and nouveau_lance:
+            return False
+        nouveau_lance = lance
+    return True
+
+
+# In[55]:
+
+
+import numpy as np
+
+
+# In[56]:
+
+
+lances = [ En(2, 0.5) for _ in range(100) ]
+np.bincount(lances)
+
+
+# In[59]:
+
+
+def pn(n, p, nbSimulations=100000):
+    return np.mean([ En(n, p) for _ in range(nbSimulations) ])
+
+
+# - Par exemple, pour seulement $2$ lancés, on a $1 - p_n = p^2$ car $\overline{E_n}$ est l'événement d'obtenir $2$ piles qui est de probabilité $p^2$.
+
+# In[60]:
+
+
+pn(2, 0.5)
+
+
+# - Avec $4$ lancés, on a $p_n$ bien plus petit.
+
+# In[61]:
+
+
+pn(4, 0.5)
+
+
+# - On vérifie que $p_n(n, p)$ est décroissante en $p$, à $n$ fixé :
+
+# In[62]:
+
+
+pn(4, 0.1)
+
+
+# In[63]:
+
+
+pn(4, 0.9)
+
+
+# - On vérifie que $p_n(n, p)$ est décroissante en $n$, à $p$ fixé :
+
+# In[66]:
+
+
+pn(6, 0.2)
+
+
+# In[67]:
+
+
+pn(20, 0.2)
+
+
+# In[69]:
+
+
+pn(100, 0.2)
+
+
+# - Notons que la suite semble converger ? Ou alors elle décroit de moins en moins rapidement.
+
+# - Par récurrence et en considérant les possibles valeurs des deux derniers lancés numérotés $n+2$ et $n+1$, on peut montrer que
+#   $$\forall n, p_{n+2} = (1-p) p_{n+1} + p(1-p) p_n$$
+
+# - Si $p_n$ converge, on trouve sa limite $l$ comme point fixe de l'équation précédente. $l = (1-p) l + p(1-p) l$ ssi $1 = 1-p + p(1-p)$ ou $l=0$, donc si $p\neq0$, $l=0$. Ainsi l'événement "on obtient deux piles d'affilé sur un nombre infini de lancers$ est bien presque sûr.
+
+# - Je vous laisse terminer pour calculer $T$ et les dernières questions.
 
 # ----
 # ## Planche 177
@@ -354,13 +534,13 @@ plt.title(r"Valeurs de $u_n / \frac{1}{n(n+1)}$")
 # 
 # - Pour calculer $f(x)$ à $10^{-5}$ près, il faut calculer sa somme partielle $S_n(x) := \sum_{i=1}^n \frac{x^i}{i^2}$ en bornant son reste $S_n(x) := \sum_{i \geq n+1} \frac{x^i}{i^2}$ par (au moins) $10^{-5}$. Une inégalité montre rapidement que $R_n(x) \leq |x|^{n+1}\sum_{i\geq n+1} \frac{1}{i^2} $, et donc $R_n(x) \leq \delta$ dès que $|x|^{n+1} \leq \frac{\pi^2}{6} \delta$, puisque $\sum_{i\geq n+1} \frac{1}{i^2} \leq \sum_{i=0}^{+\infty} \frac{1}{i^2} = \frac{\pi^2}{6}$. En inversant pour trouver $n$, cela donne que le reste est contrôlé par $\delta$ dès que $n \leq \log_{|x|}\left( \frac{6}{\pi^2} \delta \right) - 1$ (si $x\neq 0$, et par $n \geq 0$ sinon).
 
-# In[9]:
+# In[72]:
 
 
 from math import floor, log, pi
 
 
-# In[10]:
+# In[73]:
 
 
 delta = 1e-5
@@ -374,24 +554,24 @@ def f(x):
     return somme_partielle
 
 
-# In[13]:
+# In[76]:
 
 
 for x in [-0.75, -0.5, 0.25, 0, 0.25, 0.5, 0.75]:
-    print("Pour x =", x, "f(x) =", f(x))
+    print("Pour x =", x, "\tf(x) =", round(f(x), 5))
 
 
 # - L'intégrale $g(t) = \int_0^x \frac{\ln(1 - t)}{t} \mathrm{d}t$ est bien défine sur $D = [-1, 1]$ puisque son intégrande existe, est continue et bien intégrable sur tout interval de la forme $]a, 0[$ ou $]0, b[$ pour $-1 < a < 0$ ou $0 < b < 1$. Le seul point qui peut déranger l'intégrabilité est en $0$, mais $\ln(1-t) \sim t$ quand $t\to0$ donc l'intégrande est $\sim 1$ en $0^-$ et $0^+$ et donc est bien intégrable. De plus, comme "intégrale de la borne supérieure" d'une fonction continue, $g$ est dérivable sur l'intérieur de son domaine, *i.e.*, sur $]-1, 1[$.
 # 
 # - Pour la calculer numériquement, on utilise **évidemment** le module `scipy.integrate` et sa fonction `integrale, erreur = quad(f, a, b)`, qui donne une approximation de la valeur d'une intégrale en dimension 1 et une *borne* sur son erreur :
 
-# In[17]:
+# In[77]:
 
 
 from scipy import integrate
 
 
-# In[18]:
+# In[78]:
 
 
 def g(x):
@@ -403,14 +583,14 @@ def g(x):
 
 # - On visualise les deux fonctions $f$ et $g$ sur le domaine $D$ :
 
-# In[22]:
+# In[79]:
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-# In[25]:
+# In[80]:
 
 
 domaine = np.linspace(-0.99, 0.99, 1000)
