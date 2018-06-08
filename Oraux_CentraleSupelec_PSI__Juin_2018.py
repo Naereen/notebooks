@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2017" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2017-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2017</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev2 toc-item"><a href="#Planche-172" data-toc-modified-id="Planche-172-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Planche 172</a></div><div class="lev2 toc-item"><a href="#Planche-177" data-toc-modified-id="Planche-177-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Planche 177</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#Quelques-exemples-de-sujets-d'oraux-corrigés" data-toc-modified-id="Quelques-exemples-de-sujets-d'oraux-corrigés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Quelques exemples de sujets <em>d'oraux</em> corrigés</a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
+#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2017" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2017-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2017</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev2 toc-item"><a href="#Planche-160" data-toc-modified-id="Planche-160-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 160</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-168" data-toc-modified-id="Planche-168-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Planche 168</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev2 toc-item"><a href="#Planche-172" data-toc-modified-id="Planche-172-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Planche 172</a></div><div class="lev2 toc-item"><a href="#Planche-177" data-toc-modified-id="Planche-177-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Planche 177</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#Quelques-exemples-de-sujets-d'oraux-corrigés" data-toc-modified-id="Quelques-exemples-de-sujets-d'oraux-corrigés-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Quelques exemples de sujets <em>d'oraux</em> corrigés</a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
 
 # # Oraux CentraleSupélec PSI - Juin 2017
 # 
@@ -21,6 +21,99 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
 import numpy.random as rd
+
+
+# ----
+# ## Planche 160
+
+# - $I_n := \int_0^1 \frac{1}{(1+t)^n \sqrt{1-t}} \mathrm{d}t$ et $I_n := \int_0^1 \frac{1/2}{(1+t)^n \sqrt{1-t}} \mathrm{d}t$ sont définies pour tout $n$ car leur intégrande est continue et bien définie sur $]0,1[$ et intégrable en $1$ parce qu'on sait (par intégrale de Riemann) que $\frac{1}{\sqrt{u}}$ est intégrable en $0^+$ (et changement de variable $u = 1-t$).
+# - On les calcule très simplement :
+
+# In[2]:
+
+
+def I(n):
+    def f(t):
+        return 1 / ((1+t)**n * np.sqrt(1-t))
+    i, err = integrate.quad(f, 0, 1)
+    return i
+
+
+# In[3]:
+
+
+def J(n):
+    def f(t):
+        return 1 / ((1+t)**n * np.sqrt(1-t))
+    i, err = integrate.quad(f, 0, 0.5)
+    return i
+
+
+# In[12]:
+
+
+valeurs_n = np.arange(1, 50)
+valeurs_In = np.array([I(n) for n in valeurs_n])
+
+plt.figure()
+plt.plot(valeurs_n, valeurs_In, 'ro')
+plt.title("Valeurs de $I_n$")
+plt.show()
+
+
+# - On conjecture que $I_n$ est décroissante. C'est évident puisque si on note $f_n(t)$ son intégrande, on observe que $f_{n+1}(t) \leq f_n(t)$ pour tout $t$, et donc par monotonie de l'intégrale, $I_{n+1} \leq I_n$.
+# - On conjecture que $I_n \to 0$. Cela se montre très facilement avec le théorème de convergence dominée.
+
+# In[13]:
+
+
+plt.figure()
+plt.plot(np.log(valeurs_n), np.log(valeurs_In), 'go')
+plt.title(r"Valeurs de $\ln(I_n)$ en fonction de $\ln(n)$")
+plt.show()
+
+
+# - Ce qu'on observe permet de conjecturer que $\alpha=1$ est l'unique entier tel que $n^{\alpha} I_n$ converge vers une limite non nulle.
+
+# In[14]:
+
+
+valeurs_Jn = np.array([J(n) for n in valeurs_n])
+alpha = 1
+
+plt.figure()
+plt.plot(valeurs_n, valeurs_n**alpha * valeurs_In, 'r+', label=r'$n^{\alpha} I_n$')
+plt.plot(valeurs_n, valeurs_n**alpha * valeurs_Jn, 'b+', label=r'$n^{\alpha} J_n$')
+plt.legend()
+plt.title(r"Valeurs de $n^{\alpha} I_n$ et $n^{\alpha} J_n$")
+plt.show()
+
+
+# - On en déduit qu'il en est de même pour $J_n$, on a $n^{\alpha} J_n \to l$ la même limite que $n^{\alpha} I_n$.
+
+# - Pour finir, on montre mathématiquement que $n^{\alpha} (I_n - J_n)$ tend vers $0$.
+
+# In[16]:
+
+
+plt.figure()
+plt.plot(valeurs_n, valeurs_n**alpha * (valeurs_In - valeurs_Jn), 'g+', label=r'$n^{\alpha} (I_n - J_n)$')
+plt.legend()
+plt.title(r"Valeurs de $n^{\alpha} (I_n - J_n)$")
+plt.show()
+
+
+# - Puis rapidement, on montre que $\forall x \geq 0, \ln(1 + x) \geq \frac{x}{1+x}$. Ca peut se prouver de plein de façons différentes, mais par exemple on écrit $f(x) = (x+1) \log(x+1) - x$ qui est de classe $\mathcal{C}^1$, et on la dérive. $f'(x) = \log(x+1) + 1 - 1 > 0$ donc $f$ est croissante, et $f(0) = 0$ donc $f(x) \geq f(0) = 0$ pour tout $x \geq 0$.
+
+# In[18]:
+
+
+X = np.linspace(0, 100, 10000)
+plt.plot(X, np.log(1 + X), 'r-', label=r'$\log(1+x)$')
+plt.plot(X, X / (1 + X), 'b-', label=r'$\frac{x}{1+x}$')
+plt.legend()
+plt.title("Comparaison entre deux fonctions")
+plt.show()
 
 
 # ---
@@ -307,6 +400,106 @@ np.round(vecteur_propres[0])
 
 
 # $P$ n'est pas diagonalisable, **à prouver** au tableau si l'examinateur le demande.
+
+# ----
+# ## Planche 168
+
+# - Soit $f(x) = \frac{1}{2 - \exp(x)}$, et $a(n) = \frac{f^{(n)}(0)}{n!}$.
+# 
+
+# In[33]:
+
+
+def f(x):
+    return 1 / (2 - np.exp(x))
+
+
+# - Soit $g(x) = 2 - \exp(x)$, telle que $g(x) f(x) = 1$. En dérivant $n > 0$ fois cette identité et en utilisant la formule de Leibniz, on trouve :
+# $$ (g(x)f(x))^{(n)} = 0 = \sum_{k=0}^n {n \choose k} g^{(k)}(x) f^{(n-k)}(x).$$
+# Donc en $x=0$, on utilise que $g^{(k)}(x) = - \exp(x)$, qui donne que $g^{(k)}(0) = 1$ si $k=0$ ou $-1$ sinon, pour trouver que $\sum_{k=0}^n {n \choose k} f^{(k)}(0) = f^{(n)}(0)$. En écrivant ${n \choose k} = \frac{k! (n-k)!}{n!}$ et avec la formule définissant $a(n)$, cela donne directement la somme recherchée : $$ a(n) = \sum_{k=1}^n \frac{a(n-k)}{k!}.$$
+
+# - Pour calculer $a(n)$ avec Python, on utilise cette formule comme une formule récursive, et on triche un peu en utilisant `math.factorial` pour calculer $k!$. Il nous faut aussi $a(0) = f(0) = 1$ :
+
+# In[22]:
+
+
+from math import factorial
+
+def a_0an(nMax):
+    valeurs_a = np.zeros(nMax+1)
+    valeurs_a[0] = 1.0
+    for n in range(1, nMax+1):
+        valeurs_a[n] = sum(valeurs_a[n-k] / factorial(k) for k in range(1, n+1))
+    return valeurs_a
+
+
+# In[26]:
+
+
+nMax = 10
+valeurs_n = np.arange(0, nMax + 1)
+valeurs_a = a_0an(nMax)
+
+for n in valeurs_n:
+    print("Pour n =", n, "on a a(n) =", valeurs_a[n])
+
+
+# In[29]:
+
+
+plt.figure()
+plt.plot(valeurs_n, valeurs_a, 'ro', label=r'$a(n)$')
+plt.plot(valeurs_n, 1 / np.log(2)**valeurs_n, 'g+', label=r'$1/\log(2)^n$')
+plt.plot(valeurs_n, 1 / (2 * np.log(2)**valeurs_n), 'bd', label=r'$1/(2\log(2)^n)$')
+plt.title("$a(n)$ et deux autres suites")
+plt.legend()
+plt.show()
+
+
+# - On observe que $a(n)$ est comprise entre $\frac{1}{2(\log(2))^n}$ et $\frac{1}{\log(2)^n}$, donc le rayon de convergence de $S(x) = \sum a(n) x^n$ est $\log(2)$.
+# - On va calculer les sommes partielles $S_n(x)$ de la série $S(x)$ :
+
+# In[30]:
+
+
+def Sn(x, n):
+    valeurs_a = a_0an(n)
+    return sum(valeurs_a[k] * x**k for k in range(0, n + 1))
+
+
+# On peut vérifie que notre fonction marche :
+
+# In[32]:
+
+
+x = 0.5
+for n in range(0, 6 + 1):
+    print("Pour n =", n, "S_n(x) =", Sn(x, n))
+
+
+# In[68]:
+
+
+valeurs_x = np.linspace(0, 0.5, 1000)
+valeurs_f = f(valeurs_x)
+
+
+# <span style="color:red;">Je pense que l'énoncé comporte une typo sur l'intervale ! Vu le rayon de convergence, on ne voit rien si on affiche sur $[0,10]$ !</span>
+
+# In[67]:
+
+
+plt.figure()
+for n in range(0, 6 + 1):
+    valeurs_Sn = []
+    for x in valeurs_x:
+        valeurs_Sn.append(Sn(x, n))
+    plt.plot(valeurs_x, valeurs_Sn, ':', label='$S_' + str(n) + '(x)$')
+plt.plot(valeurs_x, valeurs_f, '-', label='$f(x)$')
+plt.title("$f(x)$ et $S_n(x)$ pour $n = 0$ à $n = 6$")
+plt.legend()
+plt.show()
+
 
 # ## Planche 170
 
