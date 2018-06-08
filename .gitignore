@@ -9,3 +9,4 @@ octave-workspace
 *.so
 \#*\#
 mocaml_history.ml
+private

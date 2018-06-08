@@ -8,7 +8,7 @@
 # 
 # - Ce [notebook Jupyter](https://www.jupyter.org) est une proposition de correction, en [Python 3](https://www.python.org/), d'exercices d'annales de l'épreuve "maths-info" du [concours CentraleSupélec](http://www.concours-centrale-supelec.fr/), filière PSI.
 # - Les exercices viennent de l'[Officiel de la Taupe](http://odlt.fr/), [2016](http://www.odlt.fr/Oraux_2017.pdf) (planches 162 à 177, page 23).
-# - Ce document a été écrit par [Lilian Besson](http://perso.crans.org/besson/), et est disponible en ligne [sur mon site](https://perso.crans.org/besson/publis/notebooks/Oraux_CentraleSupélec_PSI__Juin_2018.html).
+# - Ce document a été écrit par [Lilian Besson](http://perso.crans.org/besson/), et est disponible en ligne [sur mon site](https://perso.crans.org/besson/publis/notebooks/Oraux_CentraleSupelec_PSI__Juin_2018.html).
 
 # ## Remarques préliminaires
 # - Les exercices sans Python ne sont pas traités.
