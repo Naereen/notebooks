@@ -27,6 +27,8 @@ def ecrire_donnees():
     """)
     # on va lire chaque CSV, y insérer les données
     for fichier_csv in liste_fichiers_csv:
+        if "Alpha" in fichier_csv and fichier_csv.replace("Alpha", "Merite") in liste_fichiers_csv:
+            continue
         print(f"fichier_csv = {fichier_csv}")
         nom_html = os.path.basename(fichier_csv).replace('.csv', '')
         annee = re.search('[0-9]+', nom_html)[0]
