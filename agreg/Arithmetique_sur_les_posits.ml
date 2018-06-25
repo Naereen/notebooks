@@ -20,13 +20,13 @@ https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
 - Ce document est un [notebook Jupyter](https://www.Jupyter.org/), et [est open-source sous Licence MIT sur GitHub](https://github.com/Naereen/notebooks/tree/master/agreg/), comme les autres solutions de textes de modélisation que [j](https://GitHub.com/Naereen)'ai écrite cette année.
 - L'implémentation sera faite en OCaml, version 4+ : *)
 
-(* In[3]: *)
+(* In[2]: *)
 
 
 Sys.command "ocaml -version";;
 print_endline Sys.ocaml_version;;
 
-(* In[4]: *)
+(* In[3]: *)
 
 
 let print f =
@@ -59,14 +59,14 @@ Cela peut sembler inutile, mais ce genre d'amélioration peut profiter à des ca
 (* On rappelera que les flottants standards sont souvent appelés `float` en OCaml, en Python, en C ainsi en Java.
 Selon les architectures, les `float` sont des flottants sur 32 ou 64 bits, et généralement les `double` sont des flottants sur 64 ou 128 bits, qui suivent tous les deux la norme IEEE 754. En Python, les `float` utilisent en fait des `double` en C. *)
 
-(* In[5]: *)
+(* In[4]: *)
 
 
 0.0 +. 2018.0;;
 
 (* On rappelera aussi que les flottants standars contiennent trois valeurs spéciales, NaN (*"not a number"*, pas un nombre), `infinity` ou `inf` qui représente $+\infty$ et `neg_infinity` ou `-inf` qui représente $-\infty$. *)
 
-(* In[6]: *)
+(* In[5]: *)
 
 
 nan;;
@@ -78,7 +78,7 @@ neg_infinity;;
 
 (* Les règles de calcul sur les valeurs spéciales et les calculs générant des valeurs spéciales sont illustrées par les exemples suivants : *)
 
-(* In[7]: *)
+(* In[6]: *)
 
 
 (* Apparition de valeurs spéciales *)
@@ -97,26 +97,26 @@ neg_infinity /. (-3.0);;
 
 (* On notera aussi qu'avec les flottants IEEE, il y a deux zéros, un négatif et un positif : *)
 
-(* In[8]: *)
+(* In[7]: *)
 
 
 (-. 0.0) == 0.0;;
 
 (* Ce n'est pas le cas avec les entiers, par exemple : *)
 
-(* In[9]: *)
+(* In[8]: *)
 
 
 0 == -0;;
 
 (* Enfin, on rappelle que l'arithmétique sur les nombres réels n'est pas exacte, par exemple : *)
 
-(* In[10]: *)
+(* In[9]: *)
 
 
 (0.2 +. 0.4, 0.6);;
 
-(* In[11]: *)
+(* In[10]: *)
 
 
 0.2 +. 0.4 == 0.6;;
@@ -131,36 +131,36 @@ Cette page montre des exemples d'encodage redondant pour [les flottants IEEE à 
 (* On peut utiliser le module `Int32` pour obtenir un flottant à partir d'une suite de bits.
 J'utilise `"_"` pour séparer le bit de signe, les bits de l'exposant et la mantisse (ou significant). *)
 
-(* In[61]: *)
+(* In[11]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b0_01111111_00000000000000000000000" );;
 
-(* In[63]: *)
+(* In[12]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b1_10000000_00000000000000000000000" );;
 
 (* Max et min. On ne peut pas utiliser `"0b0_11111111_11111111111111111111111"` pour le max, parce qu'il représente un nan, et on ne peut pas utiliser `"0b0_00000000_00000000000000000000000"` pour le min, parce qu'il représente un zéro. *)
 
-(* In[77]: *)
+(* In[13]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b0_11111110_11111111111111111111111" );;
 
-(* In[65]: *)
+(* In[14]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b0_00000001_00000000000000000000000" );;
 
 (* Les zéro ont un exposant et une mantise remplie de zéro : *)
 
-(* In[66]: *)
+(* In[15]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b0_00000000_000000000000000000000000" );;
 
-(* In[68]: *)
+(* In[16]: *)
 
 
 (* normalement, donne -0. mais échoue ici *)
@@ -168,12 +168,12 @@ Int32.float_of_bits( Int32.of_string "0b1_00000000_000000000000000000000000" );;
 
 (* Les infinis ont un exposant rempli de $1$ et une mantisse remplie de $0$. *)
 
-(* In[69]: *)
+(* In[17]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b0_11111111_00000000000000000000000" );;
 
-(* In[70]: *)
+(* In[18]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b1_11111111_00000000000000000000000" );;
@@ -182,17 +182,17 @@ Int32.float_of_bits( Int32.of_string "0b1_11111111_00000000000000000000000" );;
 
 (* Plusieurs exemples de Not a Number : *)
 
-(* In[74]: *)
+(* In[19]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b1_11111111_10000000000000000000001" );;
 
-(* In[75]: *)
+(* In[20]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b1_11111111_00000000000000000000001" );;
 
-(* In[80]: *)
+(* In[21]: *)
 
 
 Int32.float_of_bits( Int32.of_string "0b0_11111111_00000010000000000000001" );;
@@ -384,12 +384,12 @@ On va représenter un *posit* comme un tableau de `bool` en OCaml, pour se rappr
 Notez qu'on a **besoin** d'aussi stocker `es` et `n`, si on veut que notre implémentation soit générique et facile à écrire.
 Sinon on pourrait écrire chaque fonction suivante de telle sorte qu'elle accepte `es` et `n` en arguments. *)
 
-(* In[12]: *)
+(* In[22]: *)
 
 
 type bits = bool array;;
 
-(* In[13]: *)
+(* In[23]: *)
 
 
 type posit = {
@@ -412,14 +412,14 @@ On découpe tout le traitement en sous fonctions, autant que possible. *)
 
 (* #### Signe d'un posit *)
 
-(* In[14]: *)
+(* In[24]: *)
 
 
 let signe_of_posit (p : posit) : int =
     if p.b.(0) then -1 else 1
 ;;
 
-(* In[15]: *)
+(* In[25]: *)
 
 
 let echange_bits (b : bits) (debut : int) : bits =
@@ -430,7 +430,7 @@ let echange_bits (b : bits) (debut : int) : bits =
     b2
 ;;
 
-(* In[16]: *)
+(* In[26]: *)
 
 
 let echange_bits_apres_le_premier (p : posit) : posit =
@@ -442,7 +442,7 @@ let echange_bits_apres_le_premier (p : posit) : posit =
 
 (* #### Régime d'un posit *)
 
-(* In[17]: *)
+(* In[27]: *)
 
 
 let regime_of_posit (p : posit) : int =
@@ -465,7 +465,7 @@ let regime_of_posit (p : posit) : int =
 (* #### Binaire vers entier
 On a d'abord besoin de savoir interpréter une séquence binaire comme un nombre entier non signé. On utilise la méthode de Hörner qui est optimale (en terme de nombre d'opérations arithmétiques) pour ce problème : *)
 
-(* In[18]: *)
+(* In[28]: *)
 
 
 let uint_of_bits (b : bits) : int =
@@ -484,34 +484,34 @@ let uint_of_bits (b : bits) : int =
 
 (* On a besoin de quelques tests : *)
 
-(* In[19]: *)
+(* In[29]: *)
 
 
 let t = true and f = false;;
 
-(* In[20]: *)
+(* In[30]: *)
 
 
 uint_of_bits [|f; f; f|];;
 
 (* Le bit de poids faible est bien à la fin : *)
 
-(* In[21]: *)
+(* In[31]: *)
 
 
 uint_of_bits [|t; f; f|];;
 
-(* In[22]: *)
+(* In[32]: *)
 
 
 uint_of_bits [|t; t; f|];;
 
-(* In[23]: *)
+(* In[33]: *)
 
 
 uint_of_bits [|f; f; t|];;
 
-(* In[24]: *)
+(* In[34]: *)
 
 
 uint_of_bits [|t; t; t|];;
@@ -520,7 +520,7 @@ uint_of_bits [|t; t; t|];;
 
 Pour éviter de la recalculer, on renvoit aussi la taille de l'exposant, pour faciliter le calcul des bits de fraction. *)
 
-(* In[25]: *)
+(* In[35]: *)
 
 
 let exposant_of_posit (p : posit) (m : int) : (int * int) =
@@ -536,7 +536,7 @@ let exposant_of_posit (p : posit) (m : int) : (int * int) =
 
 C'est assez rapide, on va écrire une fonction qui prend le tableau des bits après la virgule décimale (*e.g.*, $10011$) et donne le nombre flottant (décimal) correspondant à $0.f$ (*e.g.*, $0.10011_2 = 0.59375_{10}$). Il suffira d'ajouter $1_{10}$ pour obtenir la fraction. *)
 
-(* In[30]: *)
+(* In[36]: *)
 
 
 let float_of_bits_apres_virgule (b : bits) : float =
@@ -548,12 +548,12 @@ let float_of_bits_apres_virgule (b : bits) : float =
 
 (* Par exemple : *)
 
-(* In[31]: *)
+(* In[37]: *)
 
 
 float_of_bits_apres_virgule [|t;f;f;t;t|];;
 
-(* In[34]: *)
+(* In[38]: *)
 
 
 float_of_bits_apres_virgule [||];;
@@ -562,7 +562,7 @@ float_of_bits_apres_virgule [||];;
 
 (* On a juste à extraire les bits de la fraction, s'il en reste. *)
 
-(* In[35]: *)
+(* In[39]: *)
 
 
 let fraction_of_posit (p : posit) (m : int) (taille_exposant : int) : float =
@@ -580,12 +580,12 @@ let fraction_of_posit (p : posit) (m : int) (taille_exposant : int) : float =
 OCaml ne propose pas d'opérateur d'exponentiation entière, `**` est pour les flottants.
 C'est une bonne occasion de montrer qu'on sait écrire rapidement l'algorithme d'exponentiation rapide : *)
 
-(* In[36]: *)
+(* In[40]: *)
 
 
 let carre (x : int) : int = x * x;;
 
-(* In[37]: *)
+(* In[41]: *)
 
 
 (** Complexité en O(log_2 n) nombre d'appels (donc mémoire),
@@ -603,7 +603,7 @@ let rec expo_int (x : int) (n : int) : int =
     | _ -> failwith "Valeur incompatible pour expo_int"
 ;;
 
-(* In[38]: *)
+(* In[42]: *)
 
 
 expo_int 2 1;;
@@ -613,12 +613,12 @@ expo_int 2 4;;
 
 (* > Notez qu'on pourrait utiliser l'opérateur de décallage de bits vers la gauche : *)
 
-(* In[39]: *)
+(* In[43]: *)
 
 
 ( lsl );;
 
-(* In[40]: *)
+(* In[44]: *)
 
 
 2 lsl 0;;
@@ -630,19 +630,19 @@ expo_int 2 4;;
 
 C'est très rapide à vérifier, avec cette fonction : *)
 
-(* In[41]: *)
+(* In[45]: *)
 
 
 Array.for_all;;
 
-(* In[42]: *)
+(* In[46]: *)
 
 
 let est_nul (p : posit) : bool =
     Array.for_all (not) p.b
 ;;
 
-(* In[43]: *)
+(* In[47]: *)
 
 
 let est_infini (p : posit) : bool =
@@ -653,7 +653,7 @@ let est_infini (p : posit) : bool =
 
 (* On va commencer par écrire une fonction qui affiche un `posit<n,es>`, pour aider au débogage de la suite. *)
 
-(* In[44]: *)
+(* In[48]: *)
 
 
 let print_posit (p : posit) : unit =
@@ -664,7 +664,7 @@ let print_posit (p : posit) : unit =
 
 (* Et enfin on assemble le tout : *)
 
-(* In[47]: *)
+(* In[49]: *)
 
 
 (** Complexité linéaire dans la taille des bits de p *)
@@ -705,7 +705,7 @@ let posit_to_float ?(debogue=false) (p : posit) : float =
 
 On doit faire des essais, sur des *posits* sur 16 bits, avec par exemple `n=10` et `es=1` comme l'exemple dans le texte. : *)
 
-(* In[48]: *)
+(* In[50]: *)
 
 
 let n = 10 and es = 1;;
@@ -762,7 +762,18 @@ let _ = posit_to_float ~debogue:true p5;;
 (* #### Avec des bits de fraction non nuls
 
 Les *posits* sont très simples à interpréter tant que leurs bits de fraction sont non nuls, mais ils ne sont pas tellement plus compliqués avec une fraction.
-Voici quelques exemples : *)
+Voici un exemple : *)
+
+(* <img width="40%" alt="images/exemple_calcul_valeur_posit.png" src="images/exemple_calcul_valeur_posit.png"> *)
+
+(* In[56]: *)
+
+
+let p6 = { n = 16; es = 3;
+    b = [|f; f;f;f;   t;   t;f;t;   t;t;f;t;t;t;f;t|]
+    (* signe regime3t sepa expo     fraction *)
+};;
+let _ = posit_to_float ~debogue:true p6;;
 
 (* ## Complexités *)
 
