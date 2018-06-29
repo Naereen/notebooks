@@ -23,7 +23,7 @@
 
 ## About numerical (apparent) paradoxes
 ### The [Monty-Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
-This [Naive simulations of the Monty-Hall problem](Naive_simulations_of_the_Monty-Hall_paradox.ipynb), proves that the best strategy is the always chose to other door, ie to change from our initial choice to the door left by the master of the game.
+This [Naive simulations of the Monty-Hall problem](Naive_simulations_of_the_Monty-Hall_paradox.ipynb), proves that the best strategy is to always chose the other door, *i.e.*, to change from our initial choice to the door left by the master of the game.
 
 - For 3 doors:
 
