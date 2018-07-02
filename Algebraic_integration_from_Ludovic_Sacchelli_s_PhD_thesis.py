@@ -1,12 +1,9 @@
 
 # coding: utf-8
 
-# # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#Presentation" data-toc-modified-id="Presentation-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Presentation</a></div><div class="lev1 toc-item"><a href="#Computations" data-toc-modified-id="Computations-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Computations</a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Conclusion</a></div>
-
 # # Presentation
 # 
-# I want to reproduce the symbolic (algebraic) computations done in §5.A of [this PhD thesis](http://www.cmap.polytechnique.fr/~sacchelli/Sacchelli_thesis.pdf).
+# I want to reproduce the symbolic (algebraic) computations done in §5.A of [L.S.'s PhD thesis](http://www.cmap.polytechnique.fr/~sacchelli/).
 
 # I want to only use a free and open-source software, so I'm using [Python 3](https://docs.python.org/3) with the [Sympy](https://sympy.org) module.
 
