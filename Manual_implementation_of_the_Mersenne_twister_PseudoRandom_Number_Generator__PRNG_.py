@@ -10,7 +10,7 @@
 # And then I want to use it to define a `rand()` function, and use it to samples from the most famous discrete and continuous probability distributions.
 # Random permutations will also be studied.
 # 
-# - *Reference*: [Wikipedia](https://en.wikipedia.org/wiki/Mersenne_twister), and this book: ["Simulation and the Monte-Carlo method", by R.Y.Rubinstein & D.P.Kroese](http://www.wiley.com/WileyCDA/WileyTitle/productCd-1118632168.html) ([Rubinstein & Kroese, 2017]), chapter 2 pages 52-53.
+# - *Reference*: [Wikipedia](https://en.wikipedia.org/wiki/Mersenne_twister), and this book: ["Simulation and the Monte-Carlo method", by R.Y.Rubinstein & D.P.Kroese](http://www.wiley.com/WileyCDA/WileyTitle/productCd-1118632168.html) ([Rubinstein & Kroese, 2017]), chapter 2 pages 52-53. If you are curious, [this webpage](https://realpython.com/python-random/) is a good explanation of the difference between PRNG, Cryptographically Secure PRNG (CSPRNG) and "True" NRG.
 # - *Date*: 11 March 2017.
 # - *Author*: [Lilian Besson](https://GitHub.com/Naereen/notebooks).
 # - *License*: [MIT Licensed](https://lbesson.mit-license.org/).
