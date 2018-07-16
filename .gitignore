@@ -1,4 +1,5 @@
 *~
+*.pyc
 .ipynb_checkpoints/
 */.ipynb_checkpoints/
 octave-workspace
@@ -10,3 +11,4 @@ octave-workspace
 \#*\#
 mocaml_history.ml
 private
+__pycache__/
