@@ -291,7 +291,7 @@ hanoi 2 "T1" "T2" "T3";;
 
 hanoi 5 "T1" "T2" "T3";; (* 2^5 - 1 = 31 coups *);;
 
-(* Avec un compteur de cous joués (ce sera toujours $2^n - 1$) : *)
+(* Avec un compteur de coups joués (ce sera toujours $2^n - 1$) : *)
 
 (* In[38]: *)
 
@@ -379,7 +379,7 @@ liste_carree [1; 2; 3];;
 
 (* ## Exercice 15 *)
 
-(* In[48]: *)
+(* In[1]: *)
 
 
 let rec miroir_quad : 'a list -> 'a list = function
@@ -388,7 +388,7 @@ let rec miroir_quad : 'a list -> 'a list = function
 ;;
 
 let miroir_lin (liste : 'a list) : 'a list =
-  (* sous fonctions utilisant un deuxieme argument d'accumulation du resultat *)
+  (* sous fonction utilisant un deuxieme argument d'accumulation du resultat *)
   let rec miroir (l : 'a list) (accu : 'a list) : 'a list =
     match l with
       | [] -> accu
@@ -703,31 +703,39 @@ itereMonoide ((+) 1) 10 0;;
 
 ## Exercice 24 *)
 
-(* In[84]: *)
+(* In[2]: *)
 
 
 type variable = string;;
 
 type formule =
     | V of variable
-    | Not of formule
+    | Non of formule
     | Conj of formule * formule
     | Disj of formule * formule
 ;;
 
-(* In[85]: *)
+(* In[3]: *)
 
 
-let f = (Conj(Not(V("p")),Disj(Conj(V("q"),Not(V("p"))),Disj(V("r"),V("q"))))) ;;
+let f = (
+    Conj(
+        Non(V("p")),
+        Disj(
+            Conj(V("q"), Non(V("p"))),
+            Disj(V("r"), V("q"))
+        )
+    )
+) ;;
 
 (* ## Exercice 25 *)
 
-(* In[86]: *)
+(* In[4]: *)
 
 
 let rec taille : formule -> int = function
     | V(_) -> 1
-    | Not(f) -> 1 + (taille f)
+    | Non(f) -> 1 + (taille f)
     | Conj(f,g) -> 1 + (taille f) + (taille g)
     | Disj(f,g) -> 1 + (taille f) + (taille g)
 ;;
@@ -739,17 +747,17 @@ taille f;;
 
 (* ## Exercice 26 *)
 
-(* In[88]: *)
+(* In[5]: *)
 
 
 let rec formule_to_string : formule -> string = function
     | V(p) -> p
-    | Not(f) -> "not "^(formule_to_string f)
+    | Non(f) -> "non "^(formule_to_string f)
     | Conj(f,g) -> "("^(formule_to_string f)^" ^ "^(formule_to_string g)^")"
     | Disj(f,g) -> "("^(formule_to_string f)^" v "^(formule_to_string g)^")"
 ;;
 
-(* In[90]: *)
+(* In[6]: *)
 
 
 let print = Printf.printf;;
@@ -759,7 +767,7 @@ let affiche (f : formule) : unit =
     flush_all ();
 ;;
 
-(* In[91]: *)
+(* In[7]: *)
 
 
 affiche f;;
@@ -770,14 +778,14 @@ affiche f;;
 Les valeurs des variables seront données comme une fonction associant nom de variable à valeurs booléennes.
 On a l'avantage de pouvoir mettre les valeurs par défaut à `true` ou `false` via la filtration. *)
 
-(* In[92]: *)
+(* In[8]: *)
 
 
 type valuation = variable -> bool;;
 
 let rec eval (v : valuation) : formule -> bool = function
     | V(x) -> v(x)
-    | Not(f) -> not (eval v f)
+    | Non(f) -> not (eval v f)
     | Conj(f,g) -> (eval v f) && (eval v g)
     | Disj(f,g) -> (eval v f) || (eval v g)
 ;;
@@ -808,7 +816,7 @@ eval valuFalse f;;
 
 (* ## Exercice 28 *)
 
-(* In[95]: *)
+(* In[9]: *)
 
 
 let rec inserUneFois (x : 'a) : ('a list -> 'a list) = function
@@ -817,25 +825,25 @@ let rec inserUneFois (x : 'a) : ('a list -> 'a list) = function
     | t :: q -> t :: (inserUneFois x q)
 ;;
 
-(* In[96]: *)
+(* In[10]: *)
 
 
 let recupererVariable (f : formule) : variable list =
     let rec recup (l : variable list) : formule -> variable list = function
         | V(x) -> inserUneFois x l
-        | Not(f) -> recup l f
+        | Non(f) -> recup l f
         | Conj(f,g) -> recup (recup l f) g
         | Disj(f,g) -> recup (recup l f) g
     in
     recup [] f
 ;;
 
-(* In[97]: *)
+(* In[11]: *)
 
 
 recupererVariable f;;
 
-(* In[98]: *)
+(* In[12]: *)
 
 
 let rec nouvelleValu (v : valuation) : 'a list -> valuation = function
@@ -848,7 +856,7 @@ let rec nouvelleValu (v : valuation) : 'a list -> valuation = function
         if (x = t) then true else v x
 ;;
 
-(* In[99]: *)
+(* In[13]: *)
 
 
 let rec isTrue (v : valuation) : variable list -> bool = function
@@ -856,7 +864,7 @@ let rec isTrue (v : valuation) : variable list -> bool = function
     | t :: q -> if v t then isTrue v q else false
 ;;
 
-(* In[100]: *)
+(* In[14]: *)
 
 
 let rec valuToString (v : valuation) : variable list -> string = function
@@ -864,20 +872,20 @@ let rec valuToString (v : valuation) : variable list -> string = function
     | t :: q -> (if v t then "1" else "0") ^ " " ^ (valuToString v q)
 ;;
 
-(* In[102]: *)
+(* In[17]: *)
 
 
 let print = Printf.printf;;
 
 let rec printVariableList : variable list -> unit = function
-    | [] -> print "| "
+    | [ ] -> print "| "
     | t :: q ->
         print "%s " t;
         flush_all ();
         printVariableList q
 ;;
 
-(* In[105]: *)
+(* In[18]: *)
 
 
 let tableVerite (f : formule) : unit =
@@ -892,7 +900,7 @@ let tableVerite (f : formule) : unit =
     done
 ;;
 
-(* In[106]: *)
+(* In[19]: *)
 
 
 tableVerite f;;
@@ -905,6 +913,6 @@ tableVerite f;;
 
 Voilà pour aujourd'hui !
 
-Cette solution est aussi disponible en Python : [TP1.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP1.ipynb/).
+Cette solution est aussi disponible en Python : [TP1__Python.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP1__Python.ipynb/).
 
 Là où Caml excelle pour les types définis, le filtrage et la récursion, Python gagne en simplicité sur l'affichage, sa librairie standard et les dictionnaires et ensembles... *)

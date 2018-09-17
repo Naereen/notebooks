@@ -1,23 +1,33 @@
+
 # coding: utf-8
+
+# # Table of Contents
+#  <p><div class="lev1 toc-item"><a href="#TP-1---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-1---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 1 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev2 toc-item"><a href="#Remarques-sur-le-style" data-toc-modified-id="Remarques-sur-le-style-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques sur le style</a></div><div class="lev1 toc-item"><a href="#Fonctions" data-toc-modified-id="Fonctions-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Fonctions</a></div><div class="lev2 toc-item"><a href="#Exercice-4" data-toc-modified-id="Exercice-4-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Exercice 4</a></div><div class="lev2 toc-item"><a href="#Exercice-5" data-toc-modified-id="Exercice-5-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercice 5</a></div><div class="lev2 toc-item"><a href="#Exercice-6" data-toc-modified-id="Exercice-6-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercice 6</a></div><div class="lev1 toc-item"><a href="#Récursivité" data-toc-modified-id="Récursivité-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Récursivité</a></div><div class="lev2 toc-item"><a href="#Exercice-7" data-toc-modified-id="Exercice-7-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Exercice 7</a></div><div class="lev2 toc-item"><a href="#Exercice-8" data-toc-modified-id="Exercice-8-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Exercice 8</a></div><div class="lev2 toc-item"><a href="#Exercice-9" data-toc-modified-id="Exercice-9-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 9</a></div><div class="lev2 toc-item"><a href="#Exercice-10" data-toc-modified-id="Exercice-10-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Exercice 10</a></div><div class="lev2 toc-item"><a href="#Exercice-11" data-toc-modified-id="Exercice-11-35"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Exercice 11</a></div><div class="lev1 toc-item"><a href="#Listes" data-toc-modified-id="Listes-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Listes</a></div><div class="lev2 toc-item"><a href="#Exercice-12" data-toc-modified-id="Exercice-12-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercice 12</a></div><div class="lev2 toc-item"><a href="#Exercice-13" data-toc-modified-id="Exercice-13-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Exercice 13</a></div><div class="lev2 toc-item"><a href="#Exercice-14" data-toc-modified-id="Exercice-14-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Exercice 14</a></div><div class="lev2 toc-item"><a href="#Exercice-15" data-toc-modified-id="Exercice-15-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Exercice 15</a></div><div class="lev2 toc-item"><a href="#Exercice-16" data-toc-modified-id="Exercice-16-45"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Exercice 16</a></div><div class="lev2 toc-item"><a href="#Exercice-17" data-toc-modified-id="Exercice-17-46"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Exercice 17</a></div><div class="lev1 toc-item"><a href="#Exponentiation-rapide" data-toc-modified-id="Exponentiation-rapide-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exponentiation rapide</a></div><div class="lev2 toc-item"><a href="#Exercice-18" data-toc-modified-id="Exercice-18-51"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exercice 18</a></div><div class="lev2 toc-item"><a href="#Exercice-19" data-toc-modified-id="Exercice-19-52"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Exercice 19</a></div><div class="lev2 toc-item"><a href="#Exercice-20" data-toc-modified-id="Exercice-20-53"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Exercice 20</a></div><div class="lev2 toc-item"><a href="#Exercice-21" data-toc-modified-id="Exercice-21-54"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Exercice 21</a></div><div class="lev2 toc-item"><a href="#Exercice-22" data-toc-modified-id="Exercice-22-55"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Exercice 22</a></div><div class="lev2 toc-item"><a href="#Exercice-23" data-toc-modified-id="Exercice-23-56"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>Exercice 23</a></div><div class="lev1 toc-item"><a href="#Formule-du-calcul-propositionnel" data-toc-modified-id="Formule-du-calcul-propositionnel-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Formule du calcul propositionnel</a></div><div class="lev2 toc-item"><a href="#Exercice-24" data-toc-modified-id="Exercice-24-61"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exercice 24</a></div><div class="lev2 toc-item"><a href="#Exercice-25" data-toc-modified-id="Exercice-25-62"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Exercice 25</a></div><div class="lev2 toc-item"><a href="#Exercice-26" data-toc-modified-id="Exercice-26-63"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Exercice 26</a></div><div class="lev2 toc-item"><a href="#Exercice-27" data-toc-modified-id="Exercice-27-64"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Exercice 27</a></div><div class="lev2 toc-item"><a href="#Exercice-28" data-toc-modified-id="Exercice-28-65"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Exercice 28</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></div>
+
 # # TP 1 - Programmation pour la préparation à l'agrégation maths option info
+# 
+# ## Remarques sur le style
+# Ici, pour vous montrer, j'ai utilisé :
 # - En Python 3, avec des annotations de types.
 # - Notez que ce ne sont que des annotations.
 # - Pour plus, il faudrait utiliser [quelque chose comme `beartype`](https://stackoverflow.com/a/37961120/2809027).
+# 
+# Notez que ce n'est absolument *pas nécessaire*, c'était juste pour montrer que ce genre d'annotations peut aider à passer de Caml à Python.
 
 # # Fonctions
 
 # ## Exercice 4
 
-# In[17]:
+# In[1]:
 
 
 def successeur(i : int) -> int:
-    assert isinstance(i, int)
-    assert i >= 0
+    assert isinstance(i, int), "Erreur : i = {} doit etre entier.".format(i)
+    assert i >= 0, "Erreur : i = {} doit etre >= 0.".format(i)
     return i + 1
 
 
-# In[4]:
+# In[2]:
 
 
 successeur(3)
@@ -27,7 +37,7 @@ successeur(2.5)
 
 # ## Exercice 5
 
-# In[9]:
+# In[4]:
 
 
 def produit3(x, y, z):
@@ -38,18 +48,20 @@ produit3_2 = lambda x, y, z: x * y * z
 produit3_3 = lambda x: lambda y: lambda z: x * y * z
 
 
-# In[12]:
+# In[5]:
 
 
 produit3(1, 2, 3)
 produit3_2(1, 2, 3)
 produit3_3(1)(2)  # lambda z : 1 * 2 * z
+f = produit3_3(1)(2)  # lambda z : 1 * 2 * z
+f(3)
 produit3_3(1)(2)(3)
 
 
 # ## Exercice 6
 
-# In[18]:
+# In[6]:
 
 
 def exercice6(n : int) -> None:
@@ -59,17 +71,19 @@ def exercice6(n : int) -> None:
         print(i)
 
 
-# In[19]:
+# In[7]:
 
 
 exercice6(4)
 
 
 # # Récursivité
+# 
+# C'est simple. Pas besoin d'un mot clé `rec` quand on définit une fonction récursive en Python.
 
 # ## Exercice 7
 
-# In[20]:
+# In[8]:
 
 
 def factorielle(n : int) -> int:
@@ -81,16 +95,20 @@ def factorielle(n : int) -> int:
         return n * factorielle(n - 1)
 
 
-# In[25]:
+# In[10]:
 
 
 for i in range(8):
     print("{}! = {:>5}".format(i, factorielle(i)))
+    # Note : ce {:>5} signifie que l'affichage utilise au moins
+    # 5 caractères, pour avoir un joli alignement :
 
 
 # ## Exercice 8
+# 
+# Pour ce genre de fonction, j'aime bien afficher les appels récursifs. On peut rendre ça optionnel, avec comme ici un argument nommé `log`, à valeur par défaut `log=False`.
 
-# In[66]:
+# In[11]:
 
 
 def pgcd(x : int, y : int, log: bool=False) -> int:
@@ -106,28 +124,42 @@ def pgcd(x : int, y : int, log: bool=False) -> int:
         return pgcd(y, x % y, log=log)
 
 
-# In[67]:
+# In[12]:
 
 
 pgcd(10, 5)
 
 
-# In[71]:
+# On peut faire des essais pour afficher notre calcul de PGCD, sur des entiers aléatoires entre $1$ et $100$.
+# 
+# Pour se rassurer, on peut chercher dans la bibliothèque standard, à partir de Python 3.6 il y a la fonction `math.gcd` pour calculer le PGCD, sinon `fractions.gcd` ou encore dans le module (non standard) SymPy `sympy.gcd`.
+
+# In[15]:
 
 
-from sympy import gcd
+try:
+    from math import gcd
+except ImportError:
+    try:
+        from fractions import gcd
+    except ImportError:
+        from sympy import gcd
+
+
 from random import randint
 for _ in range(10):
     x = randint(1, 100)
     y = randint(1, 100)
     d = pgcd(x, y)
-    print("{:>2} ^ {:>2} = {:>2}".format(x, y, d))
-    assert d == gcd(x, y)
+    print("{:>3} ^ {:>3} = {:>3}".format(x, y, d))
+    assert d == gcd(x, y), "Erreur : mauvais calcul de pgcd(x={}, y={}) = {}, alors qu'il devrait etre = {}.".format(x, y, pgcd(x, y), gcd(x, y))
 
 
 # ## Exercice 9
+# 
+# Rien de particulier à faire, la récursivité fonctionne sans réfléchir :
 
-# In[72]:
+# In[17]:
 
 
 def fibonacci(n : int) -> int:
@@ -138,11 +170,24 @@ def fibonacci(n : int) -> int:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
 
-# In[76]:
+# Dans IPython (ou Jupyter) on peut facilement mesurer le temps (moyen) d'exécution d'une fonction sur une entrée donnée, avec la *macro* `%timeit`.
+
+# In[18]:
 
 
-get_ipython().magic('timeit fibonacci(35)')
+get_ipython().run_line_magic('timeit', 'fibonacci(35)')
 
+
+# Dans Python, on peut faire pareil avec `timeit()` du module `timeit`.
+
+# In[21]:
+
+
+from timeit import timeit
+timeit("fibonacci(35)", globals=globals())
+
+
+# Pour la version qui est en complexité (temporelle) linéaire dans l'entrée $n$, il suffit de déplier la récursion en calculant $F_{n+1}$ progressivement en partant de $F_0, F_1$.
 
 # In[77]:
 
@@ -154,6 +199,8 @@ def fibonacci_lin(n : int) -> int:
     return un
 
 
+# On peut vérifier que cette deuxième implémentation fonctionne comme la première, et ensuite vérifier qu'elle est (bien) plus rapide.
+
 # In[79]:
 
 
@@ -164,19 +211,19 @@ for i in range(10):
 # In[80]:
 
 
-get_ipython().magic('timeit fibonacci_lin(35)')
+get_ipython().run_line_magic('timeit', 'fibonacci_lin(35)')
 
 
 # Voilà la différence.
 
 # ## Exercice 10
-#
+# 
 # Aucune hypothèse n'est faite sur les arguments de la fonction, on supposera seulement qu'elle est itérable sur sa sortie.
 
 # In[44]:
 
 
-from types import FunctionType
+from types import FunctionType  # inutile, juste pour faire joli
 
 # première version, f : type x -> type x (simple)
 def itere(f : FunctionType, n : int) -> FunctionType:
@@ -226,6 +273,8 @@ itere2(foisdeux, 10)(1, 2)
 
 
 # ## Exercice 11
+# 
+# C'est assez naturel, on affiche la suite de mouvement à faire, comme une suite de `"T1 -> T2"` par exemple.
 
 # In[144]:
 
@@ -263,7 +312,8 @@ hanoi("T1", "T2", "T3", 5)  # 31 = 2^5 - 1
 # # Listes
 # ## Exercice 12
 # Les listes en Python sont des `list`.
-# Elles ne fonctionnent **pas** comme des listes simplement chaînées comme en Caml.
+# 
+# Elles ne fonctionnent **pas** comme des listes simplement chaînées comme en Caml : ce sont des tableaux, donc l'accès à `T[i]` pour n'importe quel `i` est en $\mathcal{O}(1)$ pour n'importe quel `i` et `n`.
 
 # In[152]:
 
@@ -297,11 +347,11 @@ def applique(f : FunctionType, liste : list) -> list:
     res = [f(x) for x in liste]  # solution facile
     res = map(f, liste)  # encore plus facile
     # en itérant la liste :
-    res = []
+    res = [ ]  # tableau vide
     for x in liste:
         res.append(f(x))
     # en itérant ses valeurs :
-    res = []
+    res = [ ]  # tableau
     for i in range(len(liste)):
         res.append(f(liste[i]))
     return res
@@ -431,6 +481,8 @@ tri_insertion2([5, 2, 6, 1, 4], ordre_decroissant)
 # ----
 # # Exponentiation rapide
 # ## Exercice 18
+# 
+# Une approche naïve :
 
 # In[3]:
 
@@ -451,6 +503,8 @@ for n in range(8):
 
 
 # ## Exercice 19
+# 
+# Une approche maline (optimale, en fait).
 
 # In[201]:
 
@@ -625,15 +679,17 @@ exp_rapide_2(2.0, 8)
 
 # ----
 # # Formule du calcul propositionnel
-#
-# *Spoiler alert* : en Python, c'est chaud.
-#
+# 
+# **Spoiler alert** : en Python, c'est chaud.
+# 
+# **ATTENTION** Il faut un peut d'habitude et d'idées pour réussir à faire tout ça aussi efficacement (enfin presque) qu'en OCaml.
+# 
 # On va faire des choses non typées, avec des dictionnaires, pour bidouiller.
-#
+# 
 # ## Exercice 24
 
 # ``(not p ^ ((q ^ not p) v (r v q)))`` s'écrit en Caml `` (Conj(Not(V("p")),Disj(Conj(V("q"),Not(V("p"))),Disj(V("r"),V("q")))))``.
-#
+# 
 # On va imbriquer des dictionnaires, les types, `V`, `Not`, `Conj` et `Disj` seront des clés, et les valeurs seront des formules ou couples de formules.
 # Mais on va cacher ça et l'utilisateur verra exactement la même chose qu'en Caml !
 
@@ -717,7 +773,7 @@ def affiche(formule):
 affiche(f)
 
 
-# Et voilà. Pas tellement plus dire hein !
+# Et voilà. Pas tellement plus dur hein !
 
 # ## Exercice 27
 # Les valeurs des variables seront données comme un dictionnaire associant nom de variable à valeurs booléennes.
@@ -803,7 +859,7 @@ extrait_variables(f)
 
 
 # On trouve facilement les $n$ variables d'une formule.
-#
+# 
 # Ensuite, un [`itertools.product`](https://docs.python.org/3/library/itertools.html#itertools.product) permet de générer les $2^n$ valuations.
 
 # In[98]:
@@ -855,13 +911,13 @@ table_verite(f)
 
 
 # Note : ce code est encore plus concis que celui donné dans la solution en Caml.
-#
+# 
 # > On peut vérifier, par exemple sur [Wolfram|Alpha](https%3A%2F%2Fwww.wolframalpha.com%2Finput%2F%3Fi%3D%28%7Ep%2B%2526%2B%28%28q%2B%2526%2B%7Ep%29%2B%257C%2B%28r%2B%257C%2Bq%29%29%29) que l'on obtient bien le bon résultat...
 
 # ----
-#
+# 
 # # Conclusion
-#
+# 
 # Comme vous le voyez, on arrive à répondre aux mêmes questions dans les deux langages, et il n'y a pas de grosses différences en pratique dans la mise en oeuvre.
-#
+# 
 # Là où Caml excelle pour les types définis, le filtrage et la récursion, Python gagne en simplicité sur l'affichage, sa librairie standard et les dictionnaires et ensembles...
