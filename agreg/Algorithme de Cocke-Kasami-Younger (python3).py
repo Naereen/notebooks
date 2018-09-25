@@ -464,7 +464,7 @@ def cocke_kasami_younger(self, w):
                         B, C = regle[1]
                         if B in E[(i, k)] and C in E[(k + 1, j)]:
                             E[(i, j)] = E[(i, j)] | {A}
-    # On a finit, il suffit maintenant d'utiliser la table créée par programmation dynamique
+    # On a fini, il suffit maintenant d'utiliser la table créée par programmation dynamique
     return s in E[(0, n - 1)], E
 
 # On ajoute la fonction comme une méthode (au cas où...)
