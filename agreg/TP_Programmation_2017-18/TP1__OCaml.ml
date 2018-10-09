@@ -577,7 +577,7 @@ flush_all ();;
 
 (* ## Exercice 20 *)
 
-(* In[70]: *)
+(* In[1]: *)
 
 
 (* le type monoide *)
@@ -585,7 +585,7 @@ type 'a monoide = { mult : 'a -> 'a -> 'a; neutre : 'a };;
 
 (* Avec des champs d'enregistrement, c'est concis : *)
 
-(* In[71]: *)
+(* In[2]: *)
 
 
 let floatMonoide : 'float monoide = {
@@ -595,7 +595,7 @@ let floatMonoide : 'float monoide = {
 
 (* Par contre, impossible d'avoir un neutre de taille quelconque donc on doit écrire un monoied pour les matrices qui soit dépendent d'une taille $n$. *)
 
-(* In[72]: *)
+(* In[3]: *)
 
 
 let mult_matrice (x : int array array) (y : int array array) : int array array =
@@ -611,14 +611,14 @@ let mult_matrice (x : int array array) (y : int array array) : int array array =
     z
 ;;
 
-(* In[73]: *)
+(* In[4]: *)
 
 
 mult_matrice [|[|1; 1|]; [|1; 1|]|] [|[|1; 2|]; [|3; 4|]|];;
 
 (* Manuellement ce n'est pas trop dur : *)
 
-(* In[74]: *)
+(* In[5]: *)
 
 
 let matrixMonoide n = {
@@ -626,9 +626,10 @@ let matrixMonoide n = {
     neutre = Array.init n (fun i -> Array.init n (fun j -> if i = j then 1 else 0));
 };;
 
-(* ## Exercice 21 *)
+(* ## Exercice 21
+Première approche naïve : *)
 
-(* In[75]: *)
+(* In[6]: *)
 
 
 let rec exp_rapide (m : 'a monoide) (x : 'a) (n : int) : 'a =
@@ -637,19 +638,31 @@ let rec exp_rapide (m : 'a monoide) (x : 'a) (n : int) : 'a =
     | n -> m.mult (exp_rapide m x (n-1)) x
 ;;
 
+(* Avec l'approche récursive : *)
+
+(* In[10]: *)
+
+
+let rec exp_rapide (m : 'a monoide) (x : 'a) (n : int) : 'a =
+    match n with
+    | 0 -> m.neutre
+    | n when (n mod 2) = 0 -> exp_rapide m (m.mult x x) (n / 2)
+    | n -> m.mult (exp_rapide m (m.mult x x) ((n-1)/2)) x
+;;
+
 (* ## Exercice 22 *)
 
-(* In[76]: *)
+(* In[11]: *)
 
 
 let exp_rapide_float = exp_rapide floatMonoide;;
 
-(* In[77]: *)
+(* In[12]: *)
 
 
 exp_rapide_float 2.0 8;;
 
-(* In[78]: *)
+(* In[13]: *)
 
 
 exp_rapide_float 0.2 8;;
