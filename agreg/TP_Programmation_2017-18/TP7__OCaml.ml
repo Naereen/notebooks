@@ -237,7 +237,7 @@ dot2svg "TP7__g2";;
 (* Une fois qu'on dispose de tout ça, écrire l'algorithme de Dijkstra est relativement rapide.
 
 - Voir [ce site](https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html) pour de belles visualisations de l'algorithme de Dijkstra.
-- Et [cette page](https://pythonhosted.org/tryalgo/tryalgo/tryalgo.html#module-tryalgo.dijkstra) pour une implémentation propre en Python ([lien direct vers le code](https://pythonhosted.org/tryalgo/_modules/tryalgo/dijkstra.html#dijkstra)). *)
+- Et [cette page](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html#module-tryalgo.dijkstra) pour une implémentation propre en Python ([lien direct vers le code](https://jilljenn.github.io/tryalgo/_modules/tryalgo/dijkstra.html#dijkstra)). *)
 
 (* In[22]: *)
 
