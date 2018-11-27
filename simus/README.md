@@ -1,7 +1,7 @@
 # :notebook: Notebooks pour des simulations numériques :fr:
 > Ce dossier contient des [notebooks Jupyter](http://jupyter.org/), écrits en [Python (version 3)](https://docs.python.org/3/), pour mon plaisir.
 
-[Liste des notebooks sur nbviewer.jupyter.org](http://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/simus/)
+[Liste des notebooks sur nbviewer.jupyter.org](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/simus/)
 
 ----
 
@@ -40,7 +40,7 @@ This [Naive simulations of the Monty-Hall problem](Naive_simulations_of_the_Mont
 ### :information_desk_person: Plus d'informations ?
 > - Les dépendances de ces notebooks se trouvent dans ce fichier [`requirements.txt`](requirements.txt).
 > - Plus d'informations sur ce dépôt se trouvent [ici](..).
-> - Plus d'informations sur [les notebooks (documentation de IPython)](http://nbviewer.jupiter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) ou [FAQ sur le site de Jupyter](http://nbviewer.jupyter.org/faq).
+> - Plus d'informations sur [les notebooks (documentation de IPython)](https://nbviewer.jupiter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb) ou [FAQ sur le site de Jupyter](https://nbviewer.jupyter.org/faq).
 > - Plus d'informations sur [mybinder.org](http://mybinder.org/): dans [ce dépôt exemple](https://github.com/binder-project/example-requirements).
 
 ### :scroll: Licence

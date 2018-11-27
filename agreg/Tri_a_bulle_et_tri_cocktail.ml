@@ -387,4 +387,4 @@ Les deux algorithmes ne sont pas trop difficiles à implémenter, et fonctionnen
 - Pourquoi ces noms, à bulle et cocktail ?
 
 ### Liens
-Allez voir [d'autres notebooks](http://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/) ! *)
+Allez voir [d'autres notebooks](https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/) ! *)
