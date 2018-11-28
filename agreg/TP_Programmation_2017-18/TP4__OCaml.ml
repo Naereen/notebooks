@@ -109,7 +109,7 @@ let insere (k:'a) (v:'b) (l: ('a*'b) list) : ('a*'b) list =
     (k,v) :: l
 ;;
 
-(* Mais on peut réfléchir à la sémantique que l'on shouaite donner à cette fonction `insere` : si la clé `k` est déjà présente, doit-on échouer, ou ajouter une deuxième valeur associée à la même clé, ou écraser la valeur déjà associée à `k` ?
+(* Mais on peut réfléchir à la sémantique que l'on souhaite donner à cette fonction `insere` : si la clé `k` est déjà présente, doit-on échouer, ou ajouter une deuxième valeur associée à la même clé, ou écraser la valeur déjà associée à `k` ?
 Vous pouvez essayer d'implémenter chacun des variantes ! *)
 
 (* On construit un exemple de petite liste associative : *)
