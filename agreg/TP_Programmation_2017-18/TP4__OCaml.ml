@@ -226,7 +226,7 @@ assert (try (trouve "Boromir" communaute) = "guerrier" with Not_found -> true);;
 (* ## Exercice 5 : `supprime` *)
 
 (* On choisit la sémantique suivante : l'exception `Not_found` est levée si la clé n'est pas présente.
-On supprime sinon la *première* occurence de la clé (rappel : `insere` ajoute `(cle, valeur)` même si `cle` est déjà présente). *)
+On supprime sinon la *première* occurrence de la clé (rappel : `insere` ajoute `(cle, valeur)` même si `cle` est déjà présente). *)
 
 (* In[57]: *)
 
