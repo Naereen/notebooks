@@ -48,7 +48,7 @@ from lea import Lea
 
 # ## Récupérer et nettoyer les données
 # 
-# J'ai utilisé [cette page Wikipédia](https://en.wikipedia.org/wiki/List_of_Latin_phrases_(full)) et deux lignes de Bash :
+# J'ai utilisé [cette page Wikipédia](https://en.wikipedia.org/wiki/List_of_Latin_phrases_%28full%29) et deux lignes de Bash :
 
 # In[5]:
 
