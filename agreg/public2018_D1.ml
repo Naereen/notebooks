@@ -1,4 +1,3 @@
-
 (*
 # Texte d'oral de modélisation - Agrégation Option Informatique
 ## Préparation à l'agrégation - ENS de Rennes, 2017-18
@@ -36,9 +35,13 @@ On va essayer d'être rapide et de faire simple, donc on choisit une algèbre de
 (* ### Types et représentations *)
 
 type operateur = Plus | Moins | MoinsDroite | Mul | Div | DivDroite | Modulo | Expo ;;
-(* On utilisera MoinsDroite et DivDroite pour la compilation avec la méthode d'Ershov *);;
 
-type ('a, 'b) arbre_binaire = N of (('a,'b) arbre_binaire) * 'b * (('a,'b) arbre_binaire) | F of 'a;;
+(* On utilisera MoinsDroite et DivDroite pour la compilation avec la méthode d'Ershov *)
+
+type ('a, 'b) arbre_binaire =
+    | F of 'a
+    | N of (('a,'b) arbre_binaire) * 'b * (('a,'b) arbre_binaire)
+;;
 
 (* Par exemple pour l'expression $\frac{x - yz}{u - vw}$, c'est-à-dire `(x - y*z)/(u - v*w)` : *)
 
@@ -117,7 +120,10 @@ let _ = nombre_rho exp3;;
 
 (* On choisit d'ajouter une *décoration* de type `'c` : *)
 
-type ('a, 'b, 'c) arbre_binaire_decore = N2 of ('c * (('a, 'b, 'c) arbre_binaire_decore) * 'b * (('a, 'b, 'c) arbre_binaire_decore)) | F2 of 'a;;
+type ('a, 'b, 'c) arbre_binaire_decore =
+    | F2 of 'a
+    | N2 of ('c * (('a, 'b, 'c) arbre_binaire_decore) * 'b * (('a, 'b, 'c) arbre_binaire_decore))
+;;
 
 (* On a besoin d'attacher à chaque noeud son paramètre $\rho$ et un drapeau binaire permettant de savoir si l'algorithme d'Ershov indique d'évaluer en premier le sous-arbre gauche (`premier_gauche = true`) ou droite (`= false`). *)
 
@@ -179,7 +185,8 @@ Un premier objectif plus simple est d'évaluer les expressions, en fournissant u
 
 type ('a, 'b) contexte = ('a * 'b) list;;
 
-(* une Hashtbl peut etre utilisee si besoin de bonnes performances *);;
+(* une Hashtbl peut etre utilisee si besoin de bonnes performances *)
+
 let valeur (ctx : ('a, 'b) contexte) (var : 'a) = List.assoc var ctx;;
 
 let contexte1 : (string, int) contexte = [
@@ -265,7 +272,8 @@ let _ = eval_float contexte2 exp3;;
 (* ### Evaluation par lecture postfix et pile
 On va commencer par lire l'arbre en parcours postfix (cf. TP2 @ ENS Rennes 2017/18 (https://nbviewer.jupyter.org/github/Naereen/notebooks/tree/master/agreg/TP_Programmation_2017-18/TP2__OCaml.ipynb)) et ensuite l'évaluer grâce à une pile. *)
 
-type ('a, 'b) lexem = O of 'b | V of 'a;;
+type ('a, 'b) lexem = O of ('b) | V of ('a) ;;
+
 type ('a, 'b) parcours = (('a, 'b) lexem) list;;
 
 let parcours_postfix (expr : ('a, 'b) arbre_binaire) : (('a, 'b) parcours) =
