@@ -12,3 +12,4 @@ octave-workspace
 mocaml_history.ml
 private
 __pycache__/
+*.annot

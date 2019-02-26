@@ -138,7 +138,7 @@ let rec decore (expr : (('a, 'b) arbre_binaire)) : (('a, 'b, decoration) arbre_b
     | N (t1, o, t2) ->
         let d1, d2 = nombre_rho t1, nombre_rho t2 in
         let d = if d1 = d2 then d1 + 1 else max d1 d2 in
-        N2({rho = d; premier_gauche = (d2<= d1)}, (decore t1), o, (decore t2))
+        N2({rho = d; premier_gauche = (d2 <= d1)}, (decore t1), o, (decore t2))
 ;;
 
 (* Dans nos exemples, on voit que l'évaluation favorise en premier (avec des `premier_gauche = false`) les expressions les plus profondes (à droite) au sens du paramètre $\rho$ : *)
@@ -358,7 +358,7 @@ let _ = eval_int_3 contexte1 exp3;;
 On ne va pas trop formaliser ça, mais juste les afficher... *)
 
 let print_aff (line : int) (i : int) (s : string) : unit =
-    print "\n%02i: R[%d] := %s ;" line i s;
+    print "\n%02i: R[%i] := %s ;" line i s;
 ;;
 
 let string_of_op (op : operateur) : string =
@@ -413,7 +413,7 @@ Enfin, on va générer, en plus de l'évaluation, un affichage comme celui qu'on
 
 decore exp1;;
 
-(* On modifie notre parcours postfix pour prendre en compte la décoration et savoir si on calcul d'abord le sous-arbre gauche ou droit. *)
+(* On modifie notre parcours postfix pour prendre en compte la décoration et savoir si on calcule d'abord le sous-arbre gauche ou droit. *)
 
 let parcours_postfix_decore (expr : ('a, 'b, decoration) arbre_binaire_decore) : (('a, 'b) parcours) =
     let rec parcours vus expr =
