@@ -154,8 +154,8 @@ Une approche très simple, en trois étapes :
 
 (* Il y a une finesse : en comptant une fois les rues dont les deux côtés sont éclairés, et deux fois les rues dont un seul côté est éclairé, on peut comparer au nombre de rues comptées doubles.
 
-C'est légérement sous-optimal, comme on va devoir vérifier (en temps linéaire en la de l'éclairage) si chaque rue a un ou deux côté éclairés.
-Mais on gagne en mémoire puisqu'on a n'a pas à construire une représentation de toutes les rues. *)
+C'est légérement sous-optimal, comme on va devoir vérifier (en temps linéaire en taille la de l'éclairage) si chaque rue a un ou deux côté éclairés.
+Mais on gagne en mémoire puisqu'on n'a pas à construire une représentation de toutes les rues. *)
 
 (* In[9]: *)
 
@@ -268,7 +268,7 @@ graphe1;;
 eclairage1_sat;;
 List.map (fun place_eclairee -> List.nth graphe1 place_eclairee) eclairage1_sat;;
 
-verifie_eclairage graphe1 eclairage1_sat;;    (* true *)
+verifie_eclairage graphe1 eclairage1_sat;;    (* true *);;
 
 (* - Le second est moins trivial, mais en vérifiant à la main sur le graphe on voit qu'il fonctionne.
   + On a juste éteint la place $0$, mais l'arête $0-1$ reste éclairée par la place $1$,
@@ -281,7 +281,7 @@ verifie_eclairage graphe1 eclairage1_sat;;    (* true *)
 eclairage2_sat;;
 List.map (fun place_eclairee -> List.nth graphe1 place_eclairee) eclairage2_sat;;
 
-verifie_eclairage graphe1 eclairage2_sat;;    (* true *)
+verifie_eclairage graphe1 eclairage2_sat;;    (* true *);;
 
 (* - On peut essayer un éclairage de seulement 5 villes. Est-ce optimal ? (on répondra plus tard, mais oui) *)
 
@@ -294,7 +294,7 @@ let eclairage3_sat : eclairage = [
 
 List.map (fun place_eclairee -> List.nth graphe1 place_eclairee) eclairage3_sat;;
 
-verifie_eclairage graphe1 eclairage3_sat;;    (* true *)
+verifie_eclairage graphe1 eclairage3_sat;;    (* true *);;
 
 (* #### Pour des éclairages non valides :
 
@@ -306,7 +306,7 @@ verifie_eclairage graphe1 eclairage3_sat;;    (* true *)
 eclairage1_nonsat;;
 List.map (fun place_eclairee -> List.nth graphe1 place_eclairee) eclairage1_nonsat;;
 
-verifie_eclairage graphe1 eclairage1_nonsat;;   (* false *)
+verifie_eclairage graphe1 eclairage1_nonsat;;   (* false *);;
 
 (* - Le second semble bon, mais la rue $8-9$ par exemple est éteinte. *)
 
@@ -316,7 +316,7 @@ verifie_eclairage graphe1 eclairage1_nonsat;;   (* false *)
 eclairage2_nonsat;;
 List.map (fun place_eclairee -> List.nth graphe1 place_eclairee) eclairage2_nonsat;;
 
-verifie_eclairage graphe1 eclairage2_nonsat;;   (* false *)
+verifie_eclairage graphe1 eclairage2_nonsat;;   (* false *);;
 
 (* ### Bonus : vérifier que le graphe est valide
 Bon... par acquis de conscience, on implémente l'étape de vérification évoquée plus haut.
@@ -350,7 +350,7 @@ max_liste_liste [[123; 12; 1]; [1234; 13]];;
 (* In[27]: *)
 
 
-List.for_all (fun x -> (0 <= x) && (x <= 1234)) (List.flatten [[123; 12; 1]; [1234; 13]])
+List.for_all (fun x -> (0 <= x) && (x <= 1234)) (List.flatten [[123; 12; 1]; [1234; 13]]);;
 
 (* In[28]: *)
 
@@ -564,7 +564,7 @@ let tous_sous_ensembles (liste : 'a list) : 'a list list =
 tous_sous_ensembles [];;
 tous_sous_ensembles [1];;
 tous_sous_ensembles [1; 2];;
-tous_sous_ensembles [1; 2; 3];; (* taille 2^3 = 8 *)
+tous_sous_ensembles [1; 2; 3];; (* taille 2^3 = 8 *);;
 
 (* In[45]: *)
 
@@ -726,11 +726,11 @@ Il est toujours utile de préciser, rapidement à l'oral et/ou dans le code (un 
 
 Si vous n'êtes pas sûr ou ne savez pas comment le justifier, mieux vaut marquer :
 
-> « Probablement en $\mathcal{O}(n)$ en temps et en espace. »
+> « En $\mathcal{O}(n^2)$ en temps et en espace. »
 
-que de marquer :
+que de marquer quelque chose de difficilement justifiable comme :
 
-> « En $\mathcal{O}(n^2)$ en temps et en espace. » *)
+> « Probablement en $\mathcal{O}(n)$ en temps et en espace. » *)
 
 (* ### En temps
 
@@ -740,7 +740,7 @@ que de marquer :
 
 - Les deux fonctions `tous_les_eclairages_possibles` et `eclairages_optimaux` sont en $\mathcal{O}(2^n)$ en temps, et c'est *beaucoup* ! *)
 
-(* ### En espace
+(* ### En espace (ou en mémoire)
 - La première fonction de vérification proposée `verifie_eclairage` est aussi linéaire en espace en la taille du graphe.
 - La deuxième fonction de vérification proposée `verifie_eclairage_0` est aussi linéaire en espace en la taille du graphe.
 
@@ -749,7 +749,7 @@ que de marquer :
 (* ----
 ## Conclusion
 
-Voilà pour la question obligatoire de programmation.
+Voilà pour la question obligatoire de programmation, et un gros bonus.
 
 ### Qualités
 - On a décomposé le problème en sous-fonctions,
