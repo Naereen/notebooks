@@ -36,7 +36,7 @@ La question de programmation pour ce texte était donnée au tout début, à la 
 > Le tester sur différents exemples bien choisis (on pourra justifier la/les structures de données utilisée).
 
 ### Besoin de plusieurs exemples
-Pour une fois, on vois bien que le jury *exige* de tester la fonction sur *plusieurs* exemples. *)
+Pour une fois, on voit bien que le jury *exige* de tester la fonction sur *plusieurs* exemples. *)
 
 (* ----
 ## Solution
