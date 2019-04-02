@@ -36,12 +36,12 @@ Avec une grammaire BNF, si `<var>` désigne un nom d'expression valide (on se li
 (* ----
 ## L'identité *)
 
-(* In[6]: *)
+(* In[3]: *)
 
 
 let identite = fun x -> x ;;
 
-(* In[7]: *)
+(* In[4]: *)
 
 
 let vide = fun x -> x ;;
@@ -49,7 +49,7 @@ let vide = fun x -> x ;;
 (* ## Conditionnelles
 La conditionnelle est `si cond alors valeur_vraie sinon valeur_fausse`. *)
 
-(* In[8]: *)
+(* In[13]: *)
 
 
 let si = fun cond valeur_vraie valeur_fausse -> cond valeur_vraie valeur_fausse ;;
@@ -59,7 +59,7 @@ let si = fun cond valeur_vraie valeur_fausse -> cond valeur_vraie valeur_fausse 
     si vrai e1 e2 == e1
     si faux e1 e2 == e2 *)
 
-(* In[9]: *)
+(* In[14]: *)
 
 
 let vrai = fun valeur_vraie valeur_fausse -> valeur_vraie ;;
@@ -67,14 +67,14 @@ let faux = fun valeur_vraie valeur_fausse -> valeur_fausse ;;
 
 (* La négation est facile ! *)
 
-(* In[10]: *)
+(* In[15]: *)
 
 
 let non = fun v x y -> v y x;;
 
 (* En fait, on va forcer une évaluation paresseuse, comme ça si l'une des deux expressions ne terminent pas, l'évaluation fonctionne quand même. *)
 
-(* In[11]: *)
+(* In[16]: *)
 
 
 let vrai_paresseux = fun valeur_vraie valeur_fausse -> valeur_vraie () ;;
@@ -82,7 +82,7 @@ let faux_paresseux = fun valeur_vraie valeur_fausse -> valeur_fausse () ;;
 
 (* Pour rendre paresseux un terme, rien de plus simple ! *)
 
-(* In[12]: *)
+(* In[17]: *)
 
 
 let paresseux = fun f -> fun () -> f ;;
@@ -90,7 +90,7 @@ let paresseux = fun f -> fun () -> f ;;
 (* ## Nombres
 La représentation de Church consiste a écrire $n$ comme $\lambda f. \lambda z. f^n z$. *)
 
-(* In[13]: *)
+(* In[18]: *)
 
 
 type 'a nombres = ('a -> 'a) -> 'a -> 'a;;  (* inutilisé *)
@@ -98,26 +98,26 @@ type entiers_church = (int -> int) -> int -> int;;
 
 (* $0$ est trivialement $\lambda f. \lambda z. z$ : *)
 
-(* In[14]: *)
+(* In[34]: *)
 
 
 let zero = fun (f : ('a -> 'a)) (z : 'a) -> z ;;
 
 (* $1$ est $\lambda f. \lambda z. f z$ : *)
 
-(* In[15]: *)
+(* In[35]: *)
 
 
 let un = fun (f : ('a -> 'a)) -> f ;;
 
 (* Avec l'opérateur de composition, l'écriture des entiers suivants est facile. *)
 
-(* In[16]: *)
+(* In[36]: *)
 
 
 let compose = fun f g x -> f (g x);;
 
-(* In[17]: *)
+(* In[37]: *)
 
 
 let deux = fun f -> compose f f;;  (* == compose f (un f) *)
@@ -127,7 +127,7 @@ let quatre = fun f -> compose f (trois f) ;;
 
 (* On peut généraliser ça, avec une fonction qui transforme un entier (`int`) de Caml en un entier de Church : *)
 
-(* In[18]: *)
+(* In[38]: *)
 
 
 let rec entierChurch (n : int) =
@@ -136,7 +136,7 @@ let rec entierChurch (n : int) =
 
 (* Par exemple : *)
 
-(* In[19]: *)
+(* In[39]: *)
 
 
 (entierChurch 0) (fun x -> x + 1) 0;; (* 0 *)
@@ -145,7 +145,7 @@ let rec entierChurch (n : int) =
 
 (* Et une fonction qui fait l'inverse (note : cette fonction n'est *pas* un $\lambda$-terme) : *)
 
-(* In[20]: *)
+(* In[40]: *)
 
 
 let entierNatif c : int =
@@ -154,13 +154,13 @@ let entierNatif c : int =
 
 (* Un petit test : *)
 
-(* In[21]: *)
+(* In[41]: *)
 
 
 entierNatif (si vrai zero un);; (* 0 *)
 entierNatif (si faux zero un);; (* 1 *);;
 
-(* In[22]: *)
+(* In[42]: *)
 
 
 entierNatif (entierChurch 100);; (* 100 *);;
@@ -168,33 +168,40 @@ entierNatif (entierChurch 100);; (* 100 *);;
 (* ## Test d'inégalité
 On a besoin de pouvoir tester si $n \leq 0$ (ou $n = 0$) en fait. *)
 
-(* In[23]: *)
+(* In[43]: *)
 
 
 (* prend un lambda f lambda z. ... est donne vrai ssi n = 0 ou faux sinon *)
 let estnul = fun n -> n (fun z -> faux) (vrai);;
 
-(* In[24]: *)
+(* In[44]: *)
 
 
 (* prend un lambda f lambda z. ... est donne vrai ssi n > 0 ou faux sinon *)
 let estnonnul = fun n -> n (fun z -> vrai) (faux);;
 
-(* In[25]: *)
+(* On peut proposer cette autre implémentation, qui "fonctionne" pareil (au sens calcul des $\beta$-réductions) mais est plus compliquée : *)
+
+(* In[45]: *)
+
+
+let estnonnul2 = fun n -> non (estnul n);;
+
+(* In[46]: *)
 
 
 entierNatif (si (estnul zero) zero un);; (* 0 *)
 entierNatif (si (estnul un)   zero un);; (* 1 *)
 entierNatif (si (estnul deux) zero un);; (* 1 *);;
 
-(* In[26]: *)
+(* In[47]: *)
 
 
 entierNatif (si (estnonnul zero) zero un);; (* 0 *)
 entierNatif (si (estnonnul un)   zero un);; (* 1 *)
 entierNatif (si (estnonnul deux) zero un);; (* 1 *);;
 
-(* In[27]: *)
+(* In[48]: *)
 
 
 entierNatif (si (non (estnul zero)) zero un);; (* 0 *)
@@ -205,18 +212,51 @@ entierNatif (si (non (estnul deux)) zero un);; (* 1 *);;
 Vue la représentation de Churc, $n+1$ consiste a appliquer l'argument $f$ une fois de plus :
 $f^{n+1}(z) = f (f^n(z))$. *)
 
-(* In[28]: *)
+(* In[49]: *)
 
 
 let succ = fun n f z -> f ((n f) z) ;;
 
-(* In[29]: *)
+(* In[50]: *)
 
 
 entierNatif (succ un);; (* 2 *);;
 
+(* In[51]: *)
+
+
+deux;;
+succ un;;
+
+(* On remarque qu'ils ont le même typage, mais OCaml indique qu'il a moins d'informations à propos du deuxième : ce `'_a` signifie que le type est *contraint*, il sera fixé dès la première utilisation de cette fonction.
+
+C'est assez mystérieux, mais il faut retenir le point suivant : `deux` était écrit manuellement, donc le système a vu le terme en entier, il le connaît et saît que `deux = fun f -> fun x -> f (f x))`, pas de surprise. Par contre, `succ un` est le résultat d'une évaluation *partielle* et vaut `fun f z -> f ((deux f) z)`. Sauf que le système ne calcule pas tout et laisse l'évaluation partielle ! (heureusement !) *)
+
+(* Si on appelle `succ un` à une fonction, le `'_a` va être contraint, et on ne pourra pas s'en reservir : *)
+
+(* In[54]: *)
+
+
+let succ_de_un = succ un;;
+
+(* In[55]: *)
+
+
+(succ_de_un) (fun x -> x + 1);;
+
+(* In[56]: *)
+
+
+(succ_de_un) (fun x -> x ^ "0");;
+
+(* In[57]: *)
+
+
+(succ un) (fun x -> x ^ "0");;
+(* une valeur fraîchement calculée, sans contrainte *);;
+
 (* ## Prédecesseurs
-Vue la représentation de Churc, $\lambda n. n-1$ n'existe pas... mais on peut tricher. *)
+Vue la représentation de Church, $\lambda n. n-1$ n'existe pas... mais on peut tricher. *)
 
 (* In[30]: *)
 
@@ -308,18 +348,18 @@ On va écrire un constructeur de paires, `paire a b` qui sera comme `(a, b)`, et
     gauche (paire a b) == a
     droite (paire a b) == b *)
 
-(* In[44]: *)
+(* In[75]: *)
 
 
 let paire = fun a b -> fun f -> f(a)(b);;
 
-(* In[45]: *)
+(* In[76]: *)
 
 
 let gauche = fun p -> p(fun a b -> a);;
 let droite = fun p -> p(fun a b -> b);;
 
-(* In[46]: *)
+(* In[77]: *)
 
 
 entierNatif (gauche (paire zero un));;
@@ -329,7 +369,7 @@ entierNatif (droite (paire zero un));;
 
 Il y a une façon, longue et compliquée ([source](http://gregfjohnson.com/pred/)) d'y arriver, avec des paires. *)
 
-(* In[47]: *)
+(* In[78]: *)
 
 
 let pred n suivant premier =
@@ -345,7 +385,7 @@ let pred n suivant premier =
 
 (* Malheureusement, ce n'est pas bien typé. *)
 
-(* In[48]: *)
+(* In[79]: *)
 
 
 entierNatif (pred deux);; (* 1 *);;
@@ -362,26 +402,26 @@ Pour construire des listes (simplement chaînées), on a besoin d'une valeur pou
 
 On va stocker tout ça avec des fonctions qui attendront deux arguments (deux fonctions - rappel tout est fonction en $\lambda$-calcul), l'une appellée si la liste est vide, l'autre si la liste n'est pas vide. *)
 
-(* In[49]: *)
+(* In[58]: *)
 
 
-let listevide = fun survide surpasvide -> survide();;
+let listevide = fun survide surpasvide -> survide;;
 
-(* In[50]: *)
+(* In[59]: *)
 
 
 let cons = fun hd tl -> fun survide surpasvide -> surpasvide hd tl;;
 
 (* Avec cette construction, `estvide` est assez simple : `survide` est `() -> vrai` et `surpasvide` est `tt qu -> faux`. *)
 
-(* In[51]: *)
+(* In[60]: *)
 
 
-let estvide = fun liste -> liste (fun () -> vrai) (fun tt qu -> faux);;
+let estvide = fun liste -> liste (vrai) (fun tt qu -> faux);;
 
 (* Deux tests : *)
 
-(* In[52]: *)
+(* In[61]: *)
 
 
 entierNatif (si (estvide (listevide)) un zero);; (* estvide listevide == vrai *)
@@ -389,31 +429,32 @@ entierNatif (si (estvide (cons un listevide)) un zero);; (* estvide (cons un lis
 
 (* Et pour les deux extracteurs, c'est très facile avec cet encodage. *)
 
-(* In[53]: *)
+(* In[62]: *)
 
 
 let tete = fun liste -> liste (vide) (fun tt qu -> tt);;
 let queue = fun liste -> liste (vide) (fun tt qu -> qu);;
 
-(* In[61]: *)
+(* In[69]: *)
 
 
 entierNatif (tete (cons un listevide));;
-entierNatif (tete (queue (cons un (cons un listevide))));;
+entierNatif (tete (queue (cons deux (cons un listevide))));;
+entierNatif (tete (queue (cons trois (cons deux (cons un listevide)))));;
 
 (* Visualisons les types que Caml trouve a des listes de tailles croissantes : *)
 
-(* In[62]: *)
+(* In[70]: *)
 
 
 cons un (cons un listevide);;  (* 8 variables pour une liste de taille 2 *);;
 
-(* In[63]: *)
+(* In[71]: *)
 
 
 cons un (cons un (cons un (cons un listevide)));;  (* 14 variables pour une liste de taille 4 *);;
 
-(* In[64]: *)
+(* In[72]: *)
 
 
 cons un (cons un (cons un (cons un (cons un (cons un (cons un (cons un listevide)))))));;  (* 26 variables pour une liste de taille 7 *);;
@@ -424,14 +465,33 @@ Aucun espoir donc (avec cet encodage) d'avoir un type générique pour les liste
 
 Et donc nous ne sommes pas surpris de voir cet essai échouer : *)
 
-(* In[66]: *)
+(* In[68]: *)
 
 
 let rec longueur liste =
     liste (zero) (fun t q -> succ (longueur q))
 ;;
 
-(* En effet, `longueur` devrait être bien typée et `liste` et `q` devraient avoir le même type, or le type de `liste` est strictement plus grand que celui de `q`... *)
+(* <span style="color:red;">En effet, `longueur` devrait être bien typée et `liste` et `q` devraient avoir le même type, or le type de `liste` est strictement plus grand que celui de `q`...</span> *)
+
+(* On peut essayer de faire une fonction `ieme`.
+On veut que `ieme zero liste = tete` et `ieme n liste = ieme (pred n) (queue liste)`.
+
+En écrivant en haut niveau, on aimerait pouvoir faire : *)
+
+(* In[87]: *)
+
+
+let pop liste =
+    si (estvide liste) (listevide) (queue liste)
+;;
+
+(* In[86]: *)
+
+
+let ieme n liste =
+    tete (n pop liste)
+;;
 
 (* ## La fonction U
 
