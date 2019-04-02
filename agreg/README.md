@@ -83,6 +83,8 @@ opam install jupyter
 
 Cela demande d'avoir [déjà installé Jupyter](https://jupyter.org/install.html).
 
+Note :  [ce petit article en français](http://pascal.ortiz.free.fr/contents/autres/jupyter_ocaml/jupyter_ocaml.html) présente comment (essayer d') installer OCaml et Jupyter et `ocaml-jupyter` sur un système Windows (version 10 ou plus récente).
+
 ### :scroll: Licence
 Tout ces documents sont distribues publiquement sous les conditions de la [licence MIT](http://lbesson.mit-license.org/) (fichier [LICENSE.txt](LICENSE.txt), en anglais).
 © [Lilian Besson](https://github.com/Naereen), 2016-17.
