@@ -55,7 +55,7 @@ Mathématiquement, l'énoncé à implémenter sous forme d'un critère est le su
 On définit :
 - les symboles du calcul propositionnel par un type énumération (abstrait) :
   $$ \Omega = \{V, F, \mathrm{Non}, \mathrm{Ou}, \mathrm{Et}, \mathrm{ITE}\} $$
-  $\mathrm{ITE}$ correspond au "If then else" ternaire (`a ? b : c` en C, `if a then b else c` en Python ou OCaml).
+  $\mathrm{ITE}$ correspond au "If then else" ternaire (`a ? b : c` en C, `if a then b else c` en OCaml, ou `b if a else c` en Python).
 - Et les formules du calcul propositionnel comme une *liste* de symboles. *)
 
 (* In[2]: *)
@@ -208,14 +208,14 @@ L'objectif est de construire la fonction d'évaluation d'un terme en écriture p
 
 ![images/algorithme_evaluation_terme.png](images/algorithme_evaluation_terme.png)
 
-- La pile utilisée dans l'algorithme est implémentée par une simple liste
+- La pile utilisée dans l'algorithme sera implémentée par une simple liste.
 
 - Ce que le texte appelle "valeur" et "omegabarre" sont regroupés dans une liste de couples tels que le premier élément du couple est un symbole `s` et le deuxième la fonction `f_s` permettant d'interpréter ce symbole ; on considère que les constante sont des fonctions d'arité 0. Cette fonction `f_s` prend en arguments une liste d'éléments du domaine et renvoie un élément du domaine.
  *)
 
 (* ### Manipulation basique sur une pile
 
-On a besoin de savoir dépiler plus d'une valeur, pour récupérer les $k$ valeurs successives à donner à un l'interprétation d'un symbole d'arité $k \geq 1$.
+On a besoin de savoir dépiler plus d'une valeur, pour récupérer les $k$ valeurs successives à donner à l'interprétation d'un symbole d'arité $k \geq 1$.
 
 Cette fonction renvoie un couple de listes :
 - la liste des `k` éléments en sommet de la pile `p` de sorte que le sommet de la pile `p` se trouve en dernière position dans cette liste,
@@ -249,7 +249,7 @@ depile 3 [0; 1; 2; 3; 4; 5; 6; 7];;
 depile 8 [0; 1; 2; 3; 4; 5; 6; 7];;
 
 (* Ça semble bien fonctionner.
-Notez que la première liste a été retournée ("renversée"), puisque les valeurs ont été empilés dans le sens inverse lors de leurs lectures.
+Notez que la première liste a été retournée ("renversée"), puisque les valeurs ont été empilées dans le sens inverse lors de leurs lectures.
 
 On peut aussi proposer une implémentation alternative, moins élégante mais plus rapide à écrire, avec des tableaux, et deux appels à `Array.sub` pour découper le tableau, et `Array.of_list` et `Array.to_list` pour passer d'une liste à un tableau puis de deux tableaux à deux listes. *)
 
@@ -287,7 +287,7 @@ let interprete (interpretation : ('a * ('d list -> 'd)) list) (t : 'a) (arg : 'd
 
 Notez que pour faciliter le typage, ces fonctions recoivent la pile, i.e., une *liste* d'arguments (de taille arbitraire) et s'occupent elles-mêmes de récupérer le sommet de pile et les valeurs suivantes.
 
-> Les fonctions échouent si la pile donnée n'est pas assez profondes, bien évidemment. *)
+> Les fonctions échouent si la pile donnée n'est pas assez profonde, bien évidemment. *)
 
 (* In[16]: *)
 
@@ -495,7 +495,7 @@ En gros, c'est l'arithmétique avec :
 - le test d'*égalité sur des sommes*, de la forme $x + y = z$, où $x$, $y$ et $z$ sont des constantes ou des variables,
 - le *ou binaire* sur des formules, de la forme $\phi \vee \phi'$,
 - le *et binaire* sur des formules, de la forme $\phi \wedge \phi'$,
-- le *non binaire* sur une formule, de la forme $\neg \phi$,
+- le *non unaire* sur une formule, de la forme $\neg \phi$,
 - et le *test existenciel*, de la forme $\exists x, \phi$. *)
 
 (* ### Symboles et arités *)
