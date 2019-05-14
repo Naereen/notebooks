@@ -270,7 +270,7 @@ let print_tissu (o : tissu) : unit =
     print_tissu_x (Array.to_list o)
 ;;
 
-(* In[22]: *)
+(* In[21]: *)
 
 
 print_tissu muscle1;;
@@ -291,7 +291,7 @@ flush_all ();;
 
 Cette fonction renvoie la valeur du tissu, pour éventuellement faire des sauvegardes ou l'afficher, mais le tissu est bien modifié en place ! *)
 
-(* In[23]: *)
+(* In[22]: *)
 
 
 let une_etape_infection (ti : tissu) : tissu =
@@ -307,24 +307,24 @@ let une_etape_infection (ti : tissu) : tissu =
 
 (* Un exemple sur le tissu sain, le tissu infecté au milieu et le tissu de la Figure 1. *)
 
-(* In[24]: *)
+(* In[23]: *)
 
 
 une_etape_infection muscle1;;
 
-(* In[25]: *)
+(* In[24]: *)
 
 
 une_etape_infection muscle2;;
 
-(* In[26]: *)
+(* In[25]: *)
 
 
 une_etape_infection muscle3;;
 
 (* ### Faire évoluer sur plusieurs étapes, en affichant les étapes intermédiaires *)
 
-(* In[28]: *)
+(* In[26]: *)
 
 
 let m_etapes_infection (ti : tissu) (m : int) : tissu =
@@ -343,26 +343,26 @@ let m_etapes_infection (ti : tissu) (m : int) : tissu =
 
 (* On relance les exemples depuis le début : *)
 
-(* In[29]: *)
+(* In[27]: *)
 
 
 let muscle1 = nouveau_tissu 20;;
 m_etapes_infection muscle1 3;;
-(* Il n'évolue pas *)
+(* Il n'évolue pas *);;
 
-(* In[30]: *)
+(* In[28]: *)
 
 
 let muscle2 = let m = nouveau_tissu 21 in begin infecte_cible m 11;  m end;;
 m_etapes_infection muscle2 40;;
-(* tout le tissu est infecté ! Dès la 20ème étape *)
+(* tout le tissu est infecté ! Dès la 20ème étape *);;
 
-(* In[31]: *)
+(* In[29]: *)
 
 
 let muscle3 = [| 0; 0; 3; 0; 0; 1; 5; 0; 0 |];;
 m_etapes_infection muscle3 8;;
-(* 3 étapes suffisent à tout infecter *)
+(* 3 étapes suffisent à tout infecter *);;
 
 (* > Voilà, ce sera tout pour cette solution. *)
 
