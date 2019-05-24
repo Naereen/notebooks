@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2019" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2019-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2019</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev2 toc-item"><a href="#Planche-160" data-toc-modified-id="Planche-160-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 160</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-168" data-toc-modified-id="Planche-168-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Planche 168</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev2 toc-item"><a href="#Planche-172" data-toc-modified-id="Planche-172-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Planche 172</a></div><div class="lev2 toc-item"><a href="#Planche-177" data-toc-modified-id="Planche-177-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Planche 177</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
+#  <p><div class="lev1 toc-item"><a href="#Oraux-CentraleSupélec-PSI---Juin-2019" data-toc-modified-id="Oraux-CentraleSupélec-PSI---Juin-2019-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Oraux CentraleSupélec PSI - Juin 2019</a></div><div class="lev2 toc-item"><a href="#Remarques-préliminaires" data-toc-modified-id="Remarques-préliminaires-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Remarques préliminaires</a></div><div class="lev3 toc-item"><a href="#Importez-les-modules-:" data-toc-modified-id="Importez-les-modules-:-111"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Importez les modules :</a></div><div class="lev2 toc-item"><a href="#Planche-160" data-toc-modified-id="Planche-160-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Planche 160</a></div><div class="lev2 toc-item"><a href="#Planche-162" data-toc-modified-id="Planche-162-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Planche 162</a></div><div class="lev2 toc-item"><a href="#Planche-166" data-toc-modified-id="Planche-166-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Planche 166</a></div><div class="lev2 toc-item"><a href="#Planche-168" data-toc-modified-id="Planche-168-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Planche 168</a></div><div class="lev2 toc-item"><a href="#Planche-170" data-toc-modified-id="Planche-170-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Planche 170</a></div><div class="lev2 toc-item"><a href="#Planche-172" data-toc-modified-id="Planche-172-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Planche 172</a></div><div class="lev2 toc-item"><a href="#Planche-177" data-toc-modified-id="Planche-177-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Planche 177</a></div><div class="lev1 toc-item"><a href="#À-voir-aussi" data-toc-modified-id="À-voir-aussi-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>À voir aussi</a></div><div class="lev2 toc-item"><a href="#Les-oraux---(exercices-de-maths-avec-Python)" data-toc-modified-id="Les-oraux---(exercices-de-maths-avec-Python)-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span><a href="http://perso.crans.org/besson/infoMP/oraux/solutions/" target="_blank">Les oraux</a>   <em>(exercices de maths avec Python)</em></a></div><div class="lev2 toc-item"><a href="#Fiches-de-révisions-pour-les-oraux" data-toc-modified-id="Fiches-de-révisions-pour-les-oraux-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fiches de révisions <em>pour les oraux</em></a></div><div class="lev2 toc-item"><a href="#D'autres-notebooks-?" data-toc-modified-id="D'autres-notebooks-?-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>D'autres notebooks ?</a></div>
 
 # # Oraux CentraleSupélec PSI - Juin 2019
 # 
@@ -14,7 +14,7 @@
 # - Les exercices sans Python ne sont pas traités.
 # - Les exercices avec Python utilisent Python 3, [numpy](http://numpy.org), [matplotlib](http://matplotlib.org), [scipy](http://scipy.org) et [sympy](http://sympy.org), et essaient d'être résolus le plus simplement et le plus rapidement possible. L'efficacité (algorithmique, en terme de mémoire et de temps de calcul), n'est *pas* une priorité. La concision et simplicité de la solution proposée est prioritaire.
 
-# In[15]:
+# In[1]:
 
 
 import numpy as np
@@ -32,13 +32,39 @@ import seaborn as sns
 sns.set(context="notebook", style="whitegrid", palette="hls", font="sans-serif", font_scale=1.1)
 
 
+# ### Importez les modules :
+
+# In[ ]:
+
+
+import numpy as np
+
+
+# In[ ]:
+
+
+import matplotlib.pyplot as plt
+
+
+# In[ ]:
+
+
+from scipy import integrate
+
+
+# In[ ]:
+
+
+import numpy.random as rd
+
+
 # ----
 # ## Planche 160
 
 # - $I_n := \int_0^1 \frac{1}{(1+t)^n \sqrt{1-t}} \mathrm{d}t$ et $I_n := \int_0^1 \frac{1/2}{(1+t)^n \sqrt{1-t}} \mathrm{d}t$ sont définies pour tout $n$ car leur intégrande est continue et bien définie sur $]0,1[$ et intégrable en $1$ parce qu'on sait (par intégrale de Riemann) que $\frac{1}{\sqrt{u}}$ est intégrable en $0^+$ (et changement de variable $u = 1-t$).
 # - On les calcule très simplement :
 
-# In[17]:
+# In[2]:
 
 
 def I(n):
@@ -48,7 +74,7 @@ def I(n):
     return i
 
 
-# In[18]:
+# In[3]:
 
 
 def J(n):
@@ -58,7 +84,7 @@ def J(n):
     return i
 
 
-# In[19]:
+# In[4]:
 
 
 valeurs_n = np.arange(1, 50)
@@ -73,7 +99,7 @@ plt.show()
 # - On conjecture que $I_n$ est décroissante. C'est évident puisque si on note $f_n(t)$ son intégrande, on observe que $f_{n+1}(t) \leq f_n(t)$ pour tout $t$, et donc par monotonie de l'intégrale, $I_{n+1} \leq I_n$.
 # - On conjecture que $I_n \to 0$. Cela se montre très facilement avec le théorème de convergence dominée.
 
-# In[20]:
+# In[5]:
 
 
 plt.figure()
@@ -84,11 +110,13 @@ plt.show()
 
 # - Ce qu'on observe permet de conjecturer que $\alpha=1$ est l'unique entier tel que $n^{\alpha} I_n$ converge vers une limite non nulle.
 
-# In[21]:
+# In[16]:
 
 
+valeurs_n = np.arange(1, 500)
+valeurs_In = np.array([I(n) for n in valeurs_n])
 valeurs_Jn = np.array([J(n) for n in valeurs_n])
-alpha = 1
+alpha = 0.9
 
 plt.figure()
 plt.plot(valeurs_n, valeurs_n**alpha * valeurs_In, 'r+', label=r'$n^{\alpha} I_n$')
@@ -376,47 +404,53 @@ voir_histogramme([1, 2, 3, 50, 100, 200])
 
 # On va la définir rapidement en Python, et calculer ses valeurs propres notamment.
 
-# In[69]:
+# In[18]:
+
+
+case_max = 12
+
+
+# In[19]:
 
 
 P = np.zeros((case_max, case_max))
 
 
-# In[70]:
+# In[26]:
 
 
 for k in range(case_max):
     for i in range(k - 6, k):
-        P[k, i] = 1
+        P[k, i] = 1/6
 
 
-# In[71]:
+# In[27]:
 
 
 P
 
 
-# In[72]:
+# In[28]:
 
 
 import numpy.linalg as LA
 
 
-# In[73]:
+# In[29]:
 
 
 spectre, vecteur_propres = LA.eig(P)
 
 
-# On a besoin d'éliminer les erreurs d'arrondis, mais on voit que $6$ est valeur propre, associée au vecteur $[0,\dots,1,\dots,0]$ avec un $1$ seulement à la 8ème composante.
+# On a besoin d'éliminer les erreurs d'arrondis, mais on voit que $1$ est valeur propre, associée au vecteur $[1,\dots,1,\dots,1]$ avec un $1$ seulement à la 8ème composante.
 
-# In[74]:
-
-
-np.round(spectre)
+# In[34]:
 
 
-# In[75]:
+np.round(spectre,10)
+
+
+# In[31]:
 
 
 np.round(vecteur_propres[0])
