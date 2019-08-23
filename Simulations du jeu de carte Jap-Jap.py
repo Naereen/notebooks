@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#But-de-ce-notebook" data-toc-modified-id="But-de-ce-notebook-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>But de ce notebook</a></div><div class="lev1 toc-item"><a href="#Règles-du-Jap-Jap" data-toc-modified-id="Règles-du-Jap-Jap-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Règles du <em>Jap Jap</em></a></div><div class="lev2 toc-item"><a href="#But-du-jeu" data-toc-modified-id="But-du-jeu-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>But du jeu</a></div><div class="lev2 toc-item"><a href="#Début-du-jeu" data-toc-modified-id="Début-du-jeu-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Début du jeu</a></div><div class="lev2 toc-item"><a href="#Tour-de-jeu" data-toc-modified-id="Tour-de-jeu-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Tour de jeu</a></div><div class="lev2 toc-item"><a href="#Fin-du-jeu" data-toc-modified-id="Fin-du-jeu-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Fin du jeu</a></div><div class="lev1 toc-item"><a href="#Code-pour-représenter-une-carte-à-jouer" data-toc-modified-id="Code-pour-représenter-une-carte-à-jouer-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Code pour représenter une carte à jouer</a></div><div class="lev1 toc-item"><a href="#Code-pour-représenter-un-état-actuel-du-jeu" data-toc-modified-id="Code-pour-représenter-un-état-actuel-du-jeu-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Code pour représenter un état actuel du jeu</a></div><div class="lev2 toc-item"><a href="#Un-exemple-de-début-de-jeu" data-toc-modified-id="Un-exemple-de-début-de-jeu-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Un exemple de début de jeu</a></div><div class="lev2 toc-item"><a href="#Un-exemple-de-tour" data-toc-modified-id="Un-exemple-de-tour-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Un exemple de tour</a></div>
+#  <p><div class="lev1 toc-item"><a href="#But-de-ce-notebook" data-toc-modified-id="But-de-ce-notebook-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>But de ce notebook</a></div><div class="lev1 toc-item"><a href="#Règles-du-Jap-Jap" data-toc-modified-id="Règles-du-Jap-Jap-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Règles du <em>Jap Jap</em></a></div><div class="lev2 toc-item"><a href="#But-du-jeu" data-toc-modified-id="But-du-jeu-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>But du jeu</a></div><div class="lev2 toc-item"><a href="#Début-du-jeu" data-toc-modified-id="Début-du-jeu-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Début du jeu</a></div><div class="lev2 toc-item"><a href="#Tour-de-jeu" data-toc-modified-id="Tour-de-jeu-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Tour de jeu</a></div><div class="lev2 toc-item"><a href="#Fin-du-jeu" data-toc-modified-id="Fin-du-jeu-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Fin du jeu</a></div><div class="lev1 toc-item"><a href="#Code-du-jeu" data-toc-modified-id="Code-du-jeu-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Code du jeu</a></div><div class="lev2 toc-item"><a href="#Code-pour-représenter-une-carte-à-jouer" data-toc-modified-id="Code-pour-représenter-une-carte-à-jouer-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Code pour représenter une carte à jouer</a></div><div class="lev2 toc-item"><a href="#Fin-du-jeu" data-toc-modified-id="Fin-du-jeu-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Fin du jeu</a></div><div class="lev2 toc-item"><a href="#Actions" data-toc-modified-id="Actions-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Actions</a></div><div class="lev2 toc-item"><a href="#Valider-un-coup" data-toc-modified-id="Valider-un-coup-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Valider un coup</a></div><div class="lev2 toc-item"><a href="#Jeu-interactif" data-toc-modified-id="Jeu-interactif-35"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Jeu interactif</a></div><div class="lev2 toc-item"><a href="#Etat-du-jeu" data-toc-modified-id="Etat-du-jeu-36"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Etat du jeu</a></div><div class="lev2 toc-item"><a href="#Un-exemple-de-début-de-jeu" data-toc-modified-id="Un-exemple-de-début-de-jeu-37"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Un exemple de début de jeu</a></div><div class="lev2 toc-item"><a href="#Un-exemple-de-tour" data-toc-modified-id="Un-exemple-de-tour-38"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>Un exemple de tour</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Conclusion</a></div>
 
 # ----
 # # But de ce notebook
@@ -37,19 +37,21 @@
 # - Si quelqu'un atteint $90$ points, elle perd la partie.
 
 # ----
-# # Code pour représenter une carte à jouer
+# # Code du jeu
 
-# In[33]:
+# ## Code pour représenter une carte à jouer
+
+# In[2]:
 
 
-coeur = "♥"
+coeur   = "♥"
 treffle = "♣"
-pique = "♠"
+pique   = "♠"
 carreau = "♦"
 couleurs = [coeur, treffle, pique, carreau]
 
 
-# In[43]:
+# In[3]:
 
 
 class Carte():
@@ -71,14 +73,14 @@ class Carte():
         return self.valeur
 
 
-# In[47]:
+# In[4]:
 
 
 def valeur_main(liste_carte):
     return sum(carte.val() for carte in liste_carte)
 
 
-# In[48]:
+# In[5]:
 
 
 import random
@@ -93,35 +95,35 @@ def nouveau_jeu():
     return jeu
 
 
-# In[49]:
+# In[6]:
 
 
 nouveau_jeu()[:5]
 valeur_main(_)
 
 
-# ----
-# # Code pour représenter un état actuel du jeu
+# ## Fin du jeu
 
 # Pour représenter la fin du jeu :
 
-# In[139]:
+# In[7]:
 
 
 class FinDuneManche(Exception):
     pass
 
 
-# In[140]:
+# In[8]:
 
 
 class FinDunePartie(Exception):
     pass
 
 
+# ## Actions
 # Pour représenter une action choisie par une personne :
 
-# In[137]:
+# In[9]:
 
 
 class action():
@@ -130,6 +132,11 @@ class action():
         self.typeAction = typeAction
         assert choix is None or choix in [0, 1, 2, 3, 4]
         self.choix = choix
+    
+    def __str__(self):
+        if self.est_piocher(): return "Piocher"
+        elif self.est_japjap(): return "Jap Jap !"
+        elif self.est_choisir(): return "Choisir #{}".format(self.choix)
 
     def est_piocher(self):
         return self.typeAction == "piocher"
@@ -151,7 +158,7 @@ action_choisir4 = action("choisir", 4)
 
 # Pour savoir si une suite de valeurs est bien continue :
 
-# In[117]:
+# In[10]:
 
 
 def suite_valeurs_est_continue(valeurs):
@@ -159,16 +166,17 @@ def suite_valeurs_est_continue(valeurs):
     return all([d == 1 for d in differences])
 
 
-# In[118]:
+# In[11]:
 
 
 suite_valeurs_est_continue([5, 6, 7])
 suite_valeurs_est_continue([5, 7, 8])
 
 
+# ## Valider un coup
 # Pour valider un coup choisie par une personne :
 
-# In[135]:
+# In[12]:
 
 
 def valide_le_coup(jetees):
@@ -191,43 +199,43 @@ def valide_le_coup(jetees):
 
 # Exemples de coups valides :
 
-# In[122]:
+# In[13]:
 
 
 valide_le_coup([Carte(4, coeur)])
 
 
-# In[127]:
+# In[14]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(5, coeur)])
 
 
-# In[128]:
+# In[15]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(5, coeur), Carte(3, coeur)])
 
 
-# In[129]:
+# In[16]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(5, coeur), Carte(3, coeur), Carte(2, coeur), Carte(6, coeur)])
 
 
-# In[130]:
+# In[17]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(4, carreau)])
 
 
-# In[126]:
+# In[18]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(4, carreau), Carte(4, pique)])
 
 
-# In[131]:
+# In[19]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(4, carreau), Carte(4, pique), Carte(4, treffle)])
@@ -235,39 +243,62 @@ valide_le_coup([Carte(4, coeur), Carte(4, carreau), Carte(4, pique), Carte(4, tr
 
 # Exemples de coups pas valides :
 
-# In[132]:
+# In[20]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(9, coeur)])
 
 
-# In[133]:
+# In[21]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(4, coeur), Carte(3, coeur)])
 
 
-# In[136]:
+# In[22]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(12, carreau)])
 
 
-# In[126]:
+# In[23]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(4, carreau), Carte(4, pique)])
 
 
-# In[131]:
+# In[24]:
 
 
 valide_le_coup([Carte(4, coeur), Carte(4, carreau), Carte(4, pique), Carte(4, treffle)])
 
 
+# ## Jeu interactif
 # On va utiliser les widgets ipython pour construire le jeu interactif !
 
-# In[254]:
+# In[25]:
+
+
+# Voir https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Asynchronous.html#Waiting-for-user-interaction
+get_ipython().run_line_magic('gui', 'asyncio')
+
+
+# In[26]:
+
+
+import asyncio
+
+def wait_for_change(widget, value):
+    future = asyncio.Future()
+    def getvalue(change):
+        # make the new value available
+        future.set_result(change.new)
+        widget.unobserve(getvalue, value)
+    widget.observe(getvalue, value)
+    return future
+
+
+# In[27]:
 
 
 import ipywidgets as widgets
@@ -290,15 +321,9 @@ style5boutons = {
 }
 
 
-# In[247]:
-
-
-widgets.ToggleButtonsStyle
-
-
 # Pour savoir quoi jouer :
 
-# In[251]:
+# In[28]:
 
 
 def piocher_ou_choisir_une_carte_visible():
@@ -308,29 +333,28 @@ def piocher_ou_choisir_une_carte_visible():
         tooltips=["invisible", "visibles"],
         icons=["question", "list-ol"],
         description="Action ?",
-        style=style2boutons,
+        style=style3boutons,
     )
 
 
-# In[249]:
+# In[29]:
 
 
 bouton = piocher_ou_choisir_une_carte_visible()
 display(bouton)
-input("Okay?")
 print("Choix :", bouton.index)
 
 
 # Pour savoir quoi jeter :
 
-# In[172]:
+# In[30]:
 
 
 exemple_de_main = [Carte(10, coeur), Carte(11, coeur), Carte(11, pique)]
 exemple_de_main
 
 
-# In[272]:
+# In[31]:
 
 
 def faire_japjap(main):
@@ -346,27 +370,21 @@ def faire_japjap(main):
 faire_japjap(exemple_de_main)
 
 
-# In[275]:
+# In[32]:
 
 
 b = faire_japjap(exemple_de_main)
 display(b)
-input("Okay?")
+print("Choix :", b.value)
 
 
-# In[276]:
-
-
-b.value
-
-
-# In[256]:
+# In[33]:
 
 
 def quoi_jeter(main):
     return widgets.SelectMultiple(
         options=main,
-        #index=[0],
+        index=[0],
         description="Quoi jeter ?",
         style=style,
     )
@@ -374,16 +392,50 @@ def quoi_jeter(main):
 quoi_jeter(exemple_de_main)
 
 
+# In[34]:
+
+
+b = quoi_jeter(exemple_de_main)
+display(b)
+print("Choix :", b.index)
+
+
+# In[35]:
+
+
+from IPython.display import display
+
+
+# In[36]:
+
+
+qj = quoi_jeter(exemple_de_main)
+display(qj)
+
+def valider_action():
+    return widgets.ToggleButton(description="Valider l'action ?")
+validation = valider_action()
+display(validation)
+
+#pas_clique = True
+#def on_validation_clicked(b):
+#    pas_clique = False
+#    print("Choix :", qj.index)
+#validation.on_click(on_validation_clicked)
+
+print("Choix :", qj.index)
+
+
 # Pour savoir quoi piocher :
 
-# In[178]:
+# In[37]:
 
 
 exemple_de_visibles = [Carte(11, pique), Carte(10, treffle)]
 exemple_de_visibles
 
 
-# In[192]:
+# In[38]:
 
 
 def quoi_prendre(visibles):
@@ -397,17 +449,21 @@ def quoi_prendre(visibles):
 quoi_prendre(exemple_de_visibles)
 
 
-# Maintenant on peut tout combiner :
+# Maintenant on peut tout combiner.
 
-# In[ ]:
+# In[39]:
 
 
-def demander_action(personne=0, visibles=None, main=None):
+async def demander_action(visibles=None, main=None, stockResultat=None):
+    print("- Main : {} (valeur = {})".format(main, valeur_main(main)))
+    print("- Sommet de la défausse  :", visibles)
     # 1. quoi jouer
-    bouton = piocher_ou_choisir_une_carte_visible()
-    display(bouton)
-    input("Okay?")
-    piocher = bouton.index == 0
+    bouton1 = piocher_ou_choisir_une_carte_visible()
+    validation = valider_action()
+    display(widgets.VBox([bouton1, validation]))
+    await wait_for_change(validation, 'value')
+    piocher = bouton1.index == 0
+    print("  ==> Choix :", bouton1.value)
     # 2.a. si piocher, rien à faire pour savoir quoi piocher
     if piocher:
         print("Okay, vous piochez.")
@@ -415,47 +471,78 @@ def demander_action(personne=0, visibles=None, main=None):
         choix = None
     # 2.b. si choisir carte
     else:
-        print("Okay, vous choisissez dans le sommet de la défausse.")
         typeAction = "choisir"
-        bouton = quoi_prendre(visibles)
-        display(bouton)
-        input("Okay?")
-        choix = bouton.index
+        print("Okay, vous choisissez dans le sommet de la défausse.")
+        bouton2 = quoi_prendre(visibles)
+        validation = valider_action()
+        display(widgets.VBox([bouton2, validation]))
+        await wait_for_change(validation, 'value')
+        print("  ==> Choix :", bouton2.index)
+        choix = bouton2.index
     # 3.a. si on peut faire jap jap, demander si on le fait ?
     if valeur_main(main) <= 5:
         print("Vous pouvez faire Jap Jap !")
-        bouton = faire_japjap(main)
-        display(bouton)
-        input("Okay?")
-        if bouton.value:
+        bouton3 = faire_japjap(main)
+        validation = valider_action()
+        display(widgets.VBox([bouton3, validation]))
+        await wait_for_change(validation, 'value')
+        print("  ==> Choix :", bouton3.value)
+        if bouton3.value:
             typeAction = "Jap Jap !"
             jetees = None
     # 3. choisir quoi jeter
     if typeAction != "Jap Jap !":
-        bouton = quoi_jeter(main)
-        display(bouton)
-        input("Okay?")
-        print("Choix :", bouton.index)
-        jetees = FIXME
+        bouton4 = quoi_jeter(main)
+        validation = valider_action()
+        display(widgets.VBox([bouton4, validation]))
+        await wait_for_change(validation, 'value')
+        print("  ==> Choix :", bouton4.index)
+        jetees = bouton4.index
     choix = action(typeAction=typeAction, choix=choix)
+    if stockResultat is not None:
+        stockResultat["choix"] = choix
+        stockResultat["jetees"] = jetees
     return choix, jetees
 
 
-# In[260]:
+# In[40]:
 
 
-get_ipython().run_line_magic('pinfo2', 'action')
+if False:
+    stockResultat = {"choix": None, "jetees": None}
+
+    asyncio.ensure_future(
+        demander_action(
+            visibles=exemple_de_visibles,
+            main=exemple_de_main,
+            stockResultat=stockResultat,
+        )
+    )
+
+    stockResultat
 
 
-# In[176]:
+# In[41]:
 
 
-input("Tu joues quoi?")
+def demander_action_et_donne_resultat(visibles=None, main=None):
+    stockResultat = {"choix": None, "jetees": None}
+
+    asyncio.ensure_future(
+        demander_action(
+            visibles=visibles,
+            main=main,
+            stockResultat=stockResultat,
+        )
+    )
+
+    return stockResultat["choix"], stockResultat["jetees"]
 
 
+# ## Etat du jeu
 # Maintenant on peut représenter un état du jeu.
 
-# In[159]:
+# In[42]:
 
 
 class EtatJeu():
@@ -463,6 +550,7 @@ class EtatJeu():
                  scoreMax=90, malusContreJapJap=25, nbCartesMax=5):
         assert 2 <= nbPersonnes <= 5, "Le nombre de personnes pouvant jouer doit etre entre 2 et 5."
         self.nbPersonnes = nbPersonnes
+        self.nomsPersonnes = nomsPersonnes
         self.scoreMax = scoreMax
         self.malusContreJapJap = malusContreJapJap
         self.nbCartesMax = nbCartesMax
@@ -490,8 +578,8 @@ class EtatJeu():
 
     def montrer_information_privee(self, personne=0):
         main = self.mains[personne]
-        nom = self.nomsPersonnes[personne] if self.nomsPersonnes is not None else personne,
-        print("[{}] Carte{} en main : {}", nom, "s" if len(main) > 1 else "", main)
+        nom = self.nomsPersonnes[personne] if self.nomsPersonnes is not None else personne
+        print("[{}] Carte{} en main : {}".format(nom, "s" if len(main) > 1 else "", main))
     
     # --- Mécanique de pioche et distribution initiale
     
@@ -511,7 +599,9 @@ class EtatJeu():
         self.mains[personne].append(premiere_carte)
         
     def distribuer_mains(self):
-        self.mains = []
+        self.mains = [
+            [ ] for personne in self.personnes
+        ]
         premiere_personne = random.choice(self.personnes)
         self.personnes = self.personnes[premiere_personne:] + self.personnes[:premiere_personne]
         for nb_carte in range(self.nbCartesMax):
@@ -526,10 +616,10 @@ class EtatJeu():
     
     # --- Enchainer les tours de jeux
     
-    def enchainer_les_tours(self):
+    async def enchainer_les_tours(self):
         try:
             indice_actuel = 0
-            while True:
+            while len(self.jeu) > 0:
                 # dans la même manche, on joue chaque tour, pour la personne actuelle
                 personne_actuelle = self.personnes[indice_actuel]
                 
@@ -538,19 +628,24 @@ class EtatJeu():
                 self.montrer_information_privee(personne_actuelle)
                 
                 # 2. on demande l'action choisie par la personne
-                action = demander_action(
-                    personne=personne_actuelle,
-                    visibles=self.visibles,
-                    main=self.mains[personne_actuelle],
+                # choix, jetees = demander_action_et_donne_resultat(
+                choix, jetees = await demander_action(
+                    visibles = self.visibles,
+                    main = self.mains[personne_actuelle],
                 )
 
                 # 3. on joue l'action
                 self.jouer(
-                    personne=personne_actuelle
+                    personne = personne_actuelle,
+                    action = choix,
+                    indices = jetees,
                 )
                 
                 # personne suivante
                 indice_actuel = (indice_actuel + 1) % self.nbPersonnes
+            if len(self.jeu) <= 0:
+                print("\nIl n'y a plus de cartes dans la pioche, fin de la manche sans personne qui gagne.")
+                raise FinDuneManche
         except FinDuneManche:
             print("\nFin d'une manche.")
             fin_dune_manche()
@@ -560,7 +655,10 @@ class EtatJeu():
     # --- Un tour de jeu
     
     def jouer(self, personne=0, action=action_piocher, indices=None):
-        jetees = [ self.mains[personne][indice] for indice in indices ]
+        if indices is not None:
+            jetees = [ self.mains[personne][indice] for indice in indices ]
+        else:
+            jetees = self.visibles
         assert valide_le_coup(jetees)
         # et on en prend une nouvelle
         if action.est_piocher():
@@ -612,79 +710,79 @@ class EtatJeu():
                 raise FinDunePartie
             raise FinDuneManche
         # on pose ses cartes jetées
-        self.visibles = jetees(carte_choisie)
+        self.visibles = jetees
         # et ça continue
 
 
 # ## Un exemple de début de jeu
 
-# In[145]:
+# In[42]:
 
 
 jeu = EtatJeu()
 
 
-# In[146]:
+# In[43]:
 
 
 jeu.jeu[:5]
 
 
-# In[147]:
+# In[44]:
 
 
 jeu.mains
 
 
-# In[148]:
+# In[45]:
 
 
 jeu.donner_une_carte(0)
 
 
-# In[149]:
+# In[46]:
 
 
 jeu.mains
 
 
-# In[150]:
+# In[47]:
 
 
 jeu.donner_une_carte(1)
 
 
-# In[151]:
+# In[48]:
 
 
 jeu.mains
 
 
-# In[152]:
+# In[49]:
 
 
 jeu.donner_une_carte(0)
 
 
-# In[153]:
+# In[50]:
 
 
 jeu.mains
 
 
-# In[154]:
+# In[51]:
 
 
 jeu.donner_une_carte(1)
 
 
-# In[155]:
+# In[52]:
 
 
 jeu.mains
 
 
-# In[156]:
+# In[53]:
 
 
 jeu.jeu[:5]
@@ -692,35 +790,31 @@ jeu.jeu[:5]
 
 # ## Un exemple de tour
 
-# In[214]:
+# In[43]:
 
 
-jeu = EtatJeu()
+jeu = EtatJeu(nomsPersonnes=["Alice", "Bob"])
 
 
-# In[215]:
+# In[44]:
 
 
 jeu.debut_jeu()
 
 
-# In[ ]:
+# In[45]:
 
 
+import asyncio
 
 
-
-# In[ ]:
-
+# In[46]:
 
 
+asyncio.ensure_future(jeu.enchainer_les_tours())
 
 
-# In[ ]:
-
-
-
-
+# # Conclusion
 
 # In[ ]:
 
