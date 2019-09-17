@@ -1,4 +1,13 @@
+# --- For the notebooks
 jupyter
 ipython
+watermark
+ipythonblocks
+
 bash_kernel
 octave_kernel
+
+# --- For the codebase
+tqdm>=4.0
+numpy>=1.14
+matplotlib>=2.0
