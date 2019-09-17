@@ -585,7 +585,25 @@ type 'a monoide = { mult : 'a -> 'a -> 'a; neutre : 'a };;
 
 (* Avec des champs d'enregistrement, c'est concis : *)
 
-(* In[2]: *)
+(* In[17]: *)
+
+
+(* Ca rale ici ! *)
+let floatmonoide = {
+    mult = fun a b -> a *. b;
+    (* ce ; est quoi ? fin de fun ou fin de mult ? *)
+    neutre = 1.0
+};;
+
+(* In[18]: *)
+
+
+let floatmonoide = {
+    mult = (fun a b -> a *. b);
+    neutre = 1.0
+};;
+
+(* In[19]: *)
 
 
 let floatMonoide : 'float monoide = {
@@ -614,7 +632,7 @@ let mult_matrice (x : int array array) (y : int array array) : int array array =
 (* In[4]: *)
 
 
-mult_matrice [|[|1; 1|]; [|1; 1|]|] [|[|1; 2|]; [|3; 4|]|];;
+mult_matrice [| [|1; 1|]; [|1; 1|]|] [|[|1; 2|]; [|3; 4|]|];;
 
 (* Manuellement ce n'est pas trop dur : *)
 

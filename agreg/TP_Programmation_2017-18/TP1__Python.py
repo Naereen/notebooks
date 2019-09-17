@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 # coding: utf-8
 
 # # Table of Contents
@@ -108,7 +108,7 @@ for i in range(8):
 # 
 # Pour ce genre de fonction, j'aime bien afficher les appels récursifs. On peut rendre ça optionnel, avec comme ici un argument nommé `log`, à valeur par défaut `log=False`.
 
-# In[11]:
+# In[1]:
 
 
 def pgcd(x : int, y : int, log: bool=False) -> int:
@@ -124,7 +124,7 @@ def pgcd(x : int, y : int, log: bool=False) -> int:
         return pgcd(y, x % y, log=log)
 
 
-# In[12]:
+# In[2]:
 
 
 pgcd(10, 5)
@@ -380,22 +380,43 @@ liste_carree([1, 2, 3])
 
 # ## Exercice 15
 
-# In[180]:
+# In[10]:
 
 
 def miroir_quad(liste : list) -> list:
-    # aucune idée pour le faire innefficacement en Python,
-    # ce ne sont pas des listes chaînées
-    return liste[::-1]
+    # pour le faire naïvement en Python
+    # on fait une concaténation de liste
+    if liste:
+        return miroir_quad(liste[1:]) + [ liste[0] ]
+    else:
+        return []
 
 def miroir_lin(liste : list) -> list:
     return [liste[-i] for i in range(1, len(liste) + 1)]
 
 
-# In[181]:
+# In[11]:
+
+
+miroir_quad([1, 2, 3])
+
+
+# In[12]:
+
+
+get_ipython().run_line_magic('timeit', 'miroir_quad(list(range(1000)))')
+
+
+# In[13]:
 
 
 miroir_lin([1, 2, 3])
+
+
+# In[14]:
+
+
+get_ipython().run_line_magic('timeit', 'miroir_lin(list(range(1000)))')
 
 
 # ## Exercice 16
