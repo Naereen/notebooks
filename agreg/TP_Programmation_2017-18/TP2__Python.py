@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 # coding: utf-8
 
 # # Table of Contents
@@ -20,12 +20,24 @@ print(version)
 
 # ## Exercice 1 : `taille`
 
-# In[12]:
+# In[11]:
 
 
 from typing import TypeVar, List
 _a = TypeVar('alpha')
 
+# O(n^2) temps, O(n) espace
+def taille(liste : List[_a]) -> int:
+    if not liste:
+        return 0
+    else:
+        queue = liste[1:]
+        return 1 + taille(queue)
+
+taille([])
+taille([1, 2, 3])
+
+# O(n) temps, O(1) espace
 def taille(liste : List[_a]) -> int:
     longueur = 0
     for _ in liste:
@@ -34,6 +46,12 @@ def taille(liste : List[_a]) -> int:
 
 taille([])
 taille([1, 2, 3])
+
+
+# In[12]:
+
+
+taille("OKOK")
 
 
 # In[7]:
@@ -78,7 +96,7 @@ concatene([1, 2], ["pas", "entier", "?"])
 
 # ## Exercice 3 : `appartient`
 
-# In[21]:
+# In[3]:
 
 
 from typing import TypeVar, List
@@ -96,7 +114,26 @@ appartient(1, [1, 2, 3])
 appartient(4, [1, 2, 3])
 
 
-# In[22]:
+# In[4]:
+
+
+from typing import TypeVar, List
+_a = TypeVar('alpha')
+
+def appartient2(x : _a, liste : List[_a]) -> bool:
+    if not liste:
+        return False
+    if x == liste[0]:
+        return True
+    return appartient2(x, liste[1:])  # récursivement, pas récursif terminal
+
+appartient2(1, [])
+appartient2(1, [1])
+appartient2(1, [1, 2, 3])
+appartient2(4, [1, 2, 3])
+
+
+# In[5]:
 
 
 1 in []
@@ -108,11 +145,13 @@ appartient(4, [1, 2, 3])
 # Notre implémentation est évidemment plus lente que le test `x in liste` de la librarie standard...
 # Mais pas tant :
 
-# In[23]:
+# In[8]:
 
 
-get_ipython().magic('timeit appartient(1000, list(range(10000)))')
-get_ipython().magic('timeit 1000 in list(range(10000))')
+import random
+get_ipython().run_line_magic('timeit', 'random.randint(0, 500) in list(range(1000))')
+get_ipython().run_line_magic('timeit', 'appartient(random.randint(0, 500), list(range(1000)))')
+get_ipython().run_line_magic('timeit', 'appartient2(random.randint(0, 500), list(range(1000)))')
 
 
 # ## Exercice 4 : `miroir`
@@ -141,15 +180,15 @@ miroir([2, 3, 5, 7, 11])
 # In[29]:
 
 
-get_ipython().magic('timeit miroir([2, 3, 5, 7, 11])')
-get_ipython().magic('timeit [2, 3, 5, 7, 11][::-1]')
+get_ipython().run_line_magic('timeit', 'miroir([2, 3, 5, 7, 11])')
+get_ipython().run_line_magic('timeit', '[2, 3, 5, 7, 11][::-1]')
 
 
 # ## Exercice 5 : `alterne`
 
 # La sémantique n'était pas très claire, mais on peut imaginer quelque chose comme ça :
 
-# In[30]:
+# In[9]:
 
 
 from typing import TypeVar, List
@@ -211,7 +250,7 @@ nb_occurrences(5, [1, 2, 3, 4])
 # In[33]:
 
 
-get_ipython().magic('pinfo filter')
+get_ipython().run_line_magic('pinfo', 'filter')
 
 
 # In[36]:
@@ -378,7 +417,7 @@ premiers(100)
 
 # On fera les tris en ordre croissant.
 
-# In[112]:
+# In[27]:
 
 
 test = [3, 1, 8, 4, 5, 6, 1, 2]
@@ -386,12 +425,13 @@ test = [3, 1, 8, 4, 5, 6, 1, 2]
 
 # ## Exercice 10 : Tri insertion
 
-# In[113]:
+# In[28]:
 
 
 from typing import TypeVar, List
 _a = TypeVar('alpha')
 
+# Temps O(n^2) à cause des recopies, espace O(n)
 def insere(x : _a, liste : List[_a]) -> List[_a]:
     if len(liste) == 0:
         return [x]
@@ -403,9 +443,10 @@ def insere(x : _a, liste : List[_a]) -> List[_a]:
             return [t] + insere(x, q)
 
 
-# In[114]:
+# In[29]:
 
 
+# Temps O(n^3) à cause des recopies, espace O(n^2)
 def tri_insertion(liste : List[_a]) -> List[_a]:
     if len(liste) == 0:
         return []
@@ -414,17 +455,17 @@ def tri_insertion(liste : List[_a]) -> List[_a]:
         return insere(t, tri_insertion(q))
 
 
-# In[115]:
+# In[30]:
 
 
 tri_insertion(test)
 
 
-# Complexité en temps $\mathcal{O}(n^2)$.
+# Complexité en temps $\mathcal{O}(n^2)$ si on faisait les recopies correctement, $\mathcal{O}(n^3)$ ici.
 
 # ## Exercice 11 : Tri insertion générique
 
-# In[121]:
+# In[31]:
 
 
 from typing import TypeVar, List, Callable
@@ -441,7 +482,7 @@ def insere2(ordre : Callable[[_a, _a], bool], x : _a, liste : List[_a]) -> List[
             return [t] + insere2(ordre, x, q)
 
 
-# In[122]:
+# In[32]:
 
 
 def tri_insertion2(ordre : Callable[[_a, _a], bool], liste : List[_a]) -> List[_a]:
@@ -452,25 +493,25 @@ def tri_insertion2(ordre : Callable[[_a, _a], bool], liste : List[_a]) -> List[_
         return insere2(ordre, t, tri_insertion2(ordre, q))
 
 
-# In[123]:
+# In[33]:
 
 
 ordre_croissant = lambda x, y: x <= y
 
 
-# In[124]:
+# In[34]:
 
 
 tri_insertion2(ordre_croissant, test)
 
 
-# In[125]:
+# In[35]:
 
 
 ordre_decroissant = lambda x, y: x >= y
 
 
-# In[126]:
+# In[36]:
 
 
 tri_insertion2(ordre_decroissant, test)
@@ -478,7 +519,7 @@ tri_insertion2(ordre_decroissant, test)
 
 # ## Exercice 12 : Tri selection
 
-# In[127]:
+# In[37]:
 
 
 from typing import TypeVar, List, Tuple
@@ -501,7 +542,7 @@ def selectionne_min(liste : List[_a]) -> Tuple[_a, List[_a]]:
         return cherche_min(t, [], q)
 
 
-# In[129]:
+# In[38]:
 
 
 test
@@ -510,7 +551,7 @@ selectionne_min(test)
 
 # (On voit que la liste `autre` a été inversée)
 
-# In[130]:
+# In[39]:
 
 
 def tri_selection(liste : List[_a]) -> List[_a]:
@@ -521,7 +562,7 @@ def tri_selection(liste : List[_a]) -> List[_a]:
         return [mini] + tri_selection(autres)
 
 
-# In[131]:
+# In[40]:
 
 
 tri_selection(test)
@@ -531,7 +572,7 @@ tri_selection(test)
 
 # ## Exercices 13, 14, 15 : Tri fusion
 
-# In[132]:
+# In[41]:
 
 
 from typing import TypeVar, List, Tuple
@@ -548,14 +589,14 @@ def separe(liste : List[_a]) -> Tuple[List[_a], List[_a]]:
         return ([x] + a, [y] + b)
 
 
-# In[133]:
+# In[42]:
 
 
 test
 separe(test)
 
 
-# In[134]:
+# In[43]:
 
 
 def fusion(liste1 : List[_a], liste2 : List[_a]) -> List[_a]:
@@ -577,7 +618,7 @@ def fusion(liste1 : List[_a], liste2 : List[_a]) -> List[_a]:
 fusion([1, 3, 7], [2, 3, 8])
 
 
-# In[136]:
+# In[44]:
 
 
 def tri_fusion(liste : List[_a]) -> List[_a]:
@@ -588,7 +629,7 @@ def tri_fusion(liste : List[_a]) -> List[_a]:
         return fusion(tri_fusion(a), tri_fusion(b))
 
 
-# In[137]:
+# In[45]:
 
 
 tri_fusion(test)
@@ -598,15 +639,15 @@ tri_fusion(test)
 
 # ## Comparaisons
 
-# In[138]:
+# In[46]:
 
 
-get_ipython().magic('timeit tri_insertion(test)')
-get_ipython().magic('timeit tri_selection(test)')
-get_ipython().magic('timeit tri_fusion(test)')
+get_ipython().run_line_magic('timeit', 'tri_insertion(test)')
+get_ipython().run_line_magic('timeit', 'tri_selection(test)')
+get_ipython().run_line_magic('timeit', 'tri_fusion(test)')
 
 
-# In[152]:
+# In[47]:
 
 
 from sys import setrecursionlimit
@@ -614,7 +655,19 @@ setrecursionlimit(100000)
 # nécessaire pour tester les différentes fonctions récursives sur de grosses listes
 
 
-# In[153]:
+# In[48]:
+
+
+test_random(10)
+
+
+# In[50]:
+
+
+import timeit
+
+
+# In[54]:
 
 
 import random
@@ -626,7 +679,7 @@ for n in [10, 100, 1000]:
     print("\nFor n =", n)
     for tri in [tri_insertion, tri_selection, tri_fusion]:
         print("    and tri = {}".format(tri.__name__))
-        get_ipython().magic('timeit tri(test_random(n))')
+        print(timeit.timeit("tri(test_random(n))", globals=globals(), number=1000))
 
 
 # - C'est assez pour vérifier que le tri fusion est **bien plus efficace** que les autres.
@@ -747,15 +800,15 @@ ilexiste(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5])
 # In[167]:
 
 
-get_ipython().magic('timeit qqsoit(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5])')
-get_ipython().magic('timeit all(map(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5]))')
+get_ipython().run_line_magic('timeit', 'qqsoit(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5])')
+get_ipython().run_line_magic('timeit', 'all(map(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5]))')
 
 
 # In[168]:
 
 
-get_ipython().magic('timeit ilexiste(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5])')
-get_ipython().magic('timeit any(map(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5]))')
+get_ipython().run_line_magic('timeit', 'ilexiste(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5])')
+get_ipython().run_line_magic('timeit', 'any(map(lambda x: (x % 2) == 0, [1, 2, 3, 4, 5]))')
 
 
 # ## Exercice 21 : `appartient` version 2
@@ -795,8 +848,8 @@ toutes_egales(5, [1, 2, 3])
 # In[183]:
 
 
-get_ipython().magic('timeit appartient(random.randint(-10, 10), [random.randint(-1000, 1000) for _ in range(1000)])')
-get_ipython().magic('timeit random.randint(-10, 10) in [random.randint(-1000, 1000) for _ in range(1000)]')
+get_ipython().run_line_magic('timeit', 'appartient(random.randint(-10, 10), [random.randint(-1000, 1000) for _ in range(1000)])')
+get_ipython().run_line_magic('timeit', 'random.randint(-10, 10) in [random.randint(-1000, 1000) for _ in range(1000)]')
 
 
 # ## Exercice 22 : `filtre`
@@ -884,9 +937,9 @@ sum(list(range(10)))
 # In[213]:
 
 
-get_ipython().magic('timeit somme_rec(list(range(10)))')
-get_ipython().magic('timeit somme(list(range(10)))')
-get_ipython().magic('timeit sum(list(range(10)))')
+get_ipython().run_line_magic('timeit', 'somme_rec(list(range(10)))')
+get_ipython().run_line_magic('timeit', 'somme(list(range(10)))')
+get_ipython().run_line_magic('timeit', 'sum(list(range(10)))')
 
 
 # Pour de petites listes, la version récursive est aussi efficace que la version impérative. Chouette !
@@ -894,9 +947,9 @@ get_ipython().magic('timeit sum(list(range(10)))')
 # In[214]:
 
 
-get_ipython().magic('timeit somme_rec(list(range(1000)))')
-get_ipython().magic('timeit somme(list(range(1000)))')
-get_ipython().magic('timeit sum(list(range(1000)))')
+get_ipython().run_line_magic('timeit', 'somme_rec(list(range(1000)))')
+get_ipython().run_line_magic('timeit', 'somme(list(range(1000)))')
+get_ipython().run_line_magic('timeit', 'sum(list(range(1000)))')
 
 
 # In[205]:
@@ -943,22 +996,28 @@ miroir([2, 3, 5, 7, 11])
 
 # ## Exercice 27
 
-# In[1]:
+# In[82]:
 
 
 from typing import Dict, Optional, Tuple
 
 # Impossible de définir un type récursivement, pas comme en Caml
+arbre_bin = Dict[str, Optional[Tuple[arbre_bin, arbre_bin]]]
+
+
+# In[83]:
+
+
 arbre_bin = Dict[str, Optional[Tuple[Dict, Dict]]]
 
 
-# In[37]:
+# In[56]:
 
 
 from pprint import pprint
 
 
-# In[38]:
+# In[57]:
 
 
 arbre_test = {'Noeud': (
@@ -973,7 +1032,7 @@ arbre_test = {'Noeud': (
     )}
 
 
-# In[39]:
+# In[58]:
 
 
 pprint(arbre_test)
@@ -981,20 +1040,20 @@ pprint(arbre_test)
 
 # Avec une syntaxe améliorée, on se rapproche de très près de la syntaxe de Caml/OCaml :
 
-# In[40]:
+# In[59]:
 
 
 Feuille = {'Feuille': None}
 Noeud = lambda x, y : {'Noeud': (x, y)}
 
 
-# In[34]:
+# In[60]:
 
 
 arbre_test = Noeud(Noeud(Noeud(Feuille, Feuille), Feuille), Feuille)
 
 
-# In[36]:
+# In[61]:
 
 
 pprint(arbre_test)
@@ -1004,7 +1063,7 @@ pprint(arbre_test)
 
 # Compte le nombre de feuilles et de sommets.
 
-# In[5]:
+# In[62]:
 
 
 def taille(a : arbre_bin) -> int:
@@ -1017,7 +1076,7 @@ def taille(a : arbre_bin) -> int:
         return 1 + taille(x) + taille(y)
 
 
-# In[6]:
+# In[63]:
 
 
 taille(arbre_test)  # 7
@@ -1025,7 +1084,7 @@ taille(arbre_test)  # 7
 
 # ## Exercice 29
 
-# In[7]:
+# In[64]:
 
 
 def hauteur(a : arbre_bin) -> int:
@@ -1036,7 +1095,7 @@ def hauteur(a : arbre_bin) -> int:
         return 1 + max(hauteur(x), hauteur(y))
 
 
-# In[8]:
+# In[65]:
 
 
 hauteur(arbre_test)  # 3
@@ -1053,7 +1112,7 @@ hauteur(arbre_test)  # 3
 
 # ## Exercice 31
 
-# In[9]:
+# In[66]:
 
 
 from typing import TypeVar, Union, List
@@ -1067,7 +1126,7 @@ parcours = List[element_parcours]
 
 # ## Exercice 32 : Parcours naifs (complexité quadratique)
 
-# In[10]:
+# In[67]:
 
 
 def parcours_prefixe(a : arbre_bin) -> parcours:
@@ -1080,7 +1139,7 @@ def parcours_prefixe(a : arbre_bin) -> parcours:
 parcours_prefixe(arbre_test)
 
 
-# In[11]:
+# In[68]:
 
 
 def parcours_postfixe(a : arbre_bin) -> parcours:
@@ -1093,7 +1152,7 @@ def parcours_postfixe(a : arbre_bin) -> parcours:
 parcours_postfixe(arbre_test)
 
 
-# In[12]:
+# In[69]:
 
 
 def parcours_infixe(a : arbre_bin) -> parcours:
@@ -1112,7 +1171,7 @@ parcours_infixe(arbre_test)
 # 
 # On ajoute une fonction auxiliaire et un argument `vus` qui est une liste qui stocke les élements observés dans l'ordre du parcours
 
-# In[13]:
+# In[70]:
 
 
 def parcours_prefixe2(a : arbre_bin) -> parcours:
@@ -1130,7 +1189,7 @@ def parcours_prefixe2(a : arbre_bin) -> parcours:
 parcours_prefixe2(arbre_test)
 
 
-# In[14]:
+# In[71]:
 
 
 def parcours_postfixe2(a : arbre_bin) -> parcours:
@@ -1149,7 +1208,7 @@ def parcours_postfixe2(a : arbre_bin) -> parcours:
 parcours_postfixe2(arbre_test)
 
 
-# In[15]:
+# In[72]:
 
 
 def parcours_infixe2(a : arbre_bin) -> parcours:
@@ -1172,7 +1231,7 @@ parcours_infixe2(arbre_test)
 
 # Pour utiliser une file de priorité (*priority queue*), on utilise le module [collections.deque](https://docs.python.org/3/library/collections.html#collections.deque).
 
-# In[16]:
+# In[73]:
 
 
 from collections import deque
@@ -1206,7 +1265,7 @@ parcours_largeur(arbre_test)
 
 # En remplaçant la file par une pile (une simple `list`), on obtient le parcours en profondeur, avec la même complexité.
 
-# In[17]:
+# In[74]:
 
 
 def parcours_profondeur(a : arbre_bin) -> parcours:

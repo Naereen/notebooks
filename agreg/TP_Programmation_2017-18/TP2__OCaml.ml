@@ -7,7 +7,7 @@ https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
 *)
 
 (* # Table of Contents
- <p><div class="lev1 toc-item"><a href="#TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 2 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev1 toc-item"><a href="#Listes" data-toc-modified-id="Listes-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Listes</a></div><div class="lev2 toc-item"><a href="#Exercice-1-:-taille" data-toc-modified-id="Exercice-1-:-taille-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Exercice 1 : <code>taille</code></a></div><div class="lev2 toc-item"><a href="#Exercice-2-:-concat" data-toc-modified-id="Exercice-2-:-concat-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercice 2 : <code>concat</code></a></div><div class="lev2 toc-item"><a href="#Exercice-3-:-appartient" data-toc-modified-id="Exercice-3-:-appartient-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercice 3 : <code>appartient</code></a></div><div class="lev2 toc-item"><a href="#Exercice-4-:-miroir" data-toc-modified-id="Exercice-4-:-miroir-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Exercice 4 : <code>miroir</code></a></div><div class="lev2 toc-item"><a href="#Exercice-5-:-alterne" data-toc-modified-id="Exercice-5-:-alterne-25"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Exercice 5 : <code>alterne</code></a></div><div class="lev2 toc-item"><a href="#Exercice-6-:-nb_occurrences" data-toc-modified-id="Exercice-6-:-nb_occurrences-26"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>Exercice 6 : <code>nb_occurrences</code></a></div><div class="lev2 toc-item"><a href="#Exercice-7-:-pairs" data-toc-modified-id="Exercice-7-:-pairs-27"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>Exercice 7 : <code>pairs</code></a></div><div class="lev2 toc-item"><a href="#Exercice-8-:-range" data-toc-modified-id="Exercice-8-:-range-28"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Exercice 8 : <code>range</code></a></div><div class="lev2 toc-item"><a href="#Exercice-9-:-premiers" data-toc-modified-id="Exercice-9-:-premiers-29"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Exercice 9 : <code>premiers</code></a></div><div class="lev1 toc-item"><a href="#Quelques-tris-par-comparaison" data-toc-modified-id="Quelques-tris-par-comparaison-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Quelques tris par comparaison</a></div><div class="lev2 toc-item"><a href="#Exercice-10-:-Tri-insertion" data-toc-modified-id="Exercice-10-:-Tri-insertion-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Exercice 10 : Tri insertion</a></div><div class="lev2 toc-item"><a href="#Exercice-11-:-Tri-insertion-générique" data-toc-modified-id="Exercice-11-:-Tri-insertion-générique-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Exercice 11 : Tri insertion générique</a></div><div class="lev2 toc-item"><a href="#Exercice-12-:-Tri-selection" data-toc-modified-id="Exercice-12-:-Tri-selection-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 12 : Tri selection</a></div><div class="lev2 toc-item"><a href="#Exercices-13,-14,-15-:-Tri-fusion" data-toc-modified-id="Exercices-13,-14,-15-:-Tri-fusion-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Exercices 13, 14, 15 : Tri fusion</a></div><div class="lev1 toc-item"><a href="#Listes-:-l'ordre-supérieur" data-toc-modified-id="Listes-:-l'ordre-supérieur-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Listes : l'ordre supérieur</a></div><div class="lev2 toc-item"><a href="#Exercice-16-:-applique" data-toc-modified-id="Exercice-16-:-applique-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercice 16 : <code>applique</code></a></div><div class="lev2 toc-item"><a href="#Exercice-17" data-toc-modified-id="Exercice-17-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Exercice 17</a></div><div class="lev2 toc-item"><a href="#Exercice-18-:-itere" data-toc-modified-id="Exercice-18-:-itere-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Exercice 18 : <code>itere</code></a></div><div class="lev2 toc-item"><a href="#Exercice-19" data-toc-modified-id="Exercice-19-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Exercice 19</a></div><div class="lev2 toc-item"><a href="#Exercice-20-:-qqsoit-et-ilexiste" data-toc-modified-id="Exercice-20-:-qqsoit-et-ilexiste-45"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Exercice 20 : <code>qqsoit</code> et <code>ilexiste</code></a></div><div class="lev2 toc-item"><a href="#Exercice-21-:-appartient-version-2" data-toc-modified-id="Exercice-21-:-appartient-version-2-46"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Exercice 21 : <code>appartient</code> version 2</a></div><div class="lev2 toc-item"><a href="#Exercice-22-:-filtre" data-toc-modified-id="Exercice-22-:-filtre-47"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Exercice 22 : <code>filtre</code></a></div><div class="lev2 toc-item"><a href="#Exercice-23" data-toc-modified-id="Exercice-23-48"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Exercice 23</a></div><div class="lev2 toc-item"><a href="#Exercice-24-:-reduit" data-toc-modified-id="Exercice-24-:-reduit-49"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>Exercice 24 : <code>reduit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-25-:-somme,-produit" data-toc-modified-id="Exercice-25-:-somme,-produit-410"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>Exercice 25 : <code>somme</code>, <code>produit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-26-:-miroir-version-2" data-toc-modified-id="Exercice-26-:-miroir-version-2-411"><span class="toc-item-num">4.11&nbsp;&nbsp;</span>Exercice 26 : <code>miroir</code> version 2</a></div><div class="lev1 toc-item"><a href="#Arbres" data-toc-modified-id="Arbres-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Arbres</a></div><div class="lev2 toc-item"><a href="#Exercice-27" data-toc-modified-id="Exercice-27-51"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exercice 27</a></div><div class="lev2 toc-item"><a href="#Exercice-28" data-toc-modified-id="Exercice-28-52"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Exercice 28</a></div><div class="lev2 toc-item"><a href="#Exercice-29" data-toc-modified-id="Exercice-29-53"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Exercice 29</a></div><div class="lev2 toc-item"><a href="#Exercice-30" data-toc-modified-id="Exercice-30-54"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Exercice 30</a></div><div class="lev1 toc-item"><a href="#Parcours-d'arbres-binaires" data-toc-modified-id="Parcours-d'arbres-binaires-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Parcours d'arbres binaires</a></div><div class="lev2 toc-item"><a href="#Exercice-31" data-toc-modified-id="Exercice-31-61"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exercice 31</a></div><div class="lev2 toc-item"><a href="#Exercice-32-:-Parcours-naifs-(complexité-quadratique)" data-toc-modified-id="Exercice-32-:-Parcours-naifs-(complexité-quadratique)-62"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Exercice 32 : Parcours naifs (complexité quadratique)</a></div><div class="lev2 toc-item"><a href="#Exercice-33-:-Parcours-linéaires" data-toc-modified-id="Exercice-33-:-Parcours-linéaires-63"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Exercice 33 : Parcours linéaires</a></div><div class="lev2 toc-item"><a href="#Exercice-34-:-parcours-en-largeur-et-en-profondeur" data-toc-modified-id="Exercice-34-:-parcours-en-largeur-et-en-profondeur-64"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Exercice 34 : parcours en largeur et en profondeur</a></div><div class="lev2 toc-item"><a href="#Exercice-35-et-fin" data-toc-modified-id="Exercice-35-et-fin-65"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Exercice 35 et fin</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></div> *)
+ <p><div class="lev1 toc-item"><a href="#TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 2 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev1 toc-item"><a href="#Listes" data-toc-modified-id="Listes-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Listes</a></div><div class="lev2 toc-item"><a href="#Exercice-1-:-taille" data-toc-modified-id="Exercice-1-:-taille-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Exercice 1 : <code>taille</code></a></div><div class="lev2 toc-item"><a href="#Exercice-2-:-concat" data-toc-modified-id="Exercice-2-:-concat-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercice 2 : <code>concat</code></a></div><div class="lev2 toc-item"><a href="#Exercice-3-:-appartient" data-toc-modified-id="Exercice-3-:-appartient-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercice 3 : <code>appartient</code></a></div><div class="lev2 toc-item"><a href="#Exercice-4-:-miroir" data-toc-modified-id="Exercice-4-:-miroir-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Exercice 4 : <code>miroir</code></a></div><div class="lev2 toc-item"><a href="#Exercice-5-:-alterne" data-toc-modified-id="Exercice-5-:-alterne-25"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Exercice 5 : <code>alterne</code></a></div><div class="lev2 toc-item"><a href="#Exercice-6-:-nb_occurrences" data-toc-modified-id="Exercice-6-:-nb_occurrences-26"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>Exercice 6 : <code>nb_occurrences</code></a></div><div class="lev2 toc-item"><a href="#Exercice-7-:-pairs" data-toc-modified-id="Exercice-7-:-pairs-27"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>Exercice 7 : <code>pairs</code></a></div><div class="lev2 toc-item"><a href="#Exercice-8-:-range" data-toc-modified-id="Exercice-8-:-range-28"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Exercice 8 : <code>range</code></a></div><div class="lev2 toc-item"><a href="#Exercice-9-:-premiers" data-toc-modified-id="Exercice-9-:-premiers-29"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Exercice 9 : <code>premiers</code></a></div><div class="lev1 toc-item"><a href="#Quelques-tris-par-comparaison" data-toc-modified-id="Quelques-tris-par-comparaison-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Quelques tris par comparaison</a></div><div class="lev2 toc-item"><a href="#Exercice-10-:-Tri-insertion" data-toc-modified-id="Exercice-10-:-Tri-insertion-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Exercice 10 : Tri insertion</a></div><div class="lev2 toc-item"><a href="#Exercice-11-:-Tri-insertion-générique" data-toc-modified-id="Exercice-11-:-Tri-insertion-générique-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Exercice 11 : Tri insertion générique</a></div><div class="lev2 toc-item"><a href="#Exercice-12-:-Tri-selection" data-toc-modified-id="Exercice-12-:-Tri-selection-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 12 : Tri selection</a></div><div class="lev2 toc-item"><a href="#Exercices-13,-14,-15-:-Tri-fusion" data-toc-modified-id="Exercices-13,-14,-15-:-Tri-fusion-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Exercices 13, 14, 15 : Tri fusion</a></div><div class="lev2 toc-item"><a href="#Comparaisons-des-tris" data-toc-modified-id="Comparaisons-des-tris-35"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Comparaisons des tris</a></div><div class="lev1 toc-item"><a href="#Listes-:-l'ordre-supérieur" data-toc-modified-id="Listes-:-l'ordre-supérieur-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Listes : l'ordre supérieur</a></div><div class="lev2 toc-item"><a href="#Exercice-16-:-applique" data-toc-modified-id="Exercice-16-:-applique-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercice 16 : <code>applique</code></a></div><div class="lev2 toc-item"><a href="#Exercice-17" data-toc-modified-id="Exercice-17-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Exercice 17</a></div><div class="lev2 toc-item"><a href="#Exercice-18-:-itere" data-toc-modified-id="Exercice-18-:-itere-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Exercice 18 : <code>itere</code></a></div><div class="lev2 toc-item"><a href="#Exercice-19" data-toc-modified-id="Exercice-19-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Exercice 19</a></div><div class="lev2 toc-item"><a href="#Exercice-20-:-qqsoit-et-ilexiste" data-toc-modified-id="Exercice-20-:-qqsoit-et-ilexiste-45"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Exercice 20 : <code>qqsoit</code> et <code>ilexiste</code></a></div><div class="lev2 toc-item"><a href="#Exercice-21-:-appartient-version-2" data-toc-modified-id="Exercice-21-:-appartient-version-2-46"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Exercice 21 : <code>appartient</code> version 2</a></div><div class="lev2 toc-item"><a href="#Exercice-22-:-filtre" data-toc-modified-id="Exercice-22-:-filtre-47"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Exercice 22 : <code>filtre</code></a></div><div class="lev2 toc-item"><a href="#Exercice-23" data-toc-modified-id="Exercice-23-48"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Exercice 23</a></div><div class="lev2 toc-item"><a href="#Exercice-24-:-reduit" data-toc-modified-id="Exercice-24-:-reduit-49"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>Exercice 24 : <code>reduit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-25-:-somme,-produit" data-toc-modified-id="Exercice-25-:-somme,-produit-410"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>Exercice 25 : <code>somme</code>, <code>produit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-26-:-miroir-version-2" data-toc-modified-id="Exercice-26-:-miroir-version-2-411"><span class="toc-item-num">4.11&nbsp;&nbsp;</span>Exercice 26 : <code>miroir</code> version 2</a></div><div class="lev1 toc-item"><a href="#Arbres" data-toc-modified-id="Arbres-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Arbres</a></div><div class="lev2 toc-item"><a href="#Exercice-27" data-toc-modified-id="Exercice-27-51"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exercice 27</a></div><div class="lev2 toc-item"><a href="#Exercice-28" data-toc-modified-id="Exercice-28-52"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Exercice 28</a></div><div class="lev2 toc-item"><a href="#Exercice-29" data-toc-modified-id="Exercice-29-53"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Exercice 29</a></div><div class="lev2 toc-item"><a href="#Exercice-30" data-toc-modified-id="Exercice-30-54"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Exercice 30</a></div><div class="lev1 toc-item"><a href="#Parcours-d'arbres-binaires" data-toc-modified-id="Parcours-d'arbres-binaires-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Parcours d'arbres binaires</a></div><div class="lev2 toc-item"><a href="#Exercice-31" data-toc-modified-id="Exercice-31-61"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exercice 31</a></div><div class="lev2 toc-item"><a href="#Exercice-32-:-Parcours-naifs-(complexité-quadratique)" data-toc-modified-id="Exercice-32-:-Parcours-naifs-(complexité-quadratique)-62"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Exercice 32 : Parcours naifs (complexité quadratique)</a></div><div class="lev2 toc-item"><a href="#Exercice-33-:-Parcours-linéaires" data-toc-modified-id="Exercice-33-:-Parcours-linéaires-63"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Exercice 33 : Parcours linéaires</a></div><div class="lev2 toc-item"><a href="#Exercice-34-:-parcours-en-largeur-et-en-profondeur" data-toc-modified-id="Exercice-34-:-parcours-en-largeur-et-en-profondeur-64"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Exercice 34 : parcours en largeur et en profondeur</a></div><div class="lev2 toc-item"><a href="#Exercice-35-et-fin" data-toc-modified-id="Exercice-35-et-fin-65"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Exercice 35 et fin</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></div> *)
 
 (* # TP 2 - Programmation pour la préparation à l'agrégation maths option info
 - En OCaml. *)
@@ -117,7 +117,7 @@ List.append [1; 2] [3; 4];;
 
 (* ## Exercice 3 : `appartient` *)
 
-(* In[13]: *)
+(* In[1]: *)
 
 
 let rec appartient x = function
@@ -126,10 +126,21 @@ let rec appartient x = function
     | _ :: q -> appartient x q
 ;;
 
+
+let rec appartient2 x = function
+    | [] -> false
+    | h :: q -> (h = x) || (appartient2 x q)
+;;
+
 appartient 1 [];;
 appartient 1 [1];;
 appartient 1 [1; 2; 3];;
 appartient 4 [1; 2; 3];;
+
+appartient2 1 [];;
+appartient2 1 [1];;
+appartient2 1 [1; 2; 3];;
+appartient2 4 [1; 2; 3];;
 
 (* In[14]: *)
 
@@ -195,11 +206,21 @@ let rec alterne (l1 : 'a list) (l2 : 'a list) : 'a list =
 
 (* ## Exercice 6 : `nb_occurrences` *)
 
-(* In[20]: *)
+(* In[5]: *)
 
 
+(* O(n) en temps, et en espace d'appel : pas récursif terminal ! *)
+let rec nb_occurrences (x : 'a) (liste : 'a list) : int =
+    match liste with
+    | [] -> 0
+    | h :: q when h = x -> (nb_occurrences x q) + 1
+    | _ :: q -> nb_occurrences x q
+;;
+
+(* O(n) en temps, et O(1) en espace d'appel : récursif terminal ! *)
 let nb_occurrences (x : 'a) (liste : 'a list) : int =
-    let rec aux acc x = function
+    let rec aux acc x l =
+    match l with
     | [] -> acc
     | h :: q when h = x -> aux (acc + 1) x q
     | _ :: q -> aux acc x q
@@ -353,14 +374,14 @@ premiers 100;;
 
 (* On fera les tris en ordre croissant. *)
 
-(* In[5]: *)
+(* In[33]: *)
 
 
 let test = [3; 1; 8; 4; 5; 6; 1; 2];;
 
 (* ## Exercice 10 : Tri insertion *)
 
-(* In[37]: *)
+(* In[34]: *)
 
 
 let rec insere (x : 'a) : 'a list -> 'a list = function
@@ -372,7 +393,7 @@ let rec insere (x : 'a) : 'a list -> 'a list = function
             t :: (insere x q)
 ;;
 
-(* In[38]: *)
+(* In[35]: *)
 
 
 let rec tri_insertion : 'a list -> 'a list = function
@@ -380,7 +401,7 @@ let rec tri_insertion : 'a list -> 'a list = function
     | t :: q -> insere t (tri_insertion q)
 ;;
 
-(* In[39]: *)
+(* In[36]: *)
 
 
 tri_insertion test;;
@@ -389,7 +410,7 @@ tri_insertion test;;
 
 (* ## Exercice 11 : Tri insertion générique *)
 
-(* In[40]: *)
+(* In[37]: *)
 
 
 let rec insere2 (ordre : 'a -> 'a -> bool) (x : 'a) : 'a list -> 'a list = function
@@ -401,7 +422,7 @@ let rec insere2 (ordre : 'a -> 'a -> bool) (x : 'a) : 'a list -> 'a list = funct
             t :: (insere2 ordre x q)
 ;;
 
-(* In[41]: *)
+(* In[38]: *)
 
 
 let rec tri_insertion2 (ordre : 'a -> 'a -> bool) : 'a list -> 'a list = function
@@ -409,29 +430,29 @@ let rec tri_insertion2 (ordre : 'a -> 'a -> bool) : 'a list -> 'a list = functio
     | t :: q -> insere2 ordre t (tri_insertion2 ordre q)
 ;;
 
-(* In[16]: *)
+(* In[39]: *)
 
 
 let ordre_croissant a b = a <= b;;
 
-(* In[43]: *)
+(* In[40]: *)
 
 
 tri_insertion2 ordre_croissant test;;
 
-(* In[44]: *)
+(* In[41]: *)
 
 
 let ordre_decroissant = (>=);;
 
-(* In[45]: *)
+(* In[42]: *)
 
 
 tri_insertion2 ordre_decroissant test;;
 
 (* ## Exercice 12 : Tri selection *)
 
-(* In[46]: *)
+(* In[43]: *)
 
 
 let selectionne_min (l : 'a list) : ('a * 'a list) =
@@ -448,12 +469,12 @@ let selectionne_min (l : 'a list) : ('a * 'a list) =
     | t :: q -> cherche_min t [] q
 ;;
 
-(* In[47]: *)
+(* In[44]: *)
 
 
 selectionne_min test;;
 
-(* In[48]: *)
+(* In[45]: *)
 
 
 let rec tri_selection : 'a list -> 'a list = function
@@ -463,7 +484,7 @@ let rec tri_selection : 'a list -> 'a list = function
         min :: (tri_selection autres)
 ;;
 
-(* In[49]: *)
+(* In[46]: *)
 
 
 tri_selection test;;
@@ -472,7 +493,7 @@ tri_selection test;;
 
 (* ## Exercices 13, 14, 15 : Tri fusion *)
 
-(* In[3]: *)
+(* In[47]: *)
 
 
 let print_list (liste : int list) : unit =
@@ -481,43 +502,45 @@ let print_list (liste : int list) : unit =
     print_endline "]";
 ;;
 
-(* In[7]: *)
+(* In[48]: *)
 
 
 test;;
 print_list test;;
 
-(* In[50]: *)
+(* In[49]: *)
 
 
 let rec separe : 'a list -> ('a list * 'a list) = function
     | [] -> ([], [])
     | [x] -> ([x], [])
     | x :: y :: q ->
+    (* n'est pas stable : on perturbe l'ordre des éléments en entrée *)
         let (a, b) = separe q
         in (x::a, y::b)
 ;;
 
 separe test;;
 
-(* In[51]: *)
+(* In[50]: *)
 
 
 let rec fusion (l1 : 'a list) (l2 : 'a list) : 'a list =
     match (l1, l2) with
     | (l, []) | ([], l) -> l  (* syntaxe concise pour deux cas identiques *)
-    | (x::a, y::b) ->
-        if x <= y then
-            x :: (fusion a (y :: b))
+    | (h1::q1, h2::q2) ->
+        if h1 <= h2 then
+            h1 :: (fusion q1 l2)
         else
-            y :: (fusion (x :: a) b)
+            h2 :: (fusion l1 q2)
 ;;
 
 fusion [1; 3; 7] [2; 3; 8];;
 
-(* In[52]: *)
+(* In[51]: *)
 
 
+(* O(n log(n)) en temps et O(n) en mémoire *)
 let rec tri_fusion : 'a list -> 'a list = function
     | [] -> []
     | [x] -> [x] (* ATTENTION A NE PAS OUBLIER CE CAS *)
@@ -526,12 +549,106 @@ let rec tri_fusion : 'a list -> 'a list = function
         fusion (tri_fusion a) (tri_fusion b)
 ;;
 
-(* In[53]: *)
+(* In[52]: *)
 
 
 tri_fusion test;;
 
 (* Complexité en temps $\mathcal{O}(n \log n)$. *)
+
+(* ## Comparaisons des tris *)
+
+(* In[53]: *)
+
+
+Random.self_init();;
+
+(* In[75]: *)
+
+
+Random.int 100;;
+
+(* In[65]: *)
+
+
+let random_tableau (n : int) : int array =
+    Array.init n (fun _ -> -1000 + (Random.int 2000))
+;;
+
+let random_list (n : int) : int list =
+    Array.to_list (random_tableau n)
+;;
+
+(* In[84]: *)
+
+
+random_tableau 10;;
+
+(* In[62]: *)
+
+
+let timeit (nbrepetitions : int) (f : 'a -> 'b) (lazy_x : unit -> 'a) : float =
+    let debut = Sys.time () in
+    for _ = 1 to nbrepetitions do
+        ignore (f (lazy_x ()));
+    done;
+    let fin = Sys.time () in
+    (fin -. debut) /. (float_of_int nbrepetitions)
+;;
+
+(* In[67]: *)
+
+
+let nbrepetitions = 100 in
+let n = 10 in
+let temps_insertion = timeit nbrepetitions tri_insertion (fun () -> random_list n) in
+let temps_selection = timeit nbrepetitions tri_selection (fun () -> random_list n) in
+let temps_fusion = timeit nbrepetitions tri_fusion (fun () -> random_list n) in
+(temps_insertion, temps_selection, temps_fusion);;
+
+(* In[68]: *)
+
+
+let nbrepetitions = 100 in
+let n = 100 in
+let temps_insertion = timeit nbrepetitions tri_insertion (fun () -> random_list n) in
+let temps_selection = timeit nbrepetitions tri_selection (fun () -> random_list n) in
+let temps_fusion = timeit nbrepetitions tri_fusion (fun () -> random_list n) in
+(temps_insertion, temps_selection, temps_fusion);;
+
+(* In[69]: *)
+
+
+let nbrepetitions = 100 in
+let n = 1000 in
+let temps_insertion = timeit nbrepetitions tri_insertion (fun () -> random_list n) in
+let temps_selection = timeit nbrepetitions tri_selection (fun () -> random_list n) in
+let temps_fusion = timeit nbrepetitions tri_fusion (fun () -> random_list n) in
+(temps_insertion, temps_selection, temps_fusion);;
+
+(* In[86]: *)
+
+
+let nbrepetitions = 1 in
+let n = 10000 in
+let temps_insertion = timeit nbrepetitions tri_insertion (fun () -> random_list n) in
+let temps_selection = timeit nbrepetitions tri_selection (fun () -> random_list n) in
+let temps_fusion = timeit nbrepetitions tri_fusion (fun () -> random_list n) in
+(temps_insertion, temps_selection, temps_fusion);;
+
+(* On a pu vérifier **empiriquement** que les complexités des tris par insertion et sélection sont quadratiques (multiplier $n$ par $10$ multiplie le temps par en gros $10^2$), et que le tri fusion est quasiment linéaire (multiplier $n$ par $10$ multiplie le temps par en gros $10$). *)
+
+(* Une petite question de culture camelistique : *)
+
+(* In[92]: *)
+
+
+function x -> function y -> x;;
+
+(* In[93]: *)
+
+
+fun x y -> x;;
 
 (* ----
 # Listes : l'ordre supérieur
@@ -540,9 +657,10 @@ Je ne corrige pas les questions qui étaient traitées dans le TP1. *)
 
 (* ## Exercice 16 : `applique` *)
 
-(* In[54]: *)
+(* In[19]: *)
 
 
+(* Temps O(n) pire des cas, et O(n) mémoire *)
 let rec applique f = function
     | [] -> []
     | h :: q -> (f h) :: (applique f q)
@@ -598,9 +716,10 @@ affiche_liste_entiers [1; 2; 4; 5];;
 
 (* ## Exercice 20 : `qqsoit` et `ilexiste` *)
 
-(* In[63]: *)
+(* In[20]: *)
 
 
+(* Temps O(n) pire cas, et O(1) mémoire car récursif terminal *)
 let rec qqsoit (pred : 'a -> bool) = function
     | [] -> true (* piege ! *)
     | h :: q -> (pred h) && (qqsoit pred q)
