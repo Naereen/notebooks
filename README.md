@@ -3,6 +3,8 @@
 This repository hosts some [Jupyter Notebooks](http://jupyter.org/), covering various subjects.
 Go to [nbviewer](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/) to read them.
 
+You can also launch an interactive environment to play with the code by yourself, using one of these platforms: [![MyBinder v2](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Naereen/notebooks/master) [![Google Colab: Launch](https://img.shields.io/badge/Google%20Colab-Launch-blue.svg)](https://colab.research.google.com/github/Naereen/notebooks/blob/master/)
+
 > At the beginning, this repository was only here to host some small experiments, for me to learn how to use [the wonderful Jupyter tools](http://jupyter.org/) correctly (baby notebooks :baby_bottle:)...
 
 ## :shell: Bash
