@@ -216,7 +216,7 @@ testtri tri_bulle compare 100 1000 ();;
 
 ## Tri cocktail *)
 
-(* Il est très semblable au tri à bulle, sauf que le tableau sera parcouru alternativement dans les eux sens.
+(* Il est très semblable au tri à bulle, sauf que le tableau sera parcouru alternativement dans les deux sens.
 
 Le tri cocktail a une complexité en $\mathcal{O}(n^2)$ dans le pire des cas et en moyenne.
 Il a l'avantage d'être en place. *)
