@@ -7,7 +7,7 @@ https://github.com/Naereen/Jupyter-Notebook-OCaml/issues/new if you find one
 *)
 
 (* # Table of Contents
- <p><div class="lev1 toc-item"><a href="#Texte-d'oral-de-modélisation---Agrégation-Option-Informatique" data-toc-modified-id="Texte-d'oral-de-modélisation---Agrégation-Option-Informatique-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Texte d'oral de modélisation - Agrégation Option Informatique</a></div><div class="lev2 toc-item"><a href="#Préparation-à-l'agrégation---ENS-de-Rennes,-2016-17" data-toc-modified-id="Préparation-à-l'agrégation---ENS-de-Rennes,-2016-17-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Préparation à l'agrégation - ENS de Rennes, 2016-17</a></div><div class="lev2 toc-item"><a href="#À-propos-de-ce-document" data-toc-modified-id="À-propos-de-ce-document-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>À propos de ce document</a></div><div class="lev2 toc-item"><a href="#Question-de-programmation" data-toc-modified-id="Question-de-programmation-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Question de programmation</a></div><div class="lev2 toc-item"><a href="#Réponse-à-l'exercice-requis" data-toc-modified-id="Réponse-à-l'exercice-requis-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Réponse à l'exercice requis</a></div><div class="lev3 toc-item"><a href="#Une-autre-approche" data-toc-modified-id="Une-autre-approche-141"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Une autre approche</a></div><div class="lev3 toc-item"><a href="#Un-mauvais-exemple" data-toc-modified-id="Un-mauvais-exemple-142"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Un mauvais exemple</a></div><div class="lev3 toc-item"><a href="#Un-bon-exemple" data-toc-modified-id="Un-bon-exemple-143"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Un bon exemple</a></div><div class="lev3 toc-item"><a href="#Un-exemple-de-Su-Doku-de-taille-$9-\times-9$-au-compte-juste" data-toc-modified-id="Un-exemple-de-Su-Doku-de-taille-$9-\times-9$-au-compte-juste-144"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Un exemple de Su Doku de taille <span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-278"><span class="MJXp-mn" id="MJXp-Span-279">9</span><span class="MJXp-mo" id="MJXp-Span-280" style="margin-left: 0.267em; margin-right: 0.267em;">×</span><span class="MJXp-mn" id="MJXp-Span-281">9</span></span></span><span class="MathJax MathJax_Processing" id="MathJax-Element-42-Frame" tabindex="0"></span><script type="math/tex" id="MathJax-Element-42">9 \times 9</script> au compte juste</a></div><div class="lev3 toc-item"><a href="#Un-exemple-de-Su-Doku-au-comte-faux" data-toc-modified-id="Un-exemple-de-Su-Doku-au-comte-faux-145"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>Un exemple de Su Doku au <em>comte</em> faux</a></div><div class="lev3 toc-item"><a href="#Un-exemple-de-comte...-Dooku-?" data-toc-modified-id="Un-exemple-de-comte...-Dooku-?-146"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Un exemple de comte... Dooku ?</a></div><div class="lev2 toc-item"><a href="#Vérifier-les-autres-contraintes" data-toc-modified-id="Vérifier-les-autres-contraintes-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Vérifier les autres contraintes</a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Conclusion</a></div> *)
+ <p><div class="lev1 toc-item"><a href="#Texte-d'oral-de-modélisation---Agrégation-Option-Informatique" data-toc-modified-id="Texte-d'oral-de-modélisation---Agrégation-Option-Informatique-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Texte d'oral de modélisation - Agrégation Option Informatique</a></div><div class="lev2 toc-item"><a href="#Préparation-à-l'agrégation---ENS-de-Rennes,-2016-17" data-toc-modified-id="Préparation-à-l'agrégation---ENS-de-Rennes,-2016-17-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Préparation à l'agrégation - ENS de Rennes, 2016-17</a></div><div class="lev2 toc-item"><a href="#À-propos-de-ce-document" data-toc-modified-id="À-propos-de-ce-document-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>À propos de ce document</a></div><div class="lev2 toc-item"><a href="#Question-de-programmation" data-toc-modified-id="Question-de-programmation-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Question de programmation</a></div><div class="lev2 toc-item"><a href="#Réponse-à-l'exercice-requis" data-toc-modified-id="Réponse-à-l'exercice-requis-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Réponse à l'exercice requis</a></div><div class="lev3 toc-item"><a href="#Une-autre-approche" data-toc-modified-id="Une-autre-approche-141"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Une autre approche</a></div><div class="lev3 toc-item"><a href="#Un-mauvais-exemple" data-toc-modified-id="Un-mauvais-exemple-142"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Un mauvais exemple</a></div><div class="lev3 toc-item"><a href="#Un-bon-exemple" data-toc-modified-id="Un-bon-exemple-143"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Un bon exemple</a></div><div class="lev3 toc-item"><a href="#Un-exemple-de-Su-Doku-de-taille-$9-\times-9$-au-compte-juste" data-toc-modified-id="Un-exemple-de-Su-Doku-de-taille-$9-\times-9$-au-compte-juste-144"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Un exemple de Su Doku de taille <span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-274"><span class="MJXp-mn" id="MJXp-Span-275">9</span><span class="MJXp-mo" id="MJXp-Span-276" style="margin-left: 0.267em; margin-right: 0.267em;">×</span><span class="MJXp-mn" id="MJXp-Span-277">9</span></span></span><script type="math/tex" id="MathJax-Element-41">9 \times 9</script> au compte juste</a></div><div class="lev3 toc-item"><a href="#Un-exemple-de-Su-Doku-au-comte-faux" data-toc-modified-id="Un-exemple-de-Su-Doku-au-comte-faux-145"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>Un exemple de Su Doku au <em>comte</em> faux</a></div><div class="lev3 toc-item"><a href="#Un-exemple-de-comte...-Dooku-?" data-toc-modified-id="Un-exemple-de-comte...-Dooku-?-146"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Un exemple de comte... Dooku ?</a></div><div class="lev2 toc-item"><a href="#Vérifier-les-autres-contraintes" data-toc-modified-id="Vérifier-les-autres-contraintes-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Vérifier les autres contraintes</a></div><div class="lev2 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Conclusion</a></div> *)
 
 (* # Texte d'oral de modélisation - Agrégation Option Informatique
 ## Préparation à l'agrégation - ENS de Rennes, 2016-17
@@ -82,7 +82,7 @@ let tousVrai tab =
 
 
 let tousVrai = Array.fold_left (&&) true;;
-(* Array.for_all marche aussi bien ! *)
+(* Array.for_all marche aussi bien ! *);;
 
 (* Ca permet de facilement vérifier si un tableau `tab` de taille $p$ est exactement $N_p = \{1,\dots,p\}$, en temps linéaire (c'est optimal) en $p$.
 
@@ -110,7 +110,7 @@ let estNp p tab =
 - on les remplit des contraintes pour les $p$ lignes et les $p$ colonnes,
 - et on les vérifie avec `tousVrai`. *)
 
-(* In[32]: *)
+(* In[6]: *)
 
 
 let contraintes_lignes p t =
@@ -119,7 +119,7 @@ let contraintes_lignes p t =
         ))
 ;;
 
-(* In[31]: *)
+(* In[7]: *)
 
 
 let contraintes_colonnes p t =
@@ -128,7 +128,7 @@ let contraintes_colonnes p t =
         ))
 ;;
 
-(* In[7]: *)
+(* In[8]: *)
 
 
 let carre_latin p t =
@@ -144,7 +144,7 @@ Donc pas besoin de savoir extraire les colonnes, dès qu'on a écrit `contrainte
 
 Pour calculer la transposée, une approche simple utilise deux boucles `for` : *)
 
-(* In[8]: *)
+(* In[9]: *)
 
 
 let transpose_for p tab =
@@ -160,27 +160,27 @@ let transpose_for p tab =
 (* On peut rapidement vérifier sur un exemple,
 $$ \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}^{T} = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}. $$ *)
 
-(* In[9]: *)
+(* In[10]: *)
 
 
 transpose_for 2 [| [|1; 2|]; [|3; 4|] |];;
 
 (* Notez qu'on peut faire mieux, sans boucles `for`, avec deux `Array.init` imbriqués : *)
 
-(* In[10]: *)
+(* In[11]: *)
 
 
 let transpose p tab =
     Array.init p (fun i -> (Array.init p (fun j -> tab.(j).(i))));;
 
-(* In[11]: *)
+(* In[12]: *)
 
 
 transpose 2 [| [|1; 2|]; [|3; 4|] |];;
 
 (* Et donc : *)
 
-(* In[12]: *)
+(* In[13]: *)
 
 
 let carre_latin2 p t =
@@ -192,7 +192,7 @@ On va prendre le premier carré de taille $p = 3$ dans le problème de Su Doku d
 
 <img width="40%;" alt="images/sudoku.png" src="images/sudoku.png" > *)
 
-(* In[13]: *)
+(* In[14]: *)
 
 
 let p1 = 3;;
@@ -202,7 +202,7 @@ let t1 = [|
     [| 5; 8; 6; |];
 |];;
 
-(* In[14]: *)
+(* In[15]: *)
 
 
 carre_latin p1 t1;;
@@ -213,7 +213,7 @@ carre_latin p1 t1;;
 
 (* On peut prendre un vrai exemple de taille $p = 3$, qui sera un carré latin. *)
 
-(* In[15]: *)
+(* In[16]: *)
 
 
 let p2 = 3;;
@@ -223,14 +223,14 @@ let t2 = [|
     [| 3; 1; 2 |];
 |];;
 
-(* In[16]: *)
+(* In[17]: *)
 
 
 carre_latin p2 t2;;
 
 (* Les deux implémentations, la 1ère à base d'extraction de colonnes, la 2ème à base de transposée, donnent bien-sûr le même résultat ! *)
 
-(* In[17]: *)
+(* In[18]: *)
 
 
 carre_latin2 p2 t2;;
@@ -242,7 +242,7 @@ Avec $p = n^2 = 9$, on reprend l'exemple du texte :
 
 Ça va être long un peu à écrire, mais au moins on vérifiera notre fonction sur un vrai exemple. *)
 
-(* In[18]: *)
+(* In[19]: *)
 
 
 let p3 = 9 ;;
@@ -256,14 +256,14 @@ let t3 = [|
     [| 2; 7; 8; 6; 5; 4; 1; 9; 3 |];
     [| 4; 5; 3; 1; 8; 9; 6; 7; 2 |];
     [| 6; 9; 1; 3; 2; 7; 8; 5; 4 |];
-|];
+|];;;
 
-(* In[19]: *)
+(* In[20]: *)
 
 
 carre_latin p3 t3;;
 
-(* In[20]: *)
+(* In[21]: *)
 
 
 carre_latin2 p3 t3;;
@@ -272,7 +272,7 @@ carre_latin2 p3 t3;;
 
 Avec $p = n^2 = 9$, en modifiant seulement une case du tableau $T$ précédent. *)
 
-(* In[21]: *)
+(* In[22]: *)
 
 
 let p4 = 9 ;;
@@ -286,14 +286,14 @@ let t4 = [|
     [| 2; 7; 8; 6; 5; 4; 1; 9; 3 |];
     [| 4; 5; 3; 1; 8; 9; 6; 7; 2 |];
     [| 6; 9; 1; 3; 2; 7; 8; 5; 4 |];
-|];
+|];;;
 
-(* In[22]: *)
+(* In[23]: *)
 
 
 carre_latin p4 t4;;
 
-(* In[23]: *)
+(* In[24]: *)
 
 
 carre_latin2 p4 t4;;
@@ -313,7 +313,7 @@ En bonus, on peut écrire une fonction qui vérifie les contraintes sur les peti
 
 On a déjà tout ce qu'il faut, il suffit d'écrire une fonction qui extraie un petit carré de taille $n \times n$ ($n = \sqrt{p}$). *)
 
-(* In[24]: *)
+(* In[25]: *)
 
 
 let racine_carree i = int_of_float (sqrt (float_of_int i));;
@@ -323,7 +323,7 @@ Ici, on extraie le $i$ème petit carré en ligne, et le $j$ème petit carré en 
 - en jouant avec des modulos et des divisions entières sur $k$ qui sera de $0$ à $p-1$ (`k / n` et `k mod n` font parcourir $0 \dots n-1$),
 - et en jouant avec des multiplications sur `i` et `j`. *)
 
-(* In[25]: *)
+(* In[26]: *)
 
 
 let petit_carre p n t i j =
@@ -336,12 +336,12 @@ let petit_carre p n t i j =
 
 (* Par exemple, avec le tableau `t3` défini plus haut, et $p = 9 = n^2$ pour $n = 3$, on vérifie que les $9$ petits carrés arrivent dans l'ordre : *)
 
-(* In[26]: *)
+(* In[27]: *)
 
 
 let n3 = racine_carree p3;;
 
-(* In[27]: *)
+(* In[28]: *)
 
 
 petit_carre p3 n3 t3 0 0;;
@@ -356,7 +356,7 @@ petit_carre p3 n3 t3 2 2;;
 
 (* Enfin, la contrainte supplémentaire s'écrit exactement comme les deux autres : *)
 
-(* In[28]: *)
+(* In[29]: *)
 
 
 let petits_carres_sont_latins p t =
@@ -373,14 +373,14 @@ let petits_carres_sont_latins p t =
 
 (* $\implies$ Et on peut vérifier que le tableau `t3` satisfait bien cette contrainte : *)
 
-(* In[29]: *)
+(* In[30]: *)
 
 
 petits_carres_sont_latins p3 t3;;
 
 (* $\implies$ Et on peut vérifier que le tableau `t4` ne satisfait pas cette contrainte : *)
 
-(* In[30]: *)
+(* In[31]: *)
 
 
 petits_carres_sont_latins p4 t4;;
