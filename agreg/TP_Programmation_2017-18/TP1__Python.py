@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 # coding: utf-8
 
 # # Table of Contents
@@ -108,7 +108,7 @@ for i in range(8):
 # 
 # Pour ce genre de fonction, j'aime bien afficher les appels récursifs. On peut rendre ça optionnel, avec comme ici un argument nommé `log`, à valeur par défaut `log=False`.
 
-# In[1]:
+# In[11]:
 
 
 def pgcd(x : int, y : int, log: bool=False) -> int:
@@ -124,7 +124,7 @@ def pgcd(x : int, y : int, log: bool=False) -> int:
         return pgcd(y, x % y, log=log)
 
 
-# In[2]:
+# In[12]:
 
 
 pgcd(10, 5)
@@ -380,43 +380,22 @@ liste_carree([1, 2, 3])
 
 # ## Exercice 15
 
-# In[10]:
+# In[180]:
 
 
 def miroir_quad(liste : list) -> list:
-    # pour le faire naïvement en Python
-    # on fait une concaténation de liste
-    if liste:
-        return miroir_quad(liste[1:]) + [ liste[0] ]
-    else:
-        return []
+    # aucune idée pour le faire innefficacement en Python,
+    # ce ne sont pas des listes chaînées
+    return liste[::-1]
 
 def miroir_lin(liste : list) -> list:
     return [liste[-i] for i in range(1, len(liste) + 1)]
 
 
-# In[11]:
-
-
-miroir_quad([1, 2, 3])
-
-
-# In[12]:
-
-
-get_ipython().run_line_magic('timeit', 'miroir_quad(list(range(1000)))')
-
-
-# In[13]:
+# In[181]:
 
 
 miroir_lin([1, 2, 3])
-
-
-# In[14]:
-
-
-get_ipython().run_line_magic('timeit', 'miroir_lin(list(range(1000)))')
 
 
 # ## Exercice 16
@@ -703,7 +682,7 @@ exp_rapide_2(2.0, 8)
 # 
 # **Spoiler alert** : en Python, c'est chaud.
 # 
-# **ATTENTION** Il faut un peut d'habitude et d'idées pour réussir à faire tout ça aussi efficacement (enfin presque) qu'en OCaml.
+# **ATTENTION** Il faut un peu d'habitude et d'idées pour réussir à faire tout ça aussi efficacement (enfin presque) qu'en OCaml.
 # 
 # On va faire des choses non typées, avec des dictionnaires, pour bidouiller.
 # 
@@ -744,7 +723,7 @@ f
 # In[79]:
 
 
-def taille(formule : dict) -> str:
+def taille(formule : dict) -> int:
     if 'V' in formule:
         return 0
     elif 'Not' in formule:
@@ -941,4 +920,4 @@ table_verite(f)
 # 
 # Comme vous le voyez, on arrive à répondre aux mêmes questions dans les deux langages, et il n'y a pas de grosses différences en pratique dans la mise en oeuvre.
 # 
-# Là où Caml excelle pour les types définis, le filtrage et la récursion, Python gagne en simplicité sur l'affichage, sa librairie standard et les dictionnaires et ensembles...
+# Là où OCaml excelle pour les types définis, le filtrage et la récursion, Python gagne en simplicité sur l'affichage, sa librairie standard et les dictionnaires et ensembles...

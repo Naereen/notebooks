@@ -577,7 +577,7 @@ flush_all ();;
 
 (* ## Exercice 20 *)
 
-(* In[1]: *)
+(* In[70]: *)
 
 
 (* le type monoide *)
@@ -585,25 +585,7 @@ type 'a monoide = { mult : 'a -> 'a -> 'a; neutre : 'a };;
 
 (* Avec des champs d'enregistrement, c'est concis : *)
 
-(* In[17]: *)
-
-
-(* Ca rale ici ! *)
-let floatmonoide = {
-    mult = fun a b -> a *. b;
-    (* ce ; est quoi ? fin de fun ou fin de mult ? *)
-    neutre = 1.0
-};;
-
-(* In[18]: *)
-
-
-let floatmonoide = {
-    mult = (fun a b -> a *. b);
-    neutre = 1.0
-};;
-
-(* In[19]: *)
+(* In[71]: *)
 
 
 let floatMonoide : 'float monoide = {
@@ -613,7 +595,7 @@ let floatMonoide : 'float monoide = {
 
 (* Par contre, impossible d'avoir un neutre de taille quelconque donc on doit écrire un monoied pour les matrices qui soit dépendent d'une taille $n$. *)
 
-(* In[3]: *)
+(* In[72]: *)
 
 
 let mult_matrice (x : int array array) (y : int array array) : int array array =
@@ -629,14 +611,14 @@ let mult_matrice (x : int array array) (y : int array array) : int array array =
     z
 ;;
 
-(* In[4]: *)
+(* In[73]: *)
 
 
-mult_matrice [| [|1; 1|]; [|1; 1|]|] [|[|1; 2|]; [|3; 4|]|];;
+mult_matrice [|[|1; 1|]; [|1; 1|]|] [|[|1; 2|]; [|3; 4|]|];;
 
 (* Manuellement ce n'est pas trop dur : *)
 
-(* In[5]: *)
+(* In[74]: *)
 
 
 let matrixMonoide n = {
@@ -644,10 +626,9 @@ let matrixMonoide n = {
     neutre = Array.init n (fun i -> Array.init n (fun j -> if i = j then 1 else 0));
 };;
 
-(* ## Exercice 21
-Première approche naïve : *)
+(* ## Exercice 21 *)
 
-(* In[6]: *)
+(* In[75]: *)
 
 
 let rec exp_rapide (m : 'a monoide) (x : 'a) (n : int) : 'a =
@@ -656,31 +637,19 @@ let rec exp_rapide (m : 'a monoide) (x : 'a) (n : int) : 'a =
     | n -> m.mult (exp_rapide m x (n-1)) x
 ;;
 
-(* Avec l'approche récursive : *)
-
-(* In[10]: *)
-
-
-let rec exp_rapide (m : 'a monoide) (x : 'a) (n : int) : 'a =
-    match n with
-    | 0 -> m.neutre
-    | n when (n mod 2) = 0 -> exp_rapide m (m.mult x x) (n / 2)
-    | n -> m.mult (exp_rapide m (m.mult x x) ((n-1)/2)) x
-;;
-
 (* ## Exercice 22 *)
 
-(* In[11]: *)
+(* In[76]: *)
 
 
 let exp_rapide_float = exp_rapide floatMonoide;;
 
-(* In[12]: *)
+(* In[77]: *)
 
 
 exp_rapide_float 2.0 8;;
 
-(* In[13]: *)
+(* In[78]: *)
 
 
 exp_rapide_float 0.2 8;;
