@@ -36,6 +36,8 @@ You can also launch an interactive environment to play with the code by yourself
 
 - [This short notebook defines and studies the Rényi entropy](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/A_short_study_of_Renyi_entropy.ipynb) ([on GitHub?](A_short_study_of_Renyi_entropy.ipynb)).
 
+- :fr: [Ce notebook présente des approches simples pour générer un dictionnaire des mots français adaptés à l'écriture inclusive](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Ecriture%20inclusive.ipynb), comme beau/belle -> beau·elle, professeur/professeure -> professeur·e, il/elle -> iel/ielle etc ([on GitHub?](Ecriture%20inclusive.ipynb)). [Ici ce trouve le dictionnaire généré (contenant environ 26 000 mots différents)](french_inclusive.txt). Work in progress...
+
 ### Teaching
 - :fr: [Ce notebook en français présente les problèmes de bandits multi-bras stochastiques](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb) ([on GitHub?](Introduction_aux_algorithmes_de_bandit__comme_UCB1_et_Thompson_Sampling.ipynb)) (*multi-armed bandit*, MAB), et les algorithmes dits "de bandits" pour les résoudre (UCB "Upper Confidence Bounds", KL-UCB, Thompson Sampling, Approximated Finite-Horizon Gittins index etc). C'est une bonne introduction aux outils que j'utilise pour [ma thèse](http://perso.crans.org/besson/phd/).
 
