@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Table of Contents
-#  <p><div class="lev1 toc-item"><a href="#TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 2 - Programmation pour la préparation à l'agrégation maths option info</a></div><div class="lev1 toc-item"><a href="#Listes" data-toc-modified-id="Listes-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Listes</a></div><div class="lev2 toc-item"><a href="#Exercice-1-:-taille" data-toc-modified-id="Exercice-1-:-taille-21"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Exercice 1 : <code>taille</code></a></div><div class="lev2 toc-item"><a href="#Exercice-2-:-concat" data-toc-modified-id="Exercice-2-:-concat-22"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercice 2 : <code>concat</code></a></div><div class="lev2 toc-item"><a href="#Exercice-3-:-appartient" data-toc-modified-id="Exercice-3-:-appartient-23"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercice 3 : <code>appartient</code></a></div><div class="lev2 toc-item"><a href="#Exercice-4-:-miroir" data-toc-modified-id="Exercice-4-:-miroir-24"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Exercice 4 : <code>miroir</code></a></div><div class="lev2 toc-item"><a href="#Exercice-5-:-alterne" data-toc-modified-id="Exercice-5-:-alterne-25"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Exercice 5 : <code>alterne</code></a></div><div class="lev2 toc-item"><a href="#Exercice-6-:-nb_occurrences" data-toc-modified-id="Exercice-6-:-nb_occurrences-26"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>Exercice 6 : <code>nb_occurrences</code></a></div><div class="lev2 toc-item"><a href="#Exercice-7-:-pairs" data-toc-modified-id="Exercice-7-:-pairs-27"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>Exercice 7 : <code>pairs</code></a></div><div class="lev2 toc-item"><a href="#Exercice-8-:-range" data-toc-modified-id="Exercice-8-:-range-28"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Exercice 8 : <code>range</code></a></div><div class="lev2 toc-item"><a href="#Exercice-9-:-premiers" data-toc-modified-id="Exercice-9-:-premiers-29"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Exercice 9 : <code>premiers</code></a></div><div class="lev1 toc-item"><a href="#Quelques-tris-par-comparaison" data-toc-modified-id="Quelques-tris-par-comparaison-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Quelques tris par comparaison</a></div><div class="lev2 toc-item"><a href="#Exercice-10-:-Tri-insertion" data-toc-modified-id="Exercice-10-:-Tri-insertion-31"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Exercice 10 : Tri insertion</a></div><div class="lev2 toc-item"><a href="#Exercice-11-:-Tri-insertion-générique" data-toc-modified-id="Exercice-11-:-Tri-insertion-générique-32"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Exercice 11 : Tri insertion générique</a></div><div class="lev2 toc-item"><a href="#Exercice-12-:-Tri-selection" data-toc-modified-id="Exercice-12-:-Tri-selection-33"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 12 : Tri selection</a></div><div class="lev2 toc-item"><a href="#Exercices-13,-14,-15-:-Tri-fusion" data-toc-modified-id="Exercices-13,-14,-15-:-Tri-fusion-34"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Exercices 13, 14, 15 : Tri fusion</a></div><div class="lev2 toc-item"><a href="#Comparaisons" data-toc-modified-id="Comparaisons-35"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Comparaisons</a></div><div class="lev1 toc-item"><a href="#Listes-:-l'ordre-supérieur" data-toc-modified-id="Listes-:-l'ordre-supérieur-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Listes : l'ordre supérieur</a></div><div class="lev2 toc-item"><a href="#Exercice-16-:-applique" data-toc-modified-id="Exercice-16-:-applique-41"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercice 16 : <code>applique</code></a></div><div class="lev2 toc-item"><a href="#Exercice-17" data-toc-modified-id="Exercice-17-42"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Exercice 17</a></div><div class="lev2 toc-item"><a href="#Exercice-18-:-itere" data-toc-modified-id="Exercice-18-:-itere-43"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Exercice 18 : <code>itere</code></a></div><div class="lev2 toc-item"><a href="#Exercice-19" data-toc-modified-id="Exercice-19-44"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Exercice 19</a></div><div class="lev2 toc-item"><a href="#Exercice-20-:-qqsoit-et-ilexiste" data-toc-modified-id="Exercice-20-:-qqsoit-et-ilexiste-45"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Exercice 20 : <code>qqsoit</code> et <code>ilexiste</code></a></div><div class="lev2 toc-item"><a href="#Exercice-21-:-appartient-version-2" data-toc-modified-id="Exercice-21-:-appartient-version-2-46"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Exercice 21 : <code>appartient</code> version 2</a></div><div class="lev2 toc-item"><a href="#Exercice-22-:-filtre" data-toc-modified-id="Exercice-22-:-filtre-47"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Exercice 22 : <code>filtre</code></a></div><div class="lev2 toc-item"><a href="#Exercice-23" data-toc-modified-id="Exercice-23-48"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Exercice 23</a></div><div class="lev2 toc-item"><a href="#Exercice-24-:-reduit" data-toc-modified-id="Exercice-24-:-reduit-49"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>Exercice 24 : <code>reduit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-25-:-somme,-produit" data-toc-modified-id="Exercice-25-:-somme,-produit-410"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>Exercice 25 : <code>somme</code>, <code>produit</code></a></div><div class="lev2 toc-item"><a href="#Exercice-26-:-miroir-version-2" data-toc-modified-id="Exercice-26-:-miroir-version-2-411"><span class="toc-item-num">4.11&nbsp;&nbsp;</span>Exercice 26 : <code>miroir</code> version 2</a></div><div class="lev1 toc-item"><a href="#Arbres" data-toc-modified-id="Arbres-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Arbres</a></div><div class="lev2 toc-item"><a href="#Exercice-27" data-toc-modified-id="Exercice-27-51"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exercice 27</a></div><div class="lev2 toc-item"><a href="#Exercice-28" data-toc-modified-id="Exercice-28-52"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Exercice 28</a></div><div class="lev2 toc-item"><a href="#Exercice-29" data-toc-modified-id="Exercice-29-53"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Exercice 29</a></div><div class="lev2 toc-item"><a href="#Exercice-30" data-toc-modified-id="Exercice-30-54"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Exercice 30</a></div><div class="lev1 toc-item"><a href="#Parcours-d'arbres-binaires" data-toc-modified-id="Parcours-d'arbres-binaires-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Parcours d'arbres binaires</a></div><div class="lev2 toc-item"><a href="#Exercice-31" data-toc-modified-id="Exercice-31-61"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exercice 31</a></div><div class="lev2 toc-item"><a href="#Exercice-32-:-Parcours-naifs-(complexité-quadratique)" data-toc-modified-id="Exercice-32-:-Parcours-naifs-(complexité-quadratique)-62"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Exercice 32 : Parcours naifs (complexité quadratique)</a></div><div class="lev2 toc-item"><a href="#Exercice-33-:-Parcours-linéaires" data-toc-modified-id="Exercice-33-:-Parcours-linéaires-63"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Exercice 33 : Parcours linéaires</a></div><div class="lev2 toc-item"><a href="#Exercice-34-:-parcours-en-largeur-et-en-profondeur" data-toc-modified-id="Exercice-34-:-parcours-en-largeur-et-en-profondeur-64"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Exercice 34 : parcours en largeur et en profondeur</a></div><div class="lev2 toc-item"><a href="#Exercice-35-et-fin" data-toc-modified-id="Exercice-35-et-fin-65"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Exercice 35 et fin</a></div><div class="lev3 toc-item"><a href="#Reconstruction-depuis-le-parcours-prefixe" data-toc-modified-id="Reconstruction-depuis-le-parcours-prefixe-651"><span class="toc-item-num">6.5.1&nbsp;&nbsp;</span>Reconstruction depuis le parcours prefixe</a></div><div class="lev3 toc-item"><a href="#Reconstruction-depuis-le-parcours-en-largeur" data-toc-modified-id="Reconstruction-depuis-le-parcours-en-largeur-652"><span class="toc-item-num">6.5.2&nbsp;&nbsp;</span>Reconstruction depuis le parcours en largeur</a></div><div class="lev1 toc-item"><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></div>
+# <h1>Table of Contents<span class="tocSkip"></span></h1>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info" data-toc-modified-id="TP-2---Programmation-pour-la-préparation-à-l'agrégation-maths-option-info-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>TP 2 - Programmation pour la préparation à l'agrégation maths option info</a></span></li><li><span><a href="#Listes" data-toc-modified-id="Listes-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Listes</a></span><ul class="toc-item"><li><span><a href="#Exercice-1-:-taille" data-toc-modified-id="Exercice-1-:-taille-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Exercice 1 : <code>taille</code></a></span></li><li><span><a href="#Exercice-2-:-concat" data-toc-modified-id="Exercice-2-:-concat-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercice 2 : <code>concat</code></a></span></li><li><span><a href="#Exercice-3-:-appartient" data-toc-modified-id="Exercice-3-:-appartient-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercice 3 : <code>appartient</code></a></span></li><li><span><a href="#Exercice-4-:-miroir" data-toc-modified-id="Exercice-4-:-miroir-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Exercice 4 : <code>miroir</code></a></span></li><li><span><a href="#Exercice-5-:-alterne" data-toc-modified-id="Exercice-5-:-alterne-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>Exercice 5 : <code>alterne</code></a></span></li><li><span><a href="#Exercice-6-:-nb_occurrences" data-toc-modified-id="Exercice-6-:-nb_occurrences-2.6"><span class="toc-item-num">2.6&nbsp;&nbsp;</span>Exercice 6 : <code>nb_occurrences</code></a></span></li><li><span><a href="#Exercice-7-:-pairs" data-toc-modified-id="Exercice-7-:-pairs-2.7"><span class="toc-item-num">2.7&nbsp;&nbsp;</span>Exercice 7 : <code>pairs</code></a></span></li><li><span><a href="#Exercice-8-:-range" data-toc-modified-id="Exercice-8-:-range-2.8"><span class="toc-item-num">2.8&nbsp;&nbsp;</span>Exercice 8 : <code>range</code></a></span></li><li><span><a href="#Exercice-9-:-premiers" data-toc-modified-id="Exercice-9-:-premiers-2.9"><span class="toc-item-num">2.9&nbsp;&nbsp;</span>Exercice 9 : <code>premiers</code></a></span></li></ul></li><li><span><a href="#Listes-simplement-chaînée-(manuellement-définies)" data-toc-modified-id="Listes-simplement-chaînée-(manuellement-définies)-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Listes simplement chaînée (manuellement définies)</a></span><ul class="toc-item"><li><span><a href="#La-classe-ListeChainee" data-toc-modified-id="La-classe-ListeChainee-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>La classe <code>ListeChainee</code></a></span></li><li><span><a href="#Exercice-1-:-taille" data-toc-modified-id="Exercice-1-:-taille-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Exercice 1 : <code>taille</code></a></span></li><li><span><a href="#Exercice-2-:-concat" data-toc-modified-id="Exercice-2-:-concat-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 2 : <code>concat</code></a></span></li><li><span><a href="#Exercice-3-:-appartient" data-toc-modified-id="Exercice-3-:-appartient-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Exercice 3 : <code>appartient</code></a></span></li><li><span><a href="#Exercice-4-:-miroir" data-toc-modified-id="Exercice-4-:-miroir-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Exercice 4 : <code>miroir</code></a></span></li><li><span><a href="#Exercice-5-:-alterne" data-toc-modified-id="Exercice-5-:-alterne-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Exercice 5 : <code>alterne</code></a></span></li><li><span><a href="#Exercice-6-:-nb_occurrences" data-toc-modified-id="Exercice-6-:-nb_occurrences-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Exercice 6 : <code>nb_occurrences</code></a></span></li><li><span><a href="#Exercice-7-:-pairs" data-toc-modified-id="Exercice-7-:-pairs-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>Exercice 7 : <code>pairs</code></a></span></li><li><span><a href="#Exercice-8-:-range" data-toc-modified-id="Exercice-8-:-range-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>Exercice 8 : <code>range</code></a></span></li><li><span><a href="#Exercice-9-:-premiers" data-toc-modified-id="Exercice-9-:-premiers-3.10"><span class="toc-item-num">3.10&nbsp;&nbsp;</span>Exercice 9 : <code>premiers</code></a></span></li></ul></li><li><span><a href="#Quelques-tris-par-comparaison" data-toc-modified-id="Quelques-tris-par-comparaison-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Quelques tris par comparaison</a></span><ul class="toc-item"><li><span><a href="#Exercice-10-:-Tri-insertion" data-toc-modified-id="Exercice-10-:-Tri-insertion-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercice 10 : Tri insertion</a></span></li><li><span><a href="#Exercice-11-:-Tri-insertion-générique" data-toc-modified-id="Exercice-11-:-Tri-insertion-générique-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Exercice 11 : Tri insertion générique</a></span></li><li><span><a href="#Exercice-12-:-Tri-selection" data-toc-modified-id="Exercice-12-:-Tri-selection-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Exercice 12 : Tri selection</a></span></li><li><span><a href="#Exercices-13,-14,-15-:-Tri-fusion" data-toc-modified-id="Exercices-13,-14,-15-:-Tri-fusion-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Exercices 13, 14, 15 : Tri fusion</a></span></li><li><span><a href="#Comparaisons" data-toc-modified-id="Comparaisons-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Comparaisons</a></span></li></ul></li><li><span><a href="#Listes-:-l'ordre-supérieur" data-toc-modified-id="Listes-:-l'ordre-supérieur-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Listes : l'ordre supérieur</a></span><ul class="toc-item"><li><span><a href="#Exercice-16-:-applique" data-toc-modified-id="Exercice-16-:-applique-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exercice 16 : <code>applique</code></a></span></li><li><span><a href="#Exercice-17" data-toc-modified-id="Exercice-17-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Exercice 17</a></span></li><li><span><a href="#Exercice-18-:-itere" data-toc-modified-id="Exercice-18-:-itere-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Exercice 18 : <code>itere</code></a></span></li><li><span><a href="#Exercice-19" data-toc-modified-id="Exercice-19-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Exercice 19</a></span></li><li><span><a href="#Exercice-20-:-qqsoit-et-ilexiste" data-toc-modified-id="Exercice-20-:-qqsoit-et-ilexiste-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Exercice 20 : <code>qqsoit</code> et <code>ilexiste</code></a></span></li><li><span><a href="#Exercice-21-:-appartient-version-2" data-toc-modified-id="Exercice-21-:-appartient-version-2-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>Exercice 21 : <code>appartient</code> version 2</a></span></li><li><span><a href="#Exercice-22-:-filtre" data-toc-modified-id="Exercice-22-:-filtre-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>Exercice 22 : <code>filtre</code></a></span></li><li><span><a href="#Exercice-23" data-toc-modified-id="Exercice-23-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>Exercice 23</a></span></li><li><span><a href="#Exercice-24-:-reduit" data-toc-modified-id="Exercice-24-:-reduit-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>Exercice 24 : <code>reduit</code></a></span></li><li><span><a href="#Exercice-25-:-somme,-produit" data-toc-modified-id="Exercice-25-:-somme,-produit-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>Exercice 25 : <code>somme</code>, <code>produit</code></a></span></li><li><span><a href="#Exercice-26-:-miroir-version-2" data-toc-modified-id="Exercice-26-:-miroir-version-2-5.11"><span class="toc-item-num">5.11&nbsp;&nbsp;</span>Exercice 26 : <code>miroir</code> version 2</a></span></li></ul></li><li><span><a href="#Arbres" data-toc-modified-id="Arbres-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Arbres</a></span><ul class="toc-item"><li><span><a href="#Exercice-27" data-toc-modified-id="Exercice-27-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exercice 27</a></span></li><li><span><a href="#Exercice-28" data-toc-modified-id="Exercice-28-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Exercice 28</a></span></li><li><span><a href="#Exercice-29" data-toc-modified-id="Exercice-29-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Exercice 29</a></span></li><li><span><a href="#Exercice-30" data-toc-modified-id="Exercice-30-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Exercice 30</a></span></li></ul></li><li><span><a href="#Parcours-d'arbres-binaires" data-toc-modified-id="Parcours-d'arbres-binaires-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Parcours d'arbres binaires</a></span><ul class="toc-item"><li><span><a href="#Exercice-31" data-toc-modified-id="Exercice-31-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Exercice 31</a></span></li><li><span><a href="#Exercice-32-:-Parcours-naifs-(complexité-quadratique)" data-toc-modified-id="Exercice-32-:-Parcours-naifs-(complexité-quadratique)-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Exercice 32 : Parcours naifs (complexité quadratique)</a></span></li><li><span><a href="#Exercice-33-:-Parcours-linéaires" data-toc-modified-id="Exercice-33-:-Parcours-linéaires-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>Exercice 33 : Parcours linéaires</a></span></li><li><span><a href="#Exercice-34-:-parcours-en-largeur-et-en-profondeur" data-toc-modified-id="Exercice-34-:-parcours-en-largeur-et-en-profondeur-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>Exercice 34 : parcours en largeur et en profondeur</a></span></li><li><span><a href="#Exercice-35-et-fin" data-toc-modified-id="Exercice-35-et-fin-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>Exercice 35 et fin</a></span><ul class="toc-item"><li><span><a href="#Reconstruction-depuis-le-parcours-prefixe" data-toc-modified-id="Reconstruction-depuis-le-parcours-prefixe-7.5.1"><span class="toc-item-num">7.5.1&nbsp;&nbsp;</span>Reconstruction depuis le parcours prefixe</a></span></li><li><span><a href="#Reconstruction-depuis-le-parcours-en-largeur" data-toc-modified-id="Reconstruction-depuis-le-parcours-en-largeur-7.5.2"><span class="toc-item-num">7.5.2&nbsp;&nbsp;</span>Reconstruction depuis le parcours en largeur</a></span></li></ul></li></ul></li><li><span><a href="#Conclusion" data-toc-modified-id="Conclusion-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Conclusion</a></span></li></ul></div>
 
 # # TP 2 - Programmation pour la préparation à l'agrégation maths option info
 # - En Python, version 3.
@@ -20,24 +20,12 @@ print(version)
 
 # ## Exercice 1 : `taille`
 
-# In[11]:
+# In[12]:
 
 
 from typing import TypeVar, List
 _a = TypeVar('alpha')
 
-# O(n^2) temps, O(n) espace
-def taille(liste : List[_a]) -> int:
-    if not liste:
-        return 0
-    else:
-        queue = liste[1:]
-        return 1 + taille(queue)
-
-taille([])
-taille([1, 2, 3])
-
-# O(n) temps, O(1) espace
 def taille(liste : List[_a]) -> int:
     longueur = 0
     for _ in liste:
@@ -46,12 +34,6 @@ def taille(liste : List[_a]) -> int:
 
 taille([])
 taille([1, 2, 3])
-
-
-# In[12]:
-
-
-taille("OKOK")
 
 
 # In[7]:
@@ -96,7 +78,7 @@ concatene([1, 2], ["pas", "entier", "?"])
 
 # ## Exercice 3 : `appartient`
 
-# In[3]:
+# In[21]:
 
 
 from typing import TypeVar, List
@@ -114,26 +96,7 @@ appartient(1, [1, 2, 3])
 appartient(4, [1, 2, 3])
 
 
-# In[4]:
-
-
-from typing import TypeVar, List
-_a = TypeVar('alpha')
-
-def appartient2(x : _a, liste : List[_a]) -> bool:
-    if not liste:
-        return False
-    if x == liste[0]:
-        return True
-    return appartient2(x, liste[1:])  # récursivement, pas récursif terminal
-
-appartient2(1, [])
-appartient2(1, [1])
-appartient2(1, [1, 2, 3])
-appartient2(4, [1, 2, 3])
-
-
-# In[5]:
+# In[22]:
 
 
 1 in []
@@ -145,13 +108,11 @@ appartient2(4, [1, 2, 3])
 # Notre implémentation est évidemment plus lente que le test `x in liste` de la librarie standard...
 # Mais pas tant :
 
-# In[8]:
+# In[23]:
 
 
-import random
-get_ipython().run_line_magic('timeit', 'random.randint(0, 500) in list(range(1000))')
-get_ipython().run_line_magic('timeit', 'appartient(random.randint(0, 500), list(range(1000)))')
-get_ipython().run_line_magic('timeit', 'appartient2(random.randint(0, 500), list(range(1000)))')
+get_ipython().run_line_magic('timeit', 'appartient(1000, list(range(10000)))')
+get_ipython().run_line_magic('timeit', '1000 in list(range(10000))')
 
 
 # ## Exercice 4 : `miroir`
@@ -188,7 +149,7 @@ get_ipython().run_line_magic('timeit', '[2, 3, 5, 7, 11][::-1]')
 
 # La sémantique n'était pas très claire, mais on peut imaginer quelque chose comme ça :
 
-# In[9]:
+# In[30]:
 
 
 from typing import TypeVar, List
@@ -413,11 +374,625 @@ premiers(100)
 
 
 # ----
+# # Listes simplement chaînée (manuellement définies)
+# 
+# Comme ces exercices étaient un peu foireux à écrire avec les "*listes*" de Python, qui **ne sont pas des listes simplement chaînées**, je propose une autre solution où l'on va définir une petite classe qui représentera une liste simplement chaînée, et on va écrire les fonctions demandées avec cette classe.
+
+# ## La classe `ListeChainee`
+# 
+# On va supposer que les listes que l'on représentera ne contiendront pas la valeur `None`, qui est utilisée pour représenter l'absence de tête et/ou de queue de la liste.
+
+# In[173]:
+
+
+class ListeChainee():
+    def __init__(self, hd=None, tl=None):
+        self.hd = hd
+        self.tl = tl
+    
+    def __repr__(self) -> str:
+        if self.tl is None:
+            if self.hd is None:
+                return "[]"
+            else:
+                return f"{self.hd} :: []"
+        else:
+            return f"{self.hd} :: {self.tl}"
+    
+    def jolie(self) -> str:
+        if self.tl is None:
+            if self.hd is None:
+                return "[]"
+            else:
+                return f"[{self.hd}]"
+        else:
+            j = self.tl.jolie()
+            j = j.replace("[", "").replace("]", "")
+            if j == "":
+                return f"[{self.hd}]"
+            else:
+                return f"[{self.hd}, {j}]"
+
+
+# In[174]:
+
+
+# équivalent à :: en OCaml
+def insert(hd, tl: ListeChainee) -> ListeChainee:
+    """ Insère hd en début de la liste chainée tl."""
+    return ListeChainee(hd=hd, tl=tl)
+
+
+# In[175]:
+
+
+# liste vide, puis des listes plus grandes
+vide = ListeChainee()   # []
+l_1   = insert(1, vide)  # 1 :: [] ~= [1]
+l_12  = insert(2, l_1)   # 2 :: 1 :: [] ~= [2, 1]
+l_123 = insert(3, l_12)  # 3 :: 2 :: 1 :: []
+
+
+# In[176]:
+
+
+print(vide)     # []
+print(l_1)      # 1 :: []
+print(l_12)     # 2 :: 1 :: []
+print(l_123)    # 3 :: 2 :: 1 :: []
+
+
+# In[177]:
+
+
+print(vide.jolie())     # []
+print(l_1.jolie())      # [1]
+print(l_12.jolie())     # [2, 1]
+print(l_123.jolie())    # [3, 2, 1]
+
+
+# ## Exercice 1 : `taille`
+# 
+# Par exemple la longueur sera bien en O(n) si n=taille(liste) avec cette approche récursive :
+
+# In[149]:
+
+
+from typing import Optional
+
+
+# In[150]:
+
+
+def taille(liste: Optional[ListeChainee]) -> int:
+    if liste is None:
+        return 0
+    elif liste.tl is None:
+        return 0 if liste.hd is None else 1
+    return 1 + taille(liste.tl)
+
+
+# In[151]:
+
+
+print(taille(vide))   # 0
+print(taille(l_1))    # 1
+print(taille(l_12))   # 2
+print(taille(l_123))  # 3
+
+
+# ## Exercice 2 : `concat`
+# 
+# Je vais déjà commencer par écrire une fonction `copy` qui permet de copier récursivement une liste simplement chaînée, pour être sûr que l'on ne modifie pas en place une des listes données en argument.
+
+# In[152]:
+
+
+def copy(liste: ListeChainee) -> ListeChainee:
+    if liste.tl is None:
+        return ListeChainee(hd=liste.hd, tl=None)
+    else:
+        return ListeChainee(hd=liste.hd, tl=copy(liste.tl))
+
+
+# On peut vérifier que cela marche en regardant, par exemple, l'`id` de deux objets si le deuxième est une copie du premier : les `id` seront bien différents.
+
+# In[153]:
+
+
+print(id(vide))
+print(id(copy(vide)))
+
+
+# Et donc pour concaténer deux chaînes, c'est facile :
+
+# In[154]:
+
+
+def concat(liste1: ListeChainee, liste2: ListeChainee) -> ListeChainee:
+    if taille(liste1) == 0:
+        return liste2
+    elif taille(liste2) == 0:
+        return liste1
+    # nouvelle liste : comme ça changer queue.tl ne modifie PAS liste1
+    resultat = copy(liste1)
+    queue = resultat
+    while taille(queue.tl) > 0:
+        queue = queue.tl
+    assert taille(queue.tl) == 0
+    queue.tl = ListeChainee(hd=liste2.hd, tl=liste2.tl)
+    return resultat
+
+
+# In[156]:
+
+
+print(concat(vide, l_1))
+print(vide)  # pas modifiée : []
+print(l_1)   # pas modifiée : 1 :: []
+
+
+# In[135]:
+
+
+concat(l_1, l_12)  # 1 :: 2 :: 1 :: []
+
+
+# In[136]:
+
+
+concat(l_1, l_123)  # 1 :: 3 :: 2 :: 1 :: []
+
+
+# In[137]:
+
+
+concat(l_1, vide)   # 1 :: []
+
+
+# In[138]:
+
+
+concat(l_12, vide)   # 2 :: 1 :: []
+
+
+# In[139]:
+
+
+concat(l_12, l_1)   # 2 :: 1 :: 1 :: []
+
+
+# In[140]:
+
+
+concat(l_123, l_123)   # 3 :: 2 :: 1 :: 3 :: 2 :: 1 :: []
+
+
+# ## Exercice 3 : `appartient`
+# 
+# C'est en complexité linéaire dans le pire des cas.
+
+# In[141]:
+
+
+def appartient(x, liste: ListeChainee) -> bool:
+    if liste.hd is None:
+        return False
+    else:
+        if liste.hd == x:
+            return True
+        else:
+            return appartient(x, liste.tl)
+
+
+# In[144]:
+
+
+assert appartient(0, vide)  == False
+assert appartient(0, l_1)   == False
+assert appartient(0, l_12)  == False
+assert appartient(0, l_123) == False
+assert appartient(1, l_1)   == True
+assert appartient(1, l_12)  == True
+assert appartient(1, l_123) == True
+assert appartient(2, l_1)   == False
+assert appartient(2, l_12)  == True
+assert appartient(2, l_123) == True
+assert appartient(3, l_1)   == False
+assert appartient(3, l_12)  == False
+assert appartient(3, l_123) == True
+
+
+# ## Exercice 4 : `miroir`
+# 
+# Ce sera en temps quadratique, à cause de toutes les recopies :
+
+# In[178]:
+
+
+def miroir(liste: ListeChainee) -> ListeChainee:
+    if taille(liste) <= 1:
+        return copy(liste)
+    else:
+        hd, tl = liste.hd, copy(liste.tl)  # O(n)
+        juste_hd = ListeChainee(hd=hd, tl=None)  # O(1)
+        return concat(miroir(tl), juste_hd)  # O(n^2) + O(n) à cause de concat
+
+
+# In[255]:
+
+
+print(miroir(vide))   # [] => []
+print(miroir(l_1))    # [1] => [1]
+print(miroir(l_12))   # [2, 1] => [1, 2]
+print(miroir(l_123))  # [3, 2, 1] => [1, 2, 3]
+
+
+# ## Exercice 5 : `alterne`
+
+# La sémantique n'était pas très claire, mais on peut imaginer quelque chose comme ça :
+# 
+# - si une des deux listes est vide, on prend l'autre,
+# - si les deux ne sont pas vide, on prend le début de l1, de l2, puis alterne(queue l1, queue l2)
+
+# In[256]:
+
+
+def alterne(liste1: ListeChainee, liste2: ListeChainee) -> ListeChainee:
+    if taille(liste1) == 0:
+        return copy(liste2)  # on recopie pour ne rien modifier
+    if taille(liste2) == 0:
+        return copy(liste1)  # on recopie pour ne rien modifier
+    h1, t1 = liste1.hd, liste1.tl  
+    h2, t2 = liste2.hd, liste2.tl
+    return insert(h1, insert(h2, alterne(t1, t2)))
+
+
+# In[257]:
+
+
+print(alterne(l_1, l_12))     # [1, 2, 1]
+print(alterne(l_12, l_1))     # [2, 1, 1]
+print(alterne(l_123, l_1))    # [3, 1, 2, 1]
+print(alterne(l_123, l_12))   # [3, 2, 2, 1, 1]
+print(alterne(l_123, l_123))  # [3, 3, 2, 2, 1, 1]
+print(alterne(l_12, l_123))   # [2, 3, 1, 2, 1]
+print(alterne(l_1, l_123))    # [1, 3, 2, 1]
+
+
+# La complexité est quadratique en $\mathcal{O}((\max(|\text{liste 1}|, |\text{liste 2}|)^2)$ à cause des recopies.
+
+# ## Exercice 6 : `nb_occurrences`
+# 
+# Ce sera en temps linéaire, dans tous les cas.
+# 
+
+# In[264]:
+
+
+def nb_occurrences(x, liste: ListeChainee) -> int:
+    if liste is None or liste.hd is None:
+        return 0
+    else:
+        count = 1 if x == liste.hd else 0
+    if liste.tl is None:
+        return count
+    else:
+        return count + nb_occurrences(x, liste.tl)
+
+
+# In[265]:
+
+
+assert nb_occurrences(1, vide) == 0
+assert nb_occurrences(1, l_1) == 1
+assert nb_occurrences(1, l_12) == 1
+assert nb_occurrences(2, l_12) == 1
+assert nb_occurrences(1, l_123) == 1
+assert nb_occurrences(2, l_123) == 1
+assert nb_occurrences(3, l_123) == 1
+assert nb_occurrences(1, concat(l_1, l_1)) == 2
+assert nb_occurrences(2, concat(l_1, l_12)) == 1
+assert nb_occurrences(3, concat(l_12, l_1)) == 0
+assert nb_occurrences(1, concat(l_12, l_12)) == 2
+assert nb_occurrences(2, concat(l_12, l_12)) == 2
+assert nb_occurrences(1, concat(l_123, concat(l_1, l_1))) == 3
+assert nb_occurrences(2, concat(l_123, concat(l_1, l_12))) == 2
+assert nb_occurrences(3, concat(l_123, concat(l_12, l_1))) == 1
+assert nb_occurrences(3, concat(l_123, concat(l_12, l_12))) == 1
+
+
+# On peut facilement écrire une variante qui sera récursive terminale ("tail recursive") :
+
+# In[266]:
+
+
+def nb_occurrences(x, liste: ListeChainee, count=0) -> int:
+    if liste is None or liste.hd is None:
+        return count
+    else:
+        count += 1 if x == liste.hd else 0
+        if liste.tl is None:
+            return count
+        else:
+            return nb_occurrences(x, liste.tl, count=count)
+
+
+# ## Exercice 7 : `pairs`
+# 
+# C'est un filtrage par le prédicat `x % 2 == 0`.
+# Autant écrire la fonction de filtrage générique :
+
+# In[268]:
+
+
+def filtrer(liste: ListeChainee, predicate) -> ListeChainee:
+    if liste is None or liste.hd is None:  # liste de taille 0
+        return ListeChainee(hd=None, tl=None)
+    elif liste.tl is None:  # liste de taille 1
+        if predicate(liste.hd):  # on renvoie [hd]
+            return ListeChainee(hd=liste.hd, tl=None)
+        else:  # on renvoie []
+            return ListeChainee(hd=None, tl=None)
+    else:  # liste de taille >= 2
+        if predicate(liste.hd):
+            return insert(liste.hd, filtrer(liste.tl, predicate))
+        else:
+            return filtrer(liste.tl, predicate)
+
+
+# Et donc c'est rapide :
+
+# In[269]:
+
+
+def pairs(liste: ListeChainee) -> ListeChainee:
+    def predicate(x):
+        return (x % 2) == 0
+    # aussi : predicate = lambda x: (x % 2) == 0
+    return filtrer(liste, predicate)
+
+
+# In[270]:
+
+
+def impairs(liste: ListeChainee) -> ListeChainee:
+    def predicate(x):
+        return (x % 2) == 1
+    return filtrer(liste, predicate)
+
+
+# In[206]:
+
+
+print(pairs(vide))   # []
+print(pairs(l_1))    # []
+print(pairs(l_12))   # [2]
+print(pairs(l_123))  # [2]
+print(pairs(insert(4, insert(6, insert(8, l_123)))))  # [4, 6, 8, 2]
+print(pairs(insert(5, insert(6, insert(8, l_123)))))  # [6, 8, 2]
+
+
+# In[272]:
+
+
+print(impairs(vide))   # []
+print(impairs(l_1))    # [1]
+print(impairs(l_12))   # [1]
+print(impairs(l_123))  # [3, 1]
+print(impairs(insert(4, insert(6, insert(8, l_123)))))  # [3, 1]
+print(impairs(insert(5, insert(6, insert(8, l_123)))))  # [5, 3, 1]
+
+
+# ## Exercice 8 : `range`
+# 
+# Ce sera de complexité temporelle linéaire :
+
+# In[288]:
+
+
+def myrange(n: int) -> ListeChainee:
+    if n <= 0:
+        return ListeChainee(hd=None, tl=None)
+    elif n == 1:
+        return ListeChainee(hd=1, tl=None)
+        # return insert(1, vide)
+    else:
+        return ListeChainee(hd=n, tl=myrange(n-1))
+
+
+# In[289]:
+
+
+print(myrange(1))  # [1]
+print(myrange(2))  # [1, 2]
+print(myrange(3))  # [1, 2, 3]
+print(myrange(4))  # [1, 2, 3, 4]
+
+
+# Si on veut les avoir dans l'ordre croissant, il faudrait utiliser `miroir` qui est quadratique.
+# Autant écrire directement une fonction `intervale(a, b)` qui renvoie la liste simplement chaînée contenant `a :: (a+1) :: ... :: b` :
+
+# In[216]:
+
+
+def intervale(a: int, b: Optional[int]=None) -> ListeChainee:
+    if b is None:
+        a, b = 1, a
+    n = b - a
+    if n < 0:     # [a..b] = []
+        return ListeChainee(hd=None, tl=None)
+    elif n == 0:  # [a..b] = [a]
+        return ListeChainee(hd=a, tl=None)
+    else:         # [a..b] = a :: [a+1..b]
+        return ListeChainee(hd=a, tl=intervale(a+1, b))
+
+
+# In[217]:
+
+
+print(intervale(10))      # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(intervale(1, 4))    # [1, 2, 3, 4]
+print(intervale(13, 13))  # [13]
+print(intervale(13, 10))  # []
+
+
+# Une autre approche est d'écrire la fonction `mymap` et de dire que
+# ```python
+# intervale_bis(a, b) = miroir(mymap(lambda x: x + (a - 1), myrange(b - a + 1)))
+# ```
+
+# In[277]:
+
+
+from typing import Callable
+
+def mymap(fonction: Callable, liste: ListeChainee) -> ListeChainee:
+    if liste is None or liste.hd is None:  # liste de taille 0
+        return ListeChainee(hd=None, tl=None)
+    elif liste.tl is None:  # liste de taille 1
+        return ListeChainee(hd=fonction(liste.hd), tl=None)
+    else:  # liste de taille >= 2
+        return ListeChainee(hd=fonction(liste.hd), tl=mymap(fonction, liste.tl))
+
+
+# In[281]:
+
+
+print(myrange(10))
+print(mymap(lambda x: x, myrange(10)))
+
+
+# In[290]:
+
+
+def intervale_bis(a: int, b: int) -> ListeChainee:
+    return miroir(mymap(lambda x: x + (a - 1), myrange(b - a + 1)))
+
+
+# In[291]:
+
+
+print(intervale_bis(1, 10))   # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(intervale_bis(1, 4))    # [1, 2, 3, 4]
+print(intervale_bis(13, 13))  # [13]
+print(intervale_bis(13, 10))  # []
+
+
+# ## Exercice 9 : `premiers`
+# Plusieurs possibilités. Un filtre d'Erathosthène marche bien, ou une filtrage.
+# Je ne vais pas utiliser de tableaux donc on est un peu réduit d'utiliser une filtrage.
+# 
+# On a besoin des fonctions suivantes :
+# 
+# - calculer la racine entière de $n$, très facile par une boucle,
+# - calculer les nombres impairs entre 5 et $\lfloor \sqrt{n} \rfloor$,
+# - filtrer cette liste de nombres impairs pour garder ceux qui divisent $n$,
+# - et dire que $n$ est premier s'il a un diviseur non trivial.
+
+# In[293]:
+
+
+def racine(n: int) -> int:
+    i = 1
+    for i in range(n + 1):
+        if i*i > n:
+            return i - 1
+    return i
+
+print(racine(1))  # 1
+print(racine(5))  # 2
+print(racine(102))  # 10
+print(racine(120031))  # 346
+
+
+# In[294]:
+
+
+def intervale2(a: int, b: Optional[int]=None, pas: int=1) -> ListeChainee:
+    if b is None:
+        a, b = 1, a
+    n = b - a
+    if n < 0:     # [a..b::p] = []
+        return ListeChainee(hd=None, tl=None)
+    elif n == 0:  # [a..b::p] = [a]
+        return ListeChainee(hd=a, tl=None)
+    else:         # [a..b::p] = a :: [a+p..b::p]
+        return ListeChainee(hd=a, tl=intervale2(a + pas, b=b, pas=pas))
+
+
+# In[295]:
+
+
+print(intervale2(1, 10, 2))      # [1, 3, 5, 7, 9]
+print(intervale2(1, 4, 2))    # [1, 3]
+print(intervale2(13, 13, 2))  # [13]
+print(intervale2(13, 10, 2))  # []
+
+
+# Une version purement fonctionnelle est moins facile qu'une version impérative avec une référence booléenne.
+
+# In[296]:
+
+
+def estDivisible(n: int, k: int) -> bool:
+    return (n % k) == 0
+
+
+# In[236]:
+
+
+estDivisible(10, 2)
+estDivisible(10, 3)
+estDivisible(10, 4)
+estDivisible(10, 5)
+
+
+# On est prêt à écrire `estPremier` :
+
+# In[247]:
+
+
+def estPremier(n : int) -> bool:
+    return taille(filtrer(intervale2(2, racine(n), 1), lambda k: estDivisible(n, k))) == 0
+
+
+# En effet il suffit de construire d'abord la liste des entiers impairs de 2 à $\lfloor \sqrt{n} \rfloor$, de les filtrer par ceux qui divisent $n$, et de vérifier si on a aucun diviseur (`taille(..) == 0`) auquel cas $n$ est premier, ou si $n$ a au moins un diviseur auquel cas $n$ n'est pas premier.
+
+# In[254]:
+
+
+for n in range(2, 20):
+    print("Petits diviseurs de", n, " -> ", filtrer(intervale2(2, racine(n), 1), lambda k: estDivisible(n, k)))
+
+
+# On voit dans l'exemple ci dessus les nombres premiers comme ceux n'ayant aucun diviseurs, et les nombres non premiers comme ceux ayant au moins un diviseur.
+
+# In[249]:
+
+
+def premiers(n : int) -> ListeChainee:
+    return filtrer(intervale2(2, n, 1), estPremier)
+
+
+# In[250]:
+
+
+premiers(10)  # [2, 3, 5, 7]
+
+
+# In[251]:
+
+
+premiers(100)  # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+
+
+# ----
 # # Quelques tris par comparaison
 
 # On fera les tris en ordre croissant.
 
-# In[27]:
+# In[112]:
 
 
 test = [3, 1, 8, 4, 5, 6, 1, 2]
@@ -425,13 +1000,12 @@ test = [3, 1, 8, 4, 5, 6, 1, 2]
 
 # ## Exercice 10 : Tri insertion
 
-# In[28]:
+# In[113]:
 
 
 from typing import TypeVar, List
 _a = TypeVar('alpha')
 
-# Temps O(n^2) à cause des recopies, espace O(n)
 def insere(x : _a, liste : List[_a]) -> List[_a]:
     if len(liste) == 0:
         return [x]
@@ -443,10 +1017,9 @@ def insere(x : _a, liste : List[_a]) -> List[_a]:
             return [t] + insere(x, q)
 
 
-# In[29]:
+# In[114]:
 
 
-# Temps O(n^3) à cause des recopies, espace O(n^2)
 def tri_insertion(liste : List[_a]) -> List[_a]:
     if len(liste) == 0:
         return []
@@ -455,17 +1028,17 @@ def tri_insertion(liste : List[_a]) -> List[_a]:
         return insere(t, tri_insertion(q))
 
 
-# In[30]:
+# In[115]:
 
 
 tri_insertion(test)
 
 
-# Complexité en temps $\mathcal{O}(n^2)$ si on faisait les recopies correctement, $\mathcal{O}(n^3)$ ici.
+# Complexité en temps $\mathcal{O}(n^2)$.
 
 # ## Exercice 11 : Tri insertion générique
 
-# In[31]:
+# In[121]:
 
 
 from typing import TypeVar, List, Callable
@@ -482,7 +1055,7 @@ def insere2(ordre : Callable[[_a, _a], bool], x : _a, liste : List[_a]) -> List[
             return [t] + insere2(ordre, x, q)
 
 
-# In[32]:
+# In[122]:
 
 
 def tri_insertion2(ordre : Callable[[_a, _a], bool], liste : List[_a]) -> List[_a]:
@@ -493,25 +1066,25 @@ def tri_insertion2(ordre : Callable[[_a, _a], bool], liste : List[_a]) -> List[_
         return insere2(ordre, t, tri_insertion2(ordre, q))
 
 
-# In[33]:
+# In[123]:
 
 
 ordre_croissant = lambda x, y: x <= y
 
 
-# In[34]:
+# In[124]:
 
 
 tri_insertion2(ordre_croissant, test)
 
 
-# In[35]:
+# In[125]:
 
 
 ordre_decroissant = lambda x, y: x >= y
 
 
-# In[36]:
+# In[126]:
 
 
 tri_insertion2(ordre_decroissant, test)
@@ -519,7 +1092,7 @@ tri_insertion2(ordre_decroissant, test)
 
 # ## Exercice 12 : Tri selection
 
-# In[37]:
+# In[127]:
 
 
 from typing import TypeVar, List, Tuple
@@ -542,7 +1115,7 @@ def selectionne_min(liste : List[_a]) -> Tuple[_a, List[_a]]:
         return cherche_min(t, [], q)
 
 
-# In[38]:
+# In[129]:
 
 
 test
@@ -551,7 +1124,7 @@ selectionne_min(test)
 
 # (On voit que la liste `autre` a été inversée)
 
-# In[39]:
+# In[130]:
 
 
 def tri_selection(liste : List[_a]) -> List[_a]:
@@ -562,7 +1135,7 @@ def tri_selection(liste : List[_a]) -> List[_a]:
         return [mini] + tri_selection(autres)
 
 
-# In[40]:
+# In[131]:
 
 
 tri_selection(test)
@@ -572,7 +1145,7 @@ tri_selection(test)
 
 # ## Exercices 13, 14, 15 : Tri fusion
 
-# In[41]:
+# In[132]:
 
 
 from typing import TypeVar, List, Tuple
@@ -589,14 +1162,14 @@ def separe(liste : List[_a]) -> Tuple[List[_a], List[_a]]:
         return ([x] + a, [y] + b)
 
 
-# In[42]:
+# In[133]:
 
 
 test
 separe(test)
 
 
-# In[43]:
+# In[134]:
 
 
 def fusion(liste1 : List[_a], liste2 : List[_a]) -> List[_a]:
@@ -618,7 +1191,7 @@ def fusion(liste1 : List[_a], liste2 : List[_a]) -> List[_a]:
 fusion([1, 3, 7], [2, 3, 8])
 
 
-# In[44]:
+# In[136]:
 
 
 def tri_fusion(liste : List[_a]) -> List[_a]:
@@ -629,7 +1202,7 @@ def tri_fusion(liste : List[_a]) -> List[_a]:
         return fusion(tri_fusion(a), tri_fusion(b))
 
 
-# In[45]:
+# In[137]:
 
 
 tri_fusion(test)
@@ -639,7 +1212,7 @@ tri_fusion(test)
 
 # ## Comparaisons
 
-# In[46]:
+# In[138]:
 
 
 get_ipython().run_line_magic('timeit', 'tri_insertion(test)')
@@ -647,7 +1220,7 @@ get_ipython().run_line_magic('timeit', 'tri_selection(test)')
 get_ipython().run_line_magic('timeit', 'tri_fusion(test)')
 
 
-# In[47]:
+# In[152]:
 
 
 from sys import setrecursionlimit
@@ -655,19 +1228,7 @@ setrecursionlimit(100000)
 # nécessaire pour tester les différentes fonctions récursives sur de grosses listes
 
 
-# In[48]:
-
-
-test_random(10)
-
-
-# In[50]:
-
-
-import timeit
-
-
-# In[54]:
+# In[153]:
 
 
 import random
@@ -679,7 +1240,7 @@ for n in [10, 100, 1000]:
     print("\nFor n =", n)
     for tri in [tri_insertion, tri_selection, tri_fusion]:
         print("    and tri = {}".format(tri.__name__))
-        print(timeit.timeit("tri(test_random(n))", globals=globals(), number=1000))
+        get_ipython().run_line_magic('timeit', 'tri(test_random(n))')
 
 
 # - C'est assez pour vérifier que le tri fusion est **bien plus efficace** que les autres.
@@ -816,7 +1377,7 @@ get_ipython().run_line_magic('timeit', 'any(map(lambda x: (x % 2) == 0, [1, 2, 3
 # In[178]:
 
 
-def appartient_curri(x : _a) -> Callable[[List[_a]], bool]:
+def appartient_curry(x : _a) -> Callable[[List[_a]], bool]:
     return lambda liste: ilexiste(lambda y: x == y, liste)
 
 def appartient(x : _a, liste : List[_a]) -> bool:
@@ -833,7 +1394,7 @@ def toutes_egales(x : _a, liste : List[_a]) -> bool:
 # In[181]:
 
 
-appartient_curri(1)([1, 2, 3])
+appartient_curry(1)([1, 2, 3])
 
 appartient(1, [1, 2, 3])
 appartient(5, [1, 2, 3])
@@ -996,28 +1557,22 @@ miroir([2, 3, 5, 7, 11])
 
 # ## Exercice 27
 
-# In[82]:
+# In[1]:
 
 
 from typing import Dict, Optional, Tuple
 
 # Impossible de définir un type récursivement, pas comme en Caml
-arbre_bin = Dict[str, Optional[Tuple[arbre_bin, arbre_bin]]]
-
-
-# In[83]:
-
-
 arbre_bin = Dict[str, Optional[Tuple[Dict, Dict]]]
 
 
-# In[56]:
+# In[37]:
 
 
 from pprint import pprint
 
 
-# In[57]:
+# In[38]:
 
 
 arbre_test = {'Noeud': (
@@ -1032,7 +1587,7 @@ arbre_test = {'Noeud': (
     )}
 
 
-# In[58]:
+# In[39]:
 
 
 pprint(arbre_test)
@@ -1040,20 +1595,20 @@ pprint(arbre_test)
 
 # Avec une syntaxe améliorée, on se rapproche de très près de la syntaxe de Caml/OCaml :
 
-# In[59]:
+# In[40]:
 
 
 Feuille = {'Feuille': None}
 Noeud = lambda x, y : {'Noeud': (x, y)}
 
 
-# In[60]:
+# In[34]:
 
 
 arbre_test = Noeud(Noeud(Noeud(Feuille, Feuille), Feuille), Feuille)
 
 
-# In[61]:
+# In[36]:
 
 
 pprint(arbre_test)
@@ -1063,7 +1618,7 @@ pprint(arbre_test)
 
 # Compte le nombre de feuilles et de sommets.
 
-# In[62]:
+# In[5]:
 
 
 def taille(a : arbre_bin) -> int:
@@ -1076,7 +1631,7 @@ def taille(a : arbre_bin) -> int:
         return 1 + taille(x) + taille(y)
 
 
-# In[63]:
+# In[6]:
 
 
 taille(arbre_test)  # 7
@@ -1084,7 +1639,7 @@ taille(arbre_test)  # 7
 
 # ## Exercice 29
 
-# In[64]:
+# In[7]:
 
 
 def hauteur(a : arbre_bin) -> int:
@@ -1095,7 +1650,7 @@ def hauteur(a : arbre_bin) -> int:
         return 1 + max(hauteur(x), hauteur(y))
 
 
-# In[65]:
+# In[8]:
 
 
 hauteur(arbre_test)  # 3
@@ -1112,7 +1667,7 @@ hauteur(arbre_test)  # 3
 
 # ## Exercice 31
 
-# In[66]:
+# In[9]:
 
 
 from typing import TypeVar, Union, List
@@ -1126,7 +1681,7 @@ parcours = List[element_parcours]
 
 # ## Exercice 32 : Parcours naifs (complexité quadratique)
 
-# In[67]:
+# In[10]:
 
 
 def parcours_prefixe(a : arbre_bin) -> parcours:
@@ -1139,7 +1694,7 @@ def parcours_prefixe(a : arbre_bin) -> parcours:
 parcours_prefixe(arbre_test)
 
 
-# In[68]:
+# In[11]:
 
 
 def parcours_postfixe(a : arbre_bin) -> parcours:
@@ -1152,7 +1707,7 @@ def parcours_postfixe(a : arbre_bin) -> parcours:
 parcours_postfixe(arbre_test)
 
 
-# In[69]:
+# In[12]:
 
 
 def parcours_infixe(a : arbre_bin) -> parcours:
@@ -1165,13 +1720,13 @@ def parcours_infixe(a : arbre_bin) -> parcours:
 parcours_infixe(arbre_test)
 
 
-# Pourquoi ont-ils une complexité quadratique ? La concaténation (`@`) ne se fait pas en temps constant mais linéaire dans la taille de la plus longue liste.
+# Pourquoi ont-ils une complexité quadratique ? La concaténation (`@` en OCaml, `+` en Python) ne se fait pas en temps constant mais linéaire dans la taille de la plus longue liste.
 
 # ## Exercice 33 : Parcours linéaires
 # 
 # On ajoute une fonction auxiliaire et un argument `vus` qui est une liste qui stocke les élements observés dans l'ordre du parcours
 
-# In[70]:
+# In[13]:
 
 
 def parcours_prefixe2(a : arbre_bin) -> parcours:
@@ -1189,7 +1744,7 @@ def parcours_prefixe2(a : arbre_bin) -> parcours:
 parcours_prefixe2(arbre_test)
 
 
-# In[71]:
+# In[14]:
 
 
 def parcours_postfixe2(a : arbre_bin) -> parcours:
@@ -1208,7 +1763,7 @@ def parcours_postfixe2(a : arbre_bin) -> parcours:
 parcours_postfixe2(arbre_test)
 
 
-# In[72]:
+# In[15]:
 
 
 def parcours_infixe2(a : arbre_bin) -> parcours:
@@ -1231,7 +1786,7 @@ parcours_infixe2(arbre_test)
 
 # Pour utiliser une file de priorité (*priority queue*), on utilise le module [collections.deque](https://docs.python.org/3/library/collections.html#collections.deque).
 
-# In[73]:
+# In[16]:
 
 
 from collections import deque
@@ -1265,7 +1820,7 @@ parcours_largeur(arbre_test)
 
 # En remplaçant la file par une pile (une simple `list`), on obtient le parcours en profondeur, avec la même complexité.
 
-# In[74]:
+# In[17]:
 
 
 def parcours_profondeur(a : arbre_bin) -> parcours:
