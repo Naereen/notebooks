@@ -488,7 +488,6 @@ print(methode_longer_aleatoirement(A, B))
 # ### Autres exemples : six autre premiers quadrants, deux autres demi-droites
 # 
 # On fera ces autres exemples quand on aura les deux autres méthodes.
-# TODO
 
 # - Quadrant #3, b1 < a1 mais b2 > a2 et b2 >= b1 :
 
@@ -531,7 +530,7 @@ print(methode_longer_aleatoirement(A, B))
 
 # - Quadrant #6 :
 
-# In[220]:
+# In[ ]:
 
 
 A = (0, 0)
@@ -939,13 +938,13 @@ plot_4_differents_methods(A=A, B=B, pente=pente)
 
 # ## Autres pistes :
 # 
-# - généraliser à tous les cas d'une droite : verticale, horizontale, et les sept autre quadrants (ici, seulement $0 < \alpha < 1$ et $a_2 \leq b_2$) ;
+# - DONE généraliser à tous les cas d'une droite : verticale, horizontale, et les sept autre quadrants (ici, seulement $0 < \alpha < 1$ et $a_2 \leq b_2$) ;
 # 
-# - écrire une fonction permettant de visualiser cette méthode de Bresenham, et les autres méthodes, par exemple avec ipythonblocks (pratique mais pas possible le jour J des oraux), ou avec matplotlib (ce sera un peu plus long, mais disponible le jour J) ;
+# - DONE écrire une fonction permettant de visualiser cette méthode de Bresenham, et les autres méthodes, par exemple avec ipythonblocks (pratique mais pas possible le jour J des oraux), ou avec matplotlib (ce sera un peu plus long, mais disponible le jour J) ;
 # 
-# - généraliser l'algorithme à un cercle, par exemple, ou d'autres figures dont on connaît des équations et qu'on peut chercher à vouloir longer au plus près inférieurement, supérieurement, ou de façon hybride à la Bresenham ;
+# - TODO généraliser l'algorithme à un cercle, par exemple, ou d'autres figures dont on connaît des équations et qu'on peut chercher à vouloir longer au plus près inférieurement, supérieurement, ou de façon hybride à la Bresenham ;
 # 
-# - pour s'éloigner davantage du problème de tracés de droite, on peut implémenter des choses concernant les mots binaires (ultimement) périodiques (abbrégés en *mbup*) :
+# - TODO pour s'éloigner davantage du problème de tracés de droite, on peut implémenter des choses concernant les mots binaires (ultimement) périodiques (abbrégés en *mbup*) :
 # 
 #   + représentation d'un *mbup*, affichage ;
 #   + vérification qu'un mot binaire est bien équilibré : est-ce seulement possible, sachant que Déf.5 porte sur un mot infini ?
