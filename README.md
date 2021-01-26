@@ -43,6 +43,8 @@ You can also launch an interactive environment to play with the code by yourself
 
 - :fr: I corrected some maths & programming problems from the annals of the [CentraleSupelec national competitive](http://www.concours-centrale-supelec.fr/) exam (in France), in this notebook [Oraux_CentraleSupelec_PSI__Juin_2017.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Oraux_CentraleSupelec_PSI__Juin_2017.ipynb) ([on GitHub?](Oraux_CentraleSupelec_PSI__Juin_2017.ipynb)) (for [this kind of oral exam](http://www.concours-centrale-supelec.fr/CentraleSupelec/MultiY/C2015/)). Again in 2018, [Oraux_CentraleSupelec_PSI__Juin_2018.ipynb](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Oraux_CentraleSupelec_PSI__Juin_2018.ipynb) ([on GitHub?](Oraux_CentraleSupelec_PSI__Juin_2018.ipynb)).
 
+- :fr: [Ce notebook en français est un petit tutoriel pour apprendre à résoudre des problèmes/programmes linéaires en Python avec SciPy](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Mini_tutoriel_pour_la_resolution_de_programmes_lineaires_avec_Python__ENS_Rennes_2021.ipynb), pour le cours [ALGO2](http://people.irisa.fr/Francois.Schwarzentruber/algo2/) à [l'ENS Rennes](http://www.dit.ens-rennes.fr/) en janvier 2021.
+
 ### Numerical simulations for dice games (:fr: in French)
 - I also wrote some notebooks on numerical simulations of dice games :fr: Voir [ce sous-dossier](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/simus/) (ou [sur GitHub?](simus/)) / :gb: See [this sub-folder](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/simus/) (or [on GitHub?](simus/)).
 
