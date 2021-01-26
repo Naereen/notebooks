@@ -11,3 +11,5 @@ octave_kernel
 tqdm>=4.0
 numpy>=1.14
 matplotlib>=2.0
+scipy
+#networkx
