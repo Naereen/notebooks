@@ -18,6 +18,8 @@
 # - Date : 01/02/2021
 # - Cours : [ALGO2](http://people.irisa.fr/Francois.Schwarzentruber/algo2/) @ [ENS Rennes](http://www.dit.ens-rennes.fr/)
 
+# <span style="color:red;">Attention : ce notebook est déclaré avec le kernel Python, mais certaines sections (Java, OCaml et Rust) ont été exécutées avec le kernel correspondant. La coloration syntaxique multi-langage n'est pas (encore?) supportée, désolé d'avance.</span>
+
 # ---
 # ## Réponse en Java (par [un de mes élèves de L3 SIF](http://www.dit.ens-rennes.fr/))
 # 
@@ -86,7 +88,7 @@ get_ipython().run_cell_magic('bash', '', '# voir une commande Bash directement !
 # 
 # - Date et heure : 01/02/2021, 21h16
 
-# In[7]:
+# In[5]:
 
 
 get_ipython().run_cell_magic('bash', '', 'ncal February 2021')
@@ -94,13 +96,13 @@ get_ipython().run_cell_magic('bash', '', 'ncal February 2021')
 
 # En recherchant exactement cette chaîne "lu  1  8 15 22" et en excluant 29 des lignes trouvées, on obtient la réponse :
 
-# In[70]:
+# In[6]:
 
 
 get_ipython().run_cell_magic('bash', '', "time for ((annee=1994; annee<=2077; annee+=1)); do\n    ncal February $annee \\\n    | grep 'lu  1  8 15 22' \\\n    | grep -v 29;\ndone \\\n| wc -l")
 
 
-# In[73]:
+# In[7]:
 
 
 get_ipython().run_cell_magic('bash', '', "for ((annee=1994; annee<=2077; annee+=1)); do ncal February $annee | grep 'lu  1  8 15 22' | grep -v 29; done | wc -l")
@@ -114,13 +116,13 @@ get_ipython().run_cell_magic('bash', '', "for ((annee=1994; annee<=2077; annee+=
 # 
 # - Date et heure : lundi 01 février, 21h40.
 
-# In[11]:
+# In[1]:
 
 
 import calendar
 
 
-# In[66]:
+# In[2]:
 
 
 def filter_annee(annee):
@@ -130,7 +132,7 @@ def filter_annee(annee):
     ) == {(1, 0), (28, 6)}
 
 
-# In[67]:
+# In[3]:
 
 
 filter_annee(2020), filter_annee(2021), filter_annee(2022)
@@ -138,7 +140,7 @@ filter_annee(2020), filter_annee(2021), filter_annee(2022)
 
 # Et donc on a juste à compter les années, de 1994 à 2077 inclus, qui ne sont pas des années bissextiles et qui satisfont le filtre :
 
-# In[69]:
+# In[4]:
 
 
 get_ipython().run_cell_magic('time', '', "len(list(filter(filter_annee, ( annee\n        for annee in range(1994, 2077 + 1)\n        # if not calendar.isleap(annee) # en fait c'est inutile\n    )\n)))")
@@ -162,7 +164,7 @@ Sys.command "bash -c \"for ((annee=1994; annee<=2077; annee+=1)); do ncal Februa
 
 # On pourrait faire en calculant manuellement les quantièmes du 01/01/YYYY pour YYYY entre 1994 et 2077.
 
-# In[13]:
+# In[2]:
 
 
 type day = int
@@ -173,7 +175,7 @@ and  year = int
 type date = { d: day; q: dayofweek; m: month; y: year };;
 
 
-# In[55]:
+# In[3]:
 
 
 let is_not_bissextil (y: year) : bool =
@@ -181,7 +183,7 @@ let is_not_bissextil (y: year) : bool =
 (";")
 
 
-# In[56]:
+# In[4]:
 
 
 is_not_bissextil 2019;;
@@ -189,18 +191,19 @@ is_not_bissextil 2020;;
 is_not_bissextil 2021;;
 
 
-# In[99]:
+# In[7]:
 
 
+(* Ce Warning:8 est volontaire ! *)
 let length_of_month (m: month) (y: year) : int =
     match m with
     | 4 | 6 | 9 | 11 -> 30
     | 1 | 3 | 5 | 7 | 8 | 10 | 12 -> 31
-    | 2 -> if is_bissextil(y) then 28 else 29
+    | 2 -> if is_not_bissextil(y) then 28 else 29
 (";")
 
 
-# In[58]:
+# In[8]:
 
 
 length_of_month 2 2019;; (* 28 *)
@@ -208,7 +211,7 @@ length_of_month 2 2020;; (* 29 *)
 length_of_month 2 2021;; (* 28 *)
 
 
-# In[59]:
+# In[9]:
 
 
 let next_dayofweek (q: dayofweek) =
@@ -216,7 +219,7 @@ let next_dayofweek (q: dayofweek) =
 (";")
 
 
-# In[60]:
+# In[10]:
 
 
 next_dayofweek 1;; (* Monday => Tuesday *)
@@ -228,7 +231,7 @@ next_dayofweek 6;; (* Saturday => Sunday *)
 next_dayofweek 7;; (* Sunday => Monday *)
 
 
-# In[62]:
+# In[11]:
 
 
 let next_day { d; q; m; y } =
@@ -244,7 +247,7 @@ let next_day { d; q; m; y } =
 (";")
 
 
-# In[63]:
+# In[12]:
 
 
 let rec iterate (n: int) (f: 'a -> 'a) (x: 'a): 'a =
@@ -255,7 +258,7 @@ let rec iterate (n: int) (f: 'a -> 'a) (x: 'a): 'a =
 ;;
 
 
-# In[64]:
+# In[13]:
 
 
 let start_of_next_month { d; q; m; y } =
@@ -270,13 +273,13 @@ let start_of_next_month { d; q; m; y } =
 
 # Je vais tricher un peu et utiliser la connaissance que le 01/01/1994 est un samedi :
 
-# In[65]:
+# In[14]:
 
 
 Sys.command "ncal Jan 1994 | grep '  1'";
 
 
-# In[70]:
+# In[15]:
 
 
 let start_date = {d=1; q=6; m=1; y=1994};; (* 01/01/1994 était un samedi, q=6 *)
@@ -316,7 +319,7 @@ get_ipython().system('nb_bon_mois_fevrier;;')
 # 
 # J'ai aussi eu la chance d'observer ce phénomène en 1999 (mais je ne me souviens pas l'avoir remarqué, j'avais 6 ans !) et en 2010 (et je me *souviens* l'avoir remarqué, normal j'étais en MP* et on adore ce genre de coïncidences).
 
-# In[73]:
+# In[16]:
 
 
 get_ipython().system('solutions')
@@ -327,23 +330,45 @@ get_ipython().system('solutions')
 # ---
 # ## Réponse en Rust (par [un de mes élèves (Théo Degioanni)](https://github.com/Moxinilian))
 # 
+# Le code Rust proposé peut être executé depuis le [bac à sable Rust]() :
 # https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=2ab9c57e9d114a344363e21f9493bf22
+# 
+# Mais on peut aussi utiliser [le kernel Jupyter proposé par le projet evcxr de Google](https://github.com/google/evcxr/blob/master/evcxr_jupyter/README.md) :
+# 
+# 1. il faut installer Rust, je n'avais jamais fait j'ai donc suivi [rustup.rs](https://rustup.rs/) le site officiel de présentation de l'installation de Rust ;
+# 2. puis j'ai suivi les explications pour installer le kernel [sur GitHub @google/evcxr](https://github.com/google/evcxr/blob/master/evcxr_jupyter/README.md) ;
+# 3. puis j'ai écrit cette cellule ci-dessous, j'ai changé le Noyau en Rust, et j'ai exécuté la cellule ;
+# 4. notez qu'avec l'extension [jupyter nbextension ExecuteTime](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/execute_time/readme.html), j'ai vu que la première cellule avait pris quasiment 10 secondes... mais je pense qu'il s'agit du temps d'installer et de compilation du module `chrono` (je ne suis pas encore très familier avec Rust).
+#    - Les exécutions suivantes prennent environ 300ms pour la définition (y a-t-il recompilation même si le texte ne change pas ?) de la fonction ;
+#    - Et environ 700ms pour l'exécution. C'est bien plus lent que les 35 ms de mon code naïf en OCaml (qui est juste interprété et pas compilé), que les 10 ms de Python, ou les 100 ms de Bash. Mais pas grave !
 # 
 # - Date et heure : lundi 01/02/2021, 21h20
 
-# In[10]:
+# In[8]:
 
 
-# TODO solution pour montrer du code Rust en Jupyter notebook
+:dep chrono = "0.4"
+use chrono::TimeZone;
+use chrono::Datelike;
+
+fn main() {
+    let n = (1994..=2077)
+        .filter(|n| chrono::Utc.ymd_opt(*n, 2, 29) == chrono::LocalResult::None)
+        .map(|n| chrono::Utc.ymd(n, 2, 1))
+        .filter(|t| t.weekday() == chrono::Weekday::Mon)
+        .count();
+        
+    println!("{}", n);
+}
 
 
-# https://github.com/google/evcxr/blob/master/evcxr_jupyter/README.md !
-
-# In[ ]:
+# In[9]:
 
 
-get_ipython().run_cell_magic('rust', '', ':dep chrono = "0.4"\nuse chrono::TimeZone;\nuse chrono::Datelike;\n\nfn main() {\n    let n = (1994..=2077)\n        .filter(|n| chrono::Utc.ymd_opt(*n, 2, 29) == chrono::LocalResult::None)\n        .map(|n| chrono::Utc.ymd(n, 2, 1))\n        .filter(|t| t.weekday() == chrono::Weekday::Mon)\n        .count();\n        \n    println!("{}", n);\n}')
+main()
 
+
+# On trouve la même réponse que les autres langages, parfait.
 
 # ---
 # ## Conclusion
