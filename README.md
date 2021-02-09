@@ -45,6 +45,8 @@ You can also launch an interactive environment to play with the code by yourself
 
 - :fr: [Ce notebook en français est un petit tutoriel pour apprendre à résoudre des problèmes/programmes linéaires en Python avec SciPy](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Mini_tutoriel_pour_la_resolution_de_programmes_lineaires_avec_Python__ENS_Rennes_2021.ipynb), pour le cours [ALGO2](http://people.irisa.fr/Francois.Schwarzentruber/algo2/) à [l'ENS Rennes](http://www.dit.ens-rennes.fr/) en janvier 2021 ([on GitHub?](Mini_tutoriel_pour_la_resolution_de_programmes_lineaires_avec_Python__ENS_Rennes_2021.ipynb)).
 
+- :fr: [Ce notebook en français montre une expérimentation de visualisation interactive de l'algorithme du Simplexe](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Une%20exploration%20visuelle%20de%20l'algorithme%20du%20Simplexe%20en%203D%20avec%20Python.ipynb), pour le cours [ALGO2](http://people.irisa.fr/Francois.Schwarzentruber/algo2/) à [l'ENS Rennes](http://www.dit.ens-rennes.fr/) en février 2021 ([on GitHub?](Une%20exploration%20visuelle%20de%20l'algorithme%20du%20Simplexe%20en%203D%20avec%20Python.ipynb)).
+
 - :fr: [Ce petit notebook en français présente un challenge](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/F%C3%A9vrier%202021%20un%20mini%20challenge%20arithm%C3%A9tico-algorithmique.ipynb) : « Comptez le nombre de mois de février répondant à ce critère (je n'ai pas trouvé de nom précis), depuis l'année de création de l'ENS Rennes (1994, enfin pour Cachan antenne Bretagne) jusqu'à 2077 (1994 et 2077 inclus). ». ([on GitHub?](F%C3%A9vrier%202021%20un%20mini%20challenge%20arithm%C3%A9tico-algorithmique.ipynb)).
 
 ### Numerical simulations for dice games (:fr: in French)
