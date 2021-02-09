@@ -3,7 +3,7 @@ jupyter
 ipython
 watermark
 ipythonblocks
-
+itikz
 bash_kernel
 octave_kernel
 
