@@ -49,7 +49,7 @@ You can also launch an interactive environment to play with the code by yourself
 
 - :fr: [Ce petit notebook en français présente un challenge](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/F%C3%A9vrier%202021%20un%20mini%20challenge%20arithm%C3%A9tico-algorithmique.ipynb) : « Comptez le nombre de mois de février répondant à ce critère (je n'ai pas trouvé de nom précis), depuis l'année de création de l'ENS Rennes (1994, enfin pour Cachan antenne Bretagne) jusqu'à 2077 (1994 et 2077 inclus). ». ([on GitHub?](F%C3%A9vrier%202021%20un%20mini%20challenge%20arithm%C3%A9tico-algorithmique.ipynb)).
 
-- :fr: [Ce petit notebook en français montre comment déboguer du code Python depuis Jupyter](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Debugguer_du_code_Python_depuis_Notebook_Jupyter.ipynb) ([on GitHub?](Debugguer_du_code_Python_depuis_Notebook_Jupyter.ipynb)).
+- :fr: :bug:  [Ce petit notebook en français montre comment déboguer du code Python depuis Jupyter](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Deboguer_du_code_Python_depuis_Notebook_Jupyter.ipynb) ([on GitHub?](Deboguer_du_code_Python_depuis_Notebook_Jupyter.ipynb)).
 
 ### Numerical simulations for dice games (:fr: in French)
 - I also wrote some notebooks on numerical simulations of dice games :fr: Voir [ce sous-dossier](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/simus/) (ou [sur GitHub?](simus/)) / :gb: See [this sub-folder](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/simus/) (or [on GitHub?](simus/)).
