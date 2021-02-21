@@ -81,6 +81,10 @@ You can also launch an interactive environment to play with the code by yourself
 - Demo of the [RISE Jupyter extension](https://github.com/damianavila/RISE) to easily write a dynamic slideshow in a Jupyter notebook, [for Python](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb) ([on GitHub?](Demo_of_RISE_for_slides_with_Jupyter_notebooks__Python.ipynb)) and
 [for OCaml](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb) ([on GitHub?](Demo_of_RISE_for_slides_with_Jupyter_notebooks__OCaml.ipynb)) :loudspeaker:.
 
+- :fr: Cette comparaison des deux extensions [`tutormagic`](https://github.com/kikocorreoso/tutormagic/) et [`nbtutor`](https://github.com/lgpage/nbtutor/) dans [ce notebook (20/02/2021)](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Comparaison_de_tutormagic_et_nbtutor_pour_visualiser_du_code_Python_et_C_dans_un_notebook_Jupyter.ipynb) ([on GitHub?](Comparaison_de_tutormagic_et_nbtutor_pour_visualiser_du_code_Python_et_C_dans_un_notebook_Jupyter.ipynb))
+
+- :negative_squared_cross_mark: Demonstration of using the [`nbtutor`](https://github.com/lgpage/nbtutor/) extension offline [this other tiny notebook (20/02/2021)](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Demo_of_nbtutor_offline.ipynb) ([on GitHub?](Demo_of_nbtutor_offline.ipynb))
+
 ## With [Julia](https://www.julialang.org/)
 - [This notebook shows a implementation of a naive algorithm to compute eigen values and eigen vectors for full rank matrices](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Algorithms_to_compute_eigen_values_and_eigen_vectors_in_Julia.ipynb) ([on GitHub?](Algorithms_to_compute_eigen_values_and_eigen_vectors_in_Julia.ipynb), on Julia.
 
