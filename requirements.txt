@@ -7,6 +7,10 @@ itikz
 bash_kernel
 octave_kernel
 
+# Recent experiments
+tutormagic
+nbtutor
+
 # --- For the codebase
 tqdm>=4.0
 numpy>=1.14
