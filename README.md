@@ -76,6 +76,8 @@ You can also launch an interactive environment to play with the code by yourself
 
 - [A tiny presentation on how to do time/memory profiling](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Profiling_in_a_Jupyter_notebook.ipynb) ([on GitHub?](Profiling_in_a_Jupyter_notebook.ipynb)) from *inside* the Jupyter notebook interface, with various approaches.
 
+- 🔍 ✨ I first tried the [`lolviz`](https://github.com/parrt/lolviz/) [module in 2017](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Testing_the_lolviz_Python_module.ipynb) ([on GitHub?](Testing_the_lolviz_Python_module.ipynb)), and then again in 2021, to [improve it](https://github.com/parrt/lolviz/issues/27), [with a unified display function that chooses the best one based on the datatype](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Extending_lolviz_with_a_unified_display_function_that_chooses_the_best_one_based_on_the_datatype.ipynb) ([on GitHub?](Extending_lolviz_with_a_unified_display_function_that_chooses_the_best_one_based_on_the_datatype.ipynb)).
+
 ## Experiments with Jupyter
 - [This notebook shows how to register a custom HTML writer for builtins or user-defined types in IPython and Jupyter](https://nbviewer.jupyter.org/github/Naereen/notebooks/blob/master/Demonstration%20of%20numpy.polynomial.Polynomial%20and%20nice%20display%20with%20LaTeX%20and%20MathJax%20%28python3%29.ipynb) ([on GitHub?](Demonstration%20of%20numpy.polynomial.Polynomial%20and%20nice%20display%20with%20LaTeX%20and%20MathJax%20%28python3%29.ipynb)), for the sake of the example I wrote a nice LaTeX/MathJax-powered print function that nicely displays polynomials from the `numpy.polynomial.Polynomial` module or class.
 
