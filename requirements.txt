@@ -3,17 +3,26 @@ jupyter
 ipython
 watermark
 ipythonblocks
-itikz
+ipywidgets
+
+# --- Other kernels
 bash_kernel
 octave_kernel
 
-# Recent experiments
+# --- Recent experiments
 tutormagic
 nbtutor
+line_profiler
+line_profiler
+itikz
 
 # --- For the codebase
 tqdm>=4.0
 numpy>=1.14
 matplotlib>=2.0
+seaborn
 scipy
+cython
+numba
+pandas
 #networkx
