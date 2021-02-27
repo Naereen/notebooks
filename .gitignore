@@ -13,3 +13,6 @@ mocaml_history.ml
 private
 __pycache__/
 *.annot
+
+# New in Jupyter Lab (27/02/2021)
+.virtual_documents
