@@ -864,10 +864,10 @@ for k in [2, 3, 4, 5]:
 # In[74]:
 
 
-len_alphabet = len(alphabet2)
-for k in [2, 3, 4, 5]:
-    print(f"Generating {len_alphabet**k} words of size = {k} takes about")
-    list(all_words_of_alphabet(alphabet2, k))
+# len_alphabet = len(alphabet2)
+# for k in [2, 3, 4, 5]:
+#     print(f"Generating {len_alphabet**k} words of size = {k} takes about")
+#     list(all_words_of_alphabet(alphabet2, k))
 
 
 # Who, it takes 12 seconds to just *generate* all the possible words for the largest problem (which is just of size $(5,5)$)...
@@ -1163,7 +1163,8 @@ def smart_solve(problem: dict, alphabet: Union[List[str], Set[str]], debug: bool
     nb_combination = 0
     for possible_words in itertools.product(*possible_words_for_lines):
         nb_combination += 1
-        if debug: print(f"    Trying possible_words #{nb_combination}/{number_of_combinations}, from line constraints = {possible_words}")
+        percentage = 100 * nb_combination / float(number_of_combinations)
+        if debug: print(f"{percentage:.3g}%  Trying possible_words #{nb_combination}/{number_of_combinations}, from line constraints = {possible_words}")
         column = 0
         no_wrong_column = True
         while no_wrong_column and column < n:
