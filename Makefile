@@ -6,7 +6,7 @@ all:	export send
 send:	send_zamok
 send_zamok:
 	CP-git ./ ${Szam}publis/notebooks/
-	CP ./*.html ${Szam}publis/notebooks/
+	CP ./*.pdf ./*.html ${Szam}publis/notebooks/
 
 export:
 	./export.sh

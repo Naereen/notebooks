@@ -12,7 +12,7 @@
 #
 # **Warning:** This notebook will *not* explain the concept and syntax of regular expressions, go read on about it on Wikipedia or in a good book. The Python documentation gives a nice introduction [here](https://docs.python.org/3/howto/regex.html#regex-howto).
 #
-# - Author: [Lilian Besson](https://besson.link) ([@Naereen](https://GitHub.com/Naereen) ;
+# - Author: [Lilian Besson](https://besson.link) ([@Naereen](https://GitHub.com/Naereen)) ;
 # - License: [MIT License](https://lbesson.mit-license.org/) ;
 # - Date: 28-02-2021.
 
